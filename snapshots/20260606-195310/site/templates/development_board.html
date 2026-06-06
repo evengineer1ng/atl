@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Development Tier</p>
+      <h2>{{ tier_label }}</h2>
+      {% if active_shift %}
+      <p>Active shift: {{ active_shift.label }} {{ active_shift.window }}</p>
+      {% elif next_shift %}
+      <p>Next shift: {{ next_shift.label }} {{ next_shift.window }}</p>
+      {% endif %}
+    </div>
+    <a href="/development">Return to dashboard</a>
+  </div>
+</section>
+
+{% if allow_create %}
+<section class="card">
+  <h2>Add Draft Idea</h2>
+  <form action="/development/candidates" method="post" class="development-form">
+    <div class="form-grid">
+      <label>Name<input type="text" name="name" required></label>
+      <label>Long / Short / Both
+        <select name="long_short_mode">
+          <option value="both">Both</option>
+          <option value="long">Long</option>
+          <option value="short">Short</option>
+        </select>
+      </label>
+      <label>Risk Profile<input type="text" name="risk_profile" placeholder="balanced, aggressive, defensive"></label>
+      <label>Timeframe<input type="text" name="timeframe" placeholder="5m"></label>
+      <label>Coin Universe<input type="text" name="coin_universe" placeholder="Top 20, majors, custom basket"></label>
+      <label>Expected Behavior<input type="text" name="expected_behavior" placeholder="breakout continuation, mean reversion, sniper"></label>
+    </div>
+    <label>Hypothesis<textarea name="hypothesis" rows="3"></textarea></label>
+    <label>Strategy Notes<textarea name="strategy_notes" rows="3"></textarea></label>
+    <label>Notes<textarea name="notes" rows="2"></textarea></label>
+    <details class="card dev-inline-details">
+      <summary>Optional runtime config</summary>
+      <div class="form-grid">
+        <label>Strategy Path<input type="text" name="strategy_path" placeholder="user_data/strategies/MyStrategy.py"></label>
+        <label>Config Path<input type="text" name="config_path" placeholder="user_data/config.mystrategy.json"></label>
+        <label>Log Path<input type="text" name="log_path" placeholder="user_data/logs/mystrategy.log"></label>
+        <label>Trade DB Path<input type="text" name="db_path" placeholder="user_data/tradesv3_mystrategy.sqlite"></label>
+        <label>API URL<input type="text" name="api_url" placeholder="http://127.0.0.1:8095"></label>
+        <label>API Username<input type="text" name="api_username"></label>
+        <label>API Password<input type="text" name="api_password"></label>
+        <label>Start Command<input type="text" name="start_command" placeholder="docker compose -f docker-compose.dev.yml up -d my_bot"></label>
+        <label>Stop Command<input type="text" name="stop_command" placeholder="docker compose -f docker-compose.dev.yml stop my_bot"></label>
+      </div>
+    </details>
+    <button type="submit">Create Candidate</button>
+  </form>
+</section>
+{% endif %}
+
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Lifecycle</th>
+          <th>Shift</th>
+          <th>Status</th>
+          <th>Eligibility</th>
+          <th>Closed</th>
+          <th>Realized</th>
+          <th>Unrealized</th>
+          <th>Worst Open</th>
+          <th>Heartbeat</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>
+            <strong><a href="/development/candidates/{{ row.id }}">{{ row.name }}</a></strong><br>
+            <span class="mono">{{ row.timeframe }}{% if row.coin_universe %} · {{ row.coin_universe }}{% endif %}</span><br>
+            {% if row.workflow_requirement %}
+            <span>{{ row.workflow_requirement }}</span>
+            {% endif %}
+          </td>
+          <td>{{ row.lifecycle_label }}</td>
+          <td>{{ row.display_shift }}{% if row.runtime_window %}<br><span class="mono">{{ row.runtime_window }}</span>{% endif %}</td>
+          <td><span class="badge {{ 'online' if row.runtime_status == 'running' else 'offline' }}">{{ row.runtime_status }}</span></td>
+          <td>{{ row.eligibility_status }}</td>
+          <td>{{ row.closed_trades }}</td>
+          <td>{{ "%.2f"|format(row.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.unrealized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.worst_open_trade) }}%</td>
+          <td>{{ "Yes" if row.heartbeat else "No" }}</td>
+          <td>
+            <form action="/development/candidates/{{ row.id }}/action" method="post" class="inline-form">
+              <input type="hidden" name="redirect_to" value="{{ request.url.path }}">
+              <button type="submit" name="action" value="promote">Promote</button>
+              <button type="submit" name="action" value="demote_bootcamp">Bootcamp</button>
+            </form>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="11">No candidates in this tier yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Score</th>
+          <th>Trust</th>
+          <th>Data Quality</th>
+          <th>Maturity</th>
+          <th>Recent Form</th>
+          <th>Risk Profile</th>
+          <th>Interesting Discoveries</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td><a href="/teams/{{ row.team_id }}">{{ row.team }}</a></td>
+          <td>{{ row.score }}</td>
+          <td>{{ row.trust_score }}{% if row.trust_note %}<br><small>{{ row.trust_note }}</small>{% endif %}</td>
+          <td>{{ row.data_quality }}{% if row.data_quality_note %}<br><small>{{ row.data_quality_note }}</small>{% endif %}</td>
+          <td>{{ row.strategy_maturity }}</td>
+          <td>{{ row.recent_form }}</td>
+          <td>{{ row.risk_profile }}</td>
+          <td>{{ row.interesting_discoveries }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

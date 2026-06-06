@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="league-hero ml-hero">
+  <article class="card hero-story">
+    <div class="hero-mark">
+      <div class="league-crest ml-crest">LAB</div>
+      <div>
+        <p class="eyebrow">Scouting Department</p>
+        <h2>The ML Lab is where prospects are discovered, tested, drafted, promoted, or cut.</h2>
+      </div>
+    </div>
+    <p>The league remains the live dry-run scoreboard. The ML Lab preserves hypotheses, feature buckets, false starts, and draftable ideas without pretending backtests are wins.</p>
+  </article>
+  <div class="metric-grid">
+    <article class="metric-card"><span>Active Investigations</span><strong>{{ active_hypotheses|length }}</strong></article>
+    <article class="metric-card"><span>Tracked Buckets</span><strong>{{ buckets|length }}</strong></article>
+    <article class="metric-card"><span>Registered Models</span><strong>{{ models|length }}</strong></article>
+    <article class="metric-card"><span>Draft Prospects</span><strong>{{ draft_board|length }}</strong></article>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Strategy Universe Filters</h2>
+    <form action="/ml" method="get" class="post-form">
+      <label>Scope
+        <select name="scope">
+          {% for key in ['all', 'official', 'development', 'bootcamp', 'draft_room', 'archived'] %}
+          <option value="{{ key }}" {% if scope_filter == key %}selected{% endif %}>{{ key }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Tier
+        <select name="tier">
+          <option value="">all</option>
+          {% for key in ['official_24h', 'prospect_12h', 'candidate_6h', 'bootcamp', 'draft_room', 'archived'] %}
+          <option value="{{ key }}" {% if tier_filter == key %}selected{% endif %}>{{ key }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Shift
+        <select name="shift">
+          <option value="">all</option>
+          {% for key in ['A', 'B', 'C', 'D'] %}
+          <option value="{{ key }}" {% if shift_filter == key %}selected{% endif %}>{{ key }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Sample Quality
+        <select name="sample_quality">
+          <option value="">all</option>
+          {% for key in ['healthy', 'developing', 'unreliable'] %}
+          <option value="{{ key }}" {% if sample_quality_filter == key %}selected{% endif %}>{{ key }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Long / Short
+        <select name="long_short">
+          <option value="">all</option>
+          {% for key in ['both', 'long', 'short'] %}
+          <option value="{{ key }}" {% if long_short_filter == key %}selected{% endif %}>{{ key }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Timeframe
+        <input type="text" name="timeframe" value="{{ timeframe_filter }}" placeholder="5m">
+      </label>
+      <label>Archetype / Tags / Universe
+        <input type="text" name="q" value="{{ universe_filter }}" placeholder="ghost ladder, top 20, breakout">
+      </label>
+      <label>Runtime Bucket
+        <select name="runtime_bucket">
+          <option value="">all</option>
+          <option value="low" {% if runtime_bucket == 'low' %}selected{% endif %}>low</option>
+          <option value="medium" {% if runtime_bucket == 'medium' %}selected{% endif %}>medium</option>
+          <option value="high" {% if runtime_bucket == 'high' %}selected{% endif %}>high</option>
+        </select>
+      </label>
+      <button type="submit">Filter</button>
+    </form>
+  </article>
+  <article class="card">
+    <h2>Active Investigations</h2>
+    {% for row in active_hypotheses %}
+    <article class="lab-note">
+      <p class="eyebrow">{{ row.status }}</p>
+      <h3><a href="/ml/hypotheses/{{ row.id }}">{{ row.name }}</a></h3>
+      <p>{{ row.theme }}</p>
+    </article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Recently Discovered Buckets</h2>
+    {% for row in buckets %}
+    <article class="lab-note">
+      <h3>{{ row.bucket_name }}</h3>
+      <p>{{ row.avg_forward_move }}% avg forward move &middot; {{ row.samples }} samples</p>
+    </article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Best Runtime-Adjusted Pace</h2>
+    {% for row in top_runtime_adjusted %}
+    <article class="lab-note">
+      <h3>{{ row.name }}</h3>
+      <p>{{ row.tier_competition }}{% if row.shift_code %} · Shift {{ row.shift_code }}{% endif %}</p>
+      <p>Per-24h Pace: {% if row.projected_total_pnl_per_24h is not none %}{{ "%.2f"|format(row.projected_total_pnl_per_24h) }}{% else %}Flagged{% endif %}</p>
+      <p>Scout Grade: {{ row.scout_grade }} · {{ row.promotion_recommendation }}</p>
+      <p>{{ row.sample_size_warning or "Sample looks healthy." }}</p>
+    </article>
+    {% else %}
+    <p>No strategies matched the current filters.</p>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Needs More Runtime</h2>
+    {% for row in needs_runtime_rows %}
+    <article class="lab-note">
+      <h3>{{ row.name }}</h3>
+      <p>{{ "%.2f"|format(row.total_runtime_hours) }} runtime hours · {{ row.runtime_recommendation }}</p>
+      <p>{{ row.watchlist_flag or row.cut_candidate_flag or "keep watching" }}</p>
+    </article>
+    {% else %}
+    <p>No strategies are currently flagged for extra runtime.</p>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Promising Failed Ideas</h2>
+    {% if failed_ideas %}
+      {% for row in failed_ideas %}
+      <article class="lab-note">
+        <h3>{{ row.name }}</h3>
+        <p>{{ row.status }}</p>
+      </article>
+      {% endfor %}
+    {% else %}
+      <p>No archived or rejected ideas seeded yet. Use this room to preserve near-misses instead of losing the breadcrumbs.</p>
+    {% endif %}
+  </article>
+  <article class="card">
+    <h2>Links &amp; Tools</h2>
+    <p><a href="/ml/workbench">ML Workbench</a></p>
+    <p><a href="/ml/models">Model Registry</a></p>
+    <p><a href="/ml/features">Feature Library</a></p>
+    <p><a href="/ml/pipeline">Candidate Strategy Pipeline</a></p>
+    <p><a href="/ml/contamination">Contamination / Leakage Warnings</a></p>
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Generated ML Maintenance Findings</h2>
+    {% for row in generated_findings %}
+    <article class="lab-note">
+      <h3>{{ row.title }}</h3>
+      <p>{{ row.content }}</p>
+    </article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Current ML Maintenance Question</h2>
+    {% for row in generated_questions %}
+    <article class="lab-note">
+      <h3>{{ row.question }}</h3>
+      <p>{{ row.rationale }}</p>
+    </article>
+    {% endfor %}
+  </article>
+</section>
+{% endblock %}

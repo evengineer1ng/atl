@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th>Pair</th>
+          <th>Side</th>
+          <th>Entry</th>
+          <th>Exit</th>
+          <th>Duration</th>
+          <th>Profit %</th>
+          <th>Profit</th>
+          <th>Exit Tag</th>
+          <th>Slot/Tier</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td><a href="/teams/{{ row.team_id }}">{{ row.team }}</a></td>
+          <td>{{ row.pair }}</td>
+          <td>{{ row.side }}</td>
+          <td>{{ row.entry_time }}</td>
+          <td>{{ row.exit_time }}</td>
+          <td>{{ row.duration }}</td>
+          <td>{{ "%.2f"|format(row.profit_pct) }}%</td>
+          <td>{{ "%.2f"|format(row.profit_abs) }}</td>
+          <td>{{ row.exit_tag }}</td>
+          <td>{{ row.slot_tier }}</td>
+          <td>{{ row.notes }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

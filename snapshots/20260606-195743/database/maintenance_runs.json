@@ -1,0 +1,1444 @@
+[
+  {
+    "id": 1,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "The read operation timed out",
+    "created_at": "2026-06-05T23:44:09.300104+00:00"
+  },
+  {
+    "id": 2,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League overview and research questions refreshed.",
+    "created_at": "2026-06-05T23:45:53.150332+00:00"
+  },
+  {
+    "id": 3,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "The read operation timed out",
+    "created_at": "2026-06-05T23:46:53.424754+00:00"
+  },
+  {
+    "id": 4,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "The read operation timed out",
+    "created_at": "2026-06-05T23:49:35.931048+00:00"
+  },
+  {
+    "id": 5,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML findings and question refreshed.",
+    "created_at": "2026-06-05T23:51:24.698782+00:00"
+  },
+  {
+    "id": 6,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview and research questions replaced.",
+    "created_at": "2026-06-06T00:17:18.302336+00:00"
+  },
+  {
+    "id": 7,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview and research questions replaced.",
+    "created_at": "2026-06-06T00:48:42.484922+00:00"
+  },
+  {
+    "id": 8,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview and research questions replaced.",
+    "created_at": "2026-06-06T01:19:13.107724+00:00"
+  },
+  {
+    "id": 9,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview and research questions replaced.",
+    "created_at": "2026-06-06T01:49:49.028036+00:00"
+  },
+  {
+    "id": 10,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview and research questions replaced.",
+    "created_at": "2026-06-06T02:20:56.127680+00:00"
+  },
+  {
+    "id": 11,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T02:31:31.256690+00:00"
+  },
+  {
+    "id": 12,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T02:52:32.291677+00:00"
+  },
+  {
+    "id": 13,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "The read operation timed out",
+    "created_at": "2026-06-06T02:53:32.594388+00:00"
+  },
+  {
+    "id": 14,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "The read operation timed out",
+    "created_at": "2026-06-06T02:55:32.900195+00:00"
+  },
+  {
+    "id": 15,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "The read operation timed out",
+    "created_at": "2026-06-06T02:57:33.212484+00:00"
+  },
+  {
+    "id": 16,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "The read operation timed out",
+    "created_at": "2026-06-06T02:59:33.499608+00:00"
+  },
+  {
+    "id": 17,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:00:33.836077+00:00"
+  },
+  {
+    "id": 18,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:01:34.203339+00:00"
+  },
+  {
+    "id": 19,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:02:34.537699+00:00"
+  },
+  {
+    "id": 20,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:03:34.891973+00:00"
+  },
+  {
+    "id": 21,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:04:35.236211+00:00"
+  },
+  {
+    "id": 22,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:05:35.565721+00:00"
+  },
+  {
+    "id": 23,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:06:35.924729+00:00"
+  },
+  {
+    "id": 24,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:07:36.262219+00:00"
+  },
+  {
+    "id": 25,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:08:36.656426+00:00"
+  },
+  {
+    "id": 26,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:09:36.713681+00:00"
+  },
+  {
+    "id": 27,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:10:38.049088+00:00"
+  },
+  {
+    "id": 28,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:11:39.394747+00:00"
+  },
+  {
+    "id": 29,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:12:40.735019+00:00"
+  },
+  {
+    "id": 30,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:13:42.109454+00:00"
+  },
+  {
+    "id": 31,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:14:43.462016+00:00"
+  },
+  {
+    "id": 32,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:15:44.796739+00:00"
+  },
+  {
+    "id": 33,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:16:46.171017+00:00"
+  },
+  {
+    "id": 34,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:17:47.543341+00:00"
+  },
+  {
+    "id": 35,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:18:48.937121+00:00"
+  },
+  {
+    "id": 36,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:19:50.276914+00:00"
+  },
+  {
+    "id": 37,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:20:51.645227+00:00"
+  },
+  {
+    "id": 38,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:21:53.005510+00:00"
+  },
+  {
+    "id": 39,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:22:54.345292+00:00"
+  },
+  {
+    "id": 40,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:23:55.689743+00:00"
+  },
+  {
+    "id": 41,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:24:57.028258+00:00"
+  },
+  {
+    "id": 42,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:25:58.334520+00:00"
+  },
+  {
+    "id": 43,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:26:59.691260+00:00"
+  },
+  {
+    "id": 44,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:28:01.067630+00:00"
+  },
+  {
+    "id": 45,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:29:02.386895+00:00"
+  },
+  {
+    "id": 46,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:30:03.737577+00:00"
+  },
+  {
+    "id": 47,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:31:05.074875+00:00"
+  },
+  {
+    "id": 48,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:32:06.406506+00:00"
+  },
+  {
+    "id": 49,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:33:07.793168+00:00"
+  },
+  {
+    "id": 50,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:34:09.410705+00:00"
+  },
+  {
+    "id": 51,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:35:10.744030+00:00"
+  },
+  {
+    "id": 52,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:36:12.088651+00:00"
+  },
+  {
+    "id": 53,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:37:13.445246+00:00"
+  },
+  {
+    "id": 54,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:38:14.794670+00:00"
+  },
+  {
+    "id": 55,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:39:16.130941+00:00"
+  },
+  {
+    "id": 56,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:40:17.480679+00:00"
+  },
+  {
+    "id": 57,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:41:18.805892+00:00"
+  },
+  {
+    "id": 58,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:42:20.127371+00:00"
+  },
+  {
+    "id": 59,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:43:21.429826+00:00"
+  },
+  {
+    "id": 60,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:44:22.710586+00:00"
+  },
+  {
+    "id": 61,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:45:23.978977+00:00"
+  },
+  {
+    "id": 62,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:46:25.277558+00:00"
+  },
+  {
+    "id": 63,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:47:26.553434+00:00"
+  },
+  {
+    "id": 64,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:48:27.861941+00:00"
+  },
+  {
+    "id": 65,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:49:29.160796+00:00"
+  },
+  {
+    "id": 66,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:50:30.438509+00:00"
+  },
+  {
+    "id": 67,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:51:31.713398+00:00"
+  },
+  {
+    "id": 68,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:52:33.007311+00:00"
+  },
+  {
+    "id": 69,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:53:34.294842+00:00"
+  },
+  {
+    "id": 70,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:54:35.584233+00:00"
+  },
+  {
+    "id": 71,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:55:36.875969+00:00"
+  },
+  {
+    "id": 72,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:56:38.196943+00:00"
+  },
+  {
+    "id": 73,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:57:39.497754+00:00"
+  },
+  {
+    "id": 74,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:58:40.868365+00:00"
+  },
+  {
+    "id": 75,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T03:59:42.156717+00:00"
+  },
+  {
+    "id": 76,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T04:00:43.446515+00:00"
+  },
+  {
+    "id": 77,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T04:01:44.733734+00:00"
+  },
+  {
+    "id": 78,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T04:02:46.009324+00:00"
+  },
+  {
+    "id": 79,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T04:03:47.497747+00:00"
+  },
+  {
+    "id": 80,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T04:04:48.855239+00:00"
+  },
+  {
+    "id": 81,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: slow-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | slow-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 1: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401 | fast-model attempt 2: Client error '401 Unauthorized' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401",
+    "created_at": "2026-06-06T04:05:50.268670+00:00"
+  },
+  {
+    "id": 82,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:08:21.954820+00:00"
+  },
+  {
+    "id": 83,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:10:53.533428+00:00"
+  },
+  {
+    "id": 84,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:13:25.104354+00:00"
+  },
+  {
+    "id": 85,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:15:56.730430+00:00"
+  },
+  {
+    "id": 86,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:18:28.341013+00:00"
+  },
+  {
+    "id": 87,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:21:00.060310+00:00"
+  },
+  {
+    "id": 88,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:23:31.666785+00:00"
+  },
+  {
+    "id": 89,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:26:03.310999+00:00"
+  },
+  {
+    "id": 90,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:28:34.936553+00:00"
+  },
+  {
+    "id": 91,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:31:06.676119+00:00"
+  },
+  {
+    "id": 92,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:33:38.280571+00:00"
+  },
+  {
+    "id": 93,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:36:09.863360+00:00"
+  },
+  {
+    "id": 94,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:38:41.451285+00:00"
+  },
+  {
+    "id": 95,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:41:12.999539+00:00"
+  },
+  {
+    "id": 96,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:43:44.771051+00:00"
+  },
+  {
+    "id": 97,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:46:16.320850+00:00"
+  },
+  {
+    "id": 98,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:48:47.879145+00:00"
+  },
+  {
+    "id": 99,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T04:51:07.944136+00:00"
+  },
+  {
+    "id": 100,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:52:39.500429+00:00"
+  },
+  {
+    "id": 101,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:55:11.140772+00:00"
+  },
+  {
+    "id": 102,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T04:57:42.741294+00:00"
+  },
+  {
+    "id": 103,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:00:14.356413+00:00"
+  },
+  {
+    "id": 104,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:02:45.894715+00:00"
+  },
+  {
+    "id": 105,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:05:17.565278+00:00"
+  },
+  {
+    "id": 106,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:07:49.075475+00:00"
+  },
+  {
+    "id": 107,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:10:20.593234+00:00"
+  },
+  {
+    "id": 108,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:12:52.127753+00:00"
+  },
+  {
+    "id": 109,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:15:23.704574+00:00"
+  },
+  {
+    "id": 110,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:17:55.278354+00:00"
+  },
+  {
+    "id": 111,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:20:26.787780+00:00"
+  },
+  {
+    "id": 112,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:22:58.338228+00:00"
+  },
+  {
+    "id": 113,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:25:29.872471+00:00"
+  },
+  {
+    "id": 114,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:28:01.617994+00:00"
+  },
+  {
+    "id": 115,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:30:33.096399+00:00"
+  },
+  {
+    "id": 116,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:33:04.582690+00:00"
+  },
+  {
+    "id": 117,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:35:45.594020+00:00"
+  },
+  {
+    "id": 118,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:38:17.122361+00:00"
+  },
+  {
+    "id": 119,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:40:48.596822+00:00"
+  },
+  {
+    "id": 120,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:43:20.099962+00:00"
+  },
+  {
+    "id": 121,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:45:51.726335+00:00"
+  },
+  {
+    "id": 122,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:48:23.271971+00:00"
+  },
+  {
+    "id": 123,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:50:54.875200+00:00"
+  },
+  {
+    "id": 124,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:53:26.516816+00:00"
+  },
+  {
+    "id": 125,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:55:58.250086+00:00"
+  },
+  {
+    "id": 126,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T05:58:14.657537+00:00"
+  },
+  {
+    "id": 127,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:00:46.177936+00:00"
+  },
+  {
+    "id": 128,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:03:17.743598+00:00"
+  },
+  {
+    "id": 129,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:05:49.337939+00:00"
+  },
+  {
+    "id": 130,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:08:20.963270+00:00"
+  },
+  {
+    "id": 131,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:10:52.514712+00:00"
+  },
+  {
+    "id": 132,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:13:24.043090+00:00"
+  },
+  {
+    "id": 133,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:15:55.631549+00:00"
+  },
+  {
+    "id": 134,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:18:27.309999+00:00"
+  },
+  {
+    "id": 135,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T06:20:55.009164+00:00"
+  },
+  {
+    "id": 136,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:22:26.533954+00:00"
+  },
+  {
+    "id": 137,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:24:58.022241+00:00"
+  },
+  {
+    "id": 138,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:27:29.510091+00:00"
+  },
+  {
+    "id": 139,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:30:01.096827+00:00"
+  },
+  {
+    "id": 140,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:32:32.674504+00:00"
+  },
+  {
+    "id": 141,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:35:04.349838+00:00"
+  },
+  {
+    "id": 142,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:37:35.908755+00:00"
+  },
+  {
+    "id": 143,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:40:07.497783+00:00"
+  },
+  {
+    "id": 144,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:42:39.019139+00:00"
+  },
+  {
+    "id": 145,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:45:10.677679+00:00"
+  },
+  {
+    "id": 146,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "Ollama chat failed after retries: kimi-k2.6:cloud attempt 1: The read operation timed out | kimi-k2.6:cloud attempt 2: The read operation timed out | qwen3.6:27b attempt 1: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404 | qwen3.6:27b attempt 2: Client error '404 Not Found' for url 'https://ollama.com/api/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404",
+    "created_at": "2026-06-06T06:47:42.207141+00:00"
+  },
+  {
+    "id": 147,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T06:50:18.129169+00:00"
+  },
+  {
+    "id": 148,
+    "maintenance_type": "background",
+    "status": "error",
+    "message": "ML maintenance failed: invalid literal for int() with base 10: 'ghost-ladder-clean-backtest'",
+    "created_at": "2026-06-06T06:54:38.016470+00:00"
+  },
+  {
+    "id": 149,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T06:59:00.246512+00:00"
+  },
+  {
+    "id": 150,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T07:00:24.712382+00:00"
+  },
+  {
+    "id": 151,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T07:01:29.303279+00:00"
+  },
+  {
+    "id": 152,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T07:03:37.653005+00:00"
+  },
+  {
+    "id": 153,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T07:05:27.284221+00:00"
+  },
+  {
+    "id": 154,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T07:21:12.314460+00:00"
+  },
+  {
+    "id": 155,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T07:30:07.729640+00:00"
+  },
+  {
+    "id": 156,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T07:52:54.079688+00:00"
+  },
+  {
+    "id": 157,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T08:02:28.462493+00:00"
+  },
+  {
+    "id": 158,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T08:24:37.823107+00:00"
+  },
+  {
+    "id": 159,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T08:33:41.945518+00:00"
+  },
+  {
+    "id": 160,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T08:55:30.167369+00:00"
+  },
+  {
+    "id": 161,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T09:05:25.305236+00:00"
+  },
+  {
+    "id": 162,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T09:27:29.561634+00:00"
+  },
+  {
+    "id": 163,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T09:36:40.958746+00:00"
+  },
+  {
+    "id": 164,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T09:58:19.239129+00:00"
+  },
+  {
+    "id": 165,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T10:07:40.378719+00:00"
+  },
+  {
+    "id": 166,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T10:10:18.471702+00:00"
+  },
+  {
+    "id": 167,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T10:30:07.606340+00:00"
+  },
+  {
+    "id": 168,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T10:42:48.651791+00:00"
+  },
+  {
+    "id": 169,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T11:01:24.205729+00:00"
+  },
+  {
+    "id": 170,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T11:14:40.048916+00:00"
+  },
+  {
+    "id": 171,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T11:32:45.792228+00:00"
+  },
+  {
+    "id": 172,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T11:46:42.167579+00:00"
+  },
+  {
+    "id": 173,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T12:04:37.051067+00:00"
+  },
+  {
+    "id": 174,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T12:19:14.384010+00:00"
+  },
+  {
+    "id": 175,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T12:35:43.083698+00:00"
+  },
+  {
+    "id": 176,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T12:50:09.903585+00:00"
+  },
+  {
+    "id": 177,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T13:07:22.778317+00:00"
+  },
+  {
+    "id": 178,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T13:11:56.912192+00:00"
+  },
+  {
+    "id": 179,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T13:22:44.807839+00:00"
+  },
+  {
+    "id": 180,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T13:38:32.295232+00:00"
+  },
+  {
+    "id": 181,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T13:54:44.714440+00:00"
+  },
+  {
+    "id": 182,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T14:09:29.687275+00:00"
+  },
+  {
+    "id": 183,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T14:27:19.047658+00:00"
+  },
+  {
+    "id": 184,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T14:41:33.654114+00:00"
+  },
+  {
+    "id": 185,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T14:58:53.376367+00:00"
+  },
+  {
+    "id": 186,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T15:13:09.607783+00:00"
+  },
+  {
+    "id": 187,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T15:31:03.829486+00:00"
+  },
+  {
+    "id": 188,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T15:45:36.940944+00:00"
+  },
+  {
+    "id": 189,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T16:02:55.279206+00:00"
+  },
+  {
+    "id": 190,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T16:13:26.752808+00:00"
+  },
+  {
+    "id": 191,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T16:16:54.688690+00:00"
+  },
+  {
+    "id": 192,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T16:34:25.349362+00:00"
+  },
+  {
+    "id": 193,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T16:48:22.588234+00:00"
+  },
+  {
+    "id": 194,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T17:07:00.292607+00:00"
+  },
+  {
+    "id": 195,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T17:21:16.892208+00:00"
+  },
+  {
+    "id": 196,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T17:40:55.959936+00:00"
+  },
+  {
+    "id": 197,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T17:52:53.184393+00:00"
+  },
+  {
+    "id": 198,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T18:13:34.456561+00:00"
+  },
+  {
+    "id": 199,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T18:24:37.395695+00:00"
+  },
+  {
+    "id": 200,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T18:44:10.526783+00:00"
+  },
+  {
+    "id": 201,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T18:56:08.590745+00:00"
+  },
+  {
+    "id": 202,
+    "maintenance_type": "ml",
+    "status": "success",
+    "message": "ML AI-managed findings, queue execution contracts, hypothesis overlays, and draft board overlays replaced.",
+    "created_at": "2026-06-06T19:16:07.840680+00:00"
+  },
+  {
+    "id": 203,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T19:20:31.836810+00:00"
+  },
+  {
+    "id": 204,
+    "maintenance_type": "research",
+    "status": "success",
+    "message": "Processed 1 research thread updates.",
+    "created_at": "2026-06-06T19:27:05.222849+00:00"
+  },
+  {
+    "id": 205,
+    "maintenance_type": "league",
+    "status": "success",
+    "message": "League AI-managed overview, questions, and ranking overlays replaced.",
+    "created_at": "2026-06-06T19:52:59.964425+00:00"
+  },
+  {
+    "id": 206,
+    "maintenance_type": "archive",
+    "status": "warning",
+    "message": "Created local snapshot algo_trading_league/data/archives/league_snapshots/20260606-195330 but repo sync failed: Archive repo URL is empty.",
+    "created_at": "2026-06-06T19:53:30.452395+00:00"
+  }
+]

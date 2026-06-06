@@ -1,0 +1,50 @@
+[
+  {
+    "id": 173,
+    "category": "ml",
+    "question": "Should the scouting department continue allocating live runtime to Timmy variants given 0\u20131 closed trades over ~20 hours, or redirect executor priority to unblock the Ghost Ladder clean backtest?",
+    "rationale": "Timmy live variants have generated unreliable sample quality with negligible closed-trade counts, while their parent model remains below the AUC 0.65 gate with unresolved overlapping-window contamination. Meanwhile, Ghost Ladder is the cleanest draft-board prospect but its critical backtest is unstarted. The scouting department must decide whether marginal live observation value exceeds the opportunity cost of delaying Ghost Ladder validation.",
+    "status": "active",
+    "created_at": "2026-06-06T19:16:07.725829+00:00"
+  },
+  {
+    "id": 179,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 20 currently shows 64 realized wins and 3 champion exits with net PnL near breakeven, while the Top 50 variant is underwater at \u2013$12.70 net despite 11 realized wins post-restart. Monitoring relative velocity, drawdown, and net equity will determine whether tighter universes produce superior risk-adjusted returns.",
+    "status": "monitoring",
+    "created_at": "2026-06-06T19:52:59.940163+00:00"
+  },
+  {
+    "id": 180,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy Top 20 holds higher equity ($1,010.04) with zero realized exits, whereas Top 50 ($1,005.95) has already recorded a realized loss. The comparison is pending until both variants close sufficient trades to assess universe fit.",
+    "status": "open",
+    "created_at": "2026-06-06T19:52:59.940238+00:00"
+  },
+  {
+    "id": 181,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda Top 20 has executed 3 champion exits alongside a 1.75% average realized ROI. We need to compare this profile against non-champion-exit strategies as more trade data accumulates to see if the exit mechanic preserves upside.",
+    "status": "open",
+    "created_at": "2026-06-06T19:52:59.940250+00:00"
+  },
+  {
+    "id": 182,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy variants display large unrealized swings on very few positions, consistent with a concentrated thesis, but the family\u2019s only realized exit so far was a loss. Additional closures are required to validate whether the profile can deliver outsized wins in production.",
+    "status": "monitoring",
+    "created_at": "2026-06-06T19:52:59.940256+00:00"
+  },
+  {
+    "id": 183,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Both Top 50 variants currently carry larger unrealized drawdowns relative to their realized books than their Top 20 counterparts, and Timmy Top 50 has the family\u2019s only realized loss. This raises the question of whether expanded coverage increases alpha or simply dilutes signal with harder-to-manage carry.",
+    "status": "open",
+    "created_at": "2026-06-06T19:52:59.940263+00:00"
+  }
+]

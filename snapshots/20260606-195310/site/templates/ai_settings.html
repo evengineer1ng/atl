@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Persisted Local Settings</p>
+  <h2>Ollama Cloud</h2>
+  <form action="/settings/ai" method="post" class="post-form">
+    <label>Ollama API Key
+      <input type="password" name="ollama_api_key" value="{{ settings.ollama_api_key }}">
+    </label>
+    <label>Model
+      <input type="text" name="ollama_model" value="{{ settings.ollama_model }}">
+    </label>
+    <label>Fallback model
+      <input type="text" name="ollama_fallback_model" value="{{ settings.ollama_fallback_model }}" placeholder="Optional faster fallback profile">
+    </label>
+    <label>Request timeout seconds
+      <input type="number" name="ollama_timeout_seconds" value="{{ settings.ollama_timeout_seconds }}">
+    </label>
+    <label>Retry count
+      <input type="number" name="ollama_retry_count" value="{{ settings.ollama_retry_count }}">
+    </label>
+    <label>Strategy generation model
+      <input type="text" name="development_strategy_generation_model" value="{{ settings.development_strategy_generation_model }}">
+    </label>
+    <label>Strategy generation fallback model
+      <input type="text" name="development_strategy_generation_fallback_model" value="{{ settings.development_strategy_generation_fallback_model }}" placeholder="Optional strategy-only fallback">
+    </label>
+    <label>Strategy generation timeout seconds
+      <input type="number" name="development_strategy_generation_timeout_seconds" value="{{ settings.development_strategy_generation_timeout_seconds }}">
+    </label>
+    <label>Strategy generation retry count
+      <input type="number" name="development_strategy_generation_retry_count" value="{{ settings.development_strategy_generation_retry_count }}">
+    </label>
+    <label>League maintenance minutes
+      <input type="number" name="league_maintenance_minutes" value="{{ settings.league_maintenance_minutes }}">
+    </label>
+    <label>ML maintenance minutes
+      <input type="number" name="ml_maintenance_minutes" value="{{ settings.ml_maintenance_minutes }}">
+    </label>
+    <label>Archive maintenance minutes
+      <input type="number" name="archive_maintenance_minutes" value="{{ settings.archive_maintenance_minutes }}">
+    </label>
+    <label>Archive repo URL
+      <input type="text" name="archive_repo_url" value="{{ settings.archive_repo_url }}" placeholder="https://github.com/owner/repo.git">
+    </label>
+    <label>Archive repo branch
+      <input type="text" name="archive_repo_branch" value="{{ settings.archive_repo_branch }}">
+    </label>
+    <label>Archive repo local checkout path
+      <input type="text" name="archive_repo_local_path" value="{{ settings.archive_repo_local_path }}" placeholder="algo_trading_league/data/archive_repo">
+    </label>
+    <label><input type="checkbox" name="league_maintenance_enabled" {% if settings.league_maintenance_enabled == 'true' %}checked{% endif %}> Enable league maintenance</label>
+    <label><input type="checkbox" name="ml_maintenance_enabled" {% if settings.ml_maintenance_enabled == 'true' %}checked{% endif %}> Enable ML maintenance</label>
+    <label><input type="checkbox" name="archive_maintenance_enabled" {% if settings.archive_maintenance_enabled == 'true' %}checked{% endif %}> Enable archive maintenance</label>
+    <label><input type="checkbox" name="archive_push_enabled" {% if settings.archive_push_enabled == 'true' %}checked{% endif %}> Push archive commits after each snapshot</label>
+    <label><input type="checkbox" name="auto_review_regeneration_enabled" {% if settings.auto_review_regeneration_enabled == 'true' %}checked{% endif %}> Auto-regenerate candidates after tweak/overhaul reviews</label>
+    <label>Auto-regenerate decision buckets
+      <input type="text" name="auto_review_regeneration_decisions" value="{{ settings.auto_review_regeneration_decisions }}" placeholder="tweak,overhaul">
+    </label>
+    <label><input type="checkbox" name="research_agent_enabled" {% if settings.research_agent_enabled == 'true' %}checked{% endif %}> Enable research agent</label>
+    <label>Research agent interval minutes
+      <input type="number" name="research_agent_interval_minutes" value="{{ settings.research_agent_interval_minutes }}">
+    </label>
+    <label>Research thread duration hours
+      <input type="number" name="research_agent_duration_hours" value="{{ settings.research_agent_duration_hours }}">
+    </label>
+    <button type="submit">Save Settings</button>
+  </form>
+  <p>League last run: {{ settings.league_maintenance_last_run or 'never' }}</p>
+  <p>ML last run: {{ settings.ml_maintenance_last_run or 'never' }}</p>
+  <p>Archive last run: {{ settings.archive_last_run or 'never' }}</p>
+  <p>Archive last snapshot: {{ settings.archive_last_snapshot_path or 'none yet' }}</p>
+</section>
+{% endblock %}

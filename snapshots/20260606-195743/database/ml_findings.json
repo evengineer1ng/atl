@@ -1,0 +1,38 @@
+[
+  {
+    "id": 49,
+    "title": "Timmy live runtime insufficient for hypothesis validation",
+    "content": "After ~20 hours, timmy-20-pc shows 0 closed trades and timmy-50-pc shows 1 closed trade (loss, -1.5% avg ROI). Sample quality is flagged unreliable. This does not provide evidence to support or refute the dark-matter-antimatter hypothesis.",
+    "hypothesis_id": "dark-matter-antimatter",
+    "status": "insufficient_evidence",
+    "source_question": "Should the scouting department continue allocating live runtime to Timmy variants given 0\u20131 closed trades over ~20 hours, or redirect executor priority to unblock the Ghost Ladder clean backtest?",
+    "updated_at": "2026-06-06T19:16:07.734198+00:00"
+  },
+  {
+    "id": 50,
+    "title": "Ghost Ladder backtest remains the critical path bottleneck",
+    "content": "The planned run ghost-ladder-clean-backtest-wfv1 has no executor output and has not started. Without this backtest, Ghost Ladder has zero precision or stability evidence and cannot advance from scouting status.",
+    "hypothesis_id": "ghost-ladder",
+    "status": "blocked_pending_backtest",
+    "source_question": "Should the scouting department continue allocating live runtime to Timmy variants given 0\u20131 closed trades over ~20 hours, or redirect executor priority to unblock the Ghost Ladder clean backtest?",
+    "updated_at": "2026-06-06T19:16:07.734261+00:00"
+  },
+  {
+    "id": 51,
+    "title": "Parent model AUC 0.61 sits below promotion gate with contamination",
+    "content": "timmy_bucket_ranker_v3 reports AUC 0.61 with known leakage from overlapping windows and repeated validation reuse. The 0.65 AUC gate is unmet. Any live trading influenced by this model carries elevated contamination risk.",
+    "hypothesis_id": "dark-matter-antimatter",
+    "status": "contamination_flagged",
+    "source_question": "Should the scouting department continue allocating live runtime to Timmy variants given 0\u20131 closed trades over ~20 hours, or redirect executor priority to unblock the Ghost Ladder clean backtest?",
+    "updated_at": "2026-06-06T19:16:07.734271+00:00"
+  },
+  {
+    "id": 52,
+    "title": "Champion benchmarks expose Timmy signal frequency problem",
+    "content": "Cosmo & Wanda variants generated 64 and 11 closed trades in comparable runtime, demonstrating healthy signal frequency. Timmy's 0\u20131 closed trades in ~20 hours suggests either extreme selectivity or a misfiring entry engine, making live PnL projections unreliable.",
+    "hypothesis_id": "dark-matter-antimatter",
+    "status": "anomaly_flagged",
+    "source_question": "Should the scouting department continue allocating live runtime to Timmy variants given 0\u20131 closed trades over ~20 hours, or redirect executor priority to unblock the Ghost Ladder clean backtest?",
+    "updated_at": "2026-06-06T19:16:07.734277+00:00"
+  }
+]

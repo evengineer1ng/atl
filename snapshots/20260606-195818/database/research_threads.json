@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "scope": "research",
+    "status": "completed",
+    "owner": "agent",
+    "interval_minutes": 30,
+    "duration_hours": 12,
+    "auto_reseed": 1,
+    "created_at": "2026-06-06T02:28:20.434941+00:00",
+    "started_at": "2026-06-06T02:28:20.434941+00:00",
+    "next_run_at": "2036-06-03T14:41:33.623826+00:00",
+    "completed_at": "2026-06-06T14:41:33.623820+00:00",
+    "summary": "As of the latest Official League snapshot, Cosmo/Wanda Top 20 (Hyperliquid / USDC, dynamic MarketCapPairList, Official feed, ~1 month live) definitively outperforms Top 50 (Bitget / USDT, static 50-pair whitelist, Restarted feed, launched today). Top 20 holds league rank #3 with a net total PnL of +7.89 across 63 closed trades (+62.50 USDC realized, 100% win rate, 1.77% average ROI). Top 50 is at rank #4 with a net total PnL of -28.44 across only 9 closed trades (+6.63 USDT realized, 100% win rate, 1.35% average ROI). Top 20\u2019s unrealized drawdown is roughly 0.9\u00d7 its realized profit buffer, whereas Top 50\u2019s is roughly 5.3\u00d7 realized gains, leaving the latter structurally more vulnerable to carry-risk. Per-trade ROI, initially unstable and nominally higher for Top 50 with tiny samples, has declined to 1.35% as more trades closed, now trailing Top 20\u2019s 1.77%. Severe confounders\u2014different exchanges, margin currencies, dynamic vs static pairlists, and Official vs Restarted data quality\u2014prevent an apples-to-apples strategy comparison. The operator also notes the broader Cosmo/Wanda ecosystem has ~2 years of positive live history, mostly with ~20 pairs. Conclusion: Top 20 is the clear aggregate outperformer on realized profit, throughput, total PnL, and power ranking. Reassessment is warranted once Top 50 exceeds 20 closed trades and achieves gapless Official feed continuity on a comparable exchange/currency baseline.",
+    "latest_focus": "Once Cosmo/Wanda Top 50 exceeds 20 closed trades on Official feed with matched exchange and currency settings, does it close the PnL and power-ranking gap with Top 20, or does the 20-pair dynamic universe retain a structural edge?"
+  },
+  {
+    "id": 3,
+    "question": "Once Cosmo/Wanda Top 50 exceeds 20 closed trades on Official feed with matched exchange and currency settings, does it close the PnL and power-ranking gap with Top 20, or does the 20-pair dynamic universe retain a structural edge?",
+    "scope": "research",
+    "status": "active",
+    "owner": "agent",
+    "interval_minutes": 30,
+    "duration_hours": 12,
+    "auto_reseed": 1,
+    "created_at": "2026-06-06T14:41:33.631214+00:00",
+    "started_at": "2026-06-06T14:41:33.631214+00:00",
+    "next_run_at": "2026-06-06T19:57:05.213701+00:00",
+    "completed_at": null,
+    "summary": "",
+    "latest_focus": "Once Cosmo/Wanda Top 50 exceeds 20 closed trades on Official feed with matched exchange and currency settings, does it close the PnL and power-ranking gap with Top 20, or does the 20-pair dynamic universe retain a structural edge?"
+  }
+]

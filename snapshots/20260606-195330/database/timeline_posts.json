@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "created_at": "2026-06-05T22:58:50.975308+00:00",
+    "title": "League Tracker Initialized",
+    "team_tags": "cosmo-wanda-20-pi,cosmo-wanda-50-pc,timmy-20-pc,timmy-50-pc",
+    "observation": "Set up the local-first league dashboard with one official Pi incumbent and three local challengers.",
+    "evidence": "Configured API endpoints at 10.0.0.159:8080 and 127.0.0.1:8090/8091/8092 with local trade database bindings.",
+    "interpretation": "The evidence stack is now structured enough to compare clean challenger runs against the incumbent without blending legacy containers.",
+    "next_action": "Verify Pi credentials if needed, run sync, and start posting observations as new exits and trade patterns appear.",
+    "category": "league"
+  },
+  {
+    "id": 3,
+    "created_at": "2026-06-05T23:19:36.962078+00:00",
+    "title": "Dark Matter Bucket Rediscovered",
+    "team_tags": "dark-matter-antimatter,timmy",
+    "observation": "Found a compressed-price, high-internal-motion regime consistent with the original Timmy thesis.",
+    "evidence": "Validation bucket retained outsized forward moves and behavior distinct from broad reactive expansion setups.",
+    "interpretation": "This remains scouting evidence, not scoreboard proof. Timmy dry-run behavior decides whether the idea earns promotion.",
+    "next_action": "Re-run with stricter leakage checks and compare against the live Timmy dry-run cohort.",
+    "category": "ml"
+  }
+]

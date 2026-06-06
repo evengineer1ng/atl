@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }} | Algo Trading League</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css?v=20260606a">
+</head>
+{% set cc = chat_context if chat_context is defined else {'scope': 'general', 'label': page_title, 'entity_id': ''} %}
+{% set cs = chat_settings if chat_settings is defined else {'configured': false, 'model': 'gpt-oss:120b'} %}
+{% set scope_value = cc.scope if cc.scope is defined else 'general' %}
+<body data-chat-scope="{{ scope_value }}" data-chat-label="{{ cc.label }}" data-chat-entity="{{ cc.entity_id }}">
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="brand-row">
+        <a class="brand-lockup" href="/">
+          <span class="brand-badge">ATL</span>
+          <span class="brand-copy">
+            <span class="eyebrow">Algo Trading League</span>
+            <strong>League Office</strong>
+          </span>
+        </a>
+        <div class="site-status">
+          <span class="status-pill"><span class="status-dot"></span><strong>Live</strong> dry-run evidence</span>
+          <span class="status-pill"><strong>Style</strong> editorial beige</span>
+        </div>
+      </div>
+
+      <div class="page-titlebar">
+        <div>
+          <p class="eyebrow page-kicker">{{ cc.label }}</p>
+          <h1>{{ page_title }}</h1>
+          <p class="page-summary">
+            {% if scope_value == 'dashboard' %}
+            A league table for live strategies, storyline tracking, and the evidence that actually counts.
+            {% elif scope_value == 'standings' or 'team:' in scope_value %}
+            Competitive performance, roster context, and the operating details behind each strategy.
+            {% elif scope_value == 'research' %}
+            Local-first investigation threads, indexed notes, and agent-assisted questions grounded in your repo.
+            {% elif scope_value == 'ml' or scope_value == 'ml-workbench' or scope_value == 'ml-hypotheses' %}
+            Prospect scouting, lineage review, and ML governance without confusing experiments for live wins.
+            {% elif scope_value == 'dev' or scope_value == 'dev-draft' or scope_value == 'dev-bootcamp' or scope_value == 'dev-six' or scope_value == 'dev-twelve' or scope_value == 'dev-eligible' or scope_value == 'dev-schedule' or 'dev-candidate:' in scope_value %}
+            A separate minor-league runtime world for candidate strategies, shift rotation, and promotion decisions that never touch the official season.
+            {% elif scope_value == 'trade-explorer' or scope_value == 'exit-tags' %}
+            Trade-by-trade evidence for entries, exits, tags, and the texture behind the scoreboard.
+            {% else %}
+            A cleaner front office shell for the same app shape: sharper hierarchy, stronger type, and better visual confidence.
+            {% endif %}
+          </p>
+        </div>
+        <div class="page-chip"><strong>Model</strong> {{ cs.model }}</div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link {% if scope_value == 'dashboard' %}active{% endif %}" href="/"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+        <a class="nav-link {% if scope_value == 'standings' or 'team:' in scope_value %}active{% endif %}" href="/standings"><span class="nav-icon">ST</span><span>Standings</span></a>
+        <a class="nav-link {% if scope_value == 'dev' or scope_value == 'dev-draft' or scope_value == 'dev-bootcamp' or scope_value == 'dev-six' or scope_value == 'dev-twelve' or scope_value == 'dev-eligible' or scope_value == 'dev-schedule' or 'dev-candidate:' in scope_value %}active{% endif %}" href="/development"><span class="nav-icon">DV</span><span>Dev League</span></a>
+        <a class="nav-link {% if scope_value == 'dev-schedule' %}active{% endif %}" href="/development/schedule"><span class="nav-icon">SH</span><span>Shifts</span></a>
+        <a class="nav-link {% if scope_value == 'ml' %}active{% endif %}" href="/ml"><span class="nav-icon">ML</span><span>ML Lab</span></a>
+        <a class="nav-link {% if scope_value == 'ml-workbench' %}active{% endif %}" href="/ml/workbench"><span class="nav-icon">WB</span><span>Workbench</span></a>
+        <a class="nav-link {% if scope_value == 'ml-hypotheses' %}active{% endif %}" href="/ml/hypotheses"><span class="nav-icon">HY</span><span>Hypotheses</span></a>
+        <a class="nav-link {% if scope_value == 'ml' %}active{% endif %}" href="/ml/buckets"><span class="nav-icon">BK</span><span>Buckets</span></a>
+        <a class="nav-link {% if scope_value == 'ml' %}active{% endif %}" href="/ml/draft-board"><span class="nav-icon">DR</span><span>Draft Board</span></a>
+        <a class="nav-link {% if scope_value == 'power-rankings' %}active{% endif %}" href="/power-rankings"><span class="nav-icon">PR</span><span>Power Rankings</span></a>
+        <a class="nav-link {% if scope_value == 'dashboard' %}active{% endif %}" href="/timeline"><span class="nav-icon">TL</span><span>Timeline</span></a>
+        <a class="nav-link {% if scope_value == 'ml' %}active{% endif %}" href="/ml/timeline"><span class="nav-icon">MT</span><span>ML Timeline</span></a>
+        <a class="nav-link {% if scope_value == 'general' %}active{% endif %}" href="/settings/ai"><span class="nav-icon">AI</span><span>AI Settings</span></a>
+        <a class="nav-link {% if scope_value == 'trade-explorer' %}active{% endif %}" href="/trade-explorer"><span class="nav-icon">TX</span><span>Trade Explorer</span></a>
+        <a class="nav-link {% if scope_value == 'exit-tags' %}active{% endif %}" href="/exit-tags"><span class="nav-icon">ET</span><span>Exit Tags</span></a>
+        <a class="nav-link {% if scope_value == 'dashboard' %}active{% endif %}" href="/backtests"><span class="nav-icon">BT</span><span>Backtests</span></a>
+        <a class="nav-link {% if scope_value == 'dashboard' %}active{% endif %}" href="/versions"><span class="nav-icon">VR</span><span>Versions</span></a>
+        <a class="nav-link {% if scope_value == 'research' %}active{% endif %}" href="/research"><span class="nav-icon">RD</span><span>Research</span></a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      {% block content %}{% endblock %}
+    </main>
+
+    <section id="chat-shell" class="chat-shell">
+      <div class="chat-topline">
+        <strong>Site Chat</strong>
+        <button id="chat-toggle" class="chat-toggle" type="button" aria-expanded="true">Hide</button>
+        <span>{{ "Ollama configured" if cs.configured else "Add Ollama key in AI Settings" }} &middot; {{ cs.model }}</span>
+      </div>
+      <div id="chat-body" class="chat-body">
+        <div class="chat-controls">
+          <select id="chat-scope">
+            <option value="general">General Site</option>
+            <option value="{{ scope_value }}">Current Page: {{ cc.label }}</option>
+            <option value="dashboard">Dashboard</option>
+            <option value="standings">Standings</option>
+            <option value="power-rankings">Power Rankings</option>
+            <option value="research">Research</option>
+            <option value="trade-explorer">Trade Explorer</option>
+            <option value="exit-tags">Exit Tags</option>
+            <option value="dev">Development League</option>
+            <option value="dev-draft">Draft Room</option>
+            <option value="dev-bootcamp">Bootcamp</option>
+            <option value="ml">ML Lab</option>
+            <option value="ml-workbench">ML Workbench</option>
+            <option value="ml-hypotheses">ML Hypotheses</option>
+          </select>
+          <input id="chat-input" type="text" placeholder="Ask about this page, a strategy, or the broader project">
+          <button id="chat-send" type="button">Ask</button>
+        </div>
+        {% if chat_file_context is defined and chat_file_context %}
+        <div class="chat-file-hint">
+          <p class="eyebrow">Current Page File Context</p>
+          {% for item in chat_file_context %}
+          <p class="mono">{{ item.label }} &middot; {{ item.path }}{% if not item.exists %} &middot; missing artifact{% endif %}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <div id="chat-response" class="chat-response"></div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-row">
+        <p>Same routes, same workflows, much stronger front-office presentation.</p>
+        <p class="mono">algo_trading_league / FastAPI / Jinja</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function escapeHtml(value) {
+      return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function renderInlineMarkdown(text) {
+      let html = escapeHtml(text);
+      html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
+      html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+      html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+      return html;
+    }
+
+    function renderMarkdown(text) {
+      const lines = text.replace(/\r/g, "").split("\n");
+      const chunks = [];
+      let inList = false;
+
+      function closeList() {
+        if (inList) {
+          chunks.push("</ul>");
+          inList = false;
+        }
+      }
+
+      for (const rawLine of lines) {
+        const line = rawLine.trimEnd();
+        if (!line.trim()) {
+          closeList();
+          continue;
+        }
+        if (line.startsWith("### ")) {
+          closeList();
+          chunks.push(`<h3>${renderInlineMarkdown(line.slice(4))}</h3>`);
+          continue;
+        }
+        if (line.startsWith("## ")) {
+          closeList();
+          chunks.push(`<h2>${renderInlineMarkdown(line.slice(3))}</h2>`);
+          continue;
+        }
+        if (line.startsWith("# ")) {
+          closeList();
+          chunks.push(`<h1>${renderInlineMarkdown(line.slice(2))}</h1>`);
+          continue;
+        }
+        if (line.startsWith("- ")) {
+          if (!inList) {
+            chunks.push("<ul>");
+            inList = true;
+          }
+          chunks.push(`<li>${renderInlineMarkdown(line.slice(2))}</li>`);
+          continue;
+        }
+        closeList();
+        chunks.push(`<p>${renderInlineMarkdown(line)}</p>`);
+      }
+
+      closeList();
+      return chunks.join("");
+    }
+
+    const chatScope = document.getElementById("chat-scope");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+    const chatResponse = document.getElementById("chat-response");
+    const chatShell = document.getElementById("chat-shell");
+    const chatBody = document.getElementById("chat-body");
+    const chatToggle = document.getElementById("chat-toggle");
+    function setChatCollapsed(collapsed) {
+      if (!chatShell || !chatBody || !chatToggle) return;
+      chatShell.classList.toggle("collapsed", collapsed);
+      chatBody.hidden = collapsed;
+      chatToggle.textContent = collapsed ? "Show" : "Hide";
+      chatToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      localStorage.setItem("atl_chat_collapsed", collapsed ? "true" : "false");
+    }
+
+    if (chatToggle) {
+      const saved = localStorage.getItem("atl_chat_collapsed") === "true";
+      setChatCollapsed(saved);
+      chatToggle.addEventListener("click", () => {
+        setChatCollapsed(!chatShell.classList.contains("collapsed"));
+      });
+    }
+
+    if (chatScope && chatSend && chatInput && chatResponse) {
+      chatScope.value = document.body.dataset.chatScope || "general";
+      chatSend.addEventListener("click", async () => {
+        const message = chatInput.value.trim();
+        if (!message) return;
+        setChatCollapsed(false);
+        chatResponse.textContent = "Thinking...";
+        try {
+          const res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              message,
+              scope: chatScope.value,
+              current_page: document.body.dataset.chatLabel || document.title
+            })
+          });
+          const data = await res.json();
+          chatResponse.innerHTML = renderMarkdown(data.reply || data.detail || "No reply received.");
+        } catch (err) {
+          chatResponse.textContent = "Chat request failed. Check your Ollama settings.";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

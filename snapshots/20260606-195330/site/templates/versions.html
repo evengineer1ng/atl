@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Filename</th>
+          <th>Strategy Class</th>
+          <th>File Hash</th>
+          <th>Last Modified</th>
+          <th>Notes</th>
+          <th>Live Instances</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.filename }}</td>
+          <td>{{ row.strategy_class }}</td>
+          <td>{{ row.file_hash }}</td>
+          <td>{{ row.last_modified }}</td>
+          <td>{{ row.notes }}</td>
+          <td>{{ row.teams|join(", ") }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

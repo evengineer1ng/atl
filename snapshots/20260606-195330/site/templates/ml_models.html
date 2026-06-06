@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Model</th><th>Algorithm</th><th>Dataset</th><th>Feature Set</th><th>Training Date</th><th>Metrics</th><th>Artifact</th><th>Influenced Live Strategy</th></tr></thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.model_name }}</td>
+          <td>{{ row.algorithm_type }}</td>
+          <td>{{ row.dataset }}</td>
+          <td>{{ row.feature_set|join(", ") }}</td>
+          <td>{{ row.training_date }}</td>
+          <td>{{ row.metrics }}</td>
+          <td>{{ row.saved_artifact_path }}</td>
+          <td>{{ row.influenced_live_strategy }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
