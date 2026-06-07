@@ -1,0 +1,32 @@
+[
+  {
+    "section": "league_overview",
+    "content": "The official 24/7 league is approximately 45 hours into its evaluation cycle with four strategies competing across Top 20 and Top 50 pair universes. Timmy - Top 20 nominally leads equity at $1,002.06, yet its entire edge is unrealized and concentrated in a single open position. Cosmo & Wanda - Top 20, the incumbent champion, remains offline and failed with persistent unresolved open risk. Both Top 50 variants are running but underwater on net PnL, with Cosmo & Wanda - Top 50 showing the worst net result (-$17.54) despite a 13-0 realized record. All prospects remain in low-sample, projection-unreliable territory, meaning the current standings reflect open risk more than validated, booked alpha.",
+    "updated_at": "2026-06-07T19:50:45.945061+00:00"
+  },
+  {
+    "section": "ml_hypothesis_updates",
+    "content": "[{\"id\": \"ghost-ladder\", \"status\": \"testing\", \"evidence_quality\": \"early\", \"next_action\": \"Executor must start ghost-ladder-clean-backtest-wfv1 on cross-exchange_ladder_samples_b immediately; define exact thresholds after separation analysis.\"}, {\"id\": \"dark-matter-antimatter\", \"status\": \"dry-run candidate\", \"evidence_quality\": \"low\", \"next_action\": \"Halt live capital expansion. Execute leakage-controlled revalidation on hyperliquid_futures_5m_regime_set_a with strict non-overlapping windows targeting AUC > 0.65.\"}]",
+    "updated_at": "2026-06-07T04:26:14.974136+00:00"
+  },
+  {
+    "section": "power_ranking_overrides",
+    "content": "[\n  {\n    \"team_id\": \"timmy-20-pc\",\n    \"trust_score\": 30,\n    \"trust_note\": \"Nominally leads equity at $1,002.06, but only 1 realized close (+$0.29) across ~45 hours. The entire edge is unrealized (+$9.40) in a single open trade. Trust remains speculative until additional closes confirm capture frequency and profitable exit capability.\",\n    \"data_quality\": \"Clean\",\n    \"data_quality_note\": \"100% uptime with no gaps or restarts. Sample is flagged low-trade-count and projection-unreliable; all ratios require more observations.\",\n    \"interesting_discoveries\": \"100% of economic upside is tied to one unrealized position that has remained open for the full session. This creates extreme dependency risk and raises questions about whether the strategy has a viable execution path to realize gains or is simply deferring a decision.\"\n  },\n  {\n    \"team_id\": \"cosmo-wanda-20-pi\",\n    \"trust_score\": 20,\n    \"trust_note\": \"Offline and marked failed. Equity is $990.0 with headline realized and unrealized PnL flat, yet 5 open positions show a worst mark of -39.57. Trust is limited to historical sample until the failure is resolved and open risk is reconciled.\",\n    \"data_quality\": \"Official\",\n    \"data_quality_note\": \"Previously healthy 64-close sample, but live telemetry has stopped. The worst open trade reading of -39.57 persists while headline unrealized PnL reads zero, indicating a potential reconciliation or reporting gap post-failure.\",\n    \"interesting_discoveries\": \"A 64-0 realized record and strong uptime preceded the failure, yet net equity never broke above par. The offline state with lingering open risk suggests the champion's edge depended on continuous runtime to manage carry; interruption risks crystallizing hidden tail exposure.\"\n  },\n  {\n    \"team_id\": \"timmy-50-pc\",\n    \"trust_score\": 24,\n    \"trust_note\": \"Only strategy with booked realized losses (-$3.91, 1-1). Two open trades carry -$2.95 unrealized drag. The Top 50 expansion has yet to produce a profitable realized sequence. Trust is tempered by negative booked edge and low closure count.\",\n    \"data_quality\": \"Clean\",\n    \"data_quality_note\": \"Uninterrupted 100% runtime with no restarts, yet only two closed trades keep all risk-adjusted metrics preliminary and flagged as projection-unreliable.\",\n    \"interesting_discoveries\": \"Timmy-50 recorded an immediate realized loss while Timmy-20 avoided losses entirely by not closing. This early split suggests broader Top 50 coverage may amplify noise before alpha, and that win-rate alone is a poor health proxy at low sample sizes.\"\n  },\n  {\n    \"team_id\": \"cosmo-wanda-50-pc\",\n    \"trust_score\": 16,\n    \"trust_note\": \"Post-restart challenger at -$17.54 net despite 13 realized scalps (+$8.83). Six open positions carry -$26.37 unrealized drag, and the worst open mark (-$13.43) exceeds the entire realized book. Trust is limited until restart integrity is fully verified and single-position bleed is capped.\",\n    \"data_quality\": \"Restarted\",\n    \"data_quality_note\": \"Live after restart; official-tier gapless backfill and verification are still pending. Realized count is healthy but economic risk is live and concentrated in a small number of positions.\",\n    \"interesting_discoveries\": \"100% realized win rate pairs with the league's worst net PnL, indicating Top 50 breadth may generate frequent small wins while hiding larger adverse accumulations. This structural mismatch challenges the premise that scaling via pair expansion preserves risk-adjusted returns.\"\n  }\n]",
+    "updated_at": "2026-06-07T19:50:45.961582+00:00"
+  },
+  {
+    "section": "ml_hypothesis_candidates",
+    "content": "[]",
+    "updated_at": "2026-06-07T04:26:14.981514+00:00"
+  },
+  {
+    "section": "ml_draft_board_updates",
+    "content": "[\n  {\n    \"prospect_name\": \"Ghost Ladder\",\n    \"evidence_quality\": \"Early\",\n    \"risk_level\": \"Medium\",\n    \"backtest_strength\": \"Unproven\",\n    \"live_readiness\": \"Low\",\n    \"draft_status\": \"Scouting\",\n    \"notes\": \"Highest-priority scouting action. Critical backtest ghost-ladder-clean-backtest-wfv1 remains planned-awaiting-executor. Elevation blocked until stable precision and signal frequency are demonstrated.\"\n  },\n  {\n    \"prospect_name\": \"Antimatter Short Cartographer\",\n    \"evidence_quality\": \"Mixed\",\n    \"risk_level\": \"High\",\n    \"backtest_strength\": \"Spiky\",\n    \"live_readiness\": \"Medium-low\",\n    \"draft_status\": \"Under review\",\n    \"notes\": \"Blocked by parent hypothesis contamination and short-side scarcity (n=179). No promotion until parent revalidation succeeds.\"\n  }\n]",
+    "updated_at": "2026-06-07T04:26:14.989249+00:00"
+  },
+  {
+    "section": "ml_draft_board_candidates",
+    "content": "[]",
+    "updated_at": "2026-06-07T04:26:14.996812+00:00"
+  }
+]

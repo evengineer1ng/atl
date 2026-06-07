@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 402,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "The champion Top 20 variant is offline with unresolved risk, while the Top 50 variant books frequent small wins (+$8.83 realized) but suffers severe unrealized drag (-$26.37). Resolving which universe preserves net edge is essential for capital allocation.",
+    "status": "open",
+    "created_at": "2026-06-07T19:50:45.954482+00:00"
+  },
+  {
+    "id": 403,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy-Top 20 shows positive unrealized concentration (+$9.40) with minimal realized activity, whereas Timmy-Top 50 has already realized a loss (-$3.91) at 50% win rate. This tests whether the narrower universe filters noise or merely defers losses.",
+    "status": "open",
+    "created_at": "2026-06-07T19:50:45.954532+00:00"
+  },
+  {
+    "id": 404,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "The incumbent champion recorded 3 champion exits across 64 closes yet finished below par ($990 equity). Verifying if champion-exit logic outperforms standard dynamic ROI exits will guide future strategy architecture.",
+    "status": "open",
+    "created_at": "2026-06-07T19:50:45.954538+00:00"
+  },
+  {
+    "id": 405,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-Top 20 currently relies on a single large unrealized position with only one close. We need to confirm whether the intended asymmetric payoff profile can survive execution slippage and holding-period risk in live conditions.",
+    "status": "open",
+    "created_at": "2026-06-07T19:50:45.954541+00:00"
+  },
+  {
+    "id": 406,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Both Top 50 strategies show weaker net PnL and larger unrealized drawdowns than their Top 20 counterparts, suggesting expanded coverage may dilute edge with adverse selection rather than increase actionable opportunity.",
+    "status": "open",
+    "created_at": "2026-06-07T19:50:45.954545+00:00"
+  }
+]

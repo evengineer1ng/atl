@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "cycle_id": 1,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "cosmowanda-top-50",
+    "relationship_type": "cousin",
+    "similarity_score": -0.0244,
+    "complement_score": 0.5,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T04:55:01.586107+00:00"
+  },
+  {
+    "id": 2,
+    "cycle_id": 1,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "roadrunner",
+    "relationship_type": "rival",
+    "similarity_score": -0.2439,
+    "complement_score": 0.2,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T04:55:01.586107+00:00"
+  },
+  {
+    "id": 3,
+    "cycle_id": 1,
+    "strategy_a": "cosmowanda-top-50",
+    "strategy_b": "roadrunner",
+    "relationship_type": "rival",
+    "similarity_score": -0.0995,
+    "complement_score": 0.0,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T04:55:01.586107+00:00"
+  },
+  {
+    "id": 4,
+    "cycle_id": 2,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "cosmowanda-top-50",
+    "relationship_type": "cousin",
+    "similarity_score": -0.0245,
+    "complement_score": 0.5,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T08:01:11.990584+00:00"
+  },
+  {
+    "id": 5,
+    "cycle_id": 2,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "roadrunner",
+    "relationship_type": "rival",
+    "similarity_score": -0.2763,
+    "complement_score": 0.125,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T08:01:11.990584+00:00"
+  },
+  {
+    "id": 6,
+    "cycle_id": 2,
+    "strategy_a": "cosmowanda-top-50",
+    "strategy_b": "roadrunner",
+    "relationship_type": "rival",
+    "similarity_score": -0.1215,
+    "complement_score": 0.0,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T08:01:11.990584+00:00"
+  },
+  {
+    "id": 7,
+    "cycle_id": 3,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "cosmowanda-top-50",
+    "relationship_type": "cousin",
+    "similarity_score": -0.0689,
+    "complement_score": 0.5,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T11:07:24.498612+00:00"
+  },
+  {
+    "id": 8,
+    "cycle_id": 3,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "roadrunner",
+    "relationship_type": "opposite",
+    "similarity_score": -0.4392,
+    "complement_score": 0.125,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T11:07:24.498612+00:00"
+  },
+  {
+    "id": 9,
+    "cycle_id": 3,
+    "strategy_a": "cosmowanda-top-50",
+    "strategy_b": "roadrunner",
+    "relationship_type": "rival",
+    "similarity_score": -0.1225,
+    "complement_score": 0.0,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T11:07:24.498612+00:00"
+  },
+  {
+    "id": 10,
+    "cycle_id": 4,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "cosmowanda-top-50",
+    "relationship_type": "cousin",
+    "similarity_score": -0.0689,
+    "complement_score": 0.5,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T14:09:52.744954+00:00"
+  },
+  {
+    "id": 11,
+    "cycle_id": 4,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "roadrunner",
+    "relationship_type": "opposite",
+    "similarity_score": -0.4395,
+    "complement_score": 0.125,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T14:09:52.744954+00:00"
+  },
+  {
+    "id": 12,
+    "cycle_id": 4,
+    "strategy_a": "cosmowanda-top-50",
+    "strategy_b": "roadrunner",
+    "relationship_type": "rival",
+    "similarity_score": -0.1227,
+    "complement_score": 0.0,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T14:09:52.744954+00:00"
+  },
+  {
+    "id": 13,
+    "cycle_id": 5,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "cosmowanda-top-50",
+    "relationship_type": "cousin",
+    "similarity_score": -0.069,
+    "complement_score": 0.5,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T17:11:25.537794+00:00"
+  },
+  {
+    "id": 14,
+    "cycle_id": 5,
+    "strategy_a": "cosmowanda-top-20",
+    "strategy_b": "roadrunner",
+    "relationship_type": "opposite",
+    "similarity_score": -0.4516,
+    "complement_score": 0.1,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T17:11:25.537794+00:00"
+  },
+  {
+    "id": 15,
+    "cycle_id": 5,
+    "strategy_a": "cosmowanda-top-50",
+    "strategy_b": "roadrunner",
+    "relationship_type": "rival",
+    "similarity_score": -0.1268,
+    "complement_score": 0.0,
+    "evidence_notes": "",
+    "updated_at": "2026-06-07T17:11:25.537794+00:00"
+  }
+]

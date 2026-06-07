@@ -1,0 +1,192 @@
+[
+  {
+    "key": "ollama_api_key",
+    "value": "bdd9cce8a75b466abd22842afabad439.E_x2xS-gOVBP0Fg70pRkVNw_",
+    "updated_at": "2026-06-06T04:06:25.695414+00:00"
+  },
+  {
+    "key": "ollama_model",
+    "value": "kimi-k2.6:cloud",
+    "updated_at": "2026-06-06T04:06:25.711463+00:00"
+  },
+  {
+    "key": "league_maintenance_minutes",
+    "value": "30",
+    "updated_at": "2026-06-06T04:06:25.742155+00:00"
+  },
+  {
+    "key": "ml_maintenance_minutes",
+    "value": "180",
+    "updated_at": "2026-06-06T04:06:25.749661+00:00"
+  },
+  {
+    "key": "league_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-06T04:06:25.757312+00:00"
+  },
+  {
+    "key": "ml_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-06T04:06:25.765074+00:00"
+  },
+  {
+    "key": "league_maintenance_last_run",
+    "value": "2026-06-07T19:50:45.968678+00:00",
+    "updated_at": "2026-06-07T19:50:45.969612+00:00"
+  },
+  {
+    "key": "ml_maintenance_last_run",
+    "value": "2026-06-07T17:17:26.451050+00:00",
+    "updated_at": "2026-06-07T17:17:26.452125+00:00"
+  },
+  {
+    "key": "research_agent_enabled",
+    "value": "true",
+    "updated_at": "2026-06-06T04:06:25.772610+00:00"
+  },
+  {
+    "key": "research_agent_interval_minutes",
+    "value": "30",
+    "updated_at": "2026-06-06T04:06:25.780532+00:00"
+  },
+  {
+    "key": "research_agent_duration_hours",
+    "value": "12",
+    "updated_at": "2026-06-06T04:06:25.788272+00:00"
+  },
+  {
+    "key": "ollama_fallback_model",
+    "value": "",
+    "updated_at": "2026-06-07T17:33:23.895411+00:00"
+  },
+  {
+    "key": "ollama_timeout_seconds",
+    "value": "120",
+    "updated_at": "2026-06-06T06:47:41.618020+00:00"
+  },
+  {
+    "key": "ollama_retry_count",
+    "value": "2",
+    "updated_at": "2026-06-06T06:47:41.618020+00:00"
+  },
+  {
+    "key": "development_strategy_generation_model",
+    "value": "kimi-k2.6:cloud",
+    "updated_at": "2026-06-06T06:47:53.615532+00:00"
+  },
+  {
+    "key": "development_strategy_generation_fallback_model",
+    "value": "",
+    "updated_at": "2026-06-07T17:33:23.910235+00:00"
+  },
+  {
+    "key": "development_strategy_generation_timeout_seconds",
+    "value": "240",
+    "updated_at": "2026-06-06T07:25:03.525075+00:00"
+  },
+  {
+    "key": "development_strategy_generation_retry_count",
+    "value": "3",
+    "updated_at": "2026-06-06T07:25:03.533122+00:00"
+  },
+  {
+    "key": "archive_last_run",
+    "value": "2026-06-07T07:58:19.705284+00:00",
+    "updated_at": "2026-06-07T07:58:19.705470+00:00"
+  },
+  {
+    "key": "archive_last_snapshot_path",
+    "value": "algo_trading_league/data/archives/league_snapshots/20260607-075819",
+    "updated_at": "2026-06-07T07:58:19.716021+00:00"
+  },
+  {
+    "key": "archive_repo_url",
+    "value": "https://github.com/evengineer1ng/atl.git",
+    "updated_at": "2026-06-06T19:58:18.062815+00:00"
+  },
+  {
+    "key": "archive_repo_branch",
+    "value": "main",
+    "updated_at": "2026-06-06T19:58:18.070555+00:00"
+  },
+  {
+    "key": "archive_maintenance_minutes",
+    "value": "720",
+    "updated_at": "2026-06-06T20:30:38.766985+00:00"
+  },
+  {
+    "key": "archive_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-06T20:30:38.776175+00:00"
+  },
+  {
+    "key": "archive_push_enabled",
+    "value": "true",
+    "updated_at": "2026-06-06T20:30:38.784473+00:00"
+  },
+  {
+    "key": "archive_repo_local_path",
+    "value": "algo_trading_league/data/archive_repo",
+    "updated_at": "2026-06-06T20:30:38.794443+00:00"
+  },
+  {
+    "key": "auto_review_regeneration_enabled",
+    "value": "true",
+    "updated_at": "2026-06-06T20:30:38.803805+00:00"
+  },
+  {
+    "key": "auto_review_regeneration_decisions",
+    "value": "tweak,overhaul",
+    "updated_at": "2026-06-06T20:30:38.812237+00:00"
+  },
+  {
+    "key": "league_season_anchor",
+    "value": "2026-06-01T00:00:00-04:00",
+    "updated_at": "2026-06-06T20:30:38.820640+00:00"
+  },
+  {
+    "key": "ml_evolution_review_last_run",
+    "value": "2026-06-07T05:01:43.635607+00:00",
+    "updated_at": "2026-06-07T05:01:43.636632+00:00"
+  },
+  {
+    "key": "ml_evolution_review_minutes",
+    "value": "21600",
+    "updated_at": "2026-06-07T05:25:13.051028+00:00"
+  },
+  {
+    "key": "ml_evolution_review_enabled",
+    "value": "true",
+    "updated_at": "2026-06-07T05:25:13.059835+00:00"
+  },
+  {
+    "key": "ml_descendant_conviction_threshold",
+    "value": "0.75",
+    "updated_at": "2026-06-07T05:25:13.069042+00:00"
+  },
+  {
+    "key": "ml_descendant_min_evidence_cycles",
+    "value": "8",
+    "updated_at": "2026-06-07T05:25:13.077729+00:00"
+  },
+  {
+    "key": "ml_descendant_novelty_threshold",
+    "value": "0.35",
+    "updated_at": "2026-06-07T05:25:13.086133+00:00"
+  },
+  {
+    "key": "ml_descendant_max_per_review",
+    "value": "3",
+    "updated_at": "2026-06-07T05:25:13.094703+00:00"
+  },
+  {
+    "key": "ml_complement_pair_threshold",
+    "value": "0.55",
+    "updated_at": "2026-06-07T05:25:13.103698+00:00"
+  },
+  {
+    "key": "ml_turners_protected_seeded",
+    "value": "true",
+    "updated_at": "2026-06-07T05:37:07.893489+00:00"
+  }
+]

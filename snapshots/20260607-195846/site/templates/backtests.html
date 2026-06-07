@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th>
+          <th>Version/Run</th>
+          <th>Timeframe</th>
+          <th>Date Range</th>
+          <th>Pair List</th>
+          <th>Results Summary</th>
+          <th>Notes</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.strategy }}</td>
+          <td>{{ row.version_hash }}</td>
+          <td>{{ row.timeframe }}</td>
+          <td>{{ row.date_range }}</td>
+          <td>{{ row.pair_list }}</td>
+          <td>{{ row.results_summary }}</td>
+          <td>{{ row.notes }}</td>
+          <td>{{ row.source }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

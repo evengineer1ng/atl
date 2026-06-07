@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Bucket</th><th>Conditions</th><th>Samples</th><th>Win/Loss Profile</th><th>Avg Forward Move</th><th>Long vs Short</th><th>Causality Note</th><th>Contamination</th></tr></thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.bucket_name }}</td>
+          <td>{{ row.feature_conditions }}</td>
+          <td>{{ row.samples }}</td>
+          <td>{{ row.win_loss_profile }}</td>
+          <td>{{ row.avg_forward_move }}%</td>
+          <td>{{ row.long_vs_short }}</td>
+          <td>{{ row.causal_rating }}</td>
+          <td>{{ row.contamination_flag }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

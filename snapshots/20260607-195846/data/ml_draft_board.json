@@ -1,0 +1,24 @@
+[
+  {
+    "prospect_name": "Ghost Ladder",
+    "strategy_family": "Third Lane Candidate",
+    "expected_edge": "Trend continuation from low-drama accumulation",
+    "evidence_quality": "Developing",
+    "risk_level": "Medium",
+    "backtest_strength": "Unproven",
+    "live_readiness": "Low",
+    "notes": "Interesting because it is neither Cosmo reactive breadth nor Timmy predictive compression.",
+    "draft_status": "Scouting"
+  },
+  {
+    "prospect_name": "Antimatter Short Cartographer",
+    "strategy_family": "Timmy branch",
+    "expected_edge": "Explosive short-side breakdown capture",
+    "evidence_quality": "Mixed",
+    "risk_level": "High",
+    "backtest_strength": "Spiky",
+    "live_readiness": "Medium-low",
+    "notes": "Needs contamination review before promotion.",
+    "draft_status": "Under review"
+  }
+]
