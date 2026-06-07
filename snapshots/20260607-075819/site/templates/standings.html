@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Current Cycle</p>
+  <h2>{{ current_season.season_label }}</h2>
+  <p>This month runs from {{ current_season.started_at }} to {{ current_season.ended_at }}. Season turnover calls and draft-night approvals live in <a href="/seasons">Season Office</a>.</p>
+</section>
+
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Family</th>
+          <th>Universe</th>
+          <th>Equity</th>
+          <th>Realized</th>
+          <th>Unrealized</th>
+          <th>Total</th>
+          <th>Closed Trades</th>
+          <th>Win Rate</th>
+          <th>Avg ROI</th>
+          <th>Best Trade</th>
+          <th>Worst Open</th>
+          <th>Champion Exits</th>
+          <th>Season Call</th>
+          <th>Uptime</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        {% set season_preview = season_preview_map.get(row.team_id, {}) %}
+        <tr>
+          <td>{{ row.rank }}</td>
+          <td><a href="/teams/{{ row.team_id }}">{{ row.team }}</a></td>
+          <td>{{ row.strategy_family }}</td>
+          <td>{{ row.pair_universe }}</td>
+          <td>{{ "%.2f"|format(row.equity) }}</td>
+          <td>{{ "%.2f"|format(row.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.unrealized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.total_pnl) }}</td>
+          <td>{{ row.closed_trades }}</td>
+          <td>{{ "%.1f"|format(row.win_rate) }}%</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ "%.2f"|format(row.best_trade) }}%</td>
+          <td>{{ "%.2f"|format(row.worst_open_trade) }}%</td>
+          <td>{{ row.champion_exits }}</td>
+          <td>{% if season_preview %}{{ season_preview.grade }} &middot; {{ season_preview.decision_label }}{% else %}n/a{% endif %}</td>
+          <td><span class="badge {{ 'online' if row.heartbeat else 'offline' }}">{{ row.uptime }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

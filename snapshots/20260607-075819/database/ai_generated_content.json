@@ -1,0 +1,32 @@
+[
+  {
+    "section": "league_overview",
+    "content": "The official 24h tier is ~32 hours into its first evaluation cycle with four active strategies online and uninterrupted. Current standings are dominated by unrealized PnL: Timmy - Top 20 leads equity at $1,010.04 without a single closed trade, while incumbent champion Cosmo & Wanda - Top 20 holds the only validated realized edge at +$62.84 but carries severe unrealized drag (-$48.38). The two Top 50 challengers are underwater on total PnL, with Cosmo & Wanda - Top 50 restarting and Timmy - Top 50 posting an inaugural realized loss. All strategies remain in low-sample, high-information-sensitivity territory where the next few exits will likely reshape rankings and trust scores.",
+    "updated_at": "2026-06-07T07:27:46.323849+00:00"
+  },
+  {
+    "section": "ml_hypothesis_updates",
+    "content": "[{\"id\": \"ghost-ladder\", \"status\": \"testing\", \"evidence_quality\": \"early\", \"next_action\": \"Executor must start ghost-ladder-clean-backtest-wfv1 on cross-exchange_ladder_samples_b immediately; define exact thresholds after separation analysis.\"}, {\"id\": \"dark-matter-antimatter\", \"status\": \"dry-run candidate\", \"evidence_quality\": \"low\", \"next_action\": \"Halt live capital expansion. Execute leakage-controlled revalidation on hyperliquid_futures_5m_regime_set_a with strict non-overlapping windows targeting AUC > 0.65.\"}]",
+    "updated_at": "2026-06-07T04:26:14.974136+00:00"
+  },
+  {
+    "section": "power_ranking_overrides",
+    "content": "[\n  {\n    \"team_id\": \"cosmo-wanda-20-pi\",\n    \"trust_score\": 58,\n    \"trust_note\": \"Incumbent champion with 64 consecutive realized wins (+$62.84) and 3 champion exits, but acute reversal liability from -$48.38 unrealized across 3 open positions (worst open -$38.06). Trust is capped until exits confirm alpha is monetized before deep retracements crystallize.\",\n    \"data_quality\": \"Official\",\n    \"data_quality_note\": \"Verified uninterrupted session; uncertainty is economic (realized-to-unrealized divergence), not data-integrity related.\",\n    \"interesting_discoveries\": \"64 straight realized wins is an extreme outlier. The worst open trade (-$38.06) alone is roughly 60% of the entire realized book, producing the widest realized-to-unrealized swing in the league.\"\n  },\n  {\n    \"team_id\": \"timmy-20-pc\",\n    \"trust_score\": 48,\n    \"trust_note\": \"Leads league equity at $1,010.04 on zero realized PnL after ~32 hours. Two open positions carry +$28.27 unrealized. Trust remains provisional until exits confirm slippage, fill quality, and live alpha capture; current rank is equity-phantom with no validated edge.\",\n    \"data_quality\": \"Clean\",\n    \"data_quality_note\": \"Continuous uninterrupted session. Zero closed trades renders all projections unreliable; awaiting first exit for sample validation.\",\n    \"interesting_discoveries\": \"Flat realized book after 30+ hours makes the first exit a maximum-information event for Timmy-family validation. Equity is purely theoretical until a close prints.\"\n  },\n  {\n    \"team_id\": \"timmy-50-pc\",\n    \"trust_score\": 38,\n    \"trust_note\": \"Single realized exit is a loss (-$7.43, -1.5% ROI), leaving the account dependent on an open book of +$20.34 unrealized (worst open +$2.16). Trust is suppressed until additional exits clarify whether Top 50 breadth adds execution noise or if the inaugural loss was an outlier.\",\n    \"data_quality\": \"Clean\",\n    \"data_quality_note\": \"Uninterrupted session. One closed trade makes performance metrics statistically unreliable; sample quality flagged as low-trade-count.\",\n    \"interesting_discoveries\": \"Timmy's sole live realized trade is a loss in the broader Top 50 universe, immediately challenging the low-frequency/high-win-size thesis before any winning trade is recorded. Unrealized concentration creates single-point-of-failure risk.\"\n  },\n  {\n    \"team_id\": \"cosmo-wanda-50-pc\",\n    \"trust_score\": 30,\n    \"trust_note\": \"Post-restart challenger with 12 realized scalps (+$8.25) fully absorbed by -$16.17 unrealized drag across 5 open positions. Worst open trade (-$14.23) exceeds the entire realized book. Negative total PnL (-$7.92) and unverified restart continuity constrain trust.\",\n    \"data_quality\": \"Restarted\",\n    \"data_quality_note\": \"Live since restart; backfill integrity and gapless continuity remain under review. Restart flag disqualifies official-tier verification until continuity is independently confirmed.\",\n    \"interesting_discoveries\": \"100% realized win rate is fully decoupled from a deeply underwater open book, suggesting Top 50 breadth may capture quick scalps while allowing larger adverse positions to accumulate. Net negative equity despite a perfect realized record is a stark risk-profile warning.\"\n  }\n]",
+    "updated_at": "2026-06-07T07:27:46.339638+00:00"
+  },
+  {
+    "section": "ml_hypothesis_candidates",
+    "content": "[]",
+    "updated_at": "2026-06-07T04:26:14.981514+00:00"
+  },
+  {
+    "section": "ml_draft_board_updates",
+    "content": "[\n  {\n    \"prospect_name\": \"Ghost Ladder\",\n    \"evidence_quality\": \"Early\",\n    \"risk_level\": \"Medium\",\n    \"backtest_strength\": \"Unproven\",\n    \"live_readiness\": \"Low\",\n    \"draft_status\": \"Scouting\",\n    \"notes\": \"Highest-priority scouting action. Critical backtest ghost-ladder-clean-backtest-wfv1 remains planned-awaiting-executor. Elevation blocked until stable precision and signal frequency are demonstrated.\"\n  },\n  {\n    \"prospect_name\": \"Antimatter Short Cartographer\",\n    \"evidence_quality\": \"Mixed\",\n    \"risk_level\": \"High\",\n    \"backtest_strength\": \"Spiky\",\n    \"live_readiness\": \"Medium-low\",\n    \"draft_status\": \"Under review\",\n    \"notes\": \"Blocked by parent hypothesis contamination and short-side scarcity (n=179). No promotion until parent revalidation succeeds.\"\n  }\n]",
+    "updated_at": "2026-06-07T04:26:14.989249+00:00"
+  },
+  {
+    "section": "ml_draft_board_candidates",
+    "content": "[]",
+    "updated_at": "2026-06-07T04:26:14.996812+00:00"
+  }
+]

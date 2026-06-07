@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="league-hero">
+  <article class="card hero-story">
+    <div class="hero-mark">
+      <div class="league-crest">DV</div>
+      <div>
+        <p class="eyebrow">Minor League Office</p>
+        <h2>A separate development pipeline for Bootcamp, shift rotation, and seasonal promotion decisions.</h2>
+      </div>
+    </div>
+    <p>The official Season 1 league stays locked. This dashboard only tracks experimental candidates, their lifecycle state, and which shift is supposed to be live right now.</p>
+  </article>
+  <div class="hero-side">
+    <div class="metric-grid">
+      <article class="metric-card"><span>Draft Ideas</span><strong>{{ counts_by_tier.draft_room }}</strong></article>
+      <article class="metric-card"><span>Bootcamp</span><strong>{{ counts_by_tier.bootcamp }}</strong></article>
+      <article class="metric-card"><span>6h Pool</span><strong>{{ counts_by_tier.six_hour }}/24</strong></article>
+      <article class="metric-card"><span>12h Pool</span><strong>{{ counts_by_tier.twelve_hour }}/10</strong></article>
+    </div>
+    <article class="card trophy-card">
+      <p class="eyebrow">Current Shifts</p>
+      <div class="trophy-line">
+        <div class="trophy-icon">6H</div>
+        <div>
+          <h3>{{ active_six_shift.label if active_six_shift else "No Shift" }}</h3>
+          <p>{{ active_six_shift.window if active_six_shift else "No active six-hour window" }}</p>
+        </div>
+      </div>
+      <div class="trophy-line">
+        <div class="trophy-icon">12H</div>
+        <div>
+          <h3>{{ active_twelve_shift.label if active_twelve_shift else "No Shift" }}</h3>
+          <p>{{ active_twelve_shift.window if active_twelve_shift else "No active twelve-hour window" }}</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <div class="section-head">
+      <h2>Runtime State</h2>
+      <a href="/development/schedule">Open schedule view</a>
+    </div>
+    <div class="question-list">
+      <article class="question-card">Running: {{ counts_by_status.running }}</article>
+      <article class="question-card">Off-shift: {{ counts_by_status['off-shift'] }}</article>
+      <article class="question-card">Paused: {{ counts_by_status.paused }}</article>
+      <article class="question-card">Failed: {{ counts_by_status.failed }}</article>
+      <article class="question-card">Archived: {{ counts_by_status.archived }}</article>
+    </div>
+  </article>
+  <article class="card">
+    <h2>Promotion Targets</h2>
+    <div class="question-list">
+      <article class="question-card">Remaining six-hour slots: {{ six_hour_target_remaining }}</article>
+      <article class="question-card">Remaining twelve-hour slots: {{ twelve_hour_target_remaining }}</article>
+      <article class="question-card">Remaining draft slots: {{ eligible_target_remaining }}</article>
+      <article class="question-card">Local time: {{ current_time_local }}</article>
+    </div>
+  </article>
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <h2>Pipeline Boards</h2>
+    <a href="/development/draft-room">Add new draft idea</a>
+  </div>
+  <div class="team-card-grid">
+    <article class="card franchise-card">
+      <p class="eyebrow">Draft Room</p>
+      <h3>{{ draft_rows|length }} ideas</h3>
+      <p>Ideas only. No scheduled runtime.</p>
+      <p><a href="/development/draft-room">Open Draft Room</a></p>
+    </article>
+    <article class="card franchise-card">
+      <p class="eyebrow">Bootcamp</p>
+      <h3>{{ bootcamp_rows|length }} candidates</h3>
+      <p>Runnable evidence lane outside the official standings.</p>
+      <p><a href="/development/bootcamp">Open Bootcamp</a></p>
+    </article>
+    <article class="card franchise-card">
+      <p class="eyebrow">Six-Hour League</p>
+      <h3>{{ six_hour_rows|length }} candidates</h3>
+      <p>24-slot rotation across four 6-hour shifts.</p>
+      <p><a href="/development/six-hour">Open Six-Hour Board</a></p>
+    </article>
+    <article class="card franchise-card">
+      <p class="eyebrow">Twelve-Hour League</p>
+      <h3>{{ twelve_hour_rows|length }} prospects</h3>
+      <p>Stronger candidates rotating across two 12-hour shifts.</p>
+      <p><a href="/development/twelve-hour">Open Twelve-Hour Board</a></p>
+    </article>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Recent Runtime Events</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>When</th>
+          <th>Candidate</th>
+          <th>Event</th>
+          <th>Title</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for event in recent_events %}
+        <tr>
+          <td>{{ event.created_at }}</td>
+          <td><a href="/development/candidates/{{ event.candidate_id }}">{{ event.name }}</a></td>
+          <td>{{ event.event_type }}</td>
+          <td>{{ event.title }}</td>
+          <td>{{ event.details }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="5">No development events yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Recent Report Cards</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Stopped</th>
+          <th>Candidate</th>
+          <th>Grade</th>
+          <th>Decision</th>
+          <th>Confidence</th>
+          <th>Summary</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for review in recent_reviews %}
+        <tr>
+          <td>{{ review.session_stopped_at }}</td>
+          <td><a href="/development/candidates/{{ review.candidate_id }}">{{ review.name }}</a></td>
+          <td>{{ review.grade }} · {{ review.score_label }}</td>
+          <td>{{ review.decision_label }}</td>
+          <td>{{ review.evidence_confidence }}</td>
+          <td>{{ review.summary }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6">No post-shift report cards yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Raw Standings</h2>
+    {% for row in raw_standings %}
+    <article class="question-card">
+      <strong><a href="/development/candidates/{{ row.id }}">{{ row.name }}</a></strong><br>
+      Raw PnL: {{ "%.2f"|format(row.raw_total_pnl) }}<br>
+      Runtime: {{ "%.2f"|format(row.total_runtime_hours) }}h
+    </article>
+    {% else %}
+    <article class="question-card">No development rows yet.</article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Runtime-Adjusted Pace</h2>
+    {% for row in adjusted_standings %}
+    <article class="question-card">
+      <strong><a href="/development/candidates/{{ row.id }}">{{ row.name }}</a></strong><br>
+      Per-24h Pace:
+      {% if row.projected_total_pnl_per_24h is not none %}
+      {{ "%.2f"|format(row.projected_total_pnl_per_24h) }}
+      {% else %}
+      Flagged
+      {% endif %}<br>
+      Flags: {{ row.sample_flags|join(", ") if row.sample_flags else "none" }}
+    </article>
+    {% else %}
+    <article class="question-card">No runtime-adjusted rows yet.</article>
+    {% endfor %}
+  </article>
+</section>
+{% endblock %}

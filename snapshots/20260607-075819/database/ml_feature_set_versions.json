@@ -1,0 +1,20 @@
+[
+  {
+    "id": "dark-matter-antimatter-feature-set-v1",
+    "feature_set_name": "Dark Matter / Antimatter v1",
+    "hypothesis_id": "dark-matter-antimatter",
+    "feature_names": "[\"compression_ratio\", \"internal_motion_score\", \"imbalance_delta\", \"breakout_pressure\"]",
+    "leakage_notes": "compression_ratio: Low if computed only from historical bars; internal_motion_score: Medium if future candle normalization leaks in",
+    "notes": "Predictive sniper scouting lane",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  },
+  {
+    "id": "ghost-ladder-feature-set-v1",
+    "feature_set_name": "Ghost Ladder v1",
+    "hypothesis_id": "ghost-ladder",
+    "feature_names": "[\"ladder_persistence\", \"micro_pullback_depth\", \"reclaim_velocity\"]",
+    "leakage_notes": "Awaiting explicit leakage review.",
+    "notes": "Possible third strategy lane",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  }
+]

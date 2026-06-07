@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "cosmowanda-top-20",
+    "name": "CosmoWanda Top 20",
+    "kind": "main",
+    "source_team_id": "cosmo-wanda-20-pi",
+    "source_db_path": "",
+    "family_slug": "fairly-odd-family",
+    "classification": "Reactive expansion engine",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:00.971891+00:00",
+    "updated_at": "2026-06-07T05:37:07.791710+00:00"
+  },
+  {
+    "slug": "cosmowanda-top-50",
+    "name": "CosmoWanda Top 50",
+    "kind": "main",
+    "source_team_id": "cosmo-wanda-50-pc",
+    "source_db_path": "",
+    "family_slug": "fairly-odd-family",
+    "classification": "Reactive expansion engine",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:00.979606+00:00",
+    "updated_at": "2026-06-07T05:37:07.799583+00:00"
+  },
+  {
+    "slug": "timmy-top-20",
+    "name": "Timmy Top 20",
+    "kind": "main",
+    "source_team_id": "timmy-20-pc",
+    "source_db_path": "",
+    "family_slug": "fairly-odd-family",
+    "classification": "Predictive sniper",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:00.987714+00:00",
+    "updated_at": "2026-06-07T05:37:07.807070+00:00"
+  },
+  {
+    "slug": "timmy-top-50",
+    "name": "Timmy Top 50",
+    "kind": "main",
+    "source_team_id": "timmy-50-pc",
+    "source_db_path": "",
+    "family_slug": "fairly-odd-family",
+    "classification": "Predictive sniper",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:00.995266+00:00",
+    "updated_at": "2026-06-07T05:37:07.814770+00:00"
+  },
+  {
+    "slug": "the-turners",
+    "name": "The Turners",
+    "kind": "dev",
+    "source_team_id": "the-turners",
+    "source_db_path": "",
+    "family_slug": "fairly-odd-family",
+    "classification": "Hybrid: reactive expansion + predictive gate",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:01.003280+00:00",
+    "updated_at": "2026-06-07T05:37:07.822279+00:00"
+  },
+  {
+    "slug": "roadrunner",
+    "name": "Roadrunner",
+    "kind": "dev",
+    "source_team_id": "roadrunner",
+    "source_db_path": "",
+    "family_slug": "roadrunner",
+    "classification": "Momentum hunter",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:01.011676+00:00",
+    "updated_at": "2026-06-07T05:37:07.829824+00:00"
+  },
+  {
+    "slug": "slacking",
+    "name": "Slacking",
+    "kind": "dev",
+    "source_team_id": "slaking",
+    "source_db_path": "",
+    "family_slug": "slacking",
+    "classification": "Patient mean reversion",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:01.019973+00:00",
+    "updated_at": "2026-06-07T05:37:07.837472+00:00"
+  },
+  {
+    "slug": "le-phare",
+    "name": "Le Phare",
+    "kind": "dev",
+    "source_team_id": "le-phare",
+    "source_db_path": "",
+    "family_slug": "le-phare",
+    "classification": "Timeframe alignment",
+    "active": 1,
+    "created_at": "2026-06-07T04:55:01.028356+00:00",
+    "updated_at": "2026-06-07T05:37:07.844828+00:00"
+  }
+]

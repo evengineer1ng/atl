@@ -1,0 +1,1522 @@
+[
+  {
+    "id": 1,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "throughput",
+    "value": 2.172683,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 2,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "win_rate",
+    "value": 100.0,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 3,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "avg_roi",
+    "value": 1.747115,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 4,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "avg_hold_time",
+    "value": 970.515625,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 5,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "hold_time_dispersion",
+    "value": 3874.856255,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 6,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "realized_conversion",
+    "value": 56.000972,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 7,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "unrealized_drag",
+    "value": -49.372078,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 8,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "long_short_bias",
+    "value": 45.3125,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 9,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "pair_concentration",
+    "value": 12.939453,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 10,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "champion_exit_rate",
+    "value": 4.6875,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 11,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "exit_efficiency",
+    "value": 1.747115,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 12,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "selectivity",
+    "value": 31.519064,
+    "sample_size": 64,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 13,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 64,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 14,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 64,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 15,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 64,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 16,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 64,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 17,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 64,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 18,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 64,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 19,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-20",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 64,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.498056+00:00"
+  },
+  {
+    "id": 20,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "throughput",
+    "value": 9.729638,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 21,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "win_rate",
+    "value": 100.0,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 22,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "avg_roi",
+    "value": 1.259478,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 23,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "avg_hold_time",
+    "value": 138.583333,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 24,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "hold_time_dispersion",
+    "value": 231.153794,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 25,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "realized_conversion",
+    "value": 38.289547,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 26,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "unrealized_drag",
+    "value": -13.303075,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 27,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "long_short_bias",
+    "value": 91.666667,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 28,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "pair_concentration",
+    "value": 25.0,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 29,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "champion_exit_rate",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 30,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "exit_efficiency",
+    "value": 1.259478,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 31,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "selectivity",
+    "value": 9.319979,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 32,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 33,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 34,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 35,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 36,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 37,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 38,
+    "cycle_id": 1,
+    "strategy_slug": "cosmowanda-top-50",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.506676+00:00"
+  },
+  {
+    "id": 39,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "throughput",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 40,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "win_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 41,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "avg_roi",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 42,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "avg_hold_time",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 43,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "hold_time_dispersion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 44,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "realized_conversion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 45,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "unrealized_drag",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 46,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "long_short_bias",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 47,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "pair_concentration",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 48,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "champion_exit_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 49,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "exit_efficiency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 50,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "selectivity",
+    "value": 100.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 51,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 52,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 53,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 54,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 55,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 56,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 57,
+    "cycle_id": 1,
+    "strategy_slug": "the-turners",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.516165+00:00"
+  },
+  {
+    "id": 58,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "throughput",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 59,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "win_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 60,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "avg_roi",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 61,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "avg_hold_time",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 62,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "hold_time_dispersion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 63,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "realized_conversion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 64,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "unrealized_drag",
+    "value": 23.84602,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 65,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "long_short_bias",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 66,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "pair_concentration",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 67,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "champion_exit_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 68,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "exit_efficiency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 69,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "selectivity",
+    "value": 100.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 70,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 71,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 72,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 73,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 74,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 75,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 76,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-20",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.525525+00:00"
+  },
+  {
+    "id": 77,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "throughput",
+    "value": 1.296052,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 78,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "win_rate",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 79,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "avg_roi",
+    "value": -1.497707,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 80,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "avg_hold_time",
+    "value": 1111.0,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 81,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "hold_time_dispersion",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 82,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "realized_conversion",
+    "value": -28.016222,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 83,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "unrealized_drag",
+    "value": 19.080285,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 84,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "long_short_bias",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 85,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "pair_concentration",
+    "value": 100.0,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 86,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "champion_exit_rate",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 87,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "exit_efficiency",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 88,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "selectivity",
+    "value": 43.553024,
+    "sample_size": 1,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 89,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 90,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 91,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 92,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 93,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 94,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 95,
+    "cycle_id": 1,
+    "strategy_slug": "timmy-top-50",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 1,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.536979+00:00"
+  },
+  {
+    "id": 96,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "throughput",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 97,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "win_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 98,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "avg_roi",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 99,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "avg_hold_time",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 100,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "hold_time_dispersion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 101,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "realized_conversion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 102,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "unrealized_drag",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 103,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "long_short_bias",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 104,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "pair_concentration",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 105,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "champion_exit_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 106,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "exit_efficiency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 107,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "selectivity",
+    "value": 100.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 108,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 109,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 110,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 111,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 112,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 113,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 114,
+    "cycle_id": 1,
+    "strategy_slug": "le-phare",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.547032+00:00"
+  },
+  {
+    "id": 115,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "throughput",
+    "value": 53.325005,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 116,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "win_rate",
+    "value": 58.333333,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 117,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "avg_roi",
+    "value": -0.091342,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 118,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "avg_hold_time",
+    "value": 32.16755,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 119,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "hold_time_dispersion",
+    "value": 34.625043,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 120,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "realized_conversion",
+    "value": -100.0,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 121,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "unrealized_drag",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 122,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "long_short_bias",
+    "value": 58.333333,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 123,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "pair_concentration",
+    "value": 11.111111,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 124,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "champion_exit_rate",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 125,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "exit_efficiency",
+    "value": 0.566856,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 126,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "selectivity",
+    "value": 1.840773,
+    "sample_size": 12,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 127,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 128,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 129,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 130,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 131,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 132,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 133,
+    "cycle_id": 1,
+    "strategy_slug": "roadrunner",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 12,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.556905+00:00"
+  },
+  {
+    "id": 134,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "throughput",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 135,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "win_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 136,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "avg_roi",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 137,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "avg_hold_time",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 138,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "hold_time_dispersion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 139,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "realized_conversion",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 140,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "unrealized_drag",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 141,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "long_short_bias",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 142,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "pair_concentration",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 143,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "champion_exit_rate",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 144,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "exit_efficiency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 145,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "selectivity",
+    "value": 100.0,
+    "sample_size": 0,
+    "measurable": 1,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 146,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "volatility_preference",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 147,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "trend_following_tendency",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 148,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "reversal_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 149,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "chop_vulnerability",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 150,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "drawdown_pressure",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 151,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "exposure_load",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  },
+  {
+    "id": 152,
+    "cycle_id": 1,
+    "strategy_slug": "slacking",
+    "category": "environment_sensitivity",
+    "value": 0.0,
+    "sample_size": 0,
+    "measurable": 0,
+    "computed_at": "2026-06-07T04:55:01.566295+00:00"
+  }
+]

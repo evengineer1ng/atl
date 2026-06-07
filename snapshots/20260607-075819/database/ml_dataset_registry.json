@@ -1,0 +1,68 @@
+[
+  {
+    "id": "historical-ohlcv",
+    "dataset_name": "Historical OHLCV Lake",
+    "source_kind": "source-layer",
+    "source_path": "user_data/data",
+    "timeframe": "mixed",
+    "coverage": "Exchange-organized candles used for offline feature generation and replay.",
+    "status": "available",
+    "notes": "Raw market data source for feature tables and walk-forward splits.",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  },
+  {
+    "id": "freqtrade-live-trades",
+    "dataset_name": "Freqtrade Live Trade Journals",
+    "source_kind": "source-layer",
+    "source_path": "user_data",
+    "timeframe": "5m live",
+    "coverage": "SQLite trade journals from live and dry-run bot instances.",
+    "status": "available",
+    "notes": "Primary live evidence layer for post-trade attribution and promotion review.",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  },
+  {
+    "id": "backtest-archives",
+    "dataset_name": "Backtest Archives",
+    "source_kind": "source-layer",
+    "source_path": "user_data/backtest_results",
+    "timeframe": "5m",
+    "coverage": "Packed historical backtest result sets and metadata snapshots.",
+    "status": "available",
+    "notes": "Backtest runs need lineage to config, feature version, and promotion decisions.",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  },
+  {
+    "id": "hyperopt-archives",
+    "dataset_name": "Hyperopt Archives",
+    "source_kind": "source-layer",
+    "source_path": "user_data/hyperopt_results",
+    "timeframe": "5m",
+    "coverage": "Hyperopt outputs and cached ticker snapshots used for parameter exploration.",
+    "status": "available",
+    "notes": "Useful for provenance, but not yet tied to model artifacts in a reproducible chain.",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  },
+  {
+    "id": "hyperliquid-futures-5m-regime-set-a",
+    "dataset_name": "hyperliquid_futures_5m_regime_set_a",
+    "source_kind": "research-dataset",
+    "source_path": "user_data/data/hyperliquid",
+    "timeframe": "5m",
+    "coverage": "Named experiment dataset referenced by the model registry.",
+    "status": "available",
+    "notes": "Primary rediscovery run for Dark Matter bucket.",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  },
+  {
+    "id": "cross-exchange-ladder-samples-b",
+    "dataset_name": "cross-exchange_ladder_samples_b",
+    "source_kind": "research-dataset",
+    "source_path": "user_data/data",
+    "timeframe": "unknown",
+    "coverage": "Named experiment dataset referenced by the model registry.",
+    "status": "available",
+    "notes": "Not live-influential yet.",
+    "updated_at": "2026-06-07T05:37:08.432664+00:00"
+  }
+]
