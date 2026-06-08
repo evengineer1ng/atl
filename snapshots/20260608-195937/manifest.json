@@ -1,0 +1,212 @@
+{
+  "created_at": "2026-06-08T19:59:37.821743+00:00",
+  "snapshot_slug": "20260608-195937",
+  "project_root": ".",
+  "database_tables": [
+    {
+      "table": "ai_generated_content",
+      "row_count": 42
+    },
+    {
+      "table": "ai_research_questions",
+      "row_count": 6
+    },
+    {
+      "table": "app_settings",
+      "row_count": 50
+    },
+    {
+      "table": "chronicle_days",
+      "row_count": 1
+    },
+    {
+      "table": "dev_archived_trades",
+      "row_count": 58
+    },
+    {
+      "table": "dev_candidates",
+      "row_count": 9
+    },
+    {
+      "table": "dev_post_shift_reviews",
+      "row_count": 20
+    },
+    {
+      "table": "dev_runtime_events",
+      "row_count": 390
+    },
+    {
+      "table": "dev_runtime_sessions",
+      "row_count": 145
+    },
+    {
+      "table": "dev_runtime_snapshots",
+      "row_count": 15243
+    },
+    {
+      "table": "dev_shift_episodes",
+      "row_count": 6
+    },
+    {
+      "table": "exchange_leases",
+      "row_count": 7
+    },
+    {
+      "table": "exchange_resources",
+      "row_count": 5
+    },
+    {
+      "table": "league_quarterly_reports",
+      "row_count": 0
+    },
+    {
+      "table": "league_season_draft_recommendations",
+      "row_count": 0
+    },
+    {
+      "table": "league_seasons",
+      "row_count": 0
+    },
+    {
+      "table": "league_team_season_reviews",
+      "row_count": 0
+    },
+    {
+      "table": "live_snapshots",
+      "row_count": 8077
+    },
+    {
+      "table": "maintenance_runs",
+      "row_count": 440
+    },
+    {
+      "table": "ml_bucket_candidates",
+      "row_count": 18
+    },
+    {
+      "table": "ml_dataset_registry",
+      "row_count": 6
+    },
+    {
+      "table": "ml_descendant_hypotheses",
+      "row_count": 4
+    },
+    {
+      "table": "ml_evolution_reviews",
+      "row_count": 1
+    },
+    {
+      "table": "ml_experiment_queue",
+      "row_count": 0
+    },
+    {
+      "table": "ml_experiment_runs",
+      "row_count": 1
+    },
+    {
+      "table": "ml_families",
+      "row_count": 8
+    },
+    {
+      "table": "ml_feature_set_versions",
+      "row_count": 2
+    },
+    {
+      "table": "ml_findings",
+      "row_count": 4
+    },
+    {
+      "table": "ml_label_registry",
+      "row_count": 2
+    },
+    {
+      "table": "ml_label_spec_versions",
+      "row_count": 2
+    },
+    {
+      "table": "ml_lineage",
+      "row_count": 2
+    },
+    {
+      "table": "ml_model_registry",
+      "row_count": 2
+    },
+    {
+      "table": "ml_promotion_recommendations",
+      "row_count": 25
+    },
+    {
+      "table": "ml_relationships",
+      "row_count": 84
+    },
+    {
+      "table": "ml_strategy_registry",
+      "row_count": 12
+    },
+    {
+      "table": "ml_telemetry",
+      "row_count": 2382
+    },
+    {
+      "table": "ml_telemetry_cycles",
+      "row_count": 13
+    },
+    {
+      "table": "ml_telemetry_divergence",
+      "row_count": 560
+    },
+    {
+      "table": "ml_traits",
+      "row_count": 34
+    },
+    {
+      "table": "ml_validation_reports",
+      "row_count": 0
+    },
+    {
+      "table": "research_index_entries",
+      "row_count": 215
+    },
+    {
+      "table": "research_thread_updates",
+      "row_count": 125
+    },
+    {
+      "table": "research_threads",
+      "row_count": 6
+    },
+    {
+      "table": "strategy_awards",
+      "row_count": 0
+    },
+    {
+      "table": "team_trades",
+      "row_count": 110
+    },
+    {
+      "table": "timeline_posts",
+      "row_count": 3
+    }
+  ],
+  "data_files": [
+    "instances.json",
+    "ml_buckets.json",
+    "ml_draft_board.json",
+    "ml_features.json",
+    "ml_hypotheses.json",
+    "ml_models.json",
+    "ml_promotions.json",
+    "research_questions.json"
+  ],
+  "development_config_files": [
+    "block-party.json",
+    "dany.json",
+    "downforce.json",
+    "jade.json",
+    "le-phare.json",
+    "maverick.json",
+    "roadrunner.json",
+    "slaking.json",
+    "the-turners.json"
+  ]
+}

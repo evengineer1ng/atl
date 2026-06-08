@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Scouting To Promotion Pipeline</h2>
+  <div class="pipeline">
+    {% for stage in pipeline_stages %}
+    <div class="pipeline-stage">{{ stage }}</div>
+    {% endfor %}
+  </div>
+</section>
+{% for row in rows %}
+<section class="card">
+  <h2>{{ row.strategy_name }}</h2>
+  <div class="kv-grid">
+    <div><span>Raw observation</span><strong>{{ row.raw_observation }}</strong></div>
+    <div><span>Feature bucket</span><strong>{{ row.feature_bucket }}</strong></div>
+    <div><span>Backtest prototype</span><strong>{{ row.backtest_prototype }}</strong></div>
+    <div><span>Paper/dry run</span><strong>{{ row.paper_dry_run }}</strong></div>
+    <div><span>League candidate</span><strong>{{ row.league_candidate }}</strong></div>
+    <div><span>Official team</span><strong>{{ row.official_team or 'Not yet' }}</strong></div>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}
