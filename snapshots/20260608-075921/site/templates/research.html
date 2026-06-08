@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="league-hero">
+  <article class="card hero-story">
+    <div class="hero-mark">
+      <div class="league-crest">R&amp;D</div>
+      <div>
+        <p class="eyebrow">Research Playground</p>
+        <h2>User and agent threads can evolve here against local repo context, indexed notes, and live league evidence.</h2>
+      </div>
+    </div>
+    <p>The 12-hour research agent works from your own indexed material first. It asks or receives a question, pulls the thread every 30 minutes, writes a summary at hour 12, and can automatically seed the next question.</p>
+  </article>
+  <div class="metric-grid">
+    <article class="metric-card"><span>Active Threads</span><strong>{{ active_thread_count }}</strong></article>
+    <article class="metric-card"><span>Indexed Entries</span><strong>{{ indexed_count }}</strong></article>
+    <article class="metric-card"><span>Manual Questions</span><strong>{{ questions|length }}</strong></article>
+    <article class="metric-card"><span>AI Questions</span><strong>{{ generated_questions|length }}</strong></article>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Launch Thread</p>
+    <h2>Start A New 12-Hour Question</h2>
+    <form action="/research/threads" method="post" class="post-form">
+      <label>Question
+        <input type="text" name="question" placeholder="What exactly should the agent pull apart next?">
+      </label>
+      <label><input type="checkbox" name="auto_reseed" checked> Auto-ask a new question after the 12-hour summary</label>
+      <button type="submit">Create Research Thread</button>
+    </form>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Index Search</p>
+    <h2>Search Local Research First</h2>
+    <form action="/research" method="get" class="post-form">
+      <label>Indexed search
+        <input type="text" name="q" value="{{ search_query }}" placeholder="Search indexed repo and research notes">
+      </label>
+      <button type="submit">Search Index</button>
+    </form>
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>{{ development_brief.daily_recap_title }}</h2>
+    {% for row in development_brief.momentum_rows %}
+    <article class="question-card generated-card">
+      <strong>{{ row.name }}</strong><br>
+      Pace: {% if row.projected_total_pnl_per_24h is not none %}{{ "%.2f"|format(row.projected_total_pnl_per_24h) }}{% else %}Flagged{% endif %}<br>
+      Runtime: {{ "%.2f"|format(row.total_runtime_hours) }}h
+    </article>
+    {% else %}
+    <p>No development momentum rows yet.</p>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Scheduled Reports</h2>
+    {% for title in development_brief.report_titles %}
+    <article class="question-card">{{ title }}</article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="card">
+  <div class="question-list">
+    {% for question in questions %}
+    <article class="question-card">{{ question }}</article>
+    {% endfor %}
+    {% for row in generated_questions %}
+    <article class="question-card generated-card"><strong>{{ row.question }}</strong><br>{{ row.rationale }}</article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Research Threads</h2>
+    {% for thread in threads %}
+    <article class="lab-note">
+      <p class="eyebrow">{{ thread.status }} &middot; {{ thread.owner }} &middot; every {{ thread.interval_minutes }} min &middot; {{ thread.duration_hours }}h window</p>
+      <h3>{{ thread.question }}</h3>
+      {% if thread.summary %}
+      <p><strong>Summary:</strong> {{ thread.summary }}</p>
+      {% endif %}
+      {% for update in thread.updates %}
+      <article class="question-card{% if update.source == 'agent' %} generated-card{% endif %}">
+        <strong>{{ update.title }}</strong><br>
+        {{ update.content }}
+      </article>
+      {% endfor %}
+      <form action="/research/notes" method="post" class="post-form">
+        <input type="hidden" name="thread_id" value="{{ thread.id }}">
+        <label>Manual note title
+          <input type="text" name="title" placeholder="What did you notice?">
+        </label>
+        <label>Manual note
+          <input type="text" name="note" placeholder="Add your own note or evidence to this thread">
+        </label>
+        <button type="submit">Add Note</button>
+      </form>
+      <form action="/ml/workbench/queue/thread" method="post" class="post-form">
+        <input type="hidden" name="thread_id" value="{{ thread.id }}">
+        <input type="hidden" name="redirect_to" value="/research">
+        <button type="submit">Submit Thread To ML Queue</button>
+      </form>
+    </article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Indexed Research Hits</h2>
+    {% for row in index_hits %}
+    <article class="question-card generated-card">
+      <strong>{{ row.title }}</strong><br>
+      {{ row.content[:500] }}
+    </article>
+    {% endfor %}
+  </article>
+</section>
+{% endblock %}

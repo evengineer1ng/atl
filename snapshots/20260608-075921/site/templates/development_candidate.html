@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+{% block content %}
+{% if auto_refresh_seconds %}
+<script>
+  setTimeout(function () { window.location.reload(); }, {{ auto_refresh_seconds * 1000 }});
+</script>
+{% endif %}
+<section class="league-hero">
+  <article class="card hero-story">
+    <div class="hero-mark">
+      <div class="league-crest">CD</div>
+      <div>
+        <p class="eyebrow">{{ candidate.tier_label }}</p>
+        <h2>{{ candidate.name }}</h2>
+        {% include "_trophy_shelf.html" %}
+      </div>
+    </div>
+    <p>{{ candidate.hypothesis or candidate.strategy_notes or "No working hypothesis yet." }}</p>
+    <p class="mono">{{ candidate.lifecycle_label }} · {{ candidate.display_shift }} {% if candidate.runtime_window %}· {{ candidate.runtime_window }}{% endif %}</p>
+    {% if candidate.protected %}
+    <p><strong>&#128274; Protected Prospect</strong> — competes normally, but the strategy file is immutable to automated regeneration until you approve a manual regenerate.</p>
+    {% endif %}
+    {% if candidate.workflow_requirement %}
+    <p><strong>{{ candidate.workflow_requirement }}</strong></p>
+    {% endif %}
+    {% if auto_refresh_seconds %}
+    <p>Generation is in progress. This page refreshes automatically.</p>
+    {% endif %}
+  </article>
+  <div class="hero-side">
+    <div class="metric-grid">
+      <article class="metric-card"><span>Status</span><strong>{{ candidate.runtime_status }}</strong></article>
+      <article class="metric-card"><span>Eligibility</span><strong>{{ candidate.eligibility_status }}</strong></article>
+      <article class="metric-card"><span>Closed Trades</span><strong>{{ candidate.closed_trades }}</strong></article>
+      <article class="metric-card"><span>Heartbeat</span><strong>{{ "Yes" if candidate.heartbeat else "No" }}</strong></article>
+      <article class="metric-card"><span>Generation</span><strong>{{ candidate.generation_status }}</strong></article>
+      <article class="metric-card"><span>Validation</span><strong>{{ candidate.validation_status }}</strong></article>
+      <article class="metric-card"><span>Review</span><strong>{{ candidate.review_status }}</strong></article>
+      <article class="metric-card"><span>Assembly</span><strong>{{ candidate.assembly_status }}</strong></article>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <h2>Controls</h2>
+    <a href="/development">Back to dashboard</a>
+  </div>
+  <form action="/development/candidates/{{ candidate.id }}/action" method="post" class="inline-form">
+    <input type="hidden" name="redirect_to" value="/development/candidates/{{ candidate.id }}">
+    <button type="submit" name="action" value="generate_strategy">Generate strategy file with Kimi</button>
+    <button type="submit" name="action" value="regenerate_strategy">Regenerate strategy file{% if candidate.protected %} (approve change){% endif %}</button>
+    {% if candidate.protected %}
+    <button type="submit" name="action" value="unprotect_candidate">Unprotect (allow auto-regen)</button>
+    {% else %}
+    <button type="submit" name="action" value="protect_candidate">Protect this prospect</button>
+    {% endif %}
+    <button type="submit" name="action" value="run_post_shift_review">Run post-shift review</button>
+    <button type="submit" name="action" value="mark_reviewed" {% if not candidate.can_review %}disabled{% endif %}>Mark reviewed</button>
+    <button type="submit" name="action" value="reject_generated_file">Reject generated file</button>
+    <button type="submit" name="action" value="assemble_instance" {% if not candidate.can_assemble %}disabled{% endif %}>Assemble Freqtrade instance</button>
+    <button type="submit" name="action" value="start_now">Start now</button>
+    <button type="submit" name="action" value="stop_now">Stop now</button>
+    <button type="submit" name="action" value="pause_candidate">Pause candidate</button>
+    <button type="submit" name="action" value="resume_auto">Resume auto</button>
+    <button type="submit" name="action" value="promote">Promote to next tier</button>
+    <button type="submit" name="action" value="demote_bootcamp">Return to bootcamp</button>
+    <button type="submit" name="action" value="archive_candidate">Archive candidate</button>
+  </form>
+  <p>Strategy regeneration automatically includes the latest post-shift review when one exists.</p>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <div class="section-head">
+      <h2>Latest Post-Shift Review</h2>
+      <span>{% if latest_review %}{{ latest_review.grade }} · {{ latest_review.decision_label }} · {{ latest_review.score_label }}{% else %}No completed review yet{% endif %}</span>
+    </div>
+    {% if latest_review %}
+    <p>{{ latest_review.summary }}</p>
+    <p><strong>Recommendation:</strong> {{ latest_review.recommendation }}</p>
+    <p><strong>Mutation brief:</strong> {{ latest_review.mutation_brief }}</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Rubric</th>
+            <th>Score</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in latest_review.rubric %}
+          <tr>
+            <td>{{ item.label }}</td>
+            <td>{{ "%.1f"|format(item.score) }}/{{ "%.0f"|format(item.max_score) }}</td>
+            <td>{{ item.note }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p>No completed post-shift review is recorded yet. End one runtime session, or run the manual review button after the latest shift finishes.</p>
+    {% endif %}
+  </article>
+  <article class="card">
+    <h2>Post-Shift History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Stopped</th>
+            <th>Scope</th>
+            <th>Grade</th>
+            <th>Decision</th>
+            <th>Confidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for review in post_shift_reviews %}
+          <tr>
+            <td>{{ review.session_stopped_at }}</td>
+            <td>{{ review.review_scope }}</td>
+            <td>{{ review.grade }} · {{ review.score_label }}</td>
+            <td>{{ review.decision_label }}</td>
+            <td>{{ review.evidence_confidence }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="5">No post-shift reviews yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <h2>Shift Assignment</h2>
+    <span>{{ candidate.display_shift }}{% if candidate.runtime_window %} · {{ candidate.runtime_window }}{% endif %}</span>
+  </div>
+  <form action="/development/candidates/{{ candidate.id }}/action" method="post" class="inline-form">
+    <input type="hidden" name="redirect_to" value="/development/candidates/{{ candidate.id }}">
+    <input type="hidden" name="action" value="assign_shift">
+    <label>Six-Hour Shift
+      <select name="shift_code" {% if not candidate.can_assign_shift %}disabled{% endif %}>
+        <option value="">Select shift</option>
+        {% for shift in shift_options %}
+        <option value="{{ shift.code }}" {% if candidate.shift_code == shift.code %}selected{% endif %}>{{ shift.label }} {{ "%02d:00-%02d:00"|format(shift.start_hour, shift.end_hour % 24) }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <button type="submit" {% if not candidate.can_assign_shift %}disabled{% endif %}>Assign to shift</button>
+  </form>
+  <p>Next scheduled start: {{ candidate.next_scheduled_start or "n/a" }}</p>
+  <p>Next scheduled stop: {{ candidate.next_scheduled_stop or "n/a" }}</p>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Runtime / Opportunity</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Tier</th><td>{{ candidate.tier_competition }}</td></tr>
+          <tr><th>Shift</th><td>{{ candidate.shift_code or "n/a" }}</td></tr>
+          <tr><th>Scheduled Hours / Day</th><td>{{ candidate.scheduled_hours_per_day }}</td></tr>
+          <tr><th>Actual Runtime Hours</th><td>{{ "%.2f"|format(candidate.total_runtime_hours) }}</td></tr>
+          <tr><th>Scheduled Runtime Hours</th><td>{{ "%.2f"|format(candidate.scheduled_runtime_hours) }}</td></tr>
+          <tr><th>Runtime Completion</th><td>{{ "%.2f"|format(candidate.runtime_percentage) }}%</td></tr>
+          <tr><th>Active Sessions</th><td>{{ candidate.active_sessions_count }}</td></tr>
+          <tr><th>Average Session Length</th><td>{{ "%.2f"|format(candidate.average_session_length) }} hours</td></tr>
+          <tr><th>Current Runtime State</th><td>{{ candidate.current_runtime_state }}</td></tr>
+          <tr><th>Long / Short</th><td>{{ candidate.long_short_mode }}</td></tr>
+          <tr><th>Expected Behavior</th><td>{{ candidate.expected_behavior }}</td></tr>
+          <tr><th>Risk Profile</th><td>{{ candidate.risk_profile }}</td></tr>
+          <tr><th>Coin Universe</th><td>{{ candidate.coin_universe }}</td></tr>
+          <tr><th>Timeframe</th><td>{{ candidate.timeframe }}</td></tr>
+          <tr><th>Suggested Timeframe</th><td>{{ candidate.suggested_timeframe or "n/a" }}</td></tr>
+          <tr><th>Raw PnL</th><td>{{ "%.2f"|format(candidate.raw_total_pnl) }}</td></tr>
+          <tr><th>PnL / Runtime Hour</th><td>{{ "%.2f"|format(candidate.pnl_per_runtime_hour) }}</td></tr>
+          <tr><th>Per-24h Pace</th><td>{% if candidate.projected_total_pnl_per_24h is not none %}{{ "%.2f"|format(candidate.projected_total_pnl_per_24h) }}{% else %}Flagged{% endif %}</td></tr>
+          <tr><th>Raw Closed Trades</th><td>{{ candidate.raw_closed_trades }}</td></tr>
+          <tr><th>Per-24h Closed Trade Pace</th><td>{% if candidate.projected_closed_trades_per_24h is not none %}{{ "%.2f"|format(candidate.projected_closed_trades_per_24h) }}{% else %}Flagged{% endif %}</td></tr>
+          <tr><th>Sample Quality</th><td>{{ candidate.sample_quality }}</td></tr>
+          <tr><th>Sample Flags</th><td>{{ candidate.sample_flags|join(", ") if candidate.sample_flags else "none" }}</td></tr>
+          <tr><th>Freshness Flags</th><td>{{ candidate.freshness_flags|join(", ") if candidate.freshness_flags else "none" }}</td></tr>
+          <tr><th>Data Quality</th><td>{{ candidate.data_quality }}</td></tr>
+          <tr><th>Status Detail</th><td>{{ candidate.status_detail }}</td></tr>
+          <tr><th>Last Start</th><td>{{ candidate.last_start_at or "n/a" }}</td></tr>
+          <tr><th>Last Stop</th><td>{{ candidate.last_stop_at or "n/a" }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+  <article class="card">
+    <h2>Paths and Commands</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Strategy Path</th><td>{{ candidate.strategy_path or "n/a" }}</td></tr>
+          <tr><th>Config Path</th><td>{{ candidate.config_path or "n/a" }}</td></tr>
+          <tr><th>Log Path</th><td>{{ candidate.log_path or "n/a" }}</td></tr>
+          <tr><th>DB Path</th><td>{{ candidate.db_path or "n/a" }}</td></tr>
+          <tr><th>Working Directory</th><td>{{ candidate.working_directory or "n/a" }}</td></tr>
+          <tr><th>Container Name</th><td>{{ candidate.container_name or "n/a" }}</td></tr>
+          <tr><th>API Port</th><td>{{ candidate.api_port or "n/a" }}</td></tr>
+          <tr><th>API URL</th><td>{{ candidate.api_url or "n/a" }}</td></tr>
+          <tr><th>Start Command</th><td><span class="mono">{{ candidate.start_command or "n/a" }}</span></td></tr>
+          <tr><th>Stop Command</th><td><span class="mono">{{ candidate.stop_command or "n/a" }}</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>
+
+<section class="card">
+  <h2>Active Sessions</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Start</th>
+          <th>Stop</th>
+          <th>Duration Hours</th>
+          <th>Reason Stopped</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in sessions %}
+        <tr>
+          <td>{{ row.started_at }}</td>
+          <td>{{ row.stopped_at or "running" }}</td>
+          <td>{{ "%.2f"|format(row.duration_hours) }}</td>
+          <td>{{ row.stop_reason or "active" }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="4">No sessions recorded yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Strategy Review</h2>
+    <div class="table-wrap">
+      <table>
+        <tbody>
+          <tr><th>Strategy File Path</th><td>{{ candidate.strategy_path or "n/a" }}</td></tr>
+          <tr><th>Generated At</th><td>{{ candidate.generated_at or "n/a" }}</td></tr>
+          <tr><th>Model Used</th><td>{{ candidate.generation_model or "n/a" }}</td></tr>
+          <tr><th>Generation Progress</th><td>{{ candidate.generation_progress or "n/a" }}</td></tr>
+          <tr><th>Review Status</th><td>{{ candidate.review_status }}</td></tr>
+          <tr><th>Validation Error</th><td>{{ candidate.validation_error or "n/a" }}</td></tr>
+          <tr><th>Generation Error</th><td>{{ candidate.generation_error or "n/a" }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Strategy regeneration automatically includes the latest post-shift review when one exists.</p>
+    <p>{{ candidate.implementation_summary or "No implementation summary yet." }}</p>
+    <h3>Assumptions</h3>
+    {% for item in assumptions %}
+    <p>{{ item }}</p>
+    {% else %}
+    <p>No assumptions recorded.</p>
+    {% endfor %}
+    <h3>Warnings</h3>
+    {% for item in warnings %}
+    <p>{{ item }}</p>
+    {% else %}
+    <p>No warnings recorded.</p>
+    {% endfor %}
+    <h3>Minimal Config Notes</h3>
+    {% for item in config_notes %}
+    <p>{{ item }}</p>
+    {% else %}
+    <p>No config notes recorded.</p>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Code Preview</h2>
+    {% if strategy_preview %}
+    <pre class="mono" style="white-space: pre-wrap;">{{ strategy_preview }}</pre>
+    {% else %}
+    <p>No strategy file has been generated yet.</p>
+    {% endif %}
+  </article>
+</section>
+
+<section class="card">
+  <h2>Performance Evidence</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Equity</th>
+          <th>Realized</th>
+          <th>Unrealized</th>
+          <th>Worst Open</th>
+          <th>Max Drawdown</th>
+          <th>Last Trade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ "%.2f"|format(candidate.equity) }}</td>
+          <td>{{ "%.2f"|format(candidate.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(candidate.unrealized_pnl) }}</td>
+          <td>{{ "%.2f"|format(candidate.worst_open_trade) }}%</td>
+          <td>{{ "%.2f"|format(candidate.max_drawdown) }}%</td>
+          <td>{{ candidate.last_trade_at or "n/a" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Runtime History</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Captured</th>
+            <th>Status</th>
+            <th>Closed</th>
+            <th>Realized</th>
+            <th>Unrealized</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in history %}
+          <tr>
+            <td>{{ row.captured_at }}</td>
+            <td>{{ row.runtime_status }}</td>
+            <td>{{ row.closed_trades }}</td>
+            <td>{{ "%.2f"|format(row.realized_pnl) }}</td>
+            <td>{{ "%.2f"|format(row.unrealized_pnl) }}</td>
+            <td>{{ row.status_detail }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="6">No runtime history yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </article>
+  <article class="card">
+    <h2>Event Log</h2>
+    {% for event in events %}
+    <article class="timeline-snippet">
+      <p class="eyebrow">{{ event.created_at }} · {{ event.event_type }}</p>
+      <h3>{{ event.title }}</h3>
+      <p>{{ event.details }}</p>
+    </article>
+    {% else %}
+    <p>No events yet.</p>
+    {% endfor %}
+  </article>
+</section>
+{% endblock %}

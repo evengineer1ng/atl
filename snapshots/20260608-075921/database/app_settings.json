@@ -1,0 +1,252 @@
+[
+  {
+    "key": "ollama_api_key",
+    "value": "bdd9cce8a75b466abd22842afabad439.E_x2xS-gOVBP0Fg70pRkVNw_",
+    "updated_at": "2026-06-08T03:59:38.779792+00:00"
+  },
+  {
+    "key": "ollama_model",
+    "value": "kimi-k2.6:cloud",
+    "updated_at": "2026-06-08T03:59:38.792932+00:00"
+  },
+  {
+    "key": "league_maintenance_minutes",
+    "value": "30",
+    "updated_at": "2026-06-08T03:59:38.850155+00:00"
+  },
+  {
+    "key": "ml_maintenance_minutes",
+    "value": "180",
+    "updated_at": "2026-06-08T03:59:38.855014+00:00"
+  },
+  {
+    "key": "league_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:59:38.866118+00:00"
+  },
+  {
+    "key": "ml_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:59:38.871276+00:00"
+  },
+  {
+    "key": "league_maintenance_last_run",
+    "value": "2026-06-08T07:44:46.956796+00:00",
+    "updated_at": "2026-06-08T07:44:46.957746+00:00"
+  },
+  {
+    "key": "ml_maintenance_last_run",
+    "value": "2026-06-08T05:32:49.214003+00:00",
+    "updated_at": "2026-06-08T05:32:49.215128+00:00"
+  },
+  {
+    "key": "research_agent_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:59:38.916141+00:00"
+  },
+  {
+    "key": "research_agent_interval_minutes",
+    "value": "30",
+    "updated_at": "2026-06-08T03:59:38.921114+00:00"
+  },
+  {
+    "key": "research_agent_duration_hours",
+    "value": "12",
+    "updated_at": "2026-06-08T03:59:38.926456+00:00"
+  },
+  {
+    "key": "ollama_fallback_model",
+    "value": "qwen3.6:27b",
+    "updated_at": "2026-06-08T03:59:38.805378+00:00"
+  },
+  {
+    "key": "ollama_timeout_seconds",
+    "value": "120",
+    "updated_at": "2026-06-08T03:59:38.813898+00:00"
+  },
+  {
+    "key": "ollama_retry_count",
+    "value": "2",
+    "updated_at": "2026-06-08T03:59:38.822018+00:00"
+  },
+  {
+    "key": "development_strategy_generation_model",
+    "value": "kimi-k2.6:cloud",
+    "updated_at": "2026-06-08T03:59:38.829440+00:00"
+  },
+  {
+    "key": "development_strategy_generation_fallback_model",
+    "value": "qwen3.6:27b",
+    "updated_at": "2026-06-08T03:59:38.834635+00:00"
+  },
+  {
+    "key": "development_strategy_generation_timeout_seconds",
+    "value": "240",
+    "updated_at": "2026-06-08T03:59:38.839586+00:00"
+  },
+  {
+    "key": "development_strategy_generation_retry_count",
+    "value": "3",
+    "updated_at": "2026-06-08T03:59:38.844883+00:00"
+  },
+  {
+    "key": "archive_last_run",
+    "value": "2026-06-07T19:58:46.695962+00:00",
+    "updated_at": "2026-06-07T19:58:46.697248+00:00"
+  },
+  {
+    "key": "archive_last_snapshot_path",
+    "value": "algo_trading_league/data/archives/league_snapshots/20260607-195846",
+    "updated_at": "2026-06-07T19:58:46.705318+00:00"
+  },
+  {
+    "key": "archive_repo_url",
+    "value": "https://github.com/evengineer1ng/atl.git",
+    "updated_at": "2026-06-08T03:59:38.890293+00:00"
+  },
+  {
+    "key": "archive_repo_branch",
+    "value": "main",
+    "updated_at": "2026-06-08T03:59:38.895524+00:00"
+  },
+  {
+    "key": "archive_maintenance_minutes",
+    "value": "720",
+    "updated_at": "2026-06-08T03:59:38.860223+00:00"
+  },
+  {
+    "key": "archive_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:59:38.876263+00:00"
+  },
+  {
+    "key": "archive_push_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:59:38.885033+00:00"
+  },
+  {
+    "key": "archive_repo_local_path",
+    "value": "algo_trading_league/data/archive_repo",
+    "updated_at": "2026-06-08T03:59:38.900542+00:00"
+  },
+  {
+    "key": "auto_review_regeneration_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:59:38.905539+00:00"
+  },
+  {
+    "key": "auto_review_regeneration_decisions",
+    "value": "tweak,overhaul",
+    "updated_at": "2026-06-08T03:59:38.910941+00:00"
+  },
+  {
+    "key": "league_season_anchor",
+    "value": "2026-06-01T00:00:00-04:00",
+    "updated_at": "2026-06-06T20:30:38.820640+00:00"
+  },
+  {
+    "key": "ml_evolution_review_last_run",
+    "value": "2026-06-07T05:01:43.635607+00:00",
+    "updated_at": "2026-06-07T05:01:43.636632+00:00"
+  },
+  {
+    "key": "ml_evolution_review_minutes",
+    "value": "21600",
+    "updated_at": "2026-06-07T05:25:13.051028+00:00"
+  },
+  {
+    "key": "ml_evolution_review_enabled",
+    "value": "true",
+    "updated_at": "2026-06-07T05:25:13.059835+00:00"
+  },
+  {
+    "key": "ml_descendant_conviction_threshold",
+    "value": "0.75",
+    "updated_at": "2026-06-07T05:25:13.069042+00:00"
+  },
+  {
+    "key": "ml_descendant_min_evidence_cycles",
+    "value": "8",
+    "updated_at": "2026-06-07T05:25:13.077729+00:00"
+  },
+  {
+    "key": "ml_descendant_novelty_threshold",
+    "value": "0.35",
+    "updated_at": "2026-06-07T05:25:13.086133+00:00"
+  },
+  {
+    "key": "ml_descendant_max_per_review",
+    "value": "3",
+    "updated_at": "2026-06-07T05:25:13.094703+00:00"
+  },
+  {
+    "key": "ml_complement_pair_threshold",
+    "value": "0.55",
+    "updated_at": "2026-06-07T05:25:13.103698+00:00"
+  },
+  {
+    "key": "ml_turners_protected_seeded",
+    "value": "true",
+    "updated_at": "2026-06-07T05:37:07.893489+00:00"
+  },
+  {
+    "key": "chronicle_enabled",
+    "value": "true",
+    "updated_at": "2026-06-07T21:33:27.558628+00:00"
+  },
+  {
+    "key": "chronicle_run_time",
+    "value": "23:11",
+    "updated_at": "2026-06-07T21:33:27.568282+00:00"
+  },
+  {
+    "key": "chronicle_last_run",
+    "value": "2026-06-08T03:11:43.186476+00:00",
+    "updated_at": "2026-06-08T03:11:43.187733+00:00"
+  },
+  {
+    "key": "chronicle_last_date",
+    "value": "2026-06-07",
+    "updated_at": "2026-06-08T03:11:43.195799+00:00"
+  },
+  {
+    "key": "resource_governance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:39:54.480144+00:00"
+  },
+  {
+    "key": "pairlist_manifest_minutes",
+    "value": "360",
+    "updated_at": "2026-06-08T03:39:54.481019+00:00"
+  },
+  {
+    "key": "pairlist_manifest_base_url",
+    "value": "http://host.docker.internal:8000",
+    "updated_at": "2026-06-08T03:39:54.481030+00:00"
+  },
+  {
+    "key": "coingecko_api_key",
+    "value": "",
+    "updated_at": "2026-06-08T03:39:54.481033+00:00"
+  },
+  {
+    "key": "exchange_max_dev_bots_per_shift",
+    "value": "3",
+    "updated_at": "2026-06-08T03:39:54.481036+00:00"
+  },
+  {
+    "key": "exchange_max_total_concurrent_bots",
+    "value": "6",
+    "updated_at": "2026-06-08T03:39:54.481039+00:00"
+  },
+  {
+    "key": "exchange_cooldown_minutes",
+    "value": "0",
+    "updated_at": "2026-06-08T03:39:54.481041+00:00"
+  },
+  {
+    "key": "pairlist_manifest_last_run",
+    "value": "2026-06-08T03:40:59.837606+00:00",
+    "updated_at": "2026-06-08T03:40:59.838633+00:00"
+  }
+]

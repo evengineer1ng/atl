@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 512,
+    "category": "league",
+    "question": "Does Cosmo & Wanda Top 20 outperform Top 50?",
+    "rationale": "C&W-20 holds the deepest realized sample (+$62.84) while C&W-50 shows positive realized scalps (+$12.57) but negative raw total PnL (~-$16.85) amid ~$29.42 in unrealized drag, suggesting Top 50 breadth may dilute edge or hide larger losing accumulations.",
+    "status": "active_monitoring",
+    "created_at": "2026-06-08T07:44:46.941798+00:00"
+  },
+  {
+    "id": 513,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy-20 leads nominal equity with minimal realized closure, whereas Timmy-50 has booked realized losses (-$19.81) and below-par equity (~$980.19). The divergence suggests universe breadth significantly affects signal quality and exit timing for this strategy family.",
+    "status": "active_monitoring",
+    "created_at": "2026-06-08T07:44:46.941897+00:00"
+  },
+  {
+    "id": 514,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "C&W-20 is the only competitor with champion exits (3), paired with strong realized velocity (~$1.14/hr), while non-champion strategies rely on dynamic ROI exits and show either heavy unrealized drag or booked losses. Isolating the incremental impact of champion exits on net ROI requires monitoring as the sample grows.",
+    "status": "open",
+    "created_at": "2026-06-08T07:44:46.941905+00:00"
+  },
+  {
+    "id": 515,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-20 has only one closed trade and one large open position (~$16.03 unrealized); its survival depends on whether concentrated exposure converts to booked profit or reverses. Live dry-run validation requires more closure events to assess repeatability.",
+    "status": "active_monitoring",
+    "created_at": "2026-06-08T07:44:46.941909+00:00"
+  },
+  {
+    "id": 516,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Both Top 50 variants are underwater on total PnL while both Top 20 variants retain stronger realized profiles, suggesting expanded pair coverage may force earlier unfavorable exits or faster signal decay rather than capturing incremental alpha.",
+    "status": "open",
+    "created_at": "2026-06-08T07:44:46.941913+00:00"
+  }
+]

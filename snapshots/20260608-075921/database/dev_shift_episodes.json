@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "episode_key": "6:2026-06-07T22:18:22.092606+00:00",
+    "candidate_id": 6,
+    "slug": "dany",
+    "name": "Dany",
+    "tier": "six_hour",
+    "shift_code": "D",
+    "strategy_version": "2026-06-07T20:49:28.727004+00:00",
+    "session_started_at": "2026-06-07T22:18:22.092606+00:00",
+    "session_stopped_at": null,
+    "closed_trades": 5,
+    "wins": 1,
+    "losses": 4,
+    "win_rate": 0.2,
+    "avg_roi": -0.0034746541343581524,
+    "realized_pnl": -1.7878,
+    "forced_exits": 4,
+    "forced_realized_pnl": 2.2381,
+    "strategy_closed_trades": 1,
+    "strategy_wins": 0,
+    "strategy_win_rate": 0.0,
+    "strategy_avg_roi": -0.03236188447103084,
+    "strategy_realized_pnl": -4.0259,
+    "artifact_path": "algo_trading_league/data/archives/dev_shifts/dany/20260607T2218220926060000.json",
+    "created_at": "2026-06-08T04:00:47.956537+00:00"
+  }
+]

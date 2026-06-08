@@ -1,0 +1,50 @@
+[
+  {
+    "id": 6,
+    "candidate_id": 3,
+    "candidate_slug": "le-phare",
+    "tier": "six_hour",
+    "shift_code": "A",
+    "shift_id": "six_hour:A:2026-06-08",
+    "exchange_id": "bitget",
+    "market_type": "futures",
+    "pairlist_manifest_id": "shift_six-hour-A-2026-06-08_bitget_usdt",
+    "lease_start": "2026-06-08T00:00:00-04:00",
+    "lease_end": "2026-06-08T06:00:00-04:00",
+    "status": "active",
+    "created_at": "2026-06-08T04:02:04.289737+00:00",
+    "updated_at": "2026-06-08T04:02:04.289737+00:00"
+  },
+  {
+    "id": 7,
+    "candidate_id": 7,
+    "candidate_slug": "maverick",
+    "tier": "six_hour",
+    "shift_code": "A",
+    "shift_id": "six_hour:A:2026-06-08",
+    "exchange_id": "binance",
+    "market_type": "futures",
+    "pairlist_manifest_id": "shift_six-hour-A-2026-06-08_binance_usdc",
+    "lease_start": "2026-06-08T00:00:00-04:00",
+    "lease_end": "2026-06-08T06:00:00-04:00",
+    "status": "active",
+    "created_at": "2026-06-08T04:02:10.595874+00:00",
+    "updated_at": "2026-06-08T04:02:10.595874+00:00"
+  },
+  {
+    "id": 8,
+    "candidate_id": 4,
+    "candidate_slug": "the-turners",
+    "tier": "six_hour",
+    "shift_code": "A",
+    "shift_id": "six_hour:A:2026-06-08",
+    "exchange_id": "okx",
+    "market_type": "futures",
+    "pairlist_manifest_id": "shift_six-hour-A-2026-06-08_okx_usdt",
+    "lease_start": "2026-06-08T00:00:00-04:00",
+    "lease_end": "2026-06-08T06:00:00-04:00",
+    "status": "active",
+    "created_at": "2026-06-08T04:02:18.115858+00:00",
+    "updated_at": "2026-06-08T04:02:18.115858+00:00"
+  }
+]
