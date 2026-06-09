@@ -1,0 +1,24 @@
+[
+  {
+    "id": "dark-matter-antimatter-label",
+    "label_name": "Dark Matter / Antimatter",
+    "hypothesis_id": "dark-matter-antimatter",
+    "target_variable": "Forward 12-candle directional move exceeding loser threshold.",
+    "horizon_candles": 12,
+    "leakage_risk": "high",
+    "live_safe": 0,
+    "notes": "Leakage from overlapping windows, Repeated validation reuse, Regime fragility",
+    "updated_at": "2026-06-09T17:56:44.331275+00:00"
+  },
+  {
+    "id": "ghost-ladder-label",
+    "label_name": "Ghost Ladder",
+    "hypothesis_id": "ghost-ladder",
+    "target_variable": "Forward move persistence over 24 candles.",
+    "horizon_candles": 24,
+    "leakage_risk": "high",
+    "live_safe": 0,
+    "notes": "Overfitting to a strong trend regime, Feature redundancy",
+    "updated_at": "2026-06-09T17:56:44.331275+00:00"
+  }
+]

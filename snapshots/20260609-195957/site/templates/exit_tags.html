@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Exit Tag</th>
+          <th>Count</th>
+          <th>Avg ROI</th>
+          <th>Total Profit</th>
+          <th>Best</th>
+          <th>Worst</th>
+          <th>Avg Hold Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.exit_tag }}</td>
+          <td>{{ row.count }}</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ "%.2f"|format(row.total_profit) }}</td>
+          <td>{{ "%.2f"|format(row.best) }}%</td>
+          <td>{{ "%.2f"|format(row.worst) }}%</td>
+          <td>{{ "%.1f"|format(row.avg_hold_time) }} min</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

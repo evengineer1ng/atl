@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 847,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50 on a net economic basis?",
+    "rationale": "The Top 20 incumbent has generated deeper realized volume ($66.42 across 66 trades) but carries a -$61.61 unrealized anchor, while Top 50 shows stronger net equity ($1,053) with a younger, post-restart sample. Net PnL and drawdown-adjusted returns must be compared to determine which universe actually delivers superior risk-adjusted performance.",
+    "status": "open",
+    "created_at": "2026-06-09T19:38:14.815174+00:00"
+  },
+  {
+    "id": 848,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy Top 20 is mechanically online but has produced only one closed trade in ~92 hours, while Timmy Top 50 has taken three trades with a negative realized profile (-$19.81) and has not traded since June 7. The universe breadth variable appears to control whether the family activates at all, and whether that activation is profitable.",
+    "status": "open",
+    "created_at": "2026-06-09T19:38:14.815228+00:00"
+  },
+  {
+    "id": 849,
+    "category": "league",
+    "question": "Do champion exits maintain a higher effective ROI than dynamic ROI exits?",
+    "rationale": "The incumbent champion has recorded three champion exits against a backdrop of 66 closed trades. Measuring the realized ROI specifically attributable to champion exit logic versus the default dynamic ROI exits will test whether this discrete profit-taking rule preserves capital better during volatile carry.",
+    "status": "monitoring",
+    "created_at": "2026-06-09T19:38:14.815234+00:00"
+  },
+  {
+    "id": 850,
+    "category": "league",
+    "question": "Does Timmy's expected low-win-rate, high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy was architected around a concentrated, high-conviction profile, but live data shows either complete dormancy (Top 20) or a 33% win rate with small losses (Top 50). Monitoring whether larger winners ever materialize\u2014or if the strategy stalls indefinitely\u2014is essential to validate the original design hypothesis.",
+    "status": "open",
+    "created_at": "2026-06-09T19:38:14.815238+00:00"
+  },
+  {
+    "id": 851,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Top-50 breadth has given Cosmo & Wanda significantly more trade frequency and realized gains than its Top-20 counterpart, yet for Timmy the same breadth coincides with negative realized returns and strategic paralysis. Isolating the marginal signal-to-noise contribution of universe expansion will inform future league configuration.",
+    "status": "open",
+    "created_at": "2026-06-09T19:38:14.815244+00:00"
+  }
+]
