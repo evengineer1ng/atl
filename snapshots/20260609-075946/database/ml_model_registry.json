@@ -1,0 +1,40 @@
+[
+  {
+    "id": "timmy-bucket-ranker-v3",
+    "model_name": "timmy_bucket_ranker_v3",
+    "hypothesis_id": "dark-matter-antimatter",
+    "dataset_id": "hyperliquid-futures-5m-regime-set-a",
+    "label_id": "dark-matter-antimatter-label",
+    "algorithm_type": "Gradient Boosted Trees",
+    "feature_count": 4,
+    "training_date": "2026-02-03",
+    "train_window": "2025-01-01 to 2025-10-31",
+    "validation_window": "2025-11-01 to 2026-01-31",
+    "metrics": "AUC 0.61, top-bucket avg forward move 3.9%",
+    "artifact_path": "user_data/notebooks/timmy_bucket_ranker_v3.pkl",
+    "artifact_exists": 0,
+    "influenced_live_strategy": 1,
+    "lineage_status": "partial",
+    "notes": "Continue comparing Timmy live dry-run exits against re-run validation with stricter leakage controls.",
+    "updated_at": "2026-06-09T06:14:51.640749+00:00"
+  },
+  {
+    "id": "ghost-ladder-probe-v1",
+    "model_name": "ghost_ladder_probe_v1",
+    "hypothesis_id": "ghost-ladder",
+    "dataset_id": "cross-exchange-ladder-samples-b",
+    "label_id": "ghost-ladder-label",
+    "algorithm_type": "Lightweight rules + logistic probe",
+    "feature_count": 3,
+    "training_date": "2026-05-27",
+    "train_window": "2025-03-01 to 2025-12-31",
+    "validation_window": "2026-01-01 to 2026-02-15",
+    "metrics": "Precision unstable, promising prospect bucket separation",
+    "artifact_path": "user_data/notebooks/ghost_ladder_probe_v1.ipynb",
+    "artifact_exists": 0,
+    "influenced_live_strategy": 0,
+    "lineage_status": "partial",
+    "notes": "Build clean backtest prototype and compare against Timmy/Cosmo assumptions.",
+    "updated_at": "2026-06-09T06:14:51.640749+00:00"
+  }
+]

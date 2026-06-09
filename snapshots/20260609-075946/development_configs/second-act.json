@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schema.freqtrade.io/schema.json",
+  "bot_name": "atl-dev-second-act",
+  "initial_state": "running",
+  "dry_run": true,
+  "dry_run_wallet": 250,
+  "max_open_trades": 8,
+  "stake_currency": "USDT",
+  "stake_amount": "unlimited",
+  "tradable_balance_ratio": 1.0,
+  "trading_mode": "futures",
+  "margin_mode": "isolated",
+  "fiat_display_currency": "USD",
+  "cancel_open_orders_on_exit": false,
+  "download_trades": false,
+  "timeframe": "15m",
+  "unfilledtimeout": {
+    "entry": 10,
+    "exit": 10,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
+  },
+  "entry_pricing": {
+    "price_side": "other",
+    "use_order_book": true,
+    "order_book_top": 1,
+    "price_last_balance": 0.0,
+    "check_depth_of_market": {
+      "enabled": false,
+      "bids_to_ask_delta": 1
+    }
+  },
+  "exit_pricing": {
+    "price_side": "other",
+    "use_order_book": true,
+    "order_book_top": 1
+  },
+  "exchange": {
+    "name": "okx",
+    "ccxt_config": {
+      "enableRateLimit": true,
+      "options": {
+        "defaultType": "swap",
+        "defaultSettle": "USDT"
+      }
+    },
+    "pair_whitelist": [],
+    "pair_blacklist": [
+      "(USDC|USDD|TUSD|BUSD|DAI|FDUSD|USDP|GUSD|USTC|USDE|PYUSD|FRAX|LUSD|SUSD|USD1|USDX|USDJ|USDB|EURT|EURS|AEUR|EURI)/.*"
+    ]
+  },
+  "pairlists": [
+    {
+      "method": "MarketCapPairList",
+      "number_assets": 50,
+      "max_rank": 50,
+      "refresh_period": 86400
+    }
+  ],
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 18091,
+    "verbosity": "error",
+    "enable_openapi": false,
+    "jwt_secret_key": "[redacted]",
+    "ws_token": "[redacted]",
+    "CORS_origins": [],
+    "username": "dev_second-act",
+    "password": "[redacted]"
+  },
+  "telegram": {
+    "enabled": false,
+    "token": "[redacted]",
+    "chat_id": ""
+  },
+  "internals": {
+    "process_throttle_secs": 5
+  }
+}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Universe Backtest Lab</p>
+  <h2>Backtest a strategy across many universes</h2>
+  <p class="section-intro">Pick a strategy and one or more universes. Each universe's historical membership is reconstructed day by day from local OHLCV, and entries are gated to the universe-at-time inside the backtest &mdash; so you measure the <em>habitat</em>, not the strategy. Runs launch in the background; refresh to see results.</p>
+  <div class="kv-grid">
+    <div><span>Candidate pool</span><strong>{% for p in pool_status %}{{ p.exchange }} {{ p.pairs_1h }}/{{ p.pairs_5m }}{% if not loop.last %} &middot; {% endif %}{% endfor %}</strong></div>
+    <div><span>Market-cap history</span><strong>{{ marketcap_coins ~ ' coins' if marketcap_ready else 'proxy rank (static)' }}</strong></div>
+    <div><span>Fear &amp; Greed</span><strong>{{ 'cached' if fgi_ready else 'neutral 50' }}</strong></div>
+  </div>
+  <p class="section-intro mono">pool shown as exchange 1h/5m pair counts. Broaden the pool so universes (Top 20 vs Top 50 vs Big Movers) actually separate; pull market caps so Top-N membership time-varies accurately. Jobs run in the background &mdash; refresh to see counts grow.</p>
+  <div class="record-strip" style="flex-wrap:wrap; gap:0.6rem">
+    <form action="/api/backtests/universe/download-pool" method="post" style="display:inline">
+      <input type="hidden" name="exchange" value="{{ default_exchange }}">
+      <input type="hidden" name="days" value="180">
+      <button type="submit">Broaden pool ({{ default_exchange }}, 180d, 1h+5m)</button>
+    </form>
+    <form action="/api/backtests/universe/marketcap-history" method="post" style="display:inline">
+      <input type="hidden" name="days" value="180">
+      <button type="submit">Pull market-cap history</button>
+    </form>
+    {% if not fgi_ready %}
+    <form action="/api/backtests/universe/fear-greed" method="post" style="display:inline">
+      <button type="submit">Download Fear &amp; Greed history</button>
+    </form>
+    {% endif %}
+  </div>
+  <form action="/api/backtests/universe/run" method="post" class="post-form">
+    <div class="kv-grid">
+      <label>Strategy
+        <select name="strategy_key" required>
+          {% for s in strategies %}<option value="{{ s.id }}">{{ s.display_name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Exchange
+        <input type="text" name="exchange" value="{{ default_exchange }}">
+      </label>
+      <label>Timeframe (blank = strategy default)
+        <input type="text" name="timeframe" value="{{ default_timeframe }}" placeholder="5m">
+      </label>
+      <label>Timerange
+        <input type="text" name="timerange" value="{{ default_timerange }}" placeholder="YYYYMMDD-YYYYMMDD">
+      </label>
+    </div>
+    <p class="eyebrow">Universes (pick one or many)</p>
+    <div class="record-strip" style="flex-wrap:wrap; gap:0.6rem">
+      {% for u in universes %}
+      <label class="record-pill"><input type="checkbox" name="universes" value="{{ u.key }}"> {{ u.name }} <small>({{ u.type }})</small></label>
+      {% endfor %}
+    </div>
+    <div class="record-strip">
+      <button type="submit">Run Universe Backtests</button>
+    </div>
+  </form>
+</section>
+
+{% for group in comparison_groups %}
+<section class="card">
+  <p class="eyebrow">{{ group.display_name }} &middot; {{ group.timerange }} &middot; {{ group.exchange }}</p>
+  <h2>Universe Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Universe</th><th>Status</th><th>Pairs (union)</th><th>Days</th><th>Trades</th><th>Total P&amp;L</th><th>Total %</th><th>Win Rate</th><th>Tape</th></tr></thead>
+      <tbody>
+        {% for run in group.rows %}
+        <tr>
+          <td><a href="/universes/{{ run.universe }}">{{ run.universe_name }}</a></td>
+          <td><span class="badge {{ 'online' if run.ok else 'offline' }}">{{ 'ok' if run.ok else 'failed' }}</span></td>
+          <td>{{ run.union_pairs }}</td>
+          <td>{{ run.days }}</td>
+          <td>{{ run.total_trades if run.ok else 'n/a' }}</td>
+          <td>{% if run.ok %}{{ "%.2f"|format(run.profit_total_abs) }}{% else %}n/a{% endif %}</td>
+          <td>{% if run.ok %}{{ "%.2f"|format(run.profit_total_pct) }}%{% else %}n/a{% endif %}</td>
+          <td>{% if run.ok %}{{ "%.1f"|format(run.winrate_pct) }}%{% else %}n/a{% endif %}</td>
+          <td><a href="/backtests/universe/{{ run.run_id }}">view</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endfor %}
+
+<section class="card">
+  <p class="eyebrow">Freqtrade Archive</p>
+  <h2>All Backtest Results</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Strategy</th><th>Version/Run</th><th>Timeframe</th><th>Date Range</th><th>Pair List</th><th>Results Summary</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        {% for row in archive_rows %}
+        <tr>
+          <td>{{ row.strategy }}</td>
+          <td>{{ row.version_hash }}</td>
+          <td>{{ row.timeframe }}</td>
+          <td>{{ row.date_range }}</td>
+          <td>{{ row.pair_list }}</td>
+          <td>{{ row.results_summary }}</td>
+          <td>{{ row.source }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 5,
+    "queue_id": "q-ghost-backtest",
+    "run_slug": "ghost-ladder-clean-backtest-wfv1",
+    "title": "Ghost Ladder Clean Backtest Walk-Forward",
+    "status": "planned-awaiting-executor",
+    "objective": "Validate prospect bucket separation and precision stability",
+    "dataset_id": "cross-exchange_ladder_samples_b",
+    "feature_set_version_id": "ghost-ladder-feature-set-v1",
+    "label_spec_version_id": "ghost-ladder-label",
+    "hypothesis_id": "ghost-ladder",
+    "created_at": "2026-06-06T06:52:42.424545+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "summary": "Unstarted. Scouting department flags this as the critical path bottleneck. No precision or stability evidence exists until the executor produces this run.",
+    "artifact_path": "",
+    "notes": "Do not duplicate; executor should pick up this existing planned run."
+  }
+]

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Universe Backtest &middot; {{ record.exchange }} &middot; {{ record.timeframe }}</p>
+  <h2>{{ record.display_name }} &mdash; <a href="/universes/{{ record.universe }}">{{ record.universe_name }}</a></h2>
+  <p class="section-intro">Timerange {{ record.timerange }} &middot; {{ record.days }} days &middot; union of {{ record.union_pairs }} pairs. Entries were gated to the universe's reconstructed membership on each candle's date.</p>
+  {% if record.ok %}
+  <div class="scoreboard-grid">
+    <div><span>Trades</span><strong>{{ record.total_trades }}</strong></div>
+    <div><span>Total P&amp;L</span><strong>{{ "%.2f"|format(record.profit_total_abs) }}</strong></div>
+    <div><span>Total %</span><strong>{{ "%.2f"|format(record.profit_total_pct) }}%</strong></div>
+    <div><span>Win Rate</span><strong>{{ "%.1f"|format(record.winrate_pct) }}%</strong></div>
+    <div><span>Archive</span><strong class="mono">{{ record.archive }}</strong></div>
+  </div>
+  {% else %}
+  <p>This run did not complete. {{ record.error }}</p>
+  {% if record.log_tail %}<pre class="mono">{{ record.log_tail }}</pre>{% endif %}
+  {% endif %}
+</section>
+
+<section class="card">
+  <p class="eyebrow">Universe Tape</p>
+  <h2>Day-by-day membership during the backtest</h2>
+  <p class="section-intro">Recorded live by the in-backtest gate (one row per backtest day) &mdash; this is the self-seeding universe replaying exactly as it changed.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Date</th><th>Members</th><th>Pairs</th></tr></thead>
+      <tbody>
+        {% for day in tape %}
+        <tr>
+          <td>{{ day.date }}</td>
+          <td>{{ day.count }}</td>
+          <td class="mono">{{ day.pairs | map('replace', '/USDC:USDC', '') | map('replace', '/USDT:USDT', '') | join(', ') }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="3">No tape recorded for this run.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p><a href="/backtests">Back to Backtest Lab</a></p>
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 737,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50 on a risk-adjusted, fully-realized basis?",
+    "rationale": "Top 50 currently leads in net equity and realized PnL, while Top 20 is anchored by massive unrealized drawdowns; confirming whether concentration or breadth is superior is critical for capital allocation.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-09T07:49:21.134165+00:00"
+  },
+  {
+    "id": 738,
+    "category": "league",
+    "question": "Does Timmy generate positive realized expectancy on either Top 20 or Top 50 pair coverage?",
+    "rationale": "Top 20 is statistically dormant (n=1) and Top 50 is loss-making (-$19.81 realized); the family has yet to validate a tradable edge in this league.",
+    "status": "Open / awaiting sample",
+    "created_at": "2026-06-09T07:49:21.134210+00:00"
+  },
+  {
+    "id": 739,
+    "category": "league",
+    "question": "Do champion exits sustain higher net ROI than standard dynamic ROI exits under live conditions?",
+    "rationale": "The incumbent champion has recorded 3 champion exits but flat net PnL, raising questions about whether the champion exit logic preserves capital or simply delays loss recognition.",
+    "status": "Under investigation",
+    "created_at": "2026-06-09T07:49:21.134216+00:00"
+  },
+  {
+    "id": 740,
+    "category": "league",
+    "question": "Does Timmy's selective-entry profile produce viable trade frequency and win size in live dry-run conditions?",
+    "rationale": "Theoretical expectations of low-frequency, high-win-size behavior are unverified (only 1 small winner closed), requiring observation of whether larger targets are ever hit or if the strategy remains paralyzed.",
+    "status": "Monitoring",
+    "created_at": "2026-06-09T07:49:21.134220+00:00"
+  },
+  {
+    "id": 741,
+    "category": "league",
+    "question": "Does broader pair coverage improve net opportunity or add systemic noise across strategy families?",
+    "rationale": "Cosmo/Wanda thrives on Top 50 while Timmy decays, suggesting family-specific sensitivity to breadth; determining if universe size is a generic dial or a family-specific risk factor shapes future deployment rules.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-09T07:49:21.134224+00:00"
+  }
+]
