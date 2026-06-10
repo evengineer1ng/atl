@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature</th><th>Formula</th><th>Timeframe</th><th>Strategy</th><th>Intuition</th><th>Leakage Risk</th><th>Live Safe</th></tr></thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.feature_name }}</td>
+          <td>{{ row.formula }}</td>
+          <td>{{ row.timeframe }}</td>
+          <td>{{ row.strategy_using_it }}</td>
+          <td>{{ row.intuition }}</td>
+          <td>{{ row.risk_of_leakage }}</td>
+          <td>{{ row.safe_for_live_use }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

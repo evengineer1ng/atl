@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Operations Schedule · Calls · Cadence</p>
+      <h2>League Clock</h2>
+      <p>Every recurring job, AI call, maintenance pass, and league-cycle event the system runs on its own.
+         Cadence, triggers, and last/next-run times are read live from settings and tables &mdash; this is
+         <strong>implemented behavior</strong>, not design copy.</p>
+      <p class="mono">Snapshot {{ generated_at }} &middot; Ollama key configured: {{ "yes" if llm_configured else "no — LLM-required jobs are idle" }}</p>
+    </div>
+    <a href="/schedule/export.md">Download markdown export &rarr;</a>
+  </div>
+  {% if not llm_configured %}
+  <p class="lab-note">No Ollama key is configured. The deterministic core of every job still runs, but
+    <strong>League Maintenance</strong> and the <strong>Research Agent</strong> (which require the LLM) stay idle,
+    and the ML/Chronicle/Evolution jobs fall back to templated prose.</p>
+  {% endif %}
+</section>
+
+{% macro status_class(status) -%}
+  {%- if status.startswith("Active") -%}online{%- elif "Disabled" in status or "Idle" in status -%}offline{%- else -%}badge{%- endif -%}
+{%- endmacro %}
+
+{% for group in grouped %}
+<section class="card">
+  <p class="eyebrow">{{ group.category }}</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cadence</th>
+          <th>Trigger</th>
+          <th>Last run</th>
+          <th>Next run</th>
+          <th>Writes to</th>
+          <th>LLM</th>
+          <th>Status</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in group.jobs %}
+        <tr>
+          <td><strong>{{ job.name }}</strong><br><span class="mono">{{ job.notes }}</span></td>
+          <td>{{ job.cadence }}</td>
+          <td>{{ job.trigger }}</td>
+          <td>{{ job.last_run }}</td>
+          <td>{{ job.next_run }}</td>
+          <td>{{ job.writes_to }}</td>
+          <td>{{ job.uses_llm }}</td>
+          <td><span class="badge {{ status_class(job.status) }}">{{ job.status }}</span></td>
+          <td><span class="mono">{{ job.source }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endfor %}
+
+<section class="card">
+  <p class="eyebrow">Commissioner Expectations</p>
+  <h2>If ATL is left running</h2>
+  <ul>
+    <li><strong>Every ~2 minutes:</strong> live standings, equity, P&amp;L, heartbeats, and trade history refresh from the bots.</li>
+    <li><strong>Every 30 minutes:</strong> the front-page AI overview, scouting questions, and power-ranking overlays refresh; the research agent advances its active question <em>(both need an Ollama key)</em>.</li>
+    <li><strong>Every 3 hours:</strong> the ML biology lab publishes a new telemetry cycle (Fearsome Five, traits, divergences, descendant conviction).</li>
+    <li><strong>Every 12 hours:</strong> an archive snapshot is taken and pushed; ~12h-old research questions conclude and a new one is seeded.</li>
+    <li><strong>Once per day:</strong> the Chronicle writes that day's chapter.</li>
+    <li><strong>Every 15 days:</strong> the ML evolution review may park 0&ndash;3 new descendant candidates at the Draft Room gate (never auto-deployed).</li>
+    <li><strong>Every season (monthly):</strong> the ended season is locked with reviews, awards, trophy shelves, and draft recommendations.</li>
+    <li><strong>Every quarter (3 seasons):</strong> a Quarterly Champion capital-eligibility report is archived. No live projected leader before then.</li>
+  </ul>
+  <p>The full three-level summary and Commissioner Expectations also live in the
+     <a href="/schedule/export.md">markdown export</a> ({{ export_path }}), suitable for personal notes.</p>
+</section>
+{% endblock %}

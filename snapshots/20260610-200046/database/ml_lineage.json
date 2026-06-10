@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "child_slug": "the-turners",
+    "parent_slug": "cosmowanda-top-20",
+    "relationship_type": "hybrid",
+    "mechanism_notes": "Inherits reactive expansion engine from Cosmo/Wanda.",
+    "created_at": "2026-06-07T04:55:01.037692+00:00"
+  },
+  {
+    "id": 2,
+    "child_slug": "the-turners",
+    "parent_slug": "timmy-top-20",
+    "relationship_type": "hybrid",
+    "mechanism_notes": "Inherits predictive confirmation gate from Timmy.",
+    "created_at": "2026-06-07T04:55:01.046248+00:00"
+  }
+]

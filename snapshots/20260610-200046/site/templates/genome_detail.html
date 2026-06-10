@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+{% set g = genome %}
+<section class="card">
+  <p class="eyebrow">Genome Era · {{ g.genome_kind }} genome</p>
+  <h2>{{ g.name }}
+    <span class="record-pill" style="background:{% if g.seam_status == 'traced' %}#2f4a3a{% else %}#5a3a1f{% endif %};">{{ g.seam_status }}</span>
+    {% if g.status == 'split' %}<span class="record-pill" style="background:#444;">split ancestor</span>{% endif %}
+  </h2>
+  <p>{{ g.description }}</p>
+  <div class="kv-grid">
+    <div><span>Kind</span><strong>{{ g.genome_kind }}</strong></div>
+    <div><span>Family</span><strong>{{ g.family_slug }}</strong></div>
+    <div><span>Source strategy</span><strong>{{ g.source_strategy or "—" }}</strong></div>
+    <div><span>Source file</span><strong><small>{{ g.source_file or "—" }}</small></strong></div>
+    <div><span>Origin</span><strong>{{ g.origin }}</strong></div>
+    <div><span>Can short</span><strong>{% if g.can_short == 1 %}yes{% elif g.can_short == 0 %}no{% else %}—{% endif %}</strong></div>
+    <div><span>Timeframe</span><strong>{{ g.timeframe_assumptions or "—" }}</strong></div>
+    {% if parent %}<div><span>Parent</span><strong><a href="/genomes/{{ parent.slug }}">{{ parent_name }}</a></strong></div>{% endif %}
+  </div>
+  {% if g.notes %}<p style="margin-top:0.5rem;color:#b9a;"><strong>Seam notes:</strong> {{ g.notes }}</p>{% endif %}
+</section>
+
+<section class="card">
+  <p class="eyebrow">Fingerprint</p>
+  <div class="kv-grid">
+    <div><span>Produces tags</span><strong><small>{{ g.tags_list | join(", ") if g.tags_list else "—" }}</small></strong></div>
+    <div><span>Required indicators</span><strong><small>{{ g.indicators_list | join(", ") if g.indicators_list else "—" }}</small></strong></div>
+    <div><span>Requires custom_data</span><strong><small>{{ g.custom_data_list | join(", ") if g.custom_data_list else "—" }}</small></strong></div>
+  </div>
+  {% if g.custom_data_list or g.indicators_list %}<p><small>These are the graft-compatibility requirements: another assembly can only reuse this genome if its entry produces these indicator columns / maintains this custom_data (audit §9.3).</small></p>{% endif %}
+</section>
+
+<section class="card">
+  <p class="eyebrow">Used by ({{ users | length }})</p>
+  {% if users %}
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Assembly</th><th>Role(s)</th><th>Universe</th></tr></thead>
+      <tbody>
+        {% for u in users %}
+        <tr>
+          <td><a href="/assemblies/{{ u.assembly.slug }}">{{ u.assembly.display_name or u.assembly.slug }}</a></td>
+          <td>{{ u.roles | join(", ") }}{% if u.roles | length > 1 or users | length > 1 %} <small class="record-pill" style="background:#3a2f5a;">shared</small>{% endif %}</td>
+          <td>{{ u.assembly.universe_label or "—" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}<p><small>No assembly references this genome yet.</small></p>{% endif %}
+</section>
+
+{% if children %}
+<section class="card">
+  <p class="eyebrow">Descendants (traced from this monolith)</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Genome</th><th>Kind</th><th>Seam</th></tr></thead>
+      <tbody>
+        {% for c in children %}
+        <tr><td><a href="/genomes/{{ c.slug }}">{{ c.name }}</a></td><td>{{ c.genome_kind }}</td><td>{{ c.seam_status }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<p><a href="/genomes">← Genome catalog</a> · <a href="/assemblies">Assemblies</a></p>
+{% endblock %}

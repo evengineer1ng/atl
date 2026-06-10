@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1067,
+    "category": "league",
+    "question": "Does Cosmo & Wanda\u2019s Top 20 strategy outperform its Top 50 variant on risk-adjusted realized returns?",
+    "rationale": "C&W Top 20 leads in raw realized PnL ($67.60 vs $63.80) but carries significantly larger unrealized drag (-$62.05 vs -$37.88). Determining whether tighter concentration generates superior net alpha or just heavier carry risk will inform universe-sizing rules for future deployments.",
+    "status": "Monitoring",
+    "created_at": "2026-06-10T19:47:55.687016+00:00"
+  },
+  {
+    "id": 1068,
+    "category": "league",
+    "question": "Is Timmy\u2019s signal robust when expanded from Top 20 to Top 50, or does breadth introduce noise that degrades edge?",
+    "rationale": "Timmy Top 20 shows strongly positive realized PnL (+$27.65) and a clean unrealized book, whereas Timmy Top 50 is the league\u2019s only net-realized-negative performer (-$8.11). Understanding whether this is a portability failure or a calibration mismatch is critical for scope decisions.",
+    "status": "Open",
+    "created_at": "2026-06-10T19:47:55.687089+00:00"
+  },
+  {
+    "id": 1069,
+    "category": "league",
+    "question": "Do champion exits produce superior net ROI compared to dynamic ROI exits across C&W variants?",
+    "rationale": "C&W Top 20 has executed 3 champion exits against $67.60 realized PnL, while Top 50 has 1 champion exit. Comparing exit cohort efficacy will clarify whether the champion rule locks in durable alpha or prematurely truncates winning runs before trend exhaustion.",
+    "status": "Under Review",
+    "created_at": "2026-06-10T19:47:55.687098+00:00"
+  },
+  {
+    "id": 1070,
+    "category": "league",
+    "question": "Can Timmy\u2019s low-frequency, high-win-size profile sustain performance under continuous live runtime, or is it a small-sample artifact?",
+    "rationale": "With only 11 closed trades across ~112 hours, Timmy Top 20\u2019s 72.7% win rate lacks statistical saturation. Monitoring whether the profile survives as trade volume scales will validate if the strategy is truly dry-run ready or benefiting from a lucky sparse window.",
+    "status": "Monitoring",
+    "created_at": "2026-06-10T19:47:55.687102+00:00"
+  },
+  {
+    "id": 1071,
+    "category": "league",
+    "question": "Does broader Top 50 pair coverage create genuine opportunity expansion or merely additive noise that dilutes per-trade alpha?",
+    "rationale": "Both strategy families exhibit divergent behavior between Top 20 and Top 50 universes. Isolating the causal impact of breadth\u2014more signals versus weaker signals\u2014will guide whether future challengers should default to concentrated or wide pair universes.",
+    "status": "Open",
+    "created_at": "2026-06-10T19:47:55.687107+00:00"
+  }
+]

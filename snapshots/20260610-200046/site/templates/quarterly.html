@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+  .qc-wrap { --line: rgba(255,255,255,0.12); }
+  .qc-explainer { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; margin-top: 0.8rem; }
+  .qc-explainer .qc-step { padding: 0.8rem; border: 1px solid var(--line); border-radius: 10px; }
+  .qc-step h4 { margin: 0 0 0.3rem; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; }
+  .qc-step p { margin: 0; font-size: 0.88rem; line-height: 1.45; }
+  .qc-next { margin-top: 1rem; padding: 1rem; border: 1px dashed var(--line); border-radius: 10px; }
+  .qc-empty { padding: 2rem; text-align: center; opacity: 0.8; }
+  .qc-report { margin-top: 1.4rem; }
+  .qc-report-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; }
+  .qc-report-head h2 { margin: 0; }
+  .qc-meta { font-family: ui-monospace, monospace; font-size: 0.78rem; opacity: 0.6; }
+  .qc-exec { margin: 0.6rem 0 1rem; font-size: 0.95rem; line-height: 1.5; }
+  .qc-table { width: 100%; border-collapse: collapse; }
+  .qc-table th, .qc-table td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 0.88rem; }
+  .qc-table th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .qc-rank { font-weight: 700; width: 2.5rem; }
+  .qc-champ { background: rgba(255, 215, 0, 0.08); }
+  .qc-score { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .qc-contrib { font-family: ui-monospace, monospace; font-size: 0.74rem; opacity: 0.8; }
+  .qc-blurb { font-size: 0.85rem; opacity: 0.92; }
+  .qc-partial { font-size: 0.7rem; color: #e0a96d; }
+  details.qc-break { margin-top: 0.4rem; }
+  details.qc-break summary { cursor: pointer; font-size: 0.74rem; opacity: 0.6; }
+  .qc-break table { width: 100%; border-collapse: collapse; margin-top: 0.4rem; }
+  .qc-break th, .qc-break td { padding: 0.25rem 0.5rem; font-size: 0.74rem; border-bottom: 1px solid var(--line); text-align: right; }
+  .qc-break th:first-child, .qc-break td:first-child { text-align: left; }
+</style>
+
+<section class="card qc-wrap">
+  <p class="eyebrow">Capital Eligibility · Commissioner Review</p>
+  <h2>Quarterly Champion</h2>
+  <p>Every three completed major-league seasons, ATL files a formal report ranking the official teams and naming a
+  Quarterly Champion. Think of it as a parole hearing, not a leaderboard: winning the quarter does <strong>not</strong>
+  deploy real money — it makes the strongest organism <em>eligible</em> for commissioner review. This is the disciplined
+  bridge toward a future real-money Capital League, designed so deployment is rare, structured, archived, and
+  evidence-based — never impulsive.</p>
+  <div class="qc-explainer">
+    <div class="qc-step"><h4>What it measures</h4><p>Peer-relative percentile scoring across the official season metrics ATL already tracks — no new "can this make money?" test. The whole league is the test.</p></div>
+    <div class="qc-step"><h4>Recency weighting</h4><p>The three seasons are weighted {{ (recency_weights[0]*100)|int }}% / {{ (recency_weights[1]*100)|int }}% / {{ (recency_weights[2]*100)|int }}% — lately matters most, but a full quarter of evidence is still required.</p></div>
+    <div class="qc-step"><h4>No live race</h4><p>There is intentionally no projected standing and no current leader. A ranking appears only once a quarter has fully closed, so nobody optimizes emotionally around an unfinished quarter.</p></div>
+  </div>
+
+  {% if next_review and not next_review.closed %}
+  <div class="qc-next">
+    <strong>Next review:</strong> {{ next_review.quarter_label }} ({{ next_review.season_range_label }}) —
+    closes when Season {{ next_review.season_end }} ends{% if next_review.closes_at %}, on {{ next_review.closes_at[:10] }}{% endif %}.
+    {% if not has_reports %}No report exists yet.{% endif %}
+  </div>
+  {% endif %}
+</section>
+
+{% if not has_reports %}
+<section class="card qc-empty">
+  <p>📋 No quarterly reports yet. The first Quarterly Champion report will be filed automatically once the opening
+  three-season window closes. Until then, there is deliberately nothing to rank.</p>
+</section>
+{% else %}
+  {% for r in reports %}
+  <section class="card qc-report">
+    <div class="qc-report-head">
+      <h2>👑 {{ r.quarter_label }}</h2>
+      <span class="qc-meta">{{ r.season_range_label }} · generated {{ r.generated_at[:16] }}{% if not r.llm_used %} · deterministic{% endif %}</span>
+    </div>
+    {% if r.executive_summary %}<p class="qc-exec">{{ r.executive_summary }}</p>{% endif %}
+    <table class="qc-table">
+      <thead>
+        <tr><th>#</th><th>Team</th><th>Quarterly Score</th><th>Season scores ({{ (recency_weights[0]*100)|int }}/{{ (recency_weights[1]*100)|int }}/{{ (recency_weights[2]*100)|int }})</th><th>Assessment</th></tr>
+      </thead>
+      <tbody>
+        {% for t in r.report.teams %}
+        <tr class="{% if t.rank == 1 %}qc-champ{% endif %}">
+          <td class="qc-rank">{% if t.rank == 1 %}👑{% else %}{{ t.rank }}{% endif %}</td>
+          <td>
+            <strong>{{ t.team_name }}</strong>
+            {% if not t.full_quarter %}<div class="qc-partial">partial evidence: {{ t.seasons_covered }}/{{ season_span }} seasons</div>{% endif %}
+          </td>
+          <td class="qc-score">{{ "%.1f"|format(t.quarterly_score) }}</td>
+          <td class="qc-contrib">
+            {% for c in t.contributions %}{{ c.season_label }}: {{ "%.0f"|format(c.season_score) }}{% if not loop.last %} · {% endif %}{% endfor %}
+            <details class="qc-break">
+              <summary>metric breakdown</summary>
+              <table>
+                <thead><tr><th>Metric</th>{% for c in t.contributions %}<th>{{ c.season_label }}</th>{% endfor %}</tr></thead>
+                <tbody>
+                  {% for m in r.report.metrics %}
+                  <tr>
+                    <td>{{ m.label }}</td>
+                    {% for c in t.contributions %}<td>{{ "%.0f"|format(c.percentiles[m.key]) }}%</td>{% endfor %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </details>
+          </td>
+          <td class="qc-blurb">{{ t.blurb }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endfor %}
+{% endif %}
+{% endblock %}
