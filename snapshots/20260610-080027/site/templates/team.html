@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="detail-grid">
+  <article class="card franchise-hero {{ team.id }}">
+    <div class="franchise-topline">
+      <div class="team-emblem {{ team.id }}">
+        {% if 'cosmo-wanda' in team.id %}CW{% elif 'timmy' in team.id %}TM{% else %}GL{% endif %}
+      </div>
+      <div>
+        <p class="eyebrow">{{ team.role }}</p>
+        <h2>{{ team.display_name }}{% if active_version %} <span class="record-pill">active {{ active_version.version_label }}</span>{% endif %}</h2>
+        {% include "_trophy_shelf.html" %}
+      </div>
+    </div>
+    <p class="team-subhead">{{ team.host_machine }} &middot; {{ team.data_quality }}</p>
+    <p>{{ team.notes }}</p>
+    <div class="record-strip">
+      <span class="record-pill">Closed {{ trade_stats.closed }}</span>
+      <span class="record-pill">Win Rate {{ "%.1f"|format(trade_stats.win_rate) }}%</span>
+      <span class="record-pill">Avg ROI {{ "%.2f"|format(trade_stats.avg_roi) }}%</span>
+      <span class="record-pill">Best Trade {{ "%.2f"|format(trade_stats.best_trade) }}%</span>
+    </div>
+    <div class="kv-grid">
+      <div><span>Start date</span><strong>{{ team.start_date }}</strong></div>
+      <div><span>Starting capital</span><strong>{{ team.starting_capital }} {{ team.stake_currency }}</strong></div>
+      <div><span>Pair universe</span><strong>{{ team.pair_universe }}</strong></div>
+      <div><span>Head start</span><strong>{{ team.head_start_note }}</strong></div>
+    </div>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Game State</p>
+    <h2>Current Record</h2>
+    <div class="scoreboard-grid">
+      <div><span>Status</span><strong>{{ latest.status if latest else 'unknown' }}</strong></div>
+      <div><span>Equity</span><strong>{{ "%.2f"|format(latest.equity if latest else team.starting_capital) }}</strong></div>
+      <div><span>Realized P&amp;L</span><strong>{{ "%.2f"|format(latest.realized_pnl if latest else 0) }}</strong></div>
+      <div><span>Open P&amp;L</span><strong>{{ "%.2f"|format(latest.unrealized_pnl if latest else 0) }}</strong></div>
+      <div><span>Closed trades</span><strong>{{ trade_stats.closed }}</strong></div>
+      <div><span>Win rate</span><strong>{{ "%.1f"|format(trade_stats.win_rate) }}%</strong></div>
+      <div><span>Average ROI</span><strong>{{ "%.2f"|format(trade_stats.avg_roi) }}%</strong></div>
+      <div><span>Last trade</span><strong>{{ latest.last_trade_at if latest else 'n/a' }}</strong></div>
+    </div>
+  </article>
+</section>
+
+{% if team_versions %}
+<section class="card">
+  <p class="eyebrow">Version lineage</p>
+  <h2>Version Timeline</h2>
+  <div class="record-strip">
+    {% for v in team_versions %}
+    <span class="record-pill">
+      {{ v.version_label }}: {{ (v.deployed_at or "")[:16]|replace("T", " ") or "launch" }} →
+      {{ (v.retired_at[:16]|replace("T", " ")) if v.retired_at else "active" }}
+    </span>
+    {% endfor %}
+  </div>
+  {% for v in team_versions %}
+  <details style="margin-top:0.5rem;">
+    <summary><strong>{{ v.version_label }}</strong> — {{ v.change_type_label }} ({{ v.status }}){% if v.evidence_snapshot.pathological %} 🩹{% endif %}</summary>
+    {% if v.change_summary %}<p><strong>Change:</strong> {{ v.change_summary }}</p>{% endif %}
+    {% if v.verdict %}<p><strong>Verdict:</strong> {{ v.verdict }}</p>{% endif %}
+    <div class="kv-grid">
+      <div><span>Trades</span><strong>{{ v.stats.trades }}</strong></div>
+      <div><span>Realized P&amp;L</span><strong>{{ "%.2f"|format(v.stats.realized_pnl) }}</strong></div>
+      <div><span>Win rate</span><strong>{{ "%.1f"|format(v.stats.win_rate) }}%</strong></div>
+      <div><span>Avg ROI</span><strong>{{ "%.2f"|format(v.stats.avg_roi) }}%</strong></div>
+      <div><span>Avg hold</span><strong>{{ "%.0f"|format(v.stats.avg_hold_minutes) }}m</strong></div>
+      <div><span>Transition-managed</span><strong>{{ v.stats.transition_managed_trades }}</strong></div>
+    </div>
+    <p><a href="/trade-explorer?team={{ team.id }}&version={{ v.version_label }}">View {{ v.version_label }} trades →</a></p>
+  </details>
+  {% endfor %}
+  <p style="margin-top:0.5rem;"><a href="/versions#{{ team.id }}">Manage versions →</a></p>
+</section>
+{% endif %}
+
+{% if active_environment %}
+<section class="card">
+  <p class="eyebrow">Competition Environment</p>
+  <h2>{{ active_environment.version_label }}
+    {% if active_environment.universe_construction != 'atl-remote' %}<span class="record-pill" style="background:#5a3a1f;">pre-standardization</span>{% endif %}
+  </h2>
+  <p>The measurement conditions this runtime trades under. Standings stay cumulative by strategy; this records what the "{{ active_environment.universe_label }}" label actually means for this bot.</p>
+  <div class="kv-grid">
+    <div><span>Exchange</span><strong>{{ active_environment.exchange or "—" }}</strong></div>
+    <div><span>Stake</span><strong>{{ active_environment.stake_currency or "—" }}</strong></div>
+    <div><span>Universe</span><strong>{{ active_environment.universe_label or "—" }}</strong></div>
+    <div><span>Construction</span><strong>{{ active_environment.universe_construction or "—" }}</strong></div>
+    <div><span>Pairlist source</span><strong>{{ active_environment.pairlist_source or "—" }}</strong></div>
+    <div><span>Pairlist</span><strong>{{ active_environment.pairlist_name or "—" }}</strong></div>
+  </div>
+  <p style="margin-top:0.5rem;"><a href="/versions#env-{{ team.id }}">Manage environment →</a></p>
+</section>
+{% endif %}
+
+{% if timeline.has_data %}
+<section class="card">
+  <p class="eyebrow">All-time</p>
+  <h2>Trading Timeline</h2>
+  <div class="metric-grid">
+    <article class="metric-card"><span>Strategy P&amp;L</span><strong>{{ "%+.2f"|format(timeline.summary.strategy_pnl) }}</strong></article>
+    <article class="metric-card"><span>Win Rate</span><strong>{{ timeline.summary.win_rate }}%</strong></article>
+    <article class="metric-card"><span>Active Days</span><strong>{{ timeline.summary.active_days }}</strong></article>
+    <article class="metric-card"><span>Closed Trades</span><strong>{{ timeline.summary.closed_trades }}</strong></article>
+    <article class="metric-card{% if timeline.summary.exit_autonomy_failed %} bad{% endif %}">
+      <span>Exit Mix (auto/stop/forced)</span>
+      <strong>{{ timeline.summary.autonomous_share|int }}% / {{ timeline.summary.stop_share|int }}% / {{ timeline.summary.forced_share|int }}%</strong>
+    </article>
+  </div>
+  {% if timeline.summary.exit_autonomy_failed %}
+  <p class="mono" style="color:#f87171">⚠ Exit-autonomy failure: only {{ timeline.summary.autonomous_winners }} winner(s) banked on the strategy's own signal — winners realize only via the stop or a forced exit.</p>
+  {% endif %}
+  <div style="overflow-x:auto;margin-top:.5rem">{{ timeline.svg | safe }}</div>
+  {% if timeline.version_bands %}
+  <ul style="list-style:none;padding:0;margin:.5rem 0 0;display:flex;flex-wrap:wrap;gap:.25rem 1rem;font-size:.85rem">
+    {% for band in timeline.version_bands %}
+    <li><span style="display:inline-block;width:.7rem;height:.7rem;border-radius:2px;background:{{ band.color }};vertical-align:middle"></span>
+      <span class="mono">{{ band.label }}</span> · {{ band.start }} → {{ band.end }} ({{ band.days }}d)</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
+{% endif %}
+
+{% if version_telemetry %}
+<section class="card">
+  <p class="eyebrow">Generations &amp; phenotypes</p>
+  <h2>Version Telemetry</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Version</th>{% for c in version_telemetry.categories %}<th>{{ c|replace("_"," ") }}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {% for v in version_telemetry.versions %}
+        <tr>
+          <td><strong>{{ v.label }}</strong> <small>({{ v.status }})</small>{% if v.pathological %} 🩹{% endif %}</td>
+          {% for c in version_telemetry.categories %}<td>{{ "%.2f"|format(v.telemetry[c]) }}</td>{% endfor %}
+        </tr>
+        {% endfor %}
+        <tr><td><strong>blended</strong></td>{% for c in version_telemetry.categories %}<td>{{ "%.2f"|format(version_telemetry.blended[c]) }}</td>{% endfor %}</tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Season Office</p>
+    <h2>{{ current_season.season_label }} Preview</h2>
+    <p>{{ season_preview_review.summary }}</p>
+    <div class="record-strip">
+      <span class="record-pill">Grade {{ season_preview_review.grade }}</span>
+      <span class="record-pill">Decision {{ season_preview_review.decision_label }}</span>
+      <span class="record-pill">Score {{ "%.1f"|format(season_preview_review.overall_score) }}/100</span>
+    </div>
+    <p><strong>Recommendation:</strong> {{ season_preview_review.recommendation }}</p>
+    <p><strong>Fix suggestion:</strong> {{ season_preview_review.fix_suggestion }}</p>
+    {% if latest_season_review %}
+    <p><strong>Last stored turnover:</strong> {{ latest_season_review.season_label }} &middot; {{ latest_season_review.decision_label }} &middot; {{ latest_season_review.approval_status }}</p>
+    {% endif %}
+  </article>
+  <article class="card">
+    <p class="eyebrow">Scouting File</p>
+    <h2>Config Summary</h2>
+    <div class="kv-grid">
+      <div><span>Exchange</span><strong>{{ config_summary.exchange or 'n/a' }}</strong></div>
+      <div><span>Timeframe</span><strong>{{ config_summary.timeframe or 'n/a' }}</strong></div>
+      <div><span>Dry run wallet</span><strong>{{ config_summary.dry_run_wallet or 'n/a' }}</strong></div>
+      <div><span>Max open trades</span><strong>{{ config_summary.max_open_trades or 'n/a' }}</strong></div>
+      <div><span>Pairlist</span><strong>{{ config_summary.pairlist_method or 'n/a' }}</strong></div>
+      <div><span>Pair count</span><strong>{{ config_summary.pair_count or 0 }}</strong></div>
+    </div>
+    <p class="mono">{{ config_summary.pair_whitelist_preview|join(", ") }}</p>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Signature Moves</p>
+    <h2>Exit Tag Breakdown</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Exit Tag</th><th>Count</th><th>Avg ROI</th><th>Total Profit</th></tr></thead>
+        <tbody>
+          {% for tag, data in trade_stats.exit_breakdown.items() %}
+          <tr>
+            <td>{{ tag }}</td>
+            <td>{{ data.count }}</td>
+            <td>{{ "%.2f"|format(data.avg_roi) }}%</td>
+            <td>{{ "%.2f"|format(data.total_profit) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Season Rubric</p>
+  <h2>{{ current_season.season_label }} Breakdown</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Category</th><th>Score</th><th>Note</th></tr></thead>
+      <tbody>
+        {% for item in season_preview_review.rubric %}
+        <tr>
+          <td>{{ item.label }}</td>
+          <td>{{ "%.1f"|format(item.score) }}/{{ item.max_score }}</td>
+          <td>{{ item.note }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Live Board</p>
+    <h2>Open Trades</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pair</th><th>Open Date</th><th>Profit %</th><th>Exit Tag</th></tr></thead>
+        <tbody>
+          {% for trade in open_trades %}
+          <tr>
+            <td>{{ trade.pair }}</td>
+            <td>{{ trade.open_date }}</td>
+            <td>{{ "%.2f"|format(trade.profit_pct or 0) }}%</td>
+            <td>{{ trade.exit_reason or '' }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Box Score</p>
+    <h2>Closed Trades</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pair</th><th>Open</th><th>Close</th><th>Profit %</th><th>Exit Tag</th></tr></thead>
+        <tbody>
+          {% for trade in closed_trades %}
+          <tr>
+            <td>{{ trade.pair }}</td>
+            <td>{{ trade.open_date }}</td>
+            <td>{{ trade.close_date }}</td>
+            <td>{{ "%.2f"|format(trade.profit_pct or 0) }}%</td>
+            <td>{{ trade.exit_reason or '' }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </article>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Season Trace</p>
+  <h2>Heartbeat History</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Captured At</th><th>Status</th><th>Equity</th><th>Total P&amp;L</th><th>Trades</th></tr></thead>
+      <tbody>
+        {% for row in history %}
+        <tr>
+          <td>{{ row.captured_at }}</td>
+          <td>{{ row.status }}</td>
+          <td>{{ "%.2f"|format(row.equity) }}</td>
+          <td>{{ "%.2f"|format(row.total_pnl) }}</td>
+          <td>{{ row.trade_count }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,11 @@
+[
+  {
+    "lane_id": "A",
+    "status": "running",
+    "current_job_id": "dev-jade__top20_marketcap__1781078418731065800",
+    "started_at": "2026-06-10T08:00:18.838988+00:00",
+    "last_job_id": "dev-jade__top20_marketcap__1781066142922735100",
+    "failure_reason": "",
+    "updated_at": "2026-06-10T08:00:18.838994+00:00"
+  }
+]

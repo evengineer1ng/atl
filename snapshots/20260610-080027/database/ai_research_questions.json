@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 962,
+    "category": "league",
+    "question": "Does Cosmo & Wanda Top 20 outperform Top 50?",
+    "rationale": "Both variants share the same strategy family but trade different pair universes; isolating breadth impact is required to determine whether concentration or diversification improves risk-adjusted net PnL.",
+    "status": "open",
+    "created_at": "2026-06-10T07:51:09.911533+00:00"
+  },
+  {
+    "id": 963,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy's low-frequency, high-win-size profile may be sensitive to pair-universe breadth; comparing the active Top 50 variant against the dormant Top 20 legacy sample will clarify whether narrower coverage preserves edge.",
+    "status": "open",
+    "created_at": "2026-06-10T07:51:09.911610+00:00"
+  },
+  {
+    "id": 964,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "The incumbent champion deploys champion exits yet carries severe unrealized drawdown; benchmarking exit mechanics against non-champion variants will reveal whether the exit phenotype actually protects realized returns.",
+    "status": "open",
+    "created_at": "2026-06-10T07:51:09.911621+00:00"
+  },
+  {
+    "id": 965,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-50's 28.6% win rate and Timmy-20's offline failure raise questions about whether the theoretical asymmetric payoff structure can sustain live execution slippage and regime shifts.",
+    "status": "open",
+    "created_at": "2026-06-10T07:51:09.911627+00:00"
+  },
+  {
+    "id": 966,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "A meta-comparison across both strategy families of Top 20 versus Top 50 results will indicate whether increasing pair-universe breadth enhances alpha generation or dilutes signal quality with marginal trades.",
+    "status": "open",
+    "created_at": "2026-06-10T07:51:09.911632+00:00"
+  }
+]

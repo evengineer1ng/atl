@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="view-toggle-row">
+    <div>
+      <p class="eyebrow">Backtest Calibration Lab &middot; engine {{ engine_version }}</p>
+      <h2>Does the simulator reproduce dry-run reality?</h2>
+    </div>
+    <form action="/api/backtests/calibration/run" method="post" style="display:inline">
+      <button type="submit">Run calibration cycle now</button>
+    </form>
+  </div>
+  <p>Every backtest is judged not by P&amp;L but by how faithfully it reproduces the live (dry-run) window
+  it mirrors. Higher <strong>Reality Score</strong> = the backtest behaved like live. Measure first, modify second.</p>
+  <div class="record-strip">
+    <span class="record-pill">Avg reality score {{ "%.1f"|format(avg_reality_score) }}</span>
+    <span class="record-pill">Scored {{ scored_count }}</span>
+    <span class="record-pill">Pending {{ pending_count }}</span>
+    <span class="record-pill">{{ "enabled" if calibration_enabled else "disabled" }}</span>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Reality Correlation Score per engine</p>
+  <h2>Simulator versions</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Engine</th><th>Scored windows</th><th>Avg reality score</th></tr></thead>
+      <tbody>
+        {% for e in engine_summary %}
+        <tr><td><strong>{{ e.engine_version }}</strong></td><td>{{ e.windows }}</td><td>{{ "%.1f"|format(e.avg_reality_score) }}</td></tr>
+        {% else %}
+        <tr><td colspan="3">No scored windows yet — run the calibration cycle.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Paired windows · live vs backtest</p>
+  <h2>Calibration windows</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th><th>League</th><th>Window</th><th>Status</th><th>Reality</th><th>Top mismatch</th>
+          <th>Trades L/B</th><th>PnL L/B</th><th>Win% L/B</th><th>Hold L/B (m)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for w in windows %}
+        <tr>
+          <td>{{ w.strategy_name }}{% if w.strategy_version %} <small>({{ w.strategy_version }})</small>{% endif %}</td>
+          <td>{{ w.league_type }}</td>
+          <td><small>{{ w.timerange }}</small>{% if w.live_exchange and w.live_exchange != w.backtest_exchange %} <span class="record-pill" title="live exchange differs from backtest exchange (data mismatch)">{{ w.live_exchange }}≠{{ w.backtest_exchange }}</span>{% endif %}</td>
+          <td>{{ w.status }}</td>
+          <td>{% if w.status == 'scored' %}<strong>{{ "%.0f"|format(w.reality_score) }}</strong>{% else %}—{% endif %}</td>
+          <td><small>{{ w.top_mismatch }}</small></td>
+          <td>{{ w.live_trades }} / {{ w.bt_metrics.trades if w.bt_metrics.trades is defined else "—" }}</td>
+          <td>{{ "%.1f"|format(w.live_pnl) }} / {% if w.bt_metrics.pnl is defined %}{{ "%.1f"|format(w.bt_metrics.pnl) }}{% else %}—{% endif %}</td>
+          <td>{{ "%.0f"|format(w.live_win_rate) }} / {% if w.bt_metrics.win_rate is defined %}{{ "%.0f"|format(w.bt_metrics.win_rate) }}{% else %}—{% endif %}</td>
+          <td>{{ "%.0f"|format(w.live_avg_hold_minutes) }} / {% if w.bt_metrics.avg_hold_minutes is defined %}{{ "%.0f"|format(w.bt_metrics.avg_hold_minutes) }}{% else %}—{% endif %}</td>
+        </tr>
+        {% if w.status == 'scored' and w.gap_metrics %}
+        <tr><td colspan="10">
+          <details><summary>Reality-gap breakdown</summary>
+            <div class="record-strip" style="margin-top:.4rem">
+              {% for k, v in w.gap_metrics.items() %}<span class="record-pill">{{ k }}: {{ v }}</span>{% endfor %}
+            </div>
+          </details>
+        </td></tr>
+        {% endif %}
+        {% else %}
+        <tr><td colspan="10">No calibration windows yet. Closed dev shifts and major-league rolling windows are paired automatically.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

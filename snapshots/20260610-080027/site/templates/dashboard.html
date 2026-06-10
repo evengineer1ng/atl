@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% from "_view_toggle.html" import view_toggle %}
+{% set view = view if view is defined else 'strategy' %}
+{% block content %}
+{{ view_toggle('/', view, 'Dashboard') }}
+<section class="league-hero">
+  <article class="card hero-story">
+    <div class="hero-mark">
+      <div class="league-crest">ATL</div>
+      <div>
+        <p class="eyebrow">Season Desk</p>
+        <h2>A living league office for dry-run evidence, prospects, and strategy history.</h2>
+      </div>
+    </div>
+    <p>The incumbent champion lives on the Pi. Three challengers were launched on June 5, 2026. Timmy is still trying to earn belief. Ghost Ladder waits in the draft room. The ML Lab scouts the future, but the standings remain the scoreboard.</p>
+    {% if generated_overview %}
+    <div class="generated-panel">
+      <p class="eyebrow">AI Maintenance Overview</p>
+      <p>{{ generated_overview }}</p>
+    </div>
+    {% endif %}
+  </article>
+  <div class="hero-side">
+    <div class="metric-grid">
+      <article class="metric-card"><span>Total Equity</span><strong>{{ "%.2f"|format(total_equity) }}</strong></article>
+      <article class="metric-card"><span>Total P&amp;L</span><strong>{{ "%.2f"|format(total_pnl) }}</strong></article>
+      <article class="metric-card"><span>Active Teams</span><strong>{{ active_teams }}</strong></article>
+      <article class="metric-card"><span>Closed Trades Logged</span><strong>{{ league_trades }}</strong></article>
+    </div>
+    <article class="card trophy-card">
+      <p class="eyebrow">Trophy Case</p>
+      <div class="trophy-line">
+        <div class="trophy-icon">TOP</div>
+        <div>
+          <h3>Incumbent Standard</h3>
+          <p>Every prospect and challenger gets measured against the official Cosmo &amp; Wanda Top 20 run, not against hype or backtest theater.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+{% if view != 'universe' %}
+{% if champion %}
+<section class="card champion-card">
+  <p class="eyebrow">Current Leader</p>
+  <h2>{{ champion.team }}</h2>
+  <p>{{ champion.role }} &middot; {{ champion.data_quality }} &middot; Total P&amp;L {{ "%.2f"|format(champion.total_pnl) }}</p>
+</section>
+{% endif %}
+
+<section class="team-card-grid">
+  {% for row in standings %}
+  <article class="card franchise-card {{ row.team_id }}">
+    <div class="franchise-topline">
+      <div class="team-emblem {{ row.team_id }}">
+        {% if 'cosmo-wanda' in row.team_id %}CW{% elif 'timmy' in row.team_id %}TM{% else %}GL{% endif %}
+      </div>
+      <div>
+        <p class="eyebrow">{{ row.role }}</p>
+        <h3><a href="/teams/{{ row.team_id }}">{{ row.team }}</a></h3>
+      </div>
+    </div>
+    <p class="franchise-note">
+      {% if row.team_id == 'cosmo-wanda-20-pi' %}
+      Official incumbent with the longest narrative arc and the baseline everyone else has to beat.
+      {% elif row.team_id == 'cosmo-wanda-50-pc' %}
+      Breadth-first challenger testing whether wider pair coverage improves opportunity or adds noise.
+      {% elif row.team_id == 'timmy-20-pc' %}
+      Predictive sniper prospect built for low-gap setups on a tighter pair universe.
+      {% else %}
+      Draft-room prospect testing whether Timmy's predictive lane scales across a broader universe.
+      {% endif %}
+    </p>
+    <div class="franchise-stats">
+      <div><span>Rank</span><strong>#{{ row.rank }}</strong></div>
+      <div><span>Closed</span><strong>{{ row.closed_trades }}</strong></div>
+      <div><span>Win Rate</span><strong>{{ "%.1f"|format(row.win_rate) }}%</strong></div>
+      <div><span>Total P&amp;L</span><strong>{{ "%.2f"|format(row.total_pnl) }}</strong></div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <h2>Live Standings</h2>
+    <form action="/sync" method="post">
+      <button type="submit">Sync Now</button>
+    </form>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Status</th>
+          <th>Equity</th>
+          <th>Realized</th>
+          <th>Unrealized</th>
+          <th>Total</th>
+          <th>Closed</th>
+          <th>Win Rate</th>
+          <th>Avg ROI</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in standings %}
+        <tr>
+          <td>{{ row.rank }}</td>
+          <td><a href="/teams/{{ row.team_id }}">{{ row.team }}</a></td>
+          <td><span class="badge {{ 'online' if row.heartbeat else 'offline' }}">{{ row.uptime }}</span></td>
+          <td>{{ "%.2f"|format(row.equity) }}</td>
+          <td>{{ "%.2f"|format(row.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.unrealized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.total_pnl) }}</td>
+          <td>{{ row.closed_trades }}</td>
+          <td>{{ "%.1f"|format(row.win_rate) }}%</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card archive-card">
+    <h2>League Timeline</h2>
+    <p class="section-intro">The timeline is the soul of the site. This is where promotions, discoveries, slumps, and turning points become history instead of memory.</p>
+    {% for post in recent_posts %}
+    <article class="timeline-snippet">
+      <p class="eyebrow">{{ post.created_at }}</p>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.observation }}</p>
+    </article>
+    {% endfor %}
+    <p><a href="/timeline">Open full timeline</a></p>
+  </article>
+  <article class="card">
+    <h2>Active Research Questions</h2>
+    <div class="question-list">
+      {% for question in questions %}
+      <article class="question-card">{{ question }}</article>
+      {% endfor %}
+      {% for row in generated_questions %}
+      <article class="question-card generated-card"><strong>{{ row.question }}</strong><br>{{ row.rationale }}</article>
+      {% endfor %}
+    </div>
+  </article>
+</section>
+{% else %}
+<section class="card">
+  <p class="eyebrow">Universe Championship</p>
+  <h2>Habitat Scoreboard</h2>
+  <p class="section-intro">Performance aggregated by the universe (pairlist) each team trades, not the strategy. The strategy decides how to read opportunities; the universe decides which opportunities are visible.</p>
+</section>
+
+<section class="team-card-grid">
+  {% for row in universe_rows %}
+  <article class="card franchise-card">
+    <div class="franchise-topline">
+      <div>
+        <p class="eyebrow">{{ row.type }} &middot; {{ row.status }}</p>
+        <h3><a href="/universes/{{ row.key }}">{{ row.name }}</a></h3>
+      </div>
+    </div>
+    <div class="franchise-stats">
+      <div><span>Rank</span><strong>#{{ row.rank }}</strong></div>
+      <div><span>Teams</span><strong>{{ row.active_teams }}/{{ row.historical_teams }}</strong></div>
+      <div><span>Closed</span><strong>{{ row.closed_trades }}</strong></div>
+      <div><span>Win Rate</span><strong>{{ "%.1f"|format(row.win_rate) }}%</strong></div>
+      <div><span>Avg ROI</span><strong>{{ "%.2f"|format(row.avg_roi) }}%</strong></div>
+      <div><span>Total P&amp;L</span><strong>{{ "%.2f"|format(row.total_pnl) }}</strong></div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Universe</th>
+          <th>Active Teams</th>
+          <th>Total PnL</th>
+          <th>Realized</th>
+          <th>Unrealized</th>
+          <th>Closed</th>
+          <th>Open</th>
+          <th>Win Rate</th>
+          <th>Avg ROI</th>
+          <th>Best Trade</th>
+          <th>Worst Open</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in universe_rows %}
+        <tr>
+          <td>{{ row.rank }}</td>
+          <td><a href="/universes/{{ row.key }}">{{ row.name }}</a></td>
+          <td>{{ row.active_teams }} / {{ row.historical_teams }}</td>
+          <td>{{ "%.2f"|format(row.total_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.unrealized_pnl) }}</td>
+          <td>{{ row.closed_trades }}</td>
+          <td>{{ row.open_trades }}</td>
+          <td>{{ "%.1f"|format(row.win_rate) }}%</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ "%.2f"|format(row.best_trade) }}%</td>
+          <td>{{ "%.2f"|format(row.worst_open_trade) }}%</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="12">No universes registered yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}
