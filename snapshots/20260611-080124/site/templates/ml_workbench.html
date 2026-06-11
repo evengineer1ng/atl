@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="league-hero ml-hero">
+  <article class="card hero-story">
+    <div class="hero-mark">
+      <div class="league-crest ml-crest">OPS</div>
+      <div>
+        <p class="eyebrow">ML Workbench</p>
+        <h2>The workbench tracks datasets, labels, and model lineage before anything earns league influence.</h2>
+      </div>
+    </div>
+    <p>This room is the first implementation step toward a reproducible ML platform: source layers are registered, training targets are explicit, and model runs now declare whether their lineage is complete enough for serious promotion review.</p>
+  </article>
+  <div class="metric-grid">
+    <article class="metric-card"><span>Datasets</span><strong>{{ dataset_count }}</strong></article>
+    <article class="metric-card"><span>Label Specs</span><strong>{{ label_count }}</strong></article>
+    <article class="metric-card"><span>Feature Sets</span><strong>{{ feature_set_count }}</strong></article>
+    <article class="metric-card"><span>Model Runs</span><strong>{{ model_count }}</strong></article>
+    <article class="metric-card"><span>Complete Lineage</span><strong>{{ complete_runs }}</strong></article>
+    <article class="metric-card"><span>Queued Leads</span><strong>{{ queued_lead_count }}</strong></article>
+    <article class="metric-card"><span>Experiment Runs</span><strong>{{ experiment_run_count }}</strong></article>
+    <article class="metric-card"><span>Bucket Candidates</span><strong>{{ bucket_candidate_count }}</strong></article>
+    <article class="metric-card"><span>Artifact Coverage</span><strong>{{ artifact_coverage }}%</strong></article>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Runtime Comparison</p>
+    <h2>Compare Strategy vs Strategy</h2>
+    <form action="/ml/workbench" method="get" class="post-form">
+      <input type="hidden" name="status" value="{{ queue_status }}">
+      <label>Compare A
+        <select name="compare_a">
+          <option value="">Select strategy</option>
+          {% for row in strategy_universe %}
+          <option value="{{ row.strategy_id or row.team_id or row.id }}" {% if compare_a == (row.strategy_id or row.team_id or row.id)|string %}selected{% endif %}>{{ row.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Compare B
+        <select name="compare_b">
+          <option value="">Select strategy</option>
+          {% for row in strategy_universe %}
+          <option value="{{ row.strategy_id or row.team_id or row.id }}" {% if compare_b == (row.strategy_id or row.team_id or row.id)|string %}selected{% endif %}>{{ row.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <button type="submit">Compare</button>
+    </form>
+    {% if selected_compare_a %}
+    <article class="question-card">
+      <strong>{{ selected_compare_a.name }}</strong><br>
+      Raw PnL: {{ "%.2f"|format(selected_compare_a.raw_total_pnl) }}<br>
+      Per-24h Pace: {% if selected_compare_a.projected_total_pnl_per_24h is not none %}{{ "%.2f"|format(selected_compare_a.projected_total_pnl_per_24h) }}{% else %}Flagged{% endif %}<br>
+      Runtime: {{ "%.2f"|format(selected_compare_a.total_runtime_hours) }}h
+    </article>
+    {% endif %}
+    {% if selected_compare_b %}
+    <article class="question-card">
+      <strong>{{ selected_compare_b.name }}</strong><br>
+      Raw PnL: {{ "%.2f"|format(selected_compare_b.raw_total_pnl) }}<br>
+      Per-24h Pace: {% if selected_compare_b.projected_total_pnl_per_24h is not none %}{{ "%.2f"|format(selected_compare_b.projected_total_pnl_per_24h) }}{% else %}Flagged{% endif %}<br>
+      Runtime: {{ "%.2f"|format(selected_compare_b.total_runtime_hours) }}h
+    </article>
+    {% endif %}
+    {% if shift_average %}
+    <article class="question-card">
+      <strong>Shift Average</strong><br>
+      Raw PnL Avg: {{ "%.2f"|format(shift_average.raw_total_pnl) }}<br>
+      Per-24h Pace Avg: {{ "%.2f"|format(shift_average.projected_total_pnl_per_24h) }}
+    </article>
+    {% endif %}
+  </article>
+  <article class="card">
+    <p class="eyebrow">Lead Intake</p>
+    <h2>Queue A New ML Study</h2>
+    <form action="/ml/workbench/queue" method="post" class="post-form">
+      <label>Lead title
+        <input type="text" name="title" placeholder="Short label for the queued ML lead">
+      </label>
+      <label>Lead question
+        <input type="text" name="lead_question" placeholder="What should the ML agent test or learn?">
+      </label>
+      <label>Rationale
+        <input type="text" name="rationale" placeholder="Why does this deserve dataset, bucket, or model study?">
+      </label>
+      <label>Priority
+        <input type="text" name="priority" value="normal">
+      </label>
+      <label><input type="checkbox" name="execute_now"> Execute immediately after queueing</label>
+      <button type="submit">Add To ML Queue</button>
+    </form>
+  </article>
+  <article class="card">
+    <h2>Feature Set Versions</h2>
+    {% for row in feature_set_rows %}
+    <article class="question-card">
+      <strong>{{ row.feature_set_name }}</strong><br>
+      {{ row.feature_names|join(", ") }}<br>
+      {{ row.leakage_notes }}
+    </article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Registered Data Sources</h2>
+    {% for row in dataset_rows %}
+    <article class="lab-note">
+      <p class="eyebrow">{{ row.source_kind }} · {{ row.status }}</p>
+      <h3>{{ row.dataset_name }}</h3>
+      <p>{{ row.coverage }}</p>
+      <p class="mono">{{ row.source_path }}{% if row.timeframe %} · {{ row.timeframe }}{% endif %}</p>
+      <p>{{ row.notes }}</p>
+    </article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Label Spec Versions</h2>
+    {% for row in label_spec_rows %}
+    <article class="question-card">
+      <strong>{{ row.label_name }}</strong><br>
+      {{ row.target_variable }}<br>
+      Leakage risk: {{ row.leakage_risk }} · Live safe: {{ "yes" if row.live_safe else "no" }}{% if row.horizon_candles %} · Horizon: {{ row.horizon_candles }} candles{% endif %}
+    </article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <h2>Experiment Queue</h2>
+    <form action="/ml/workbench" method="get" class="post-form inline-form">
+      <label>Status
+        <select name="status">
+          {% for key, count in queue_status_counts.items() %}
+          <option value="{{ key }}" {% if queue_status == key %}selected{% endif %}>{{ key }} ({{ count }})</option>
+          {% endfor %}
+        </select>
+      </label>
+      <button type="submit">Filter</button>
+    </form>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Question</th>
+          <th>Source</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Resolution</th>
+          <th>Controls</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in queue_rows %}
+        <tr>
+          <td>{{ row.id }}</td>
+          <td>{{ row.title }}</td>
+          <td>{{ row.lead_question }}</td>
+          <td>{{ row.source_type }}</td>
+          <td>{{ row.priority }}</td>
+          <td>{{ row.status }}</td>
+          <td>{{ row.resolution or 'Pending' }}</td>
+          <td>
+            <form action="/ml/workbench/queue/{{ row.id }}/action" method="post" class="post-form compact-form">
+              <input type="hidden" name="status" value="{{ queue_status }}">
+              <button type="submit" name="action" value="execute">Run Now</button>
+            </form>
+            <form action="/ml/workbench/queue/{{ row.id }}/action" method="post" class="post-form compact-form">
+              <input type="hidden" name="status" value="{{ queue_status }}">
+              <button type="submit" name="action" value="retry">Retry</button>
+            </form>
+            <form action="/ml/workbench/queue/{{ row.id }}/action" method="post" class="post-form compact-form">
+              <input type="hidden" name="status" value="{{ queue_status }}">
+              <input type="hidden" name="action" value="reprioritize">
+              <select name="priority">
+                {% for priority in ['low', 'normal', 'high'] %}
+                <option value="{{ priority }}" {% if row.priority == priority %}selected{% endif %}>{{ priority }}</option>
+                {% endfor %}
+              </select>
+              <button type="submit">Set</button>
+            </form>
+            <form action="/ml/workbench/queue/{{ row.id }}/action" method="post" class="post-form compact-form">
+              <input type="hidden" name="status" value="{{ queue_status }}">
+              <button type="submit" name="action" value="block">Block</button>
+            </form>
+            <a href="/ml/workbench?status={{ queue_status }}&queue_id={{ row.id }}">Inspect</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% if selected_queue_row %}
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Selected Queue Lead</p>
+    <h2>{{ selected_queue_row.title }}</h2>
+    <p><strong>Status:</strong> {{ selected_queue_row.status }} · <strong>Priority:</strong> {{ selected_queue_row.priority }}</p>
+    <p>{{ selected_queue_row.lead_question }}</p>
+    <p>{{ selected_queue_row.rationale }}</p>
+    <p class="mono">source {{ selected_queue_row.source_type }} · {{ selected_queue_row.source_key }}</p>
+  </article>
+  <article class="card">
+    <h2>Runs For Selected Lead</h2>
+    {% for row in selected_queue_runs %}
+    <article class="question-card generated-card">
+      <strong>{{ row.title }}</strong><br>
+      {{ row.status }}<br>
+      {{ row.summary }}{% if row.artifact_path %}<br>{{ row.artifact_path }}{% endif %}<br>
+      <a href="/ml/workbench?status={{ queue_status }}&queue_id={{ selected_queue_row.id }}&run_slug={{ row.run_slug }}">Inspect Artifact</a>
+    </article>
+    {% else %}
+    <article class="question-card">No runs recorded for this queue item yet.</article>
+    {% endfor %}
+  </article>
+</section>
+{% endif %}
+
+{% if selected_run_row %}
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Artifact Detail</p>
+    <h2>{{ selected_run_row.title }}</h2>
+    <p><strong>Status:</strong> {{ selected_run_row.status }}{% if selected_run_row.queue_id %} · queue {{ selected_run_row.queue_id }}{% endif %}</p>
+    <p>{{ selected_run_row.summary }}</p>
+    <p class="mono">{{ selected_run_row.artifact_path or 'No artifact path recorded' }}</p>
+    {% set artifact_contract = selected_run_artifact.get('dataset_contract', {}) %}
+    {% if artifact_contract %}
+    <p><strong>Dataset Contract:</strong> {{ artifact_contract.get('id', 'unknown') }} · {{ artifact_contract.get('description', '') }}</p>
+    {% endif %}
+  </article>
+  <article class="card">
+    <h2>Saved Metrics</h2>
+    {% for key, value in selected_run_artifact.get('metrics', {}).items() %}
+    <article class="question-card"><strong>{{ key }}</strong><br>{{ value }}</article>
+    {% else %}
+    <article class="question-card">No saved metrics found for this artifact.</article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Top Bucket Candidates</h2>
+    {% for row in selected_run_artifact.get('top_bucket_candidates', []) %}
+    <article class="lab-note">
+      <p class="eyebrow">{{ row.evidence_quality }} · {{ row.contamination_risk }}</p>
+      <h3>{{ row.candidate_name }}</h3>
+      <p>{{ row.expected_behavior }}</p>
+      <p class="mono">{{ row.feature_conditions }}</p>
+    </article>
+    {% else %}
+    <article class="question-card">No bucket candidates were saved in this artifact.</article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Feature Influences</h2>
+    {% for row in selected_run_artifact.get('top_feature_influences', []) or selected_run_artifact.get('feature_importance', []) %}
+    <article class="question-card generated-card">
+      <strong>{{ row.feature }}</strong><br>
+      {% if row.bucket %}Bucket: {{ row.bucket }} · {% endif %}
+      {% if row.count %}Count: {{ row.count }} · {% endif %}
+      {% if row.win_rate_delta is defined %}Win delta: {{ row.win_rate_delta }} · Profit delta: {{ row.profit_ratio_delta }}{% else %}Best bucket: {{ row.strongest_bucket }} · Edge: {{ row.edge_score }}{% endif %}
+    </article>
+    {% else %}
+    <article class="question-card">No feature influence summary was saved in this artifact.</article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="card">
+  <h2>Contamination Checks</h2>
+  {% for item in selected_run_artifact.get('contamination_checks', []) %}
+  <article class="question-card">{{ item }}</article>
+  {% else %}
+  <article class="question-card">No contamination notes were saved for this artifact.</article>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Experiment Runs</h2>
+    {% for row in experiment_rows %}
+    <article class="lab-note">
+      <p class="eyebrow">{{ row.status }}{% if row.queue_id %} · queue {{ row.queue_id }}{% endif %}</p>
+      <h3>{{ row.title }}</h3>
+      <p>{{ row.objective }}</p>
+      <p class="mono">{{ row.dataset_id or 'No dataset yet' }} · {{ row.feature_set_version_id or 'No feature set' }} · {{ row.label_spec_version_id or 'No label spec' }}</p>
+      <p>{{ row.summary or row.notes }}</p>
+      {% if row.artifact_path %}
+      <p class="mono">Artifact: {{ row.artifact_path }}</p>
+      <p><a href="/ml/workbench?status={{ queue_status }}{% if row.queue_id %}&queue_id={{ row.queue_id }}{% endif %}&run_slug={{ row.run_slug }}">Inspect Artifact</a></p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Validation Reports</h2>
+    {% for row in validation_rows %}
+    <article class="question-card generated-card">
+      <strong>{{ row.run_title or row.run_slug or 'Run' }} · {{ row.report_type }}</strong><br>
+      {{ row.summary }}<br>
+      Recommendation: {{ row.recommendation }}
+    </article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Bucket Candidates</h2>
+    {% for row in bucket_candidate_rows %}
+    <article class="lab-note">
+      <p class="eyebrow">{{ row.status }} · {{ row.evidence_quality }} · {{ row.contamination_risk }}</p>
+      <h3>{{ row.candidate_name }}</h3>
+      <p>{{ row.expected_behavior }}</p>
+      <p class="mono">{{ row.feature_conditions }}</p>
+      <p>{{ row.next_action }}</p>
+    </article>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Promotion Recommendations</h2>
+    {% for row in promotion_rows %}
+    <article class="question-card generated-card">
+      <strong>{{ row.candidate_name }}</strong><br>
+      {{ row.recommendation }} · {{ row.target_surface }}<br>
+      {{ row.rationale }}{% if row.blockers %}<br>Blockers: {{ row.blockers }}{% endif %}
+    </article>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="card">
+  <div class="section-head">
+    <h2>Model Lineage Registry</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Hypothesis</th>
+          <th>Dataset</th>
+          <th>Label</th>
+          <th>Algorithm</th>
+          <th>Train Window</th>
+          <th>Validation Window</th>
+          <th>Metrics</th>
+          <th>Artifact</th>
+          <th>Lineage</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in model_rows %}
+        <tr>
+          <td>{{ row.model_name }}</td>
+          <td>{{ row.hypothesis_id or "Unmapped" }}</td>
+          <td>{{ row.dataset_id or "Unmapped" }}</td>
+          <td>{{ row.label_id or "Unmapped" }}</td>
+          <td>{{ row.algorithm_type }} · {{ row.feature_count }} features</td>
+          <td>{{ row.train_window or "Pending" }}</td>
+          <td>{{ row.validation_window or "Pending" }}</td>
+          <td>{{ row.metrics }}</td>
+          <td>{{ row.artifact_path or "Missing" }} · {{ "found" if row.artifact_exists else "missing" }}</td>
+          <td>{{ row.lineage_status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

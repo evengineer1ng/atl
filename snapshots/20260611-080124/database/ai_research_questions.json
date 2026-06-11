@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1177,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Timmy Top 50 realizes ~2.5\u00d7 the hourly PnL of its Top 20 sibling with only a modest drawdown increase, whereas Cosmo & Wanda Top 50 shows deeper unrealized bleed than its Top 20 counterpart. Disentangling whether breadth expands the positive-expectancy set or dilutes edge is critical for universe sizing.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-11T07:37:34.303403+00:00"
+  },
+  {
+    "id": 1178,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy Top 50 leads in absolute realized PnL and throughput, while Top 20 posts a superior win rate (52.9% vs 38.7%) and marginally tighter unrealized. The trade-off between signal frequency and per-trade precision remains unresolved at current sample sizes.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-11T07:37:34.303475+00:00"
+  },
+  {
+    "id": 1179,
+    "category": "league",
+    "question": "Do champion exits maintain a higher effective ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda Top 20 has recorded three champion exits harvesting +$67.60 realized, yet net PnL is only +$6.04 because open runners bleed \u2212$61.55. Comparing champion-exit hold times and net contribution against non-champion realized trades will clarify whether the rule preserves capital or merely delays loss realization.",
+    "status": "Under review",
+    "created_at": "2026-06-11T07:37:34.303483+00:00"
+  },
+  {
+    "id": 1180,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Cosmo & Wanda Top 50 holds higher net equity ($1,053.17 vs $995.65) and a less extreme worst-open-runner (\u2212$22.64 vs \u2212$41.22), despite both posting 100% closed win rates. Determining which universe produces superior risk-adjusted total PnL once open positions resolve is essential.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-11T07:37:34.303490+00:00"
+  },
+  {
+    "id": 1181,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "With a 38.7% win rate but positive net equity and controlled drawdown, Timmy Top 50 is demonstrating asymmetric payoff survival in real time. Sustained sub-40% accuracy requires outsized average wins; continued tracking will validate whether the profile is robust or variance-dependent.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-11T07:37:34.303497+00:00"
+  }
+]
