@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1292,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Cosmo & Wanda Top 20 shows higher realized PnL ($67.60 vs $63.80) and more champion exits (3 vs 1), but net equity is lower ($997.36 vs $1053.17) due to deeper unrealized drawdown (-$60.23 vs -$38.15). Comparing realized-per-hour and net outcomes will clarify whether narrower coverage improves risk-adjusted returns.",
+    "status": "open",
+    "created_at": "2026-06-11T20:02:04.090143+00:00"
+  },
+  {
+    "id": 1293,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy-Top 50 dominates in realized PnL ($36.80 vs $4.09), trade velocity (45 vs 29), and realized PnL per hour (~$0.26 vs ~$0.03), while Timmy-Top 20 offers lower drawdown (2.90% vs 5.17%). Resolving which universe better aligns with the strategy's edge is critical for allocation.",
+    "status": "open",
+    "created_at": "2026-06-11T20:02:04.090209+00:00"
+  },
+  {
+    "id": 1294,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda Top 20 has 3 champion exits and +$67.60 realized, yet standard holds have bled -$60.23 unrealized. Cosmo & Wanda Top 50 shows a similar pattern with 1 champion exit but -$38.15 carry. Evaluating per-trade ROI of champion-exited positions against standard exits will validate the override logic.",
+    "status": "open",
+    "created_at": "2026-06-11T20:02:04.090218+00:00"
+  },
+  {
+    "id": 1295,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-50 operates at ~35.6% win rate with extreme positive skew (best trade +$19.37 vs average per-trade ROI ~$0.18), while Timmy-20's higher win rate (~41.4%) collapses average ROI. Confirming that the infrequent large-winner pattern persists across fresh live tape without degrading into deeper drawdowns is essential for model trust.",
+    "status": "monitoring",
+    "created_at": "2026-06-11T20:02:04.090222+00:00"
+  },
+  {
+    "id": 1296,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Top 50 variants generate substantially higher trade velocity and realized PnL per hour for both families, yet Cosmo & Wanda Top 50 suffers larger absolute unrealized drawdowns than Top 20. Disambiguating whether the extra pairs provide exploitable alpha or simply increase carry risk will guide universe sizing.",
+    "status": "open",
+    "created_at": "2026-06-11T20:02:04.090226+00:00"
+  }
+]
