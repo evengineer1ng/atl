@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1402,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 20 shows higher realized PnL per hour but catastrophic open-carry decay (-$58.86 unrealized), while Top 50 posts lower realized PnL with a smaller relative unrealized drag (-$39.01). Continuous monitoring is needed to separate universe alpha from hold-management degradation.",
+    "status": "active",
+    "created_at": "2026-06-12T07:46:55.889727+00:00"
+  },
+  {
+    "id": 1403,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy-50 is the league leader with +$49.29 realized and +$0.32 realized per hour, while Timmy-20 is underwater (-$0.84) despite an identical ~35% win-rate phenotype, suggesting entry liquidity or volatility requirements may not be met in the narrower Top 20 universe.",
+    "status": "active",
+    "created_at": "2026-06-12T07:46:55.889791+00:00"
+  },
+  {
+    "id": 1404,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda-20 has recorded three champion exits contributing ~$67.60 in realized gains, yet total PnL remains near breakeven due to severe hold erosion. Determining whether the champion-exit trigger preserves more alpha than it sacrifices\u2014and whether it outperforms a dynamic ROI exit\u2014is critical for strategy refinement.",
+    "status": "active",
+    "created_at": "2026-06-12T07:46:55.889799+00:00"
+  },
+  {
+    "id": 1405,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-50 currently relies on a 35.8% hit rate with heavily skewed per-trade outcomes; an extended dry-run or live tape read is required to verify that the tail risk of consecutive losses does not overwhelm intermittent large winners, especially if breadth is reduced.",
+    "status": "monitoring",
+    "created_at": "2026-06-12T07:46:55.889807+00:00"
+  },
+  {
+    "id": 1406,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Divergent performance across universe sizes within both strategy families suggests breadth effects are model-dependent. Isolating whether Top 50 adds sufficient tradable volatility or dilutes signal quality\u2014and whether Top 20 improves precision or creates liquidity traps\u2014is a key design question.",
+    "status": "active",
+    "created_at": "2026-06-12T07:46:55.889812+00:00"
+  }
+]

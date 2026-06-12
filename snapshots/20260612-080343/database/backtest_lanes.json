@@ -1,0 +1,11 @@
+[
+  {
+    "lane_id": "A",
+    "status": "idle",
+    "current_job_id": "",
+    "started_at": null,
+    "last_job_id": "dev-block-party__block_party__1781245951936249200",
+    "failure_reason": "Backtest produced no archive.",
+    "updated_at": "2026-06-12T06:38:54.083648+00:00"
+  }
+]
