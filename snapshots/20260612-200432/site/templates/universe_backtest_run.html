@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Universe Backtest &middot; {{ record.exchange }} &middot; {{ record.timeframe }}</p>
+  <h2>{{ record.display_name }} &mdash; <a href="/universes/{{ record.universe }}">{{ record.universe_name }}</a></h2>
+  <p class="section-intro">Timerange {{ record.timerange }} &middot; {{ record.days }} days &middot; union of {{ record.union_pairs }} pairs. Entries were gated to the universe's reconstructed membership on each candle's date.</p>
+  {% if record.ok %}
+  <div class="scoreboard-grid">
+    <div><span>Trades</span><strong>{{ record.total_trades }}</strong></div>
+    <div><span>Total P&amp;L</span><strong>{{ "%.2f"|format(record.profit_total_abs) }}</strong></div>
+    <div><span>Total %</span><strong>{{ "%.2f"|format(record.profit_total_pct) }}%</strong></div>
+    <div><span>Win Rate</span><strong>{{ "%.1f"|format(record.winrate_pct) }}%</strong></div>
+    <div><span>Archive</span><strong class="mono">{{ record.archive }}</strong></div>
+  </div>
+  {% else %}
+  <p>This run did not complete. {{ record.error }}</p>
+  {% if record.log_tail %}<pre class="mono">{{ record.log_tail }}</pre>{% endif %}
+  {% endif %}
+</section>
+
+{% if record.ok %}
+{% if inspection.summary %}
+<section class="card">
+  <p class="eyebrow">Freqtrade summary{% if not inspection.has_archive %} (from stored trades — archive pruned){% endif %}</p>
+  <h2>Full result statistics</h2>
+  <div class="kv-grid">
+    {% for s in inspection.summary %}<div><span>{{ s.label }}</span><strong>{{ s.value }}</strong></div>{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Per pair</p>
+    <h2>Results by pair</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Pair</th><th>Trades</th><th>Win%</th><th>Avg %</th><th>Profit</th></tr></thead>
+      <tbody>
+        {% for r in inspection.per_pair %}
+        <tr><td class="mono">{{ r.key|replace('/USDT:USDT','')|replace('/USDC:USDC','') }}</td><td>{{ r.trades }}</td><td>{{ "%.0f"|format(r.win_rate) }}%</td><td>{{ "%.2f"|format(r.profit_mean_pct) }}%</td><td>{{ "%.2f"|format(r.profit_total_abs) }}</td></tr>
+        {% else %}<tr><td colspan="5">No trades.</td></tr>{% endfor %}
+      </tbody>
+    </table></div>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Per exit reason</p>
+    <h2>Exit-reason summary</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Exit reason</th><th>Trades</th><th>Win%</th><th>Avg %</th><th>Profit</th></tr></thead>
+      <tbody>
+        {% for r in inspection.exit_summary %}
+        <tr><td>{{ r.key }}</td><td>{{ r.trades }}</td><td>{{ "%.0f"|format(r.win_rate) }}%</td><td>{{ "%.2f"|format(r.profit_mean_pct) }}%</td><td>{{ "%.2f"|format(r.profit_total_abs) }}</td></tr>
+        {% else %}<tr><td colspan="5">No trades.</td></tr>{% endfor %}
+      </tbody>
+    </table></div>
+  </article>
+</section>
+
+{% if inspection.per_enter_tag and inspection.per_enter_tag|length > 1 or (inspection.per_enter_tag and inspection.per_enter_tag[0].key != '(none)') %}
+<section class="card">
+  <p class="eyebrow">Per entry tag</p>
+  <h2>Results by entry hypothesis</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Enter tag</th><th>Trades</th><th>Win%</th><th>Avg %</th><th>Profit</th></tr></thead>
+    <tbody>
+      {% for r in inspection.per_enter_tag %}
+      <tr><td>{{ r.key }}</td><td>{{ r.trades }}</td><td>{{ "%.0f"|format(r.win_rate) }}%</td><td>{{ "%.2f"|format(r.profit_mean_pct) }}%</td><td>{{ "%.2f"|format(r.profit_total_abs) }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table></div>
+</section>
+{% endif %}
+
+<section class="card">
+  <p class="eyebrow">{{ inspection.trades_total }} trades{% if inspection.trades_truncated %} · showing first {{ inspection.trades|length }}{% endif %}</p>
+  <h2>Every trade</h2>
+  <div class="table-wrap" style="max-height:520px;overflow:auto">
+    <table>
+      <thead><tr><th>Pair</th><th>Side</th><th>Enter</th><th>Exit reason</th><th>Open</th><th>Close</th><th>Dur (m)</th><th>Profit %</th><th>Profit</th></tr></thead>
+      <tbody>
+        {% for t in inspection.trades %}
+        <tr>
+          <td class="mono">{{ t.pair|replace('/USDT:USDT','')|replace('/USDC:USDC','') }}</td>
+          <td>{{ t.side }}</td><td>{{ t.enter_tag }}</td><td>{{ t.exit_reason }}</td>
+          <td>{{ t.open_date }}</td><td>{{ t.close_date }}</td><td>{{ t.duration_min }}</td>
+          <td>{{ "%.2f"|format(t.profit_pct) }}%</td><td>{{ "%.3f"|format(t.profit_abs) }}</td>
+        </tr>
+        {% else %}<tr><td colspan="9">No trades recorded.</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<section class="card">
+  <p class="eyebrow">Universe Tape</p>
+  <h2>Day-by-day membership during the backtest</h2>
+  <p class="section-intro">Recorded live by the in-backtest gate (one row per backtest day) &mdash; this is the self-seeding universe replaying exactly as it changed.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Date</th><th>Members</th><th>Pairs</th></tr></thead>
+      <tbody>
+        {% for day in tape %}
+        <tr>
+          <td>{{ day.date }}</td>
+          <td>{{ day.count }}</td>
+          <td class="mono">{{ day.pairs | map('replace', '/USDC:USDC', '') | map('replace', '/USDT:USDT', '') | join(', ') }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="3">No tape recorded for this run.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p><a href="/backtests">Back to Backtest Lab</a></p>
+</section>
+{% endblock %}
