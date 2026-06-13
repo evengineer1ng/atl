@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1742,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 20 generated more champion exits (3 vs 1) but suffers deeper unrealized drag (-$54.97 vs -$35.88) and lower net total PnL (+$12.96 vs +$27.92). Determining which universe size produces superior risk-adjusted returns is essential before any execution restart.",
+    "status": "Stalled \u2014 awaiting execution resumption for comparative assessment",
+    "created_at": "2026-06-13T19:35:57.637788+00:00"
+  },
+  {
+    "id": 1743,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Live data through June 13 shows Timmy-50 near breakeven realized (-$0.55) with positive unrealized (+$3.40), while Timmy-20 bleeds -$33.65 realized. This divergence directly tests whether Timmy\u2019s edge scales with pair breadth or decays under concentration.",
+    "status": "Partially Answered \u2014 Top 50 demonstrating superior viability",
+    "created_at": "2026-06-13T19:35:57.637835+00:00"
+  },
+  {
+    "id": 1744,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Champion exits are recorded only on Cosmo & Wanda variants (3 on Top 20, 1 on Top 50), while Timmy shows zero. With C&W currently stalled, comparing the per-exit ROI of champion logic against Timmy\u2019s dynamic management requires more active samples across both exit types.",
+    "status": "Open \u2014 insufficient active sample with varied exit logic",
+    "created_at": "2026-06-13T19:35:57.637843+00:00"
+  },
+  {
+    "id": 1745,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-50 has sustained a 33.7% win rate across 89 closed trades with worst open risk of only -$0.21 and max drawdown under 8.6%. Confirming whether this phenotype can transition from marginal to profitable is critical for the league\u2019s forward roster.",
+    "status": "Under Validation \u2014 live execution confirms phenotype persistence but profitability remains marginal",
+    "created_at": "2026-06-13T19:35:57.637848+00:00"
+  },
+  {
+    "id": 1746,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Across both families, the broader Top 50 universe currently outperforms Top 20 in total PnL and shows milder unrealized decay. The Timmy A/B pair provides the cleanest live comparison, suggesting breadth expands opportunity rather than diluting it.",
+    "status": "Trending Toward Breadth Advantage \u2014 preliminary evidence favors wider universe",
+    "created_at": "2026-06-13T19:35:57.637852+00:00"
+  }
+]

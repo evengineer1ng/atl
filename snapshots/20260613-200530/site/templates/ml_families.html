@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% macro wind_tunnel(rows, spectrum) %}
+<div class="windtunnel-grid">
+  <div class="wt-track wt-head">
+    <div class="wt-name"></div>
+    {% for p in spectrum %}<div class="wt-cell" style="grid-column: {{ loop.index0 + 2 }}">{{ p.label }}</div>{% endfor %}
+  </div>
+  {% for r in rows %}
+  <div class="wt-track">
+    <div class="wt-name">{{ r.name }}</div>
+    {% for p in spectrum %}<div class="wt-guide" style="grid-column: {{ loop.index0 + 2 }}"></div>{% endfor %}
+    {% if r.temporal and r.temporal.placed %}
+    <div class="wt-bar" style="grid-column: {{ r.temporal.start + 2 }} / {{ r.temporal.end + 3 }}"
+         title="Declared niche: {{ r.temporal.start_label }}{% if r.temporal.end > r.temporal.start %} → {{ r.temporal.end_label }}{% endif %}{% if r.temporal.note %} · {{ r.temporal.note }}{% endif %}">
+      {{ r.temporal.start_label }}{% if r.temporal.end > r.temporal.start %} → {{ r.temporal.end_label }}{% endif %}
+    </div>
+    {% else %}
+    <div class="wt-unplaced" style="grid-column: 2 / 9">niche undeclared{% if r.temporal and r.temporal.note %} · {{ r.temporal.note }}{% endif %}</div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+<section class="league-hero ml-hero">
+  <article class="card hero-story">
+    <p class="eyebrow">Genealogy Office</p>
+    <h2>Family Registry &amp; Trait Catalog</h2>
+    <p>Families are bloodlines of inherited mechanisms, not cosmetic labels. The Turners bridge the Cosmo/Wanda and Timmy bloodlines through documented hybrid inheritance.</p>
+  </article>
+</section>
+
+{% if version_breakdowns %}
+<section class="card">
+  <p class="eyebrow">Generations &amp; phenotypes</p>
+  <h2>Version-Aware Telemetry</h2>
+  <p>An organism's identity is the strategy; a version is one generation/phenotype implementation.
+  The lab reads each generation separately rather than judging the whole organism by one era — a
+  parent era flagged pathological does not condemn its descendant version.</p>
+  {% for vb in version_breakdowns %}
+  <article class="card" style="margin-top:0.6rem;">
+    <h3>{{ vb.name }}</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Generation</th><th>Change</th><th>Sample</th>
+            {% for c in vb.categories %}<th>{{ c|replace("_", " ") }}</th>{% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for v in vb.versions %}
+          <tr>
+            <td><strong>{{ v.label }}</strong> <small>({{ v.status }})</small>{% if v.pathological %} 🩹{% endif %}</td>
+            <td>{{ v.change_type_label }}</td>
+            <td>{{ v.telemetry.sample_size }}</td>
+            {% for c in vb.categories %}<td>{{ "%.2f"|format(v.telemetry[c]) }}</td>{% endfor %}
+          </tr>
+          {% endfor %}
+          <tr>
+            <td><strong>blended</strong> <small>(all eras)</small></td>
+            <td>—</td>
+            <td>{{ vb.blended.sample_size }}</td>
+            {% for c in vb.categories %}<td>{{ "%.2f"|format(vb.blended[c]) }}</td>{% endfor %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {% for v in vb.versions %}{% if v.verdict %}<p><small><strong>{{ v.label }}:</strong> {{ v.verdict }}</small></p>{% endif %}{% endfor %}
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
+<section class="detail-grid">
+  <article class="card" style="grid-column:1 / -1;">
+    <h2>Wind Tunnel <span class="eyebrow">Signal Timing Spectrum</span></h2>
+    <p class="wt-caption">Declared belief about where each organism seeks its edge — an editable theory, not a measured fact, and <strong>not</strong> a compatibility score. The spectrum is a lens, not a claim that markets move through fixed phases.</p>
+    {% if organisms_timeline %}
+    {{ wind_tunnel(organisms_timeline, spectrum) }}
+    {% else %}
+    <p class="eyebrow">No organisms registered yet.</p>
+    {% endif %}
+  </article>
+</section>
+
+{% for fam in families %}
+<section class="detail-grid">
+  <article class="card" style="grid-column:1 / -1;">
+    <h2>{{ fam.name }}</h2>
+    <p>{{ fam.description }}</p>
+    {% if fam.members %}
+    {{ wind_tunnel(fam.members, spectrum) }}
+    {% endif %}
+    {% for member in fam.members %}
+    <article class="lab-note">
+      <h3>{{ member.name }} <span class="pill">{{ member.kind }}</span>{% if member.classification %} <span class="eyebrow">{{ member.classification }}</span>{% endif %}</h3>
+      {% if member.parents %}<p class="eyebrow">Parents: {{ member.parents|join(', ') }}</p>{% endif %}
+      {% set _src = {'llm': 'auto-classified by generator', 'seed': 'seed', 'human': 'pinned'} %}
+      {% if member.temporal and member.temporal.placed %}
+      <p class="eyebrow">Niche (declared): {{ member.temporal.start_label }}{% if member.temporal.end > member.temporal.start %} → {{ member.temporal.end_label }}{% endif %}{% if member.temporal.source %} · {{ _src.get(member.temporal.source, member.temporal.source) }}{% endif %}</p>
+      {% elif member.temporal and member.temporal.note %}
+      <p class="eyebrow">Niche: needs data · {{ member.temporal.note }}</p>
+      {% endif %}
+      {% if member.traits %}
+      <p>
+        {% for t in member.traits %}
+        <span class="pill pill-{{ t.polarity }}" title="confidence {{ '%.2f'|format(t.confidence) }} · {{ t.evidence_source }}">{{ t.trait_name }} ({{ "%.0f"|format(t.confidence * 100) }}%)</span>
+        {% endfor %}
+      </p>
+      {% else %}
+      <p class="eyebrow">No traits catalogued yet.</p>
+      {% endif %}
+    </article>
+    {% else %}
+    <p>No members yet.</p>
+    {% endfor %}
+  </article>
+</section>
+{% endfor %}
+
+<style>
+  .pill { display:inline-block; padding:1px 8px; border-radius:999px; font-size:0.72em; margin:2px; background:rgba(255,255,255,0.12); }
+  .pill-strength { background: rgba(60,200,120,0.25); }
+  .pill-weakness { background: rgba(230,90,90,0.25); }
+
+  .wt-caption { font-size:0.8em; opacity:0.75; margin:4px 0 12px; }
+  .windtunnel-grid { margin:6px 0 4px; }
+  .wt-track { display:grid; grid-template-columns:140px repeat(7, 1fr); align-items:center; column-gap:3px; margin:3px 0; }
+  .wt-head .wt-cell { font-size:0.62em; line-height:1.1; opacity:0.65; text-align:center; padding:0 2px; }
+  .wt-name { font-size:0.78em; padding-right:8px; text-align:right; opacity:0.9; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .wt-guide { grid-row:1; height:24px; background:rgba(255,255,255,0.045); border-radius:5px; }
+  .wt-bar { grid-row:1; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.64em; padding:0 6px; border-radius:6px; background:rgba(90,150,230,0.4); white-space:nowrap; overflow:hidden; }
+  .wt-unplaced { grid-row:1; height:24px; display:flex; align-items:center; font-size:0.64em; opacity:0.5; padding:0 6px; font-style:italic; }
+</style>
+{% endblock %}

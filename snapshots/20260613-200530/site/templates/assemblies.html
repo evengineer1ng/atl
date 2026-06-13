@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Genome Era</p>
+  <h2>Team Assemblies</h2>
+  <p>Every competitor as an <strong>assembly</strong> of organs — Entry + Exit + Management + Universe — not a single strategy file. Read-only: this describes what runs, it does not change it. The <code>.py</code> is a <em>compiled artifact</em>, not the identity. See <a href="/genomes">the genome catalog</a> and <code>docs/ATL_GENOME_ERA_MIGRATION_AUDIT.md</code>.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Assembly</th>
+          <th>Entry</th>
+          <th>Exit</th>
+          <th>Management</th>
+          <th>Universe</th>
+          <th>Compatibility</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in rows %}
+        <tr>
+          <td><a href="/assemblies/{{ a.slug }}">{{ a.display_name or a.slug }}</a>
+            {% if a.self_paired %}<br><small class="record-pill" style="background:#3a2f5a;">monolithic · seam not traced</small>{% endif %}
+          </td>
+          <td>{% if a.entry_genome_slug %}<a href="/genomes/{{ a.entry_genome_slug }}">{{ a.entry_name or a.entry_genome_slug }}</a>{% else %}—{% endif %}</td>
+          <td>{% if a.exit_genome_slug %}<a href="/genomes/{{ a.exit_genome_slug }}">{{ a.exit_name or a.exit_genome_slug }}</a>{% else %}—{% endif %}</td>
+          <td>{% if a.management_genome_slug %}<a href="/genomes/{{ a.management_genome_slug }}">{{ a.mgmt_name or a.management_genome_slug }}</a>{% else %}<small>(none)</small>{% endif %}</td>
+          <td>{{ a.universe_label or "—" }}</td>
+          <td>{% set cs = a.compatibility_status or "—" %}<span class="record-pill" style="background:{% if cs == 'native' %}#2f4a3a{% elif cs == 'plausible' %}#5a4a1f{% elif cs == 'incompatible' %}#5a1f1f{% else %}#444{% endif %};">{{ cs }}</span></td>
+          <td>{% if a.is_dev %}<small>dev · {{ a.league_tier }}</small>{% elif a.era == 'genome' %}<small>graft</small>{% else %}<a href="/teams/{{ a.source_team_id }}"><small>major league</small></a>{% endif %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% if not rows %}<p><small>No assemblies yet — the backfill runs at startup.</small></p>{% endif %}
+</section>
+
+<section class="card">
+  <p class="eyebrow">Compiler · new graft</p>
+  <h2>Build a cross-genome graft</h2>
+  <p>Combine any entry + exit (+ optional management) into a new assembly. The compiler runs the <strong>validity gate</strong> immediately — it does not generate code, and it will block an incompatible graft. This is how Phase-3's Entry × Exit × Universe matrix cells get created.</p>
+  <form method="post" action="/assemblies/graft" class="kv-grid">
+    <div><span>Entry genome</span>
+      <select name="entry_slug" required>
+        {% for g in entry_genomes %}<option value="{{ g.slug }}">{{ g.name }} ({{ g.family_slug }})</option>{% endfor %}
+      </select>
+    </div>
+    <div><span>Exit genome</span>
+      <select name="exit_slug" required>
+        {% for g in exit_genomes %}<option value="{{ g.slug }}">{{ g.name }} ({{ g.family_slug }})</option>{% endfor %}
+      </select>
+    </div>
+    <div><span>Management (optional)</span>
+      <select name="management_slug">
+        <option value="">(none)</option>
+        {% for g in management_genomes %}<option value="{{ g.slug }}">{{ g.name }} ({{ g.family_slug }})</option>{% endfor %}
+      </select>
+    </div>
+    <div><span>Universe label</span><input type="text" name="universe_label" placeholder="e.g. Top 50"></div>
+    <div><span>&nbsp;</span><button type="submit">Create graft & gate</button></div>
+  </form>
+</section>
+{% endblock %}
