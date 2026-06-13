@@ -1,0 +1,11 @@
+[
+  {
+    "lane_id": "A",
+    "status": "idle",
+    "current_job_id": "",
+    "started_at": null,
+    "last_job_id": "dev-dany__top20_marketcap__1781332763513651400",
+    "failure_reason": "",
+    "updated_at": "2026-06-13T06:40:54.230508+00:00"
+  }
+]

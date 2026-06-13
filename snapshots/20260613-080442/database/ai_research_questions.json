@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1627,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 50 leads in net PnL ($28.6 vs $11.9) but both suffer severe unrealized drag and stale tapes; relative risk-adjusted returns remain unresolved as open positions compound without intervention.",
+    "status": "Under review",
+    "created_at": "2026-06-13T07:33:59.164874+00:00"
+  },
+  {
+    "id": 1628,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy-50 is net-positive with +$0.06 realized PnL/hr while Timmy-20 registers -$0.20/hr, yet both share an identical ~35% win-rate phenotype, suggesting universe breadth is the decisive variable.",
+    "status": "Monitoring",
+    "created_at": "2026-06-13T07:33:59.164950+00:00"
+  },
+  {
+    "id": 1629,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo-Wanda-20 generated 3 champion exits but only ~$11.9 net PnL due to uncut open losses, while Cosmo-Wanda-50 shows 1 exit and ~$28.6 net PnL; champion exit frequency is not currently correlating with superior net returns.",
+    "status": "Open",
+    "created_at": "2026-06-13T07:33:59.164957+00:00"
+  },
+  {
+    "id": 1630,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-50 is producing positive realized alpha with a 35% win rate and contained drawdown (~7.7%) in continuous live operation; ongoing observation is required to confirm the edge persists without manual intervention.",
+    "status": "Monitoring",
+    "created_at": "2026-06-13T07:33:59.164961+00:00"
+  },
+  {
+    "id": 1631,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "For Timmy, Top-50 coverage is clearly additive (profitable vs unprofitable), while Cosmo & Wanda Top-50 shows stalled activity and silent open drag versus Top-20's higher exit count, indicating family-specific answers.",
+    "status": "Active study",
+    "created_at": "2026-06-13T07:33:59.164964+00:00"
+  }
+]

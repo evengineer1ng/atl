@@ -1,0 +1,320 @@
+{% extends "base.html" %}
+{% macro fmt_dt(value) -%}
+{{ value.replace("T", " ")[:16] if value else "—" }}
+{%- endmacro %}
+{% macro version_stat_grid(stats) %}
+<div class="kv-grid">
+  <div><span>Trades</span><strong>{{ stats.trades }}</strong></div>
+  <div><span>Closed</span><strong>{{ stats.closed }}</strong></div>
+  <div><span>Open</span><strong>{{ stats.open }}</strong></div>
+  <div><span>Realized P&amp;L</span><strong>{{ "%.2f"|format(stats.realized_pnl) }}</strong></div>
+  <div><span>Unrealized P&amp;L</span><strong>{{ "%.2f"|format(stats.unrealized_pnl) }}</strong></div>
+  <div><span>Win rate</span><strong>{{ "%.1f"|format(stats.win_rate) }}%</strong></div>
+  <div><span>Avg ROI</span><strong>{{ "%.2f"|format(stats.avg_roi) }}%</strong></div>
+  <div><span>Median ROI</span><strong>{{ "%.2f"|format(stats.median_roi) }}%</strong></div>
+  <div><span>Avg hold</span><strong>{{ "%.0f"|format(stats.avg_hold_minutes) }}m</strong></div>
+  <div><span>Max hold</span><strong>{{ "%.0f"|format(stats.max_hold_minutes) }}m</strong></div>
+  <div><span>Exit efficiency</span><strong>{{ "%.2f"|format(stats.exit_efficiency) }}%</strong></div>
+  <div><span>Stale inventory</span><strong>{{ stats.stale_inventory }}</strong></div>
+  <div><span>Native trades</span><strong>{{ stats.native_trades }}</strong></div>
+  <div><span>Transition-managed</span><strong>{{ stats.transition_managed_trades }}</strong></div>
+</div>
+{% endmacro %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Live in-season versioning</p>
+  <h2>Strategy Versions</h2>
+  <p>A season freezes <em>history</em>, not strategies. Each runtime carries its own lineage of
+  version eras; standings stay cumulative by strategy while every version era is split out here.
+  Major changes (new exit system, entry logic, timeframe, sizing, universe, risk regime) create a
+  new version; logging, dashboard, and behavior-neutral fixes do not.</p>
+  {% if request.query_params.get("error") == "missing_required" %}
+  <p class="record-pill" style="background:#5a1f1f;">A version needs a change summary, a reason, and an evidence snapshot before it can be created or deployed.</p>
+  {% endif %}
+</section>
+
+{% for strat in strategies %}
+<section class="card" id="{{ strat.team_id }}">
+  <div class="franchise-topline">
+    <div>
+      <p class="eyebrow">{{ strat.strategy_family }} &middot; {{ strat.pair_universe }}</p>
+      <h2>{{ strat.display_name }}
+        {% if strat.active %}<span class="record-pill">active {{ strat.active.version_label }}</span>{% endif %}
+      </h2>
+    </div>
+  </div>
+
+  {% if strat.drift %}
+  <p class="record-pill" style="background:#5a3a1f;">
+    ⚠ Strategy file changed (hash {{ strat.drift.current_hash }}) but no version deployed since
+    {{ strat.active.version_label }} ({{ strat.drift.active_hash }}). Record the change as a new version.
+  </p>
+  {% endif %}
+
+  <!-- Version timeline -->
+  <div class="record-strip">
+    {% for v in strat.versions %}
+    <span class="record-pill">
+      {{ v.version_label }}: {{ fmt_dt(v.deployed_at) }} → {{ fmt_dt(v.retired_at) if v.retired_at else "active" }}
+    </span>
+    {% endfor %}
+  </div>
+
+  <!-- Version history table -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Version</th><th>Status</th><th>Change</th><th>Deployed</th><th>Retired</th><th>Runtime</th>
+          <th>Trades</th><th>Realized</th><th>Avg ROI</th><th>Win%</th><th>Avg hold</th><th>Exit eff.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for v in strat.versions %}
+        <tr>
+          <td><strong>{{ v.version_label }}</strong>{% if v.parent_version_id %} <small>← parent</small>{% endif %}</td>
+          <td>{{ v.status }}{% if v.evidence_snapshot.pathological %} 🩹{% endif %}</td>
+          <td>{{ v.change_type_label }}</td>
+          <td>{{ fmt_dt(v.deployed_at) }}</td>
+          <td>{{ fmt_dt(v.retired_at) }}</td>
+          <td>{{ v.runtime_duration }}</td>
+          <td>{{ v.stats.trades }}</td>
+          <td>{{ "%.2f"|format(v.stats.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(v.stats.avg_roi) }}%</td>
+          <td>{{ "%.1f"|format(v.stats.win_rate) }}%</td>
+          <td>{{ "%.0f"|format(v.stats.avg_hold_minutes) }}m</td>
+          <td>{{ "%.2f"|format(v.stats.exit_efficiency) }}%</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Per-version detail (era narrative + stats + actions) -->
+  {% for v in strat.versions %}
+  <details class="card" style="margin-top:0.6rem;">
+    <summary><strong>{{ v.version_label }}</strong> — {{ v.change_type_label }} ({{ v.status }})</summary>
+    {% if v.change_summary %}<p><strong>Change summary:</strong> {{ v.change_summary }}</p>{% endif %}
+    {% if v.reason_for_change %}<p><strong>Reason:</strong> {{ v.reason_for_change }}</p>{% endif %}
+    {% if v.verdict %}<p><strong>Verdict:</strong> {{ v.verdict }}</p>{% endif %}
+    {% if v.evidence_snapshot.notes %}<p><strong>Evidence:</strong> {{ v.evidence_snapshot.notes }}</p>{% endif %}
+    {% if v.notes %}<p><strong>Notes:</strong><br>{{ v.notes|replace("\n", "<br>")|safe }}</p>{% endif %}
+    {{ version_stat_grid(v.stats) }}
+    <div class="record-strip" style="margin-top:0.6rem;">
+      <a class="record-pill" href="/trade-explorer?team={{ strat.team_id }}&version={{ v.version_label }}">View {{ v.version_label }} trades</a>
+      {% if v.status == 'draft' %}
+      <form method="post" action="/versions/{{ v.id }}/deploy" style="display:inline;">
+        <button type="submit">Deploy {{ v.version_label }}</button>
+      </form>
+      {% endif %}
+      {% if v.status == 'active' %}
+      <form method="post" action="/versions/{{ v.id }}/retire" style="display:inline;">
+        <button type="submit">Retire</button>
+      </form>
+      {% endif %}
+    </div>
+    <details style="margin-top:0.5rem;">
+      <summary>Add note</summary>
+      <form method="post" action="/versions/{{ v.id }}/note">
+        <textarea name="note" rows="2" placeholder="Version note…" required></textarea>
+        <button type="submit">Save note</button>
+      </form>
+    </details>
+    <details style="margin-top:0.5rem;">
+      <summary>Mark pathological</summary>
+      <form method="post" action="/versions/{{ v.id }}/mark-pathological">
+        <input name="verdict" placeholder="Verdict (e.g. exit phenotype unhealthy)">
+        <textarea name="evidence" rows="2" placeholder="Evidence (high avg hold, negative avg ROI, stale inventory…)"></textarea>
+        <button type="submit">Flag as pathological</button>
+      </form>
+    </details>
+  </details>
+  {% endfor %}
+
+  <!-- Create new version -->
+  <details class="card" style="margin-top:0.6rem;">
+    <summary><strong>Create New Version</strong></summary>
+    <form method="post" action="/versions/create">
+      <input type="hidden" name="strategy_id" value="{{ strat.team_id }}">
+      <label>Change type
+        <select name="change_type">
+          {% for key, label in change_types.items() %}
+          <option value="{{ key }}">{{ label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Change summary
+        <input name="change_summary" placeholder="reduce stale holds and improve exit efficiency" required>
+      </label>
+      <label>Reason for change
+        <input name="reason" placeholder="v1 exit pathology" required>
+      </label>
+      <label>Evidence snapshot
+        <textarea name="evidence" rows="2" placeholder="high avg hold time, negative avg ROI, stale inventory behavior" required></textarea>
+      </label>
+      <label>Verdict (optional)
+        <input name="verdict" placeholder="entry concept may still be useful; exit phenotype unhealthy">
+      </label>
+      <label><input type="checkbox" name="deploy_now" value="1"> Deploy immediately (retires {{ strat.active.version_label if strat.active else "current" }})</label>
+      <button type="submit">Create version</button>
+    </form>
+  </details>
+
+  {% if strat.versions|length > 1 %}
+  <details style="margin-top:0.5rem;">
+    <summary>Compare versions</summary>
+    <form method="get" action="/versions/compare">
+      <input type="hidden" name="team" value="{{ strat.team_id }}">
+      <label>A
+        <select name="a">{% for v in strat.versions %}<option value="{{ v.id }}">{{ v.version_label }}</option>{% endfor %}</select>
+      </label>
+      <label>B
+        <select name="b">{% for v in strat.versions %}<option value="{{ v.id }}" {% if loop.last %}selected{% endif %}>{{ v.version_label }}</option>{% endfor %}</select>
+      </label>
+      <button type="submit">Compare</button>
+    </form>
+  </details>
+  {% endif %}
+</section>
+{% endfor %}
+
+<section class="card" id="environments">
+  <p class="eyebrow">Competition Environment · the second axis</p>
+  <h2>Environment Versions</h2>
+  <p>A strategy version changes the <em>organism</em>; an environment version changes the
+  <em>measurement conditions</em> (exchange, stake currency, universe construction, pairlist source).
+  Each trade carries both, so we can separate "the strategy changed" from "the universe changed."</p>
+
+  {% if environments.any_needs_migration %}
+  <div class="card" style="border:1px solid #5a3a1f;">
+    <p class="eyebrow">🏗️ Staged migration — parked at the gate</p>
+    <h3>Standardize all major-league runtimes to the ATL RemotePairList</h3>
+    <p>Major-league runtimes are currently on a mix of dynamic market-cap and frozen snapshots across
+    different exchanges. This migration repoints every runtime's <strong>universe</strong> at the single
+    league-controlled ATL pairlist service (exchange &amp; stake unchanged), rewrites the live configs, and
+    deploys Environment v2 as one infrastructure event. <strong>It runs only when you confirm.</strong></p>
+    <form method="post" action="/environments/migrate-all">
+      <label><input type="checkbox" name="confirm" value="1" required> I understand this rewrites live bot configs and changes what they trade on next restart.</label>
+      <button type="submit">Migrate all major-league runtimes → ATL RemotePairList</button>
+    </form>
+  </div>
+  {% endif %}
+
+  {% for r in environments.runtimes %}
+  <article class="card" id="env-{{ r.team_id }}" style="margin-top:0.6rem;">
+    <h3>{{ r.display_name }}
+      {% if r.active %}<span class="record-pill">active {{ r.active.version_label }}</span>{% endif %}
+      {% if r.needs_migration %}<span class="record-pill" style="background:#5a3a1f;">pre-standardization</span>{% endif %}
+    </h3>
+    {% if r.active %}
+    <div class="kv-grid">
+      <div><span>Exchange</span><strong>{{ r.active.exchange or "—" }}</strong></div>
+      <div><span>Stake</span><strong>{{ r.active.stake_currency or "—" }}</strong></div>
+      <div><span>Universe label</span><strong>{{ r.active.universe_label or "—" }}</strong></div>
+      <div><span>Construction</span><strong>{{ r.active.universe_construction or "—" }}</strong></div>
+      <div><span>Pairlist source</span><strong>{{ r.active.pairlist_source or "—" }}</strong></div>
+      <div><span>Pairlist</span><strong>{{ r.active.pairlist_name or "—" }}</strong></div>
+      <div><span>Assets</span><strong>{{ r.active.number_assets or "—" }}</strong></div>
+    </div>
+    {% endif %}
+    {% if r.drift %}
+    <p class="record-pill" style="background:#5a3a1f;">⚠ Live config environment differs from the recorded {{ r.active.version_label }} — record it as a new environment version.</p>
+    {% endif %}
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Env</th><th>Status</th><th>Change</th><th>Exchange</th><th>Construction</th><th>Pairlist</th><th>Deployed</th><th>Retired</th><th>Trades</th><th>Realized</th><th>Avg ROI</th></tr></thead>
+        <tbody>
+          {% for v in r.versions %}
+          <tr>
+            <td><strong>{{ v.version_label }}</strong></td>
+            <td>{{ v.status }}</td>
+            <td>{{ v.change_type_label }}</td>
+            <td>{{ v.exchange }}</td>
+            <td>{{ v.universe_construction }}</td>
+            <td>{{ v.pairlist_name or v.pairlist_source }}</td>
+            <td>{{ fmt_dt(v.deployed_at) }}</td>
+            <td>{{ fmt_dt(v.retired_at) }}</td>
+            <td>{{ v.stats.trades }}</td>
+            <td>{{ "%.2f"|format(v.stats.realized_pnl) }}</td>
+            <td>{{ "%.2f"|format(v.stats.avg_roi) }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if r.needs_migration %}
+    <details style="margin-top:0.5rem;">
+      <summary>Migrate just this runtime → ATL RemotePairList (preview)</summary>
+      <p>Target: <strong>{{ r.migration_preview.pairlist_name }}</strong> ({{ r.migration_preview.number_assets }} assets,
+      construction <strong>atl-remote</strong>) on <strong>{{ r.migration_preview.exchange }}</strong> /
+      {{ r.migration_preview.stake_currency }} — exchange &amp; stake unchanged.
+      From: {{ r.migration_preview.from.universe_construction }} / {{ r.migration_preview.from.pairlist_source }}.</p>
+      <form method="post" action="/environments/{{ r.team_id }}/migrate">
+        <label><input type="checkbox" name="confirm" value="1" required> Rewrite this bot's config and deploy Environment v2.</label>
+        <button type="submit">Migrate {{ r.display_name }}</button>
+      </form>
+    </details>
+    {% endif %}
+  </article>
+  {% endfor %}
+
+  {% if environments.events %}
+  <div class="table-wrap" style="margin-top:0.6rem;">
+    <table>
+      <thead><tr><th>When</th><th>Runtime</th><th>From → To</th><th>Reason</th></tr></thead>
+      <tbody>
+        {% for e in environments.events %}
+        <tr><td>{{ fmt_dt(e.created_at) }}</td><td>{{ e.strategy_id }}</td><td>{{ e.old_version_id or "—" }} → {{ e.new_version_id }}</td><td>{{ e.reason }}</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</section>
+
+{% if events %}
+<section class="card">
+  <p class="eyebrow">Deploy log</p>
+  <h2>Version Transitions</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>When</th><th>Strategy</th><th>From → To</th><th>Reason</th><th>Summary</th></tr></thead>
+      <tbody>
+        {% for e in events %}
+        <tr>
+          <td>{{ fmt_dt(e.created_at) }}</td>
+          <td>{{ e.strategy_family }} <small>({{ e.strategy_id }})</small></td>
+          <td>{{ e.old_version_id or "—" }} → {{ e.new_version_id }}</td>
+          <td>{{ e.reason }}</td>
+          <td>{{ e.summary }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<section class="card">
+  <p class="eyebrow">Code fingerprints</p>
+  <h2>Strategy File Checksums</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Filename</th><th>Class</th><th>File hash</th><th>Last modified</th><th>Live instances</th></tr></thead>
+      <tbody>
+        {% for row in fingerprints %}
+        <tr>
+          <td>{{ row.filename }}</td>
+          <td>{{ row.strategy_class }}</td>
+          <td>{{ row.file_hash }}</td>
+          <td>{{ fmt_dt(row.last_modified) }}</td>
+          <td>{{ row.teams|join(", ") }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

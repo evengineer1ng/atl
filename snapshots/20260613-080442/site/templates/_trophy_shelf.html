@@ -1,0 +1,40 @@
+<style>
+  .trophy-shelf { margin: 0.5rem 0 0.2rem; }
+  .trophy-chips { display: flex; flex-wrap: wrap; gap: 0.25rem; align-items: center; }
+  .trophy-chip {
+    font-size: 1.35rem; line-height: 1; cursor: default;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.35));
+    transition: transform 0.1s ease;
+  }
+  .trophy-chip:hover { transform: translateY(-2px) scale(1.12); }
+  .trophy-empty { font-size: 0.8rem; opacity: 0.55; }
+  details.trophy-case { margin-top: 0.4rem; }
+  details.trophy-case > summary { cursor: pointer; font-size: 0.74rem; opacity: 0.65; letter-spacing: 0.03em; }
+  details.trophy-case ul { list-style: none; padding: 0.5rem 0 0; margin: 0; display: grid; gap: 0.45rem; }
+  details.trophy-case li { font-size: 0.82rem; line-height: 1.35; }
+  details.trophy-case .t-emoji { font-size: 1.05rem; margin-right: 0.25rem; }
+  details.trophy-case .t-dim { opacity: 0.55; font-size: 0.74rem; }
+  details.trophy-case .t-reason { opacity: 0.8; font-size: 0.76rem; margin-left: 1.5rem; }
+</style>
+{% if trophy_shelf %}
+<div class="trophy-shelf">
+  <div class="trophy-chips" aria-label="Trophy shelf">
+    {% for a in trophy_shelf %}
+    <span class="trophy-chip" title="{{ a.emoji }} {{ a.award_title }} — {{ a.season_label }} · {{ a.dimension }} · {{ a.reason }}">{{ a.emoji }}</span>
+    {% endfor %}
+  </div>
+  <details class="trophy-case">
+    <summary>🗄️ Trophy case ({{ trophy_shelf|length }})</summary>
+    <ul>
+      {% for a in trophy_shelf %}
+      <li>
+        <span class="t-emoji">{{ a.emoji }}</span><strong>{{ a.award_title }}</strong> — {{ a.season_label }}<span class="t-dim"> · {{ a.dimension }}</span>
+        <div class="t-reason">{{ a.reason }}</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </details>
+</div>
+{% else %}
+<div class="trophy-shelf trophy-empty">🗄️ No trophies yet — this organism's career is just beginning.</div>
+{% endif %}
