@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Genome Era · execution</p>
+  <h2>Broker — Shared Market Tape</h2>
+  <p>The broker is ATL's <strong>shared market tape</strong>: one on-disk OHLCV feed that every lobby slot reads, so experiments run container-free in pure pandas instead of one Freqtrade bot each. This is the cheap broad-exploration layer. <strong>Ghost evidence is scouting-grade</strong> — directional, calibrated against Freqtrade, not a substitute for it. Freqtrade stays the scarce validation layer.</p>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Tape coverage</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exchange</th><th>Timeframes (pairs)</th><th>Span (5m)</th></tr></thead>
+      <tbody>
+        {% for ex in status.exchanges %}
+        <tr>
+          <td>{{ ex.exchange }}</td>
+          <td><small>{% for tf, n in ex.timeframes.items() %}{{ tf }}:{{ n }}  {% endfor %}</small></td>
+          <td><small>{{ ex.span or "—" }}</small></td>
+        </tr>
+        {% endfor %}
+        {% if not status.exchanges %}<tr><td colspan="3"><small>No on-disk tape found under user_data/data/&lt;exchange&gt;/futures.</small></td></tr>{% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Ghost evaluator coverage</p>
+  <p><small>Only genomes with a registered executable evaluator can ghost-run. Extracting the rest of the organ code is the deferred Phase-2 work; un-runnable genomes are honestly skipped (their lobby slots stay <code>pending</code>). An exit with no evaluator is approximated as stop-only and flagged in the evidence source.</small></p>
+  <div class="kv-grid">
+    <div><span>Runnable entries</span><strong>{% for g in status.entry_evaluators %}{{ g.name }}{% if not loop.last %}, {% endif %}{% endfor %}</strong></div>
+    <div><span>Runnable exits</span><strong>{% for g in status.exit_evaluators %}{{ g.name }}{% if not loop.last %}, {% endif %}{% endfor %} <small>(+ any → stop-only)</small></strong></div>
+  </div>
+  <p style="margin-top:0.5rem;"><a href="/lobbies/new">Build a broker-fed lobby →</a></p>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Storage discipline</p>
+  <p><strong>Doctrine:</strong> store the market tape <em>once</em> (shared, referenced by exchange + pair + timeframe + timerange), store results compactly, keep detailed per-trade evidence for what matters — and never duplicate candles per lobby. <small>{{ storage.no_candle_duplication }}.</small></p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Data</th><th>Size (MB)</th><th>Files</th><th>Retention</th></tr></thead>
+      <tbody>
+        {% for it in storage.lines %}
+        <tr><td>{{ it.data }}</td><td>{{ it.mb }}</td><td>{{ it.files }}</td><td><small>{{ it.policy }}</small></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="kv-grid" style="margin-top:0.5rem;">
+    {% for k, v in storage.counts.items() %}<div><span>{{ k }}</span><strong>{{ v }} rows</strong></div>{% endfor %}
+  </div>
+  <p style="margin-top:0.5rem;"><small><strong>Prunable now</strong> (archive zips &gt;30d + logs &gt;14d): {{ prune_preview.candidates }} files, {{ (prune_preview.bytes / 1000000)|round(1) }} MB. This is a dry-run preview — <code>POST /api/maintenance/storage</code> prunes them (never touches tape, results, or the DB).</small></p>
+</section>
+{% endblock %}

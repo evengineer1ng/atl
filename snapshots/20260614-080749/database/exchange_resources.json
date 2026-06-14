@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "exchange_id": "binance",
+    "market_type": "futures",
+    "enabled": 1,
+    "max_dev_bots_per_shift": 3,
+    "max_total_concurrent_bots": 6,
+    "cooldown_minutes": 0,
+    "notes": "Seeded from DEV_EXCHANGE_PROFILES (USDC settle).",
+    "created_at": "2026-06-08T03:39:54.489717+00:00",
+    "updated_at": "2026-06-08T03:39:54.489721+00:00"
+  },
+  {
+    "id": 2,
+    "exchange_id": "bitget",
+    "market_type": "futures",
+    "enabled": 1,
+    "max_dev_bots_per_shift": 3,
+    "max_total_concurrent_bots": 6,
+    "cooldown_minutes": 0,
+    "notes": "Seeded from DEV_EXCHANGE_PROFILES (USDT settle).",
+    "created_at": "2026-06-08T03:39:54.490524+00:00",
+    "updated_at": "2026-06-08T03:39:54.490529+00:00"
+  },
+  {
+    "id": 3,
+    "exchange_id": "bybit",
+    "market_type": "futures",
+    "enabled": 1,
+    "max_dev_bots_per_shift": 3,
+    "max_total_concurrent_bots": 6,
+    "cooldown_minutes": 0,
+    "notes": "Seeded from DEV_EXCHANGE_PROFILES (USDT settle).",
+    "created_at": "2026-06-08T03:39:54.490538+00:00",
+    "updated_at": "2026-06-08T03:39:54.490539+00:00"
+  },
+  {
+    "id": 4,
+    "exchange_id": "okx",
+    "market_type": "futures",
+    "enabled": 1,
+    "max_dev_bots_per_shift": 3,
+    "max_total_concurrent_bots": 6,
+    "cooldown_minutes": 0,
+    "notes": "Seeded from DEV_EXCHANGE_PROFILES (USDT settle).",
+    "created_at": "2026-06-08T03:39:54.490544+00:00",
+    "updated_at": "2026-06-08T03:39:54.490545+00:00"
+  },
+  {
+    "id": 5,
+    "exchange_id": "hyperliquid",
+    "market_type": "futures",
+    "enabled": 1,
+    "max_dev_bots_per_shift": 3,
+    "max_total_concurrent_bots": 6,
+    "cooldown_minutes": 0,
+    "notes": "Seeded from DEV_EXCHANGE_PROFILES (USDC settle).",
+    "created_at": "2026-06-08T03:39:54.490549+00:00",
+    "updated_at": "2026-06-08T03:39:54.490550+00:00"
+  }
+]

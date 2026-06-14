@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1862,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "C&W Top 20 currently trails the Top 50 variant in total PnL (+10.42 vs +28.93) and shows deeper proportional unrealized decay (-57.52 vs -34.88) despite a narrower universe, questioning whether concentration risk is offset by cleaner signals.",
+    "status": "Open",
+    "created_at": "2026-06-14T08:06:07.278078+00:00"
+  },
+  {
+    "id": 1863,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy-50 shows mildly negative realized expectancy with compressed risk, while Timmy-20 exhibits steep realized bleeding (-49.60) and negative total PnL, suggesting universe breadth may be critical for Timmy's signal efficacy.",
+    "status": "Open",
+    "created_at": "2026-06-14T08:06:07.278129+00:00"
+  },
+  {
+    "id": 1864,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "C&W strategies deployed champion exits (3 in Top 20, 1 in Top 50) versus Timmy's zero champion exits with dynamic ROI; comparing per-trade ROI and drawdown profiles can validate whether champion-level holds improve risk-adjusted returns.",
+    "status": "Open",
+    "created_at": "2026-06-14T08:06:07.278135+00:00"
+  },
+  {
+    "id": 1865,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy-50 has executed 90 trades with a 33.3% win rate and a best trade of +19.37, but cumulative realized PnL remains negative at -1.72; live dry-run data is needed to determine if the tail-risk profile can flip to positive expectancy.",
+    "status": "Under Review",
+    "created_at": "2026-06-14T08:06:07.278139+00:00"
+  },
+  {
+    "id": 1866,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Both families run parallel Top 20 and Top 50 variants; comparing win rates, trade frequency, and realized PnL per runtime hour across universe widths will clarify whether breadth improves edge or dilutes signal.",
+    "status": "Open",
+    "created_at": "2026-06-14T08:06:07.278142+00:00"
+  }
+]
