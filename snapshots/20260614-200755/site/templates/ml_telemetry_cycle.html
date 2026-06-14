@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="league-hero ml-hero">
+  <article class="card hero-story">
+    <p class="eyebrow">Telemetry Cycle {{ cycle.id }} &middot; {{ cycle.started_at }} &middot; {{ 'LLM-narrated' if cycle.llm_used else 'deterministic' }}</p>
+    <h2>ML Telemetry Essay</h2>
+    <pre class="ml-essay">{{ cycle.essay_markdown }}</pre>
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card" style="grid-column:1 / -1;">
+    <h2>The Fearsome Five</h2>
+    <table class="data-table">
+      <thead><tr><th>#</th><th>Strategy</th><th>Telemetry</th><th>Value</th><th>Peer median</th><th>Robust z</th><th>Read</th></tr></thead>
+      <tbody>
+      {% for f in cycle.findings %}
+        <tr>
+          <td>{{ loop.index }}</td><td>{{ f.strategy_name }}</td><td>{{ f.category }}</td>
+          <td>{{ "%.3f"|format(f.value) }}</td><td>{{ "%.3f"|format(f.peer_median) }}</td>
+          <td>{{ "%.2f"|format(f.robust_z) }} ({{ f.direction }})</td>
+          <td><span class="pill pill-{{ f.favorable }}">{{ f.favorable }}</span></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card" style="grid-column:1 / -1;">
+    <h2>Full divergence breakdown</h2>
+    <table class="data-table">
+      <thead><tr><th>Strategy</th><th>Telemetry</th><th>Value</th><th>Peer mean</th><th>Peer median</th><th>Robust z</th><th>Direction</th></tr></thead>
+      <tbody>
+      {% for d in divergence %}
+        <tr>
+          <td>{{ d.strategy_name }}</td><td>{{ d.category }}</td>
+          <td>{{ "%.3f"|format(d.value) }}</td><td>{{ "%.3f"|format(d.peer_mean) }}</td>
+          <td>{{ "%.3f"|format(d.peer_median) }}</td><td>{{ "%.2f"|format(d.robust_z) }}</td><td>{{ d.direction }}</td>
+        </tr>
+      {% else %}
+        <tr><td colspan="7">No divergence rows for this cycle.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </article>
+</section>
+
+<style>
+  .ml-essay { white-space: pre-wrap; font-family: inherit; line-height: 1.5; background: rgba(0,0,0,0.15); padding: 14px; border-radius: 10px; }
+  .pill { display:inline-block; padding:1px 8px; border-radius:999px; font-size:0.72em; background:rgba(255,255,255,0.12); }
+  .pill-favorable { background: rgba(60,200,120,0.25); }
+  .pill-unfavorable { background: rgba(230,90,90,0.25); }
+</style>
+{% endblock %}

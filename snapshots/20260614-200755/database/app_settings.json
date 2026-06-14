@@ -1,0 +1,307 @@
+[
+  {
+    "key": "ollama_api_key",
+    "value": "bdd9cce8a75b466abd22842afabad439.E_x2xS-gOVBP0Fg70pRkVNw_",
+    "updated_at": "2026-06-09T00:20:27.058920+00:00"
+  },
+  {
+    "key": "ollama_model",
+    "value": "kimi-k2.6:cloud",
+    "updated_at": "2026-06-09T00:20:27.071343+00:00"
+  },
+  {
+    "key": "league_maintenance_minutes",
+    "value": "30",
+    "updated_at": "2026-06-09T00:20:27.138776+00:00"
+  },
+  {
+    "key": "ml_maintenance_minutes",
+    "value": "180",
+    "updated_at": "2026-06-09T00:20:27.150317+00:00"
+  },
+  {
+    "key": "league_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-09T00:20:27.166169+00:00"
+  },
+  {
+    "key": "ml_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-09T00:20:27.173742+00:00"
+  },
+  {
+    "key": "league_maintenance_last_run",
+    "value": "2026-06-14T19:37:41.557709+00:00",
+    "updated_at": "2026-06-14T19:37:41.558680+00:00"
+  },
+  {
+    "key": "ml_maintenance_last_run",
+    "value": "2026-06-14T17:37:56.106262+00:00",
+    "updated_at": "2026-06-14T17:37:56.107255+00:00"
+  },
+  {
+    "key": "research_agent_enabled",
+    "value": "true",
+    "updated_at": "2026-06-09T00:20:27.236856+00:00"
+  },
+  {
+    "key": "research_agent_interval_minutes",
+    "value": "30",
+    "updated_at": "2026-06-09T00:20:27.245488+00:00"
+  },
+  {
+    "key": "research_agent_duration_hours",
+    "value": "12",
+    "updated_at": "2026-06-09T00:20:27.253857+00:00"
+  },
+  {
+    "key": "ollama_fallback_model",
+    "value": "qwen3.6:27b",
+    "updated_at": "2026-06-09T00:20:27.081222+00:00"
+  },
+  {
+    "key": "ollama_timeout_seconds",
+    "value": "247",
+    "updated_at": "2026-06-09T00:20:27.089348+00:00"
+  },
+  {
+    "key": "ollama_retry_count",
+    "value": "-2",
+    "updated_at": "2026-06-09T00:20:27.097551+00:00"
+  },
+  {
+    "key": "development_strategy_generation_model",
+    "value": "kimi-k2.6:cloud",
+    "updated_at": "2026-06-09T00:20:27.105535+00:00"
+  },
+  {
+    "key": "development_strategy_generation_fallback_model",
+    "value": "gpt-oss:120b",
+    "updated_at": "2026-06-09T00:20:27.114129+00:00"
+  },
+  {
+    "key": "development_strategy_generation_timeout_seconds",
+    "value": "247",
+    "updated_at": "2026-06-09T00:20:27.122290+00:00"
+  },
+  {
+    "key": "development_strategy_generation_retry_count",
+    "value": "3",
+    "updated_at": "2026-06-09T00:20:27.130432+00:00"
+  },
+  {
+    "key": "archive_last_run",
+    "value": "2026-06-14T08:07:53.279644+00:00",
+    "updated_at": "2026-06-14T08:07:53.280544+00:00"
+  },
+  {
+    "key": "archive_last_snapshot_path",
+    "value": "algo_trading_league/data/archives/league_snapshots/20260614-080749",
+    "updated_at": "2026-06-14T08:07:53.289407+00:00"
+  },
+  {
+    "key": "archive_repo_url",
+    "value": "https://github.com/evengineer1ng/atl.git",
+    "updated_at": "2026-06-09T00:20:27.196887+00:00"
+  },
+  {
+    "key": "archive_repo_branch",
+    "value": "main",
+    "updated_at": "2026-06-09T00:20:27.204782+00:00"
+  },
+  {
+    "key": "archive_maintenance_minutes",
+    "value": "720",
+    "updated_at": "2026-06-09T00:20:27.158198+00:00"
+  },
+  {
+    "key": "archive_maintenance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-09T00:20:27.181519+00:00"
+  },
+  {
+    "key": "archive_push_enabled",
+    "value": "true",
+    "updated_at": "2026-06-09T00:20:27.189058+00:00"
+  },
+  {
+    "key": "archive_repo_local_path",
+    "value": "algo_trading_league/data/archive_repo",
+    "updated_at": "2026-06-09T00:20:27.212554+00:00"
+  },
+  {
+    "key": "auto_review_regeneration_enabled",
+    "value": "true",
+    "updated_at": "2026-06-09T00:20:27.220373+00:00"
+  },
+  {
+    "key": "auto_review_regeneration_decisions",
+    "value": "tweak,overhaul",
+    "updated_at": "2026-06-09T00:20:27.228562+00:00"
+  },
+  {
+    "key": "league_season_anchor",
+    "value": "2026-06-01T00:00:00-04:00",
+    "updated_at": "2026-06-06T20:30:38.820640+00:00"
+  },
+  {
+    "key": "ml_evolution_review_last_run",
+    "value": "2026-06-07T05:01:43.635607+00:00",
+    "updated_at": "2026-06-07T05:01:43.636632+00:00"
+  },
+  {
+    "key": "ml_evolution_review_minutes",
+    "value": "21600",
+    "updated_at": "2026-06-07T05:25:13.051028+00:00"
+  },
+  {
+    "key": "ml_evolution_review_enabled",
+    "value": "true",
+    "updated_at": "2026-06-07T05:25:13.059835+00:00"
+  },
+  {
+    "key": "ml_descendant_conviction_threshold",
+    "value": "0.75",
+    "updated_at": "2026-06-07T05:25:13.069042+00:00"
+  },
+  {
+    "key": "ml_descendant_min_evidence_cycles",
+    "value": "8",
+    "updated_at": "2026-06-07T05:25:13.077729+00:00"
+  },
+  {
+    "key": "ml_descendant_novelty_threshold",
+    "value": "0.35",
+    "updated_at": "2026-06-07T05:25:13.086133+00:00"
+  },
+  {
+    "key": "ml_descendant_max_per_review",
+    "value": "3",
+    "updated_at": "2026-06-07T05:25:13.094703+00:00"
+  },
+  {
+    "key": "ml_complement_pair_threshold",
+    "value": "0.55",
+    "updated_at": "2026-06-07T05:25:13.103698+00:00"
+  },
+  {
+    "key": "ml_turners_protected_seeded",
+    "value": "true",
+    "updated_at": "2026-06-07T05:37:07.893489+00:00"
+  },
+  {
+    "key": "chronicle_enabled",
+    "value": "true",
+    "updated_at": "2026-06-07T21:33:27.558628+00:00"
+  },
+  {
+    "key": "chronicle_run_time",
+    "value": "23:11",
+    "updated_at": "2026-06-07T21:33:27.568282+00:00"
+  },
+  {
+    "key": "chronicle_last_run",
+    "value": "2026-06-14T03:12:22.652825+00:00",
+    "updated_at": "2026-06-14T03:12:22.653645+00:00"
+  },
+  {
+    "key": "chronicle_last_date",
+    "value": "2026-06-13",
+    "updated_at": "2026-06-14T03:12:22.661630+00:00"
+  },
+  {
+    "key": "resource_governance_enabled",
+    "value": "true",
+    "updated_at": "2026-06-08T03:39:54.480144+00:00"
+  },
+  {
+    "key": "pairlist_manifest_minutes",
+    "value": "360",
+    "updated_at": "2026-06-08T03:39:54.481019+00:00"
+  },
+  {
+    "key": "pairlist_manifest_base_url",
+    "value": "http://host.docker.internal:8000",
+    "updated_at": "2026-06-08T03:39:54.481030+00:00"
+  },
+  {
+    "key": "coingecko_api_key",
+    "value": "",
+    "updated_at": "2026-06-08T03:39:54.481033+00:00"
+  },
+  {
+    "key": "exchange_max_dev_bots_per_shift",
+    "value": "3",
+    "updated_at": "2026-06-08T03:39:54.481036+00:00"
+  },
+  {
+    "key": "exchange_max_total_concurrent_bots",
+    "value": "6",
+    "updated_at": "2026-06-08T03:39:54.481039+00:00"
+  },
+  {
+    "key": "exchange_cooldown_minutes",
+    "value": "0",
+    "updated_at": "2026-06-08T03:39:54.481041+00:00"
+  },
+  {
+    "key": "pairlist_manifest_last_run",
+    "value": "2026-06-14T18:01:09.778456+00:00",
+    "updated_at": "2026-06-14T18:01:09.779440+00:00"
+  },
+  {
+    "key": "backtest_department_paused",
+    "value": "false",
+    "updated_at": "2026-06-10T02:22:43.682108+00:00"
+  },
+  {
+    "key": "backtest_department_last_run",
+    "value": "2026-06-14T20:06:43.536498+00:00",
+    "updated_at": "2026-06-14T20:06:43.536629+00:00"
+  },
+  {
+    "key": "backtest_calibration_enabled",
+    "value": "true",
+    "updated_at": "2026-06-10T04:35:10.633357+00:00"
+  },
+  {
+    "key": "backtest_calibration_interval_minutes",
+    "value": "360",
+    "updated_at": "2026-06-10T04:35:10.633776+00:00"
+  },
+  {
+    "key": "backtest_calibration_window_days",
+    "value": "7",
+    "updated_at": "2026-06-10T04:35:10.633789+00:00"
+  },
+  {
+    "key": "backtest_calibration_last_run",
+    "value": "2026-06-14T18:39:37.562882+00:00",
+    "updated_at": "2026-06-14T18:39:37.563011+00:00"
+  },
+  {
+    "key": "ollama_breaker_threshold",
+    "value": "4",
+    "updated_at": "2026-06-10T11:45:43.641719+00:00"
+  },
+  {
+    "key": "ollama_breaker_cooldown_minutes",
+    "value": "15",
+    "updated_at": "2026-06-10T11:45:43.650715+00:00"
+  },
+  {
+    "key": "ollama_consecutive_failures",
+    "value": "0",
+    "updated_at": "2026-06-14T19:38:54.839565+00:00"
+  },
+  {
+    "key": "ollama_last_success_at",
+    "value": "2026-06-14T19:38:54.848861+00:00",
+    "updated_at": "2026-06-14T19:38:54.856378+00:00"
+  },
+  {
+    "key": "ollama_last_failure_at",
+    "value": "2026-06-11T11:20:31.570466+00:00",
+    "updated_at": "2026-06-11T11:20:31.571645+00:00"
+  }
+]

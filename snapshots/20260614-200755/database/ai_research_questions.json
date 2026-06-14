@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 1972,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Comparing total and realized PnL across CW20 (+$7.66 total, +$67.94 realized) and CW50 (+$26.16 total, +$65.90 realized) will reveal whether narrowing the universe to Top 20 improves capture or simply concentrates unrealized risk.",
+    "status": "Open",
+    "created_at": "2026-06-14T19:37:41.542102+00:00"
+  },
+  {
+    "id": 1973,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy50 is currently profitable (+$10.35 total PnL, 33% win rate) while Timmy20 is deeply negative (-$57.41, 39% win rate), indicating universe breadth may be essential for Timmy's entry signal quality.",
+    "status": "Monitoring \u2014 early evidence favors Top 50",
+    "created_at": "2026-06-14T19:37:41.542150+00:00"
+  },
+  {
+    "id": 1974,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda uses champion exits (3 on CW20, 1 on CW50) and posts 100% closed-trade win rates, while Timmy uses dynamic ROI and shows sub-40% win rates but positive total PnL in Top 50; isolating the exit mechanic's contribution requires deeper trade-level attribution.",
+    "status": "Open",
+    "created_at": "2026-06-14T19:37:41.542156+00:00"
+  },
+  {
+    "id": 1975,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy50's 33% win rate is offset by outsized winners (+$19.37 best trade) and minimal carry (2 open positions). Sustained monitoring will confirm whether this payoff asymmetry holds without manual intervention or if drawdowns exceed the 8.86% ceiling.",
+    "status": "Monitoring",
+    "created_at": "2026-06-14T19:37:41.542160+00:00"
+  },
+  {
+    "id": 1976,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Both strategy families are live on Top 20 and Top 50; comparing their respective total PnL trajectories, trade frequencies, and drawdown profiles will determine if additional pairs provide more alpha or dilute signal fidelity.",
+    "status": "Open",
+    "created_at": "2026-06-14T19:37:41.542164+00:00"
+  }
+]
