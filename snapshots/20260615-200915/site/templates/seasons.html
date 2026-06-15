@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% from "_view_toggle.html" import view_toggle %}
+{% set view = view if view is defined else 'strategy' %}
+{% block content %}
+{{ view_toggle('/seasons', view, 'Seasons') }}
+
+{% if view == 'universe' %}
+<section class="card">
+  <p class="eyebrow">Universe Championship</p>
+  <h2>Which universes performed best this season?</h2>
+  <p class="section-intro">{{ current_season.season_label }} &middot; {{ current_season.started_at }} to {{ current_season.ended_at }}. Official team season results, aggregated by the universe each team trades.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Universe</th><th>Season PnL</th><th>Closed Trades</th><th>Win Rate</th><th>Avg ROI</th><th>Teams</th><th>Best Team</th></tr></thead>
+      <tbody>
+        {% for row in universe_season_rows %}
+        <tr>
+          <td>{{ row.rank }}</td>
+          <td><a href="/universes/{{ row.key }}">{{ row.name }}</a></td>
+          <td>{{ "%.2f"|format(row.season_pnl) }}</td>
+          <td>{{ row.closed_trades }}</td>
+          <td>{{ "%.1f"|format(row.win_rate) }}%</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ row.teams }}</td>
+          <td>{% if row.best_team %}{{ row.best_team }} ({{ "%.2f"|format(row.best_team_pnl) }}){% else %}n/a{% endif %}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="8">No universe season data yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% else %}
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Current Season</p>
+    <h2>{{ current_season.season_label }}</h2>
+    <p>{{ current_season.started_at }} to {{ current_season.ended_at }}</p>
+    <form action="/api/seasons/turnover" method="post" class="post-form">
+      <input type="hidden" name="force" value="true">
+      <button type="submit">Run Turnover Snapshot Now</button>
+    </form>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Awards Preview &middot; {{ current_awards_preview|length }} projected</p>
+    <h2>Projected Honors</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Award</th><th>Dimension</th><th>Winner</th><th>Reason</th></tr></thead>
+        <tbody>
+          {% for award in current_awards_preview %}
+          <tr>
+            <td>{{ award.emoji }} {{ award.title }}</td>
+            <td><small>{{ award.dimension }}</small></td>
+            <td>{{ award.winner }}</td>
+            <td><small>{{ award.reason }}</small></td>
+          </tr>
+          {% else %}
+          <tr><td colspan="4">No teams to project yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p class="mono">Dev &amp; research wing awards (Mad Scientist ⚗️, Patriarch 🧬, Professor 📚, Marathoner 🐢) are also granted at turnover from the development league. Awards are permanent and append-only at season turnover.</p>
+  </article>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Season Preview</p>
+  <h2>Official Team Rubric Calls</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Team</th><th>Grade</th><th>Decision</th><th>Score</th><th>Total P&amp;L</th><th>Fix Suggestion</th></tr></thead>
+      <tbody>
+        {% for row in current_preview_rows %}
+        <tr>
+          <td>{{ row.team_name }}</td>
+          <td>{{ row.grade }}</td>
+          <td>{{ row.decision_label }}</td>
+          <td>{{ "%.1f"|format(row.overall_score) }}</td>
+          <td>{{ "%.2f"|format(row.total_pnl) }}</td>
+          <td>{{ row.fix_suggestion }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Approval Queue</p>
+    <h2>Top Team Decisions</h2>
+    {% for row in pending_reviews %}
+    <form action="/api/seasons/reviews" method="post" class="post-form">
+      <input type="hidden" name="review_key" value="{{ row.review_key }}">
+      <p><strong>{{ row.team_name }}</strong> &middot; {{ row.season_label }} &middot; {{ row.decision_label }}</p>
+      <p>{{ row.fix_suggestion }}</p>
+      <label>Notes
+        <input type="text" name="notes" placeholder="Optional approval note">
+      </label>
+      <div class="record-strip">
+        <button type="submit" name="action" value="approve">Approve</button>
+        <button type="submit" name="action" value="reject">Reject</button>
+      </div>
+    </form>
+    {% else %}
+    <p>No pending official-team approvals right now.</p>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <p class="eyebrow">Draft Night</p>
+    <h2>12-Hour Pool Candidates</h2>
+    {% for row in pending_drafts %}
+    <form action="/api/seasons/drafts" method="post" class="post-form">
+      <input type="hidden" name="draft_id" value="{{ row.id }}">
+      <p><strong>{{ row.candidate_name }}</strong> &middot; {{ row.season_label }}</p>
+      <p>{{ row.rationale }}</p>
+      <label>Notes
+        <input type="text" name="notes" placeholder="Optional draft note">
+      </label>
+      <div class="record-strip">
+        <button type="submit" name="action" value="approved">Draft</button>
+        <button type="submit" name="action" value="rejected">Pass</button>
+      </div>
+    </form>
+    {% else %}
+    <p>No persisted draft approvals are waiting right now.</p>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Draft Watch</p>
+  <h2>Current Twelve-Hour Pool Preview</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Candidate</th><th>Tier</th><th>Score</th><th>Projected Total P&amp;L</th><th>Recommendation</th><th>Rationale</th></tr></thead>
+      <tbody>
+        {% for row in draft_preview_rows %}
+        <tr>
+          <td>{{ row.candidate_name }}</td>
+          <td>{{ row.candidate_tier }}</td>
+          <td>{{ "%.1f"|format(row.overall_score) }}</td>
+          <td>{{ "%.2f"|format(row.projected_total_pnl) }}</td>
+          <td>{{ row.recommendation }}</td>
+          <td>{{ row.rationale }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="6">No twelve-hour candidates qualify for draft-night consideration yet.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Stored Turnovers</p>
+  <h2>Season History</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Season</th><th>Status</th><th>Turnover Processed</th><th>Awards</th></tr></thead>
+      <tbody>
+        {% for season in stored_seasons %}
+        <tr>
+          <td>{{ season.season_label }}</td>
+          <td>{{ season.status }}</td>
+          <td>{{ season.turnover_processed_at or 'not yet' }}</td>
+          <td>{{ season.awards|map(attribute='title')|join(', ') }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}
