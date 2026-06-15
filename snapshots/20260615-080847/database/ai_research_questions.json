@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 2087,
+    "category": "league",
+    "question": "Does Cosmo & Wanda Top 20 outperform Top 50 on a net-realized basis?",
+    "rationale": "Top 20 shows higher realized PnL per trade but deeper unrealized drag, while Top 50 leads in headline equity but is post-restart. Clarifying which universe produces superior net retention will guide capital allocation between the two variants.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-15T07:43:47.026313+00:00"
+  },
+  {
+    "id": 2088,
+    "category": "league",
+    "question": "Does Timmy structurally require Top 50 breadth, or can Top 20 improve with parameter tuning?",
+    "rationale": "Timmy Top 50 is net positive (+20.58 total PnL) while Top 20 is decisively negative (-37.40). The gap suggests Top 20 is too narrow, but further telemetry is needed to rule out a fixable parameter misfit versus a structural surface-area requirement.",
+    "status": "Preliminary finding recorded",
+    "created_at": "2026-06-15T07:43:47.026366+00:00"
+  },
+  {
+    "id": 2089,
+    "category": "league",
+    "question": "Do champion exits produce higher net ROI than standard dynamic exits?",
+    "rationale": "Cosmo & Wanda Top 20 has three champion exits yet total PnL (+3.59) lags Top 50 (+25.67), which has only one. If champion exits were superior, the incumbent should show better profit retention rather than near-complete unrealized erosion.",
+    "status": "Under review",
+    "created_at": "2026-06-15T07:43:47.026373+00:00"
+  },
+  {
+    "id": 2090,
+    "category": "league",
+    "question": "Is Timmy's 33% win-rate / high-payoff profile stable or a transient variance artifact?",
+    "rationale": "With 111 closed trades and positive net PnL, Timmy Top 50 demonstrates asymmetric payoff, but max drawdown is 8.86%. Sustained monitoring must confirm the hit rate and payoff ratio remain stable across market regimes.",
+    "status": "Open",
+    "created_at": "2026-06-15T07:43:47.026376+00:00"
+  },
+  {
+    "id": 2091,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or merely add uncorrelated noise?",
+    "rationale": "Timmy clearly benefits from Top 50 expansion, whereas Cosmo & Wanda expanded to Top 50 without resolving exit degradation. Understanding whether breadth adds edge or noise for each phenotype is critical for future universe design.",
+    "status": "Active monitoring",
+    "created_at": "2026-06-15T07:43:47.026380+00:00"
+  }
+]

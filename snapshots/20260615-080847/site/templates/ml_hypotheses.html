@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Name</th><th>Nickname</th><th>Description</th><th>Target</th><th>Training</th><th>Validation</th><th>Status</th></tr></thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td><a href="/ml/hypotheses/{{ row.id }}">{{ row.name }}</a></td>
+          <td>{{ row.nickname }}</td>
+          <td>{{ row.description }}</td>
+          <td>{{ row.target_variable }}</td>
+          <td>{{ row.training_period }}</td>
+          <td>{{ row.validation_period }}</td>
+          <td>{{ row.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

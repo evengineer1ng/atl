@@ -1,0 +1,29 @@
+[
+  {
+    "feature_name": "compression_ratio",
+    "formula": "rolling_true_range / rolling_price_range",
+    "timeframe": "5m",
+    "strategy_using_it": "Timmy hypothesis family",
+    "intuition": "Captures apparent price stillness versus latent movement compression.",
+    "risk_of_leakage": "Low if computed only from historical bars",
+    "safe_for_live_use": true
+  },
+  {
+    "feature_name": "internal_motion_score",
+    "formula": "weighted intrabar excursion + wick stress + reclaim churn",
+    "timeframe": "5m",
+    "strategy_using_it": "Dark Matter / Antimatter",
+    "intuition": "Measures hidden instability inside a seemingly quiet candle sequence.",
+    "risk_of_leakage": "Medium if future candle normalization leaks in",
+    "safe_for_live_use": true
+  },
+  {
+    "feature_name": "forward_return_12",
+    "formula": "(close[t+12] - close[t]) / close[t]",
+    "timeframe": "5m",
+    "strategy_using_it": "Training target only",
+    "intuition": "Labels whether the future move justified the setup.",
+    "risk_of_leakage": "High",
+    "safe_for_live_use": false
+  }
+]
