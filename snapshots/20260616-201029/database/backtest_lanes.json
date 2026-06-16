@@ -1,0 +1,11 @@
+[
+  {
+    "lane_id": "A",
+    "status": "running",
+    "current_job_id": "dev-downforce__top100_marketcap__1781639410704088100",
+    "started_at": "2026-06-16T20:10:22.582448+00:00",
+    "last_job_id": "dev-downforce__top50_marketcap__1781639276417353300",
+    "failure_reason": "Backtest produced no archive.",
+    "updated_at": "2026-06-16T20:10:22.582453+00:00"
+  }
+]

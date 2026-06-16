@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">{{ hypothesis.status }}</p>
+    <h2>{{ hypothesis.name }}</h2>
+    <p>{{ hypothesis.description }}</p>
+    <div class="kv-grid">
+      <div><span>Nickname</span><strong>{{ hypothesis.nickname }}</strong></div>
+      <div><span>Theme</span><strong>{{ hypothesis.theme }}</strong></div>
+      <div><span>Training</span><strong>{{ hypothesis.training_period }}</strong></div>
+      <div><span>Validation</span><strong>{{ hypothesis.validation_period }}</strong></div>
+      <div><span>Evidence Quality</span><strong>{{ hypothesis.evidence_quality }}</strong></div>
+      <div><span>Target</span><strong>{{ hypothesis.target_variable }}</strong></div>
+    </div>
+  </article>
+  <article class="card">
+    <h2>Market Behavior</h2>
+    <p>{{ hypothesis.market_behavior }}</p>
+    <h2>Features Used</h2>
+    <p class="mono">{{ hypothesis.features_used|join(", ") }}</p>
+    <h2>Known Risks</h2>
+    {% for risk in hypothesis.known_risks %}
+    <p>{{ risk }}</p>
+    {% endfor %}
+    <h2>Next Action</h2>
+    <p>{{ hypothesis.next_action }}</p>
+  </article>
+</section>
+<section class="card">
+  <h2>Related Buckets</h2>
+  {% for row in related_buckets %}
+  <p><strong>{{ row.bucket_name }}</strong> · {{ row.feature_conditions }}</p>
+  {% endfor %}
+</section>
+<section class="card">
+  <h2>Maintenance Findings</h2>
+  {% for row in findings %}
+  <p><strong>{{ row.title }}</strong><br>{{ row.content }}</p>
+  {% endfor %}
+</section>
+{% endblock %}

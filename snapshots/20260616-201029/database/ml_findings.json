@@ -1,0 +1,38 @@
+[
+  {
+    "id": 61,
+    "title": "Ghost Ladder backtest is the sole clean critical path",
+    "content": "Ghost Ladder carries no known leakage or contamination, but its walk-forward backtest (ghost-ladder-clean-backtest-wfv1) is planned-awaiting-executor with zero precision or stability evidence. Until the executor produces this run, the prospect cannot advance from Scouting.",
+    "hypothesis_id": "ghost-ladder",
+    "status": "testing",
+    "source_question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "updated_at": "2026-06-07T04:26:14.967171+00:00"
+  },
+  {
+    "id": 62,
+    "title": "Timmy live variants yield non-informative sample counts",
+    "content": "Timmy-20-PC has 0 closed trades and Timmy-50-PC has 1 closed trade over ~29 hours. Both carry projection_unreliable and low_trade_count flags. Live runtime is producing unrealized PnL volatility without the statistical volume needed to validate or refute the parent AUC 0.61 model.",
+    "hypothesis_id": "dark-matter-antimatter",
+    "status": "dry-run candidate",
+    "source_question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "updated_at": "2026-06-07T04:26:14.967218+00:00"
+  },
+  {
+    "id": 63,
+    "title": "Dark Matter parent fails AUC gate with overlapping-window leakage",
+    "content": "The timmy_bucket_ranker_v3 artifact reports AUC 0.61, below the 0.65 promotion threshold. Known leakage risks from overlapping windows and repeated validation reuse remain unresolved. All dependent buckets are blocked until strict non-overlapping revalidation succeeds.",
+    "hypothesis_id": "dark-matter-antimatter",
+    "status": "dry-run candidate",
+    "source_question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "updated_at": "2026-06-07T04:26:14.967224+00:00"
+  },
+  {
+    "id": 64,
+    "title": "Antimatter short-side scarcity prevents independent evaluation",
+    "content": "Antimatter exhibits only 179 samples, a suspicious causal rating, and high short-side contamination risk. It cannot advance independently of the parent Dark Matter revalidation.",
+    "hypothesis_id": "dark-matter-antimatter",
+    "status": "blocked",
+    "source_question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "updated_at": "2026-06-07T04:26:14.967228+00:00"
+  }
+]
