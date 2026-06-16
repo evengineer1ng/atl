@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Shift Scheduler</p>
+      <h2>Development Runtime Rotation</h2>
+      <p>Local time: {{ current_time_local }}</p>
+    </div>
+    <a href="/development">Back to Dev League</a>
+  </div>
+</section>
+
+{% for schedule in schedules %}
+<section class="card">
+  <h2>{{ schedule.tier_label }}</h2>
+  <div class="team-card-grid">
+    {% for shift in schedule.shifts %}
+    <article class="card franchise-card">
+      <p class="eyebrow">{{ shift.label }}{% if shift.is_active %} · Active{% endif %}</p>
+      <h3>{{ shift.window }}</h3>
+      <p>{{ shift.candidates|length }} assigned candidate{{ "" if shift.candidates|length == 1 else "s" }}</p>
+      {% for candidate in shift.candidates %}
+      <p><a href="/development/candidates/{{ candidate.id }}">{{ candidate.name }}</a> · {{ candidate.runtime_status }}{% if candidate.latest_post_shift_grade %} · {{ candidate.latest_post_shift_grade }} {{ candidate.latest_post_shift_decision_label }}{% endif %}</p>
+      {% else %}
+      <p>No candidates assigned yet.</p>
+      {% endfor %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+{% endblock %}
