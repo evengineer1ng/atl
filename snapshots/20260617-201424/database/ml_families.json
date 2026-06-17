@@ -1,0 +1,79 @@
+[
+  {
+    "slug": "fairly-odd-family",
+    "name": "Fairly Odd Family",
+    "description": "Cosmo/Wanda and Timmy bloodlines, bridged by The Turners' hybrid inheritance.",
+    "created_at": "2026-06-07T04:55:00.941994+00:00",
+    "updated_at": "2026-06-17T19:03:10.800780+00:00"
+  },
+  {
+    "slug": "roadrunner",
+    "name": "Roadrunner",
+    "description": "Independent momentum-hunter bloodline.",
+    "created_at": "2026-06-07T04:55:00.948834+00:00",
+    "updated_at": "2026-06-17T19:03:10.808485+00:00"
+  },
+  {
+    "slug": "slacking",
+    "name": "Slacking",
+    "description": "Independent patient mean-reversion bloodline.",
+    "created_at": "2026-06-07T04:55:00.956636+00:00",
+    "updated_at": "2026-06-17T19:03:10.816908+00:00"
+  },
+  {
+    "slug": "le-phare",
+    "name": "Le Phare",
+    "description": "Independent timeframe-alignment bloodline.",
+    "created_at": "2026-06-07T04:55:00.964170+00:00",
+    "updated_at": "2026-06-17T19:03:10.825417+00:00"
+  },
+  {
+    "slug": "jade",
+    "name": "Jade",
+    "description": "Founder bloodline. Bitcoin is the dominant organism of the crypto ecosystem and leaves detectable fingerprints across the broader market. By systematically measuring Bitcoin be...",
+    "created_at": "2026-06-07T16:49:05.305089+00:00",
+    "updated_at": "2026-06-07T16:49:05.305089+00:00"
+  },
+  {
+    "slug": "dany",
+    "name": "Dany",
+    "description": "Founder bloodline. When a move begins, the first minute of expansion contains information.",
+    "created_at": "2026-06-07T21:33:27.492854+00:00",
+    "updated_at": "2026-06-07T21:33:27.492854+00:00"
+  },
+  {
+    "slug": "maverick",
+    "name": "Maverick",
+    "description": "Founder bloodline. Most large-cap crypto assets move together most of the time. When one asset begins moving differently from the group, that difference often persists long eno...",
+    "created_at": "2026-06-08T03:47:42.068169+00:00",
+    "updated_at": "2026-06-08T03:47:42.068169+00:00"
+  },
+  {
+    "slug": "downforce",
+    "name": "Downforce",
+    "description": "Founder bloodline. Hypothesis",
+    "created_at": "2026-06-08T08:33:17.130835+00:00",
+    "updated_at": "2026-06-08T08:33:17.130835+00:00"
+  },
+  {
+    "slug": "block-party",
+    "name": "Block Party",
+    "description": "Founder bloodline. Markets organize into temporary constellations of co-moving coins. Most traders focus on individual stars; Block Party maps the sky first. If a constellation...",
+    "created_at": "2026-06-08T20:49:52.767221+00:00",
+    "updated_at": "2026-06-08T20:49:52.767221+00:00"
+  },
+  {
+    "slug": "turnstile",
+    "name": "The Turnstile",
+    "description": "Founder bloodline. Does a Future Champion scouting layer improve a champion-promotion strategy? The Turnstile runs IDENTICAL Turners logic but only on a universe pre-filtered t...",
+    "created_at": "2026-06-08T22:55:02.268444+00:00",
+    "updated_at": "2026-06-08T22:55:02.268444+00:00"
+  },
+  {
+    "slug": "second-act",
+    "name": "Second Act",
+    "description": "Founder bloodline. After a coin experiences an extraordinary move (crash/pump/volatility explosion/relative-performance anomaly), what tends to happen next? Second Act classifi...",
+    "created_at": "2026-06-08T23:37:59.107733+00:00",
+    "updated_at": "2026-06-08T23:37:59.107733+00:00"
+  }
+]
