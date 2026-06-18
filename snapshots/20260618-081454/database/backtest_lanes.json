@@ -1,0 +1,11 @@
+[
+  {
+    "lane_id": "A",
+    "status": "idle",
+    "current_job_id": "",
+    "started_at": null,
+    "last_job_id": "dev-le-phare__top20_marketcap__1781769400620920700",
+    "failure_reason": "Backtest produced no archive.",
+    "updated_at": "2026-06-18T08:13:37.444233+00:00"
+  }
+]

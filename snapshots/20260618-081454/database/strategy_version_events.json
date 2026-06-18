@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "event_type": "strategy_version_deployed",
+    "strategy_id": "timmy-50-pc",
+    "strategy_family": "Timmy",
+    "old_version_id": 3,
+    "new_version_id": 5,
+    "season_number": 1,
+    "reason": "Timmy v1 showed strong entries but low throughput because positions could remain open for days under generic TP logic. v2 makes exits dynamic, conviction-aware, and evidence-aged so the strategy can harvest profits, free slots, and generate more entry observations.",
+    "summary": "Exit system now uses Timmy-style continuous thesis re-evaluation instead of fixed TP ladder only. Entry DNA preserved.",
+    "evidence_snapshot_json": "{\"mechanism\": \"harvest sleeve + ownership-core thesis re-evaluation\", \"intended_correction\": [\"reduce stale holds\", \"cut loss anchoring\", \"improve exit efficiency\", \"free slots for new entries\"]}",
+    "created_at": "2026-06-09T22:10:05.541913+00:00"
+  },
+  {
+    "id": 2,
+    "event_type": "strategy_version_deployed",
+    "strategy_id": "timmy-20-pc",
+    "strategy_family": "Timmy",
+    "old_version_id": 4,
+    "new_version_id": 6,
+    "season_number": 1,
+    "reason": "Timmy v1 showed strong entries but low throughput because positions could remain open for days under generic TP logic. v2 makes exits dynamic, conviction-aware, and evidence-aged so the strategy can harvest profits, free slots, and generate more entry observations.",
+    "summary": "Exit system now uses Timmy-style continuous thesis re-evaluation instead of fixed TP ladder only. Entry DNA preserved. (shared Timmy strategy file).",
+    "evidence_snapshot_json": "{\"mechanism\": \"harvest sleeve + ownership-core thesis re-evaluation\", \"intended_correction\": [\"reduce stale holds\", \"cut loss anchoring\", \"improve exit efficiency\", \"free slots for new entries\"]}",
+    "created_at": "2026-06-09T22:10:05.623207+00:00"
+  },
+  {
+    "id": 3,
+    "event_type": "strategy_version_deployed",
+    "strategy_id": "timmy-50-pc",
+    "strategy_family": "Timmy",
+    "old_version_id": 5,
+    "new_version_id": 7,
+    "season_number": 1,
+    "reason": "v2 deployed inert \u2014 freqtrade only calls custom_exit inside `if self.use_exit_signal:`. With it False, Timmy's only working exits were the harvest sleeve, trailing stop and hard stop; the decisive ownership-phase exits (opposite_bias, giveback, thesis_decay, stale_slot, reset) never executed. v3 turns the flag on so the v2 exit logic actually runs.",
+    "summary": "Activate the v2 exit system: use_exit_signal was False, which disabled custom_exit entirely, so the thesis-reeval ownership exits (and v1 elite stomp) never fired. v3 sets it True.",
+    "evidence_snapshot_json": "{\"flag\": \"use_exit_signal False->True\", \"disabled\": \"custom_exit\", \"proof\": \"dany went 0->autonomous custom exits when flipped; freqtrade should_exit gates custom_exit on use_exit_signal\"}",
+    "created_at": "2026-06-10T03:16:24.772698+00:00"
+  },
+  {
+    "id": 4,
+    "event_type": "strategy_version_deployed",
+    "strategy_id": "timmy-20-pc",
+    "strategy_family": "Timmy",
+    "old_version_id": 6,
+    "new_version_id": 8,
+    "season_number": 1,
+    "reason": "v2 deployed inert \u2014 freqtrade only calls custom_exit inside `if self.use_exit_signal:`. With it False, Timmy's only working exits were the harvest sleeve, trailing stop and hard stop; the decisive ownership-phase exits (opposite_bias, giveback, thesis_decay, stale_slot, reset) never executed. v3 turns the flag on so the v2 exit logic actually runs.",
+    "summary": "Activate the v2 exit system: use_exit_signal was False, which disabled custom_exit entirely, so the thesis-reeval ownership exits (and v1 elite stomp) never fired. v3 sets it True.",
+    "evidence_snapshot_json": "{\"flag\": \"use_exit_signal False->True\", \"disabled\": \"custom_exit\", \"proof\": \"dany went 0->autonomous custom exits when flipped; freqtrade should_exit gates custom_exit on use_exit_signal\"}",
+    "created_at": "2026-06-10T03:16:24.921668+00:00"
+  }
+]

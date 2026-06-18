@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 2752,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 20 shows 1.76% avg ROI and 3 champion exits, while Top 50 shows 2.38% avg ROI but only 1 champion exit. However, Top 20 carries an unreconciled \u221233.57 open position and Top 50 has corrupted post-restart logs, making clean comparison impossible without first restoring data integrity.",
+    "status": "On hold \u2014 both variants offline with data-quality flags blocking valid read.",
+    "created_at": "2026-06-18T07:56:03.460451+00:00"
+  },
+  {
+    "id": 2753,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy Top 50 posts a 31.85% win rate and \u22120.008% avg ROI with a 19.37 best trade, while Top 20 shows a 36.04% win rate and \u22120.021% avg ROI with a 7.38 best trade. The trade-off between hit rate, frequency, and right-tail capture is unresolved in the historical tape.",
+    "status": "Monitoring \u2014 awaiting live restart to validate under current market conditions.",
+    "created_at": "2026-06-18T07:56:03.460502+00:00"
+  },
+  {
+    "id": 2754,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Top 20 (champion-exit-heavy, 3 exits) averages 1.76% ROI but warehouses a \u221233.57 latent loss, while Top 50 (dynamic ROI, 1 exit) averages 2.38% with collapsed exit frequency and log corruption. Whether champion exits truly protect returns or simply defer losses into open trades remains unproven.",
+    "status": "Under review \u2014 offline statuses and restart artifacts prevent a clean read.",
+    "created_at": "2026-06-18T07:56:03.460508+00:00"
+  },
+  {
+    "id": 2755,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Both Timmy variants exhibit sub-37% win rates with negative average ROI but sporadic large winners (up to 19.37). Without runtime or heartbeat since mid-June, the sustainability of this asymmetric payoff structure under current spread and slippage regimes is untested.",
+    "status": "Blocked \u2014 both Timmy variants offline; requires resumed telemetry before assessment.",
+    "created_at": "2026-06-18T07:56:03.460514+00:00"
+  },
+  {
+    "id": 2756,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Within-family comparisons suggest Top 50 breadth lifts average ROI for Cosmo & Wanda while increasing trade count and lowering win rate for Timmy, yet divergent exit mechanics and data-quality issues confound the signal-to-noise assessment.",
+    "status": "Monitoring pending live restart of official league pairs.",
+    "created_at": "2026-06-18T07:56:03.460518+00:00"
+  }
+]
