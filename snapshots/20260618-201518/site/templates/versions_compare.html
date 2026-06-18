@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% macro stat_col(v) %}
+{% if v %}
+<article class="card">
+  <p class="eyebrow">{{ v.change_type_label }} &middot; {{ v.status }}</p>
+  <h2>{{ v.version_label }}</h2>
+  {% if v.verdict %}<p><strong>Verdict:</strong> {{ v.verdict }}</p>{% endif %}
+  <div class="kv-grid">
+    <div><span>Trades</span><strong>{{ v.stats.trades }}</strong></div>
+    <div><span>Realized P&amp;L</span><strong>{{ "%.2f"|format(v.stats.realized_pnl) }}</strong></div>
+    <div><span>Unrealized P&amp;L</span><strong>{{ "%.2f"|format(v.stats.unrealized_pnl) }}</strong></div>
+    <div><span>Win rate</span><strong>{{ "%.1f"|format(v.stats.win_rate) }}%</strong></div>
+    <div><span>Avg ROI</span><strong>{{ "%.2f"|format(v.stats.avg_roi) }}%</strong></div>
+    <div><span>Median ROI</span><strong>{{ "%.2f"|format(v.stats.median_roi) }}%</strong></div>
+    <div><span>Avg hold</span><strong>{{ "%.0f"|format(v.stats.avg_hold_minutes) }}m</strong></div>
+    <div><span>Median hold</span><strong>{{ "%.0f"|format(v.stats.median_hold_minutes) }}m</strong></div>
+    <div><span>Max hold</span><strong>{{ "%.0f"|format(v.stats.max_hold_minutes) }}m</strong></div>
+    <div><span>Hold dispersion</span><strong>{{ "%.0f"|format(v.stats.hold_dispersion) }}</strong></div>
+    <div><span>Exit efficiency</span><strong>{{ "%.2f"|format(v.stats.exit_efficiency) }}%</strong></div>
+    <div><span>Stale inventory</span><strong>{{ v.stats.stale_inventory }}</strong></div>
+    <div><span>Native trades</span><strong>{{ v.stats.native_trades }}</strong></div>
+    <div><span>Transition-managed</span><strong>{{ v.stats.transition_managed_trades }}</strong></div>
+  </div>
+</article>
+{% else %}
+<article class="card"><p>Version not found.</p></article>
+{% endif %}
+{% endmacro %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Compare versions</p>
+  <h2>{{ display_name }}</h2>
+  <p><a href="/versions#{{ team_id }}">← back to versions</a></p>
+</section>
+<section class="detail-grid">
+  {{ stat_col(version_a) }}
+  {{ stat_col(version_b) }}
+</section>
+{% endblock %}

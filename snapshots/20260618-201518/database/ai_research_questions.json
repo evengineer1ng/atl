@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 2867,
+    "category": "league",
+    "question": "Does Cosmo & Wanda Top 20 produce more consistent champion-exit alpha than Top 50 once telemetry sync issues are resolved?",
+    "rationale": "Top 20 logs a higher champion-exit frequency (3 vs 1) but carries a -33.57 open-trade anomaly with zero unrealized PnL, while Top 50 posts higher average ROI (~2.38% vs ~1.76%) after its restart. Reconciling book-sync on both variants is prerequisite to determining whether narrow-universe discipline or broad-universe yield proves more robust under live conditions.",
+    "status": "Pending restart reconciliation",
+    "created_at": "2026-06-18T19:58:56.562641+00:00"
+  },
+  {
+    "id": 2868,
+    "category": "league",
+    "question": "Does Timmy\u2019s Top 20 selectivity improve net expectancy versus Top 50 tail-alpha harvesting?",
+    "rationale": "Top 20 lifts win rate by approximately 4 percentage points and reduces trade count, yet caps the best winner at 7.38% compared to 19.37% in Top 50. With both variants offline, the critical unknown is whether narrower coverage cuts noise or simply eliminates outsized payoffs that might otherwise offset a low base win rate.",
+    "status": "Awaiting v3 dry-run comparison",
+    "created_at": "2026-06-18T19:58:56.562720+00:00"
+  },
+  {
+    "id": 2869,
+    "category": "league",
+    "question": "Do champion exits in Cosmo & Wanda maintain a higher effective ROI than dynamic ROI exits when accounting for open-trade drift?",
+    "rationale": "The incumbent\u2019s 100% closed win rate coexists with material unbooked drawdown exposure, suggesting champion-exit latency may mask true position risk. Comparing exit methodologies requires first clearing stale snapshot artifacts, then measuring realized path-to-profit against hold-time and mark-to-market variance.",
+    "status": "Blocked by stale-snapshot audit",
+    "created_at": "2026-06-18T19:58:56.562728+00:00"
+  },
+  {
+    "id": 2870,
+    "category": "league",
+    "question": "Can Timmy\u2019s low-win-rate / high-win-size profile survive live dry-run execution costs and depth constraints?",
+    "rationale": "Timmy\u2019s ~32\u201336% win rate relies on episodic large winners, making fill quality, slippage, and adverse selection existential variables in both Top 20 and Top 50 books. Historical backfits are clean, but live microstructure validation is outstanding before any production trust is warranted.",
+    "status": "Requires live dry-run clearance",
+    "created_at": "2026-06-18T19:58:56.562736+00:00"
+  },
+  {
+    "id": 2871,
+    "category": "league",
+    "question": "Does expanding pair coverage to Top 50 improve opportunity capture or degrade signal-to-noise ratio across both strategy families?",
+    "rationale": "Preliminary offline data shows divergent breadth effects: Cosmo & Wanda gains average ROI but loses exit discipline, while Timmy encounters wider outcome variance. A definitive answer requires controlled restart with matched runtime windows and identical market regimes.",
+    "status": "Queued for paired reboot study",
+    "created_at": "2026-06-18T19:58:56.562742+00:00"
+  }
+]

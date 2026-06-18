@@ -1,0 +1,290 @@
+{
+  "created_at": "2026-06-18T20:15:18.829569+00:00",
+  "snapshot_slug": "20260618-201518",
+  "project_root": ".",
+  "database_tables": [
+    {
+      "table": "ai_generated_content",
+      "row_count": 134
+    },
+    {
+      "table": "ai_research_questions",
+      "row_count": 6
+    },
+    {
+      "table": "app_settings",
+      "row_count": 61
+    },
+    {
+      "table": "backtest_jobs",
+      "row_count": 2699
+    },
+    {
+      "table": "backtest_lanes",
+      "row_count": 1
+    },
+    {
+      "table": "backtest_results",
+      "row_count": 316
+    },
+    {
+      "table": "calibration_windows",
+      "row_count": 53
+    },
+    {
+      "table": "chronicle_days",
+      "row_count": 11
+    },
+    {
+      "table": "compiled_artifacts",
+      "row_count": 15
+    },
+    {
+      "table": "dev_archived_trades",
+      "row_count": 959
+    },
+    {
+      "table": "dev_candidates",
+      "row_count": 11
+    },
+    {
+      "table": "dev_post_shift_reviews",
+      "row_count": 96
+    },
+    {
+      "table": "dev_runtime_events",
+      "row_count": 1523
+    },
+    {
+      "table": "dev_runtime_sessions",
+      "row_count": 219
+    },
+    {
+      "table": "dev_runtime_snapshots",
+      "row_count": 128711
+    },
+    {
+      "table": "dev_shift_episodes",
+      "row_count": 75
+    },
+    {
+      "table": "environment_version_events",
+      "row_count": 4
+    },
+    {
+      "table": "environment_versions",
+      "row_count": 8
+    },
+    {
+      "table": "exchange_leases",
+      "row_count": 84
+    },
+    {
+      "table": "exchange_resources",
+      "row_count": 5
+    },
+    {
+      "table": "experiment_lobbies",
+      "row_count": 4
+    },
+    {
+      "table": "experiment_lobby_results",
+      "row_count": 0
+    },
+    {
+      "table": "experiment_lobby_slots",
+      "row_count": 208
+    },
+    {
+      "table": "experiment_proposals",
+      "row_count": 0
+    },
+    {
+      "table": "experiment_questions",
+      "row_count": 0
+    },
+    {
+      "table": "genome_traits",
+      "row_count": 52
+    },
+    {
+      "table": "genome_versions",
+      "row_count": 26
+    },
+    {
+      "table": "genomes",
+      "row_count": 26
+    },
+    {
+      "table": "league_quarterly_reports",
+      "row_count": 0
+    },
+    {
+      "table": "league_season_draft_recommendations",
+      "row_count": 0
+    },
+    {
+      "table": "league_seasons",
+      "row_count": 0
+    },
+    {
+      "table": "league_team_season_reviews",
+      "row_count": 0
+    },
+    {
+      "table": "live_snapshots",
+      "row_count": 34437
+    },
+    {
+      "table": "maintenance_runs",
+      "row_count": 1736
+    },
+    {
+      "table": "market_tape",
+      "row_count": 398
+    },
+    {
+      "table": "ml_bucket_candidates",
+      "row_count": 18
+    },
+    {
+      "table": "ml_dataset_registry",
+      "row_count": 6
+    },
+    {
+      "table": "ml_descendant_hypotheses",
+      "row_count": 25
+    },
+    {
+      "table": "ml_evolution_reviews",
+      "row_count": 1
+    },
+    {
+      "table": "ml_experiment_queue",
+      "row_count": 0
+    },
+    {
+      "table": "ml_experiment_runs",
+      "row_count": 1
+    },
+    {
+      "table": "ml_families",
+      "row_count": 11
+    },
+    {
+      "table": "ml_feature_set_versions",
+      "row_count": 2
+    },
+    {
+      "table": "ml_findings",
+      "row_count": 4
+    },
+    {
+      "table": "ml_label_registry",
+      "row_count": 2
+    },
+    {
+      "table": "ml_label_spec_versions",
+      "row_count": 2
+    },
+    {
+      "table": "ml_lineage",
+      "row_count": 2
+    },
+    {
+      "table": "ml_model_registry",
+      "row_count": 2
+    },
+    {
+      "table": "ml_promotion_recommendations",
+      "row_count": 25
+    },
+    {
+      "table": "ml_relationships",
+      "row_count": 4893
+    },
+    {
+      "table": "ml_strategy_registry",
+      "row_count": 15
+    },
+    {
+      "table": "ml_telemetry",
+      "row_count": 25251
+    },
+    {
+      "table": "ml_telemetry_cycles",
+      "row_count": 94
+    },
+    {
+      "table": "ml_telemetry_divergence",
+      "row_count": 11491
+    },
+    {
+      "table": "ml_traits",
+      "row_count": 49
+    },
+    {
+      "table": "ml_validation_reports",
+      "row_count": 0
+    },
+    {
+      "table": "research_index_entries",
+      "row_count": 2219
+    },
+    {
+      "table": "research_thread_updates",
+      "row_count": 592
+    },
+    {
+      "table": "research_threads",
+      "row_count": 25
+    },
+    {
+      "table": "strategy_awards",
+      "row_count": 0
+    },
+    {
+      "table": "strategy_version_events",
+      "row_count": 4
+    },
+    {
+      "table": "strategy_versions",
+      "row_count": 8
+    },
+    {
+      "table": "team_assemblies",
+      "row_count": 15
+    },
+    {
+      "table": "team_trades",
+      "row_count": 412
+    },
+    {
+      "table": "timeline_posts",
+      "row_count": 3
+    }
+  ],
+  "data_files": [
+    "instances.json",
+    "ml_buckets.json",
+    "ml_draft_board.json",
+    "ml_features.json",
+    "ml_hypotheses.json",
+    "ml_models.json",
+    "ml_promotions.json",
+    "research_questions.json"
+  ],
+  "development_config_files": [
+    "block-party.json",
+    "dany.json",
+    "downforce.json",
+    "jade.json",
+    "le-phare.json",
+    "maverick.json",
+    "roadrunner.json",
+    "second-act.json",
+    "slaking.json",
+    "the-turners.json",
+    "turnstile.json"
+  ]
+}

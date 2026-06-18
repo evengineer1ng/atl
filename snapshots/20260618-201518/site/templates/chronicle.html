@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+  .chronicle-wrap { --line: rgba(255,255,255,0.18); }
+  .chronicle-strip {
+    display: flex; flex-direction: row; gap: 0; overflow-x: auto; padding: 1.5rem 0 2rem;
+    scroll-snap-type: x proximity; position: relative;
+  }
+  .chronicle-strip::before {
+    content: ""; position: absolute; left: 0; right: 0; top: 78px; height: 2px;
+    background: var(--line); z-index: 0;
+  }
+  .chronicle-day {
+    position: relative; z-index: 1; flex: 0 0 260px; width: 260px; scroll-snap-align: start;
+    padding: 0 0.9rem; display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .chronicle-emoji { font-size: 3rem; line-height: 1; height: 64px; display: flex; align-items: center; }
+  .chronicle-node {
+    width: 14px; height: 14px; border-radius: 50%; background: currentColor;
+    margin: 8px 0 14px; box-shadow: 0 0 0 4px rgba(0,0,0,0.25);
+  }
+  .chronicle-date { font-family: ui-monospace, monospace; font-size: 0.78rem; opacity: 0.7; }
+  .chronicle-class { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.55; margin-top: 2px; }
+  .chronicle-title { font-weight: 600; font-size: 0.98rem; margin: 0.5rem 0 0.4rem; }
+  .chronicle-blurb { font-size: 0.86rem; line-height: 1.45; opacity: 0.92; }
+  .chronicle-day details { margin-top: 0.6rem; width: 100%; text-align: left; }
+  .chronicle-day summary { cursor: pointer; font-size: 0.74rem; opacity: 0.6; }
+  .chronicle-events { list-style: none; padding: 0.4rem 0 0; margin: 0; }
+  .chronicle-events li { font-size: 0.76rem; opacity: 0.8; padding: 0.15rem 0; }
+  .chronicle-empty { padding: 2rem; text-align: center; opacity: 0.7; }
+  .chronicle-actions { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
+  #chronicle-status { font-size: 0.85rem; opacity: 0.75; }
+</style>
+
+<section class="card chronicle-wrap">
+  <p class="eyebrow">League Memory · The Historian</p>
+  <h2>The Chronicle</h2>
+  <p>One chapter per day. The Historian doesn't predict or opine — it records <strong>what happened</strong>, picks a single emoji for the day, and places it in the context of everything that came before. Scroll right toward today.</p>
+  <div class="chronicle-actions">
+    <button type="button" id="chronicle-write" onclick="writeChapter()">Write today's chapter</button>
+    <span id="chronicle-status">
+      {{ day_count }} chapter{{ '' if day_count == 1 else 's' }} recorded ·
+      auto-writes daily at {{ run_time }} local{% if last_run %} · last run {{ last_run }}{% endif %}
+    </span>
+  </div>
+</section>
+
+{% if days %}
+<section class="card chronicle-wrap">
+  <div class="chronicle-strip">
+    {% for day in days %}
+    <article class="chronicle-day">
+      <div class="chronicle-emoji" title="{{ day.classification }}">{{ day.emoji }}</div>
+      <div class="chronicle-node"></div>
+      <div class="chronicle-date">{{ day.chronicle_date }}</div>
+      <div class="chronicle-class">{{ day.classification }}</div>
+      <div class="chronicle-title">{{ day.title }}</div>
+      <div class="chronicle-blurb">{{ day.blurb }}</div>
+      {% if day.events %}
+      <details>
+        <summary>{{ day.events|length }} source event{{ '' if day.events|length == 1 else 's' }}</summary>
+        <ul class="chronicle-events">
+          {% for ev in day.events %}
+          <li>· {{ ev.detail }}</li>
+          {% endfor %}
+        </ul>
+      </details>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% else %}
+<section class="card chronicle-empty">
+  <p>No chapters yet. The Historian writes the first one automatically at {{ run_time }} local — or press <strong>Write today's chapter</strong> to start the record now.</p>
+</section>
+{% endif %}
+
+<script>
+async function writeChapter() {
+  const btn = document.getElementById('chronicle-write');
+  const status = document.getElementById('chronicle-status');
+  btn.disabled = true;
+  status.textContent = 'Consulting the record and writing today’s chapter…';
+  try {
+    const res = await fetch('/api/maintenance/chronicle', { method: 'POST' });
+    if (!res.ok) throw new Error((await res.json()).detail || res.statusText);
+    const data = await res.json();
+    const c = data.chronicle || {};
+    status.textContent = 'Wrote ' + (c.emoji || '') + ' ' + (c.classification || '') + ' — reloading…';
+    setTimeout(() => window.location.reload(), 700);
+  } catch (err) {
+    status.textContent = 'Failed: ' + err.message;
+    btn.disabled = false;
+  }
+}
+</script>
+{% endblock %}

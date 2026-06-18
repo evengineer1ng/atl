@@ -1,0 +1,33 @@
+[
+  {
+    "model_name": "timmy_bucket_ranker_v3",
+    "algorithm_type": "Gradient Boosted Trees",
+    "dataset": "hyperliquid_futures_5m_regime_set_a",
+    "feature_set": [
+      "compression_ratio",
+      "internal_motion_score",
+      "imbalance_delta",
+      "breakout_pressure"
+    ],
+    "training_date": "2026-02-03",
+    "metrics": "AUC 0.61, top-bucket avg forward move 3.9%",
+    "saved_artifact_path": "user_data/notebooks/timmy_bucket_ranker_v3.pkl",
+    "notes": "Primary rediscovery run for Dark Matter bucket.",
+    "influenced_live_strategy": true
+  },
+  {
+    "model_name": "ghost_ladder_probe_v1",
+    "algorithm_type": "Lightweight rules + logistic probe",
+    "dataset": "cross-exchange_ladder_samples_b",
+    "feature_set": [
+      "ladder_persistence",
+      "micro_pullback_depth",
+      "reclaim_velocity"
+    ],
+    "training_date": "2026-05-27",
+    "metrics": "Precision unstable, promising prospect bucket separation",
+    "saved_artifact_path": "user_data/notebooks/ghost_ladder_probe_v1.ipynb",
+    "notes": "Not live-influential yet.",
+    "influenced_live_strategy": false
+  }
+]
