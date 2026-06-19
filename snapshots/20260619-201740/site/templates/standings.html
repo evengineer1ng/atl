@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% from "_view_toggle.html" import view_toggle %}
+{% set view = view if view is defined else 'strategy' %}
+{% block content %}
+{{ view_toggle('/standings', view, 'Standings') }}
+
+<section class="card">
+  <p class="eyebrow">Current Cycle</p>
+  <h2>{{ current_season.season_label }}</h2>
+  <p>This month runs from {{ current_season.started_at }} to {{ current_season.ended_at }}. Season turnover calls and draft-night approvals live in <a href="/seasons">Season Office</a>.</p>
+</section>
+
+{% if view != 'universe' %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Family</th>
+          <th>Universe</th>
+          <th>Equity</th>
+          <th>Realized</th>
+          <th>Unrealized</th>
+          <th>Total</th>
+          <th>Closed Trades</th>
+          <th>Win Rate</th>
+          <th>Avg ROI</th>
+          <th>Best Trade</th>
+          <th>Worst Open</th>
+          <th>Season Call</th>
+          <th>Uptime</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        {% set season_preview = season_preview_map.get(row.team_id, {}) %}
+        <tr>
+          <td>{{ row.rank }}</td>
+          <td><a href="/teams/{{ row.team_id }}">{{ row.team }}</a>{% if row.active_version %} <span class="badge online" title="cumulative season totals; currently running {{ row.active_version }}">active {{ row.active_version }}</span>{% endif %}</td>
+          <td>{{ row.strategy_family }}</td>
+          <td>{% if row.pair_universe %}<a href="/universes/{{ universe_key(row.pair_universe) }}">{{ row.pair_universe }}</a>{% else %}n/a{% endif %}</td>
+          <td>{{ "%.2f"|format(row.equity) }}</td>
+          <td>{{ "%.2f"|format(row.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.unrealized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.total_pnl) }}</td>
+          <td>{{ row.closed_trades }}</td>
+          <td>{{ "%.1f"|format(row.win_rate) }}%</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ "%.2f"|format(row.best_trade) }}%</td>
+          <td>{{ "%.2f"|format(row.worst_open_trade) }}%</td>
+          <td>{% if season_preview %}{{ season_preview.grade }} &middot; {{ season_preview.decision_label }}{% else %}n/a{% endif %}</td>
+          <td><span class="badge {{ 'online' if row.heartbeat else 'offline' }}">{{ row.uptime }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% else %}
+<section class="card">
+  <p class="eyebrow">Universe Championship</p>
+  <h2>Pairlist Standings</h2>
+  <p class="section-intro">Every team currently assigned to a universe, aggregated into one habitat scoreboard. Click a universe for its full profile.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Universe</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Active Teams</th>
+          <th>Total PnL</th>
+          <th>Realized</th>
+          <th>Unrealized</th>
+          <th>Closed Trades</th>
+          <th>Avg ROI</th>
+          <th>Win Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in universe_rows %}
+        <tr>
+          <td>{{ row.rank }}</td>
+          <td><a href="/universes/{{ row.key }}">{{ row.name }}</a></td>
+          <td>{{ row.type }}</td>
+          <td><span class="badge {{ 'online' if row.status == 'active' else 'offline' }}">{{ row.status }}</span></td>
+          <td>{{ row.active_teams }} / {{ row.historical_teams }}</td>
+          <td>{{ "%.2f"|format(row.total_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.realized_pnl) }}</td>
+          <td>{{ "%.2f"|format(row.unrealized_pnl) }}</td>
+          <td>{{ row.closed_trades }}</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ "%.1f"|format(row.win_rate) }}%</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="11">No universes registered yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

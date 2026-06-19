@@ -1,0 +1,50 @@
+[
+  {
+    "id": "dark-matter-antimatter",
+    "name": "Dark Matter / Antimatter",
+    "nickname": "Timmy Origin Bucket",
+    "description": "Compressed price with hidden internal pressure and unstable motion that may precede a breakout.",
+    "market_behavior": "Hovering tape with internal aggression, imbalance, and latent directional energy.",
+    "features_used": [
+      "compression_ratio",
+      "internal_motion_score",
+      "imbalance_delta",
+      "breakout_pressure"
+    ],
+    "target_variable": "Forward 12-candle directional move exceeding loser threshold.",
+    "training_period": "2025-01-01 to 2025-10-31",
+    "validation_period": "2025-11-01 to 2026-01-31",
+    "known_risks": [
+      "Leakage from overlapping windows",
+      "Repeated validation reuse",
+      "Regime fragility"
+    ],
+    "status": "dry-run candidate",
+    "theme": "Predictive sniper scouting lane",
+    "evidence_quality": "Medium-high",
+    "next_action": "Continue comparing Timmy live dry-run exits against re-run validation with stricter leakage controls."
+  },
+  {
+    "id": "ghost-ladder",
+    "name": "Ghost Ladder",
+    "nickname": "Third Lane Prospect",
+    "description": "Investigates silent stair-step accumulation before expansion without full Dark Matter instability.",
+    "market_behavior": "Low-drama climbs with repeated shallow pullbacks and persistent order-book reclaim behavior.",
+    "features_used": [
+      "ladder_persistence",
+      "micro_pullback_depth",
+      "reclaim_velocity"
+    ],
+    "target_variable": "Forward move persistence over 24 candles.",
+    "training_period": "2025-03-01 to 2025-12-31",
+    "validation_period": "2026-01-01 to 2026-02-15",
+    "known_risks": [
+      "Overfitting to a strong trend regime",
+      "Feature redundancy"
+    ],
+    "status": "testing",
+    "theme": "Possible third strategy lane",
+    "evidence_quality": "Early",
+    "next_action": "Build clean backtest prototype and compare against Timmy/Cosmo assumptions."
+  }
+]

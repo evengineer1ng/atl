@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 3097,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 20 shows tighter champion-exit density but a phantom -33.57 open-trade mark, while Top 50 posts higher average ROI yet was recently restarted; neither has realized PnL, so relative performance is undefined.",
+    "status": "Blocked \u2014 awaiting simultaneous contiguous runtime",
+    "created_at": "2026-06-19T20:16:40.106482+00:00"
+  },
+  {
+    "id": 3098,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Top 50 carries a single +19.37% tail winner that props up an otherwise negative-mean process, whereas Top 20 shows marginally higher win rate but severe winner shrinkage (~7.4%); universe sizing appears to alter outcome distribution materially.",
+    "status": "Blocked \u2014 pending live cross-universe deployment",
+    "created_at": "2026-06-19T20:16:40.106522+00:00"
+  },
+  {
+    "id": 3099,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda Top 20 logs 3 champion exits against 69 closed trades, yet reports flat PnL; verifying whether champion-exit logic preserves more profit than dynamic ROI exits requires marked-to-market trade-level comparison on restart.",
+    "status": "Pending \u2014 needs trade-level audit post-restart",
+    "created_at": "2026-06-19T20:16:40.106527+00:00"
+  },
+  {
+    "id": 3100,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "With ~32-36% win rates and aggregate negative expectancy, Timmy\u2019s economics depend on infrequent large winners; the strategy requires live observation to determine if the right-tail outcome is repeatable or a back-test artifact.",
+    "status": "Blocked \u2014 awaiting offline-to-live transition",
+    "created_at": "2026-06-19T20:16:40.106531+00:00"
+  },
+  {
+    "id": 3101,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Comparing Top 20 vs Top 50 across both families shows wider universes increase trade count but reduce champion-exit density and compress or skew winner profiles; distinguishing liquidity-driven alpha from noise demands controlled runtime.",
+    "status": "Blocked \u2014 awaiting synchronized pair-coverage test",
+    "created_at": "2026-06-19T20:16:40.106535+00:00"
+  }
+]
