@@ -1,0 +1,316 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="card">
+  <div class="view-toggle-row">
+    <div>
+      <p class="eyebrow">Experiment Feedback Loop</p>
+      <h2>The dept asks the questions — lobbies answer them</h2>
+    </div>
+    <form action="/api/backtests/propose" method="post" style="display:inline"><button type="submit">Craft proposals from evidence</button></form>
+  </div>
+  <p><small>The Backtesting Dept no longer just re-runs whole strategies. It reads the genome evidence (matrix gaps, synergies, churn traps, habitat fit) and crafts <strong>experiments with explicit predictions</strong> that launch as lobbies (broker ghost — backtest or live-dry). Each launched experiment commits to predictions before it runs.</small></p>
+  {% if experiment_proposals %}
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Source</th><th>Question</th><th>Roster</th><th>Predictions</th><th></th></tr></thead>
+      <tbody>
+        {% for pr in experiment_proposals %}
+        <tr>
+          <td><span class="record-pill" style="background:#3a2f5a;">{{ pr.source }}</span></td>
+          <td><small>{{ pr.question }}</small></td>
+          <td><small>{{ pr.entries|join(", ") }} × {{ pr.exits|join(", ") }}<br>{{ pr.universes|join(", ") }}</small></td>
+          <td><small>{% for p in pr.predictions %}• {{ p }}<br>{% endfor %}</small></td>
+          <td style="white-space:nowrap;">
+            <form method="post" action="/backtests/proposals/{{ pr.id }}/launch" style="display:inline"><button type="submit">launch →</button></form>
+            <form method="post" action="/backtests/proposals/{{ pr.id }}/to-research" style="display:inline"><button type="submit">to research</button></form>
+            <form method="post" action="/backtests/proposals/{{ pr.id }}/dismiss" style="display:inline"><button type="submit">✕</button></form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p><small>No open proposals. Click <em>Craft proposals from evidence</em> to generate the next batch of experiments.</small></p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <div class="view-toggle-row">
+    <div>
+      <p class="eyebrow">Backtesting Department</p>
+      <h2>Continuous evidence engine</h2>
+    </div>
+    <form action="/api/backtests/dept/toggle" method="post" style="display:inline">
+      <input type="hidden" name="action" value="{{ 'resume' if dept_paused else 'pause' }}">
+      <button type="submit">{{ 'Resume department' if dept_paused else 'Pause department' }}</button>
+    </form>
+  </div>
+  <div class="kv-grid">
+    <div><span>Status</span><strong>{{ 'paused' if dept_paused else ('running' if dept_enabled else 'disabled') }}</strong></div>
+    <div><span>Queued</span><strong>{{ dept_queue_count }}</strong></div>
+    <div><span>Stale / missing</span><strong>{{ dept_stale_count }}</strong></div>
+    <div><span>Failed</span><strong>{{ dept_failed_count }}</strong></div>
+    <div><span>Last completed</span><strong>{% if dept_last_completed %}{{ dept_last_completed.strategy_name }} &middot; {{ dept_last_completed.universe_name }}{% else %}none{% endif %}</strong></div>
+    <div><span>Window</span><strong class="mono">{{ dept_default_timerange }}</strong></div>
+  </div>
+  <p class="section-intro">Keeps backtest evidence fresh by priority bucket (health → habitat → research → frontier) on the binance pool, 30-day windows. One lane, paced. Evidence only &mdash; never modifies live behavior.</p>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Lanes</p>
+  <h2>Backtest Lanes</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Lane</th><th>Status</th><th>Current job</th><th>Started</th><th>Last job</th><th>Controls</th></tr></thead>
+      <tbody>
+        {% for lane in dept_lanes %}
+        <tr>
+          <td>{{ lane.lane_id }}</td>
+          <td><span class="badge {{ 'online' if lane.status == 'running' else 'offline' }}">{{ lane.status }}</span></td>
+          <td>{{ lane.current_title or '—' }}</td>
+          <td>{{ lane.started_at or '—' }}</td>
+          <td class="mono">{{ lane.last_job_id or '—' }}</td>
+          <td>
+            <form action="/api/backtests/dept/run-next" method="post" style="display:inline"><button type="submit">Run next now</button></form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Evidence Coverage</p>
+  <h2>Coverage by bucket</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Bucket</th><th>Complete</th><th>Stale</th><th>Missing</th><th>Queued</th><th>Running</th></tr></thead>
+      <tbody>
+        {% for b in [1, 2] %}
+        <tr>
+          <td>{{ b }} &middot; {{ dept_bucket_labels[b] }}</td>
+          <td>{{ dept_coverage[b].complete }}</td>
+          <td>{{ dept_coverage[b].stale }}</td>
+          <td>{{ dept_coverage[b].missing }}</td>
+          <td>{{ dept_coverage[b].queued }}</td>
+          <td>{{ dept_coverage[b].running }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Comparison Matrix</p>
+  <h2>Strategy × Universe (latest P&amp;L)</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Strategy</th>{% for c in dept_matrix_cols %}<th>{{ c.name }}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {% for row in dept_matrix_rows %}
+        <tr>
+          <td>{{ row.name }}</td>
+          {% for cell in row.cells %}
+          <td>
+            {% if cell.run_id %}<a href="/backtests/universe/{{ cell.run_id }}">{{ "%.1f"|format(cell.pnl) }}</a>{% elif cell.state == 'running' %}…{% elif cell.state == 'queued' %}q{% else %}—{% endif %}
+            {% if cell.state == 'stale' %}<small>*</small>{% endif %}
+          </td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="section-intro mono">cell = latest result P&amp;L (link to tape). * = stale &middot; q = queued &middot; … = running &middot; — = no evidence yet.</p>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Priority Queue</p>
+  <h2>Upcoming jobs ({{ dept_queue_count }})</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Bucket</th><th>Title</th><th>Strategy</th><th>Universe</th><th>Reason</th><th>Cancel</th></tr></thead>
+      <tbody>
+        {% for job in dept_queue %}
+        <tr>
+          <td>{{ job.priority_bucket }} &middot; {{ job.bucket_label }}</td>
+          <td>{{ job.title }}</td>
+          <td>{{ job.strategy_name }}</td>
+          <td>{{ job.universe_name }}</td>
+          <td>{{ job.reason }}</td>
+          <td><form action="/api/backtests/dept/cancel" method="post" style="display:inline"><input type="hidden" name="job_id" value="{{ job.job_id }}"><button type="submit">×</button></form></td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6">Queue empty — all tracked evidence is fresh.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Recent Results</p>
+  <h2>Latest completed backtests</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Completed</th><th>Strategy</th><th>Universe</th><th>P&amp;L</th><th>Avg ROI</th><th>Trades</th><th>Win%</th><th>Max DD</th><th></th></tr></thead>
+      <tbody>
+        {% for r in dept_recent %}
+        <tr>
+          <td>{{ r.completed_at }}</td>
+          <td>{{ r.strategy_name }}</td>
+          <td>{{ r.universe_name }}</td>
+          {% if r.status == 'completed' %}
+          <td>{{ "%.2f"|format(r.total_pnl or 0) }}</td>
+          <td>{{ "%.2f"|format(r.avg_roi or 0) }}%</td>
+          <td>{{ r.closed_trades or 0 }}</td>
+          <td>{{ "%.1f"|format(r.win_rate or 0) }}%</td>
+          <td>{{ "%.1f"|format(r.max_drawdown or 0) }}%</td>
+          <td>{% if r.run_id %}<a href="/backtests/universe/{{ r.run_id }}">tape</a>{% endif %}</td>
+          {% else %}
+          <td colspan="5"><span class="badge offline">failed</span> {{ r.failure_reason[:80] }}</td>
+          <td><form action="/api/backtests/dept/retry" method="post" style="display:inline"><input type="hidden" name="job_id" value="{{ r.job_id }}"><button type="submit">retry</button></form></td>
+          {% endif %}
+        </tr>
+        {% else %}
+        <tr><td colspan="9">No completed backtests yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Manual Queue</p>
+  <h2>Queue a custom backtest</h2>
+  <form action="/api/backtests/dept/queue" method="post" class="post-form">
+    <div class="kv-grid">
+      <label>Strategy
+        <select name="strategy_key" required>
+          {% for o in dept_organisms %}<option value="{{ o.key }}">{{ o.name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Universe
+        <select name="universe" required>
+          {% for u in universes %}<option value="{{ u.key }}">{{ u.name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Timerange
+        <input type="text" name="timerange" value="{{ dept_default_timerange }}" placeholder="YYYYMMDD-YYYYMMDD">
+      </label>
+    </div>
+    <div class="record-strip"><button type="submit">Queue job</button></div>
+  </form>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Universe Backtest Lab</p>
+  <h2>Backtest a strategy across many universes</h2>
+  <p class="section-intro">Pick a strategy and one or more universes. Each universe's historical membership is reconstructed day by day from local OHLCV, and entries are gated to the universe-at-time inside the backtest &mdash; so you measure the <em>habitat</em>, not the strategy. Runs launch in the background; refresh to see results.</p>
+  <div class="kv-grid">
+    <div><span>Candidate pool</span><strong>{% for p in pool_status %}{{ p.exchange }} {{ p.pairs_1h }}/{{ p.pairs_5m }}{% if not loop.last %} &middot; {% endif %}{% endfor %}</strong></div>
+    <div><span>Market-cap history</span><strong>{{ marketcap_coins ~ ' coins' if marketcap_ready else 'proxy rank (static)' }}</strong></div>
+    <div><span>Fear &amp; Greed</span><strong>{{ 'cached' if fgi_ready else 'neutral 50' }}</strong></div>
+  </div>
+  <p class="section-intro mono">pool shown as exchange 1h/5m pair counts. Broaden the pool so universes (Top 20 vs Top 50 vs Big Movers) actually separate; pull market caps so Top-N membership time-varies accurately. Jobs run in the background &mdash; refresh to see counts grow.</p>
+  <div class="record-strip" style="flex-wrap:wrap; gap:0.6rem">
+    <form action="/api/backtests/universe/download-pool" method="post" style="display:inline">
+      <input type="hidden" name="exchange" value="{{ default_exchange }}">
+      <input type="hidden" name="days" value="180">
+      <button type="submit">Broaden pool ({{ default_exchange }}, 180d, 1h+5m)</button>
+    </form>
+    <form action="/api/backtests/universe/marketcap-history" method="post" style="display:inline">
+      <input type="hidden" name="days" value="180">
+      <button type="submit">Pull market-cap history</button>
+    </form>
+    {% if not fgi_ready %}
+    <form action="/api/backtests/universe/fear-greed" method="post" style="display:inline">
+      <button type="submit">Download Fear &amp; Greed history</button>
+    </form>
+    {% endif %}
+  </div>
+  <form action="/api/backtests/universe/run" method="post" class="post-form">
+    <div class="kv-grid">
+      <label>Strategy
+        <select name="strategy_key" required>
+          {% for s in strategies %}<option value="{{ s.id }}">{{ s.display_name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Exchange
+        <input type="text" name="exchange" value="{{ default_exchange }}">
+      </label>
+      <label>Timeframe (blank = strategy default)
+        <input type="text" name="timeframe" value="{{ default_timeframe }}" placeholder="5m">
+      </label>
+      <label>Timerange
+        <input type="text" name="timerange" value="{{ default_timerange }}" placeholder="YYYYMMDD-YYYYMMDD">
+      </label>
+    </div>
+    <p class="eyebrow">Universes (pick one or many)</p>
+    <div class="record-strip" style="flex-wrap:wrap; gap:0.6rem">
+      {% for u in universes %}
+      <label class="record-pill"><input type="checkbox" name="universes" value="{{ u.key }}"> {{ u.name }} <small>({{ u.type }})</small></label>
+      {% endfor %}
+    </div>
+    <div class="record-strip">
+      <button type="submit">Run Universe Backtests</button>
+    </div>
+  </form>
+</section>
+
+{% for group in comparison_groups %}
+<section class="card">
+  <p class="eyebrow">{{ group.display_name }} &middot; {{ group.timerange }} &middot; {{ group.exchange }}</p>
+  <h2>Universe Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Universe</th><th>Status</th><th>Pairs (union)</th><th>Days</th><th>Trades</th><th>Total P&amp;L</th><th>Total %</th><th>Win Rate</th><th>Tape</th></tr></thead>
+      <tbody>
+        {% for run in group.rows %}
+        <tr>
+          <td><a href="/universes/{{ run.universe }}">{{ run.universe_name }}</a></td>
+          <td><span class="badge {{ 'online' if run.ok else 'offline' }}">{{ 'ok' if run.ok else 'failed' }}</span></td>
+          <td>{{ run.union_pairs }}</td>
+          <td>{{ run.days }}</td>
+          <td>{{ run.total_trades if run.ok else 'n/a' }}</td>
+          <td>{% if run.ok %}{{ "%.2f"|format(run.profit_total_abs) }}{% else %}n/a{% endif %}</td>
+          <td>{% if run.ok %}{{ "%.2f"|format(run.profit_total_pct) }}%{% else %}n/a{% endif %}</td>
+          <td>{% if run.ok %}{{ "%.1f"|format(run.winrate_pct) }}%{% else %}n/a{% endif %}</td>
+          <td><a href="/backtests/universe/{{ run.run_id }}">view</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endfor %}
+
+<section class="card">
+  <p class="eyebrow">Freqtrade Archive</p>
+  <h2>All Backtest Results</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Strategy</th><th>Version/Run</th><th>Timeframe</th><th>Date Range</th><th>Pair List</th><th>Results Summary</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        {% for row in archive_rows %}
+        <tr>
+          <td>{{ row.strategy }}</td>
+          <td>{{ row.version_hash }}</td>
+          <td>{{ row.timeframe }}</td>
+          <td>{{ row.date_range }}</td>
+          <td>{{ row.pair_list }}</td>
+          <td>{{ row.results_summary }}</td>
+          <td>{{ row.source }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

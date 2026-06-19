@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 2982,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 20 logs more champion exits (3 vs 1) but lower avg ROI (1.76% vs 2.38%); without realized PnL, it is unclear whether narrower focus or broader dispersion drives true economic edge.",
+    "status": "open pending live runtime",
+    "created_at": "2026-06-19T08:04:00.319274+00:00"
+  },
+  {
+    "id": 2983,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy Top 20 improves win rate slightly (~36% vs ~32%) yet deepens negative avg ROI and collapses best-trade magnitude, suggesting a liquidity-concentration trade-off that needs live venue testing.",
+    "status": "open pending dry-run",
+    "created_at": "2026-06-19T08:04:00.319320+00:00"
+  },
+  {
+    "id": 2984,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda Top 20 uses champion exits (3 events) while Top 50 relies on dynamic ROI harvesting (1 champion exit, higher per-trade ROI). The offline ledger cannot yet confirm which exit phenotype books superior realized returns.",
+    "status": "monitoring offline ledgers",
+    "created_at": "2026-06-19T08:04:00.319326+00:00"
+  },
+  {
+    "id": 2985,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy\u2019s lottery-like tail winners (19.37% best trade) are embedded in a sub-32% win-rate distribution; live order-book depth and fill slippage must validate whether these outsized winners are repeatable or back-test artifacts.",
+    "status": "blocked until live dry-run",
+    "created_at": "2026-06-19T08:04:00.319329+00:00"
+  },
+  {
+    "id": 2986,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Expanding from Top 20 to Top 50 increases trade frequency and avg ROI for Cosmo & Wanda but suppresses champion exits and deepens Timmy\u2019s losses, indicating coverage breadth effects are strategy-dependent and need live cross-venue data.",
+    "status": "open pending restart",
+    "created_at": "2026-06-19T08:04:00.319334+00:00"
+  }
+]

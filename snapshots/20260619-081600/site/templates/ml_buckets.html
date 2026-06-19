@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="card">
+  <p class="eyebrow">ML Lab · Genome Wind Tunnel</p>
+  <h2>Classify the organs</h2>
+  <p>Every differentiated genome is run through the same shared-tape conditions and classified by <strong>how it behaves</strong>, not which strategy it came from. Traits are deterministic (no LLM) from real telemetry. <code>g</code>=ghost-graded, <code>v</code>=validated, <code>mixed</code>=both.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Genome</th><th>Kind</th><th>Combos</th><th>P&amp;L</th><th>Win%</th><th>Trades/combo</th><th>Hold(m)</th><th>MaxDD</th><th>Grade</th><th>Traits</th></tr></thead>
+      <tbody>
+        {% for g in tunnel %}
+        <tr>
+          <td><a href="/genomes/{{ g.slug }}">{{ g.name }}</a></td>
+          <td><small>{{ g.kind }}</small></td>
+          <td>{{ g.combos }}</td>
+          <td>{{ "%+.1f"|format(g.metrics.pnl) }}</td>
+          <td>{{ g.metrics.win_rate }}%</td>
+          <td>{{ g.metrics.trades_mean|int }}</td>
+          <td>{{ g.metrics.avg_hold|int }}</td>
+          <td>{{ g.metrics.max_dd }}</td>
+          <td><small>{{ g.grade }}</small></td>
+          <td>{% for t in g.traits %}<span class="record-pill" style="background:{% if t.polarity=='favorable' %}#2f4a3a{% elif t.polarity=='unfavorable' %}#5a1f1f{% else %}#444{% endif %};">{{ t.trait }}</span> {% endfor %}</td>
+        </tr>
+        {% endfor %}
+        {% if not tunnel %}<tr><td colspan="10"><small>No genome evidence yet — run lobbies to populate the wind tunnel.</small></td></tr>{% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">ML Lab · combination study</p>
+  <h2>How do the organs combine? <small>({{ interaction.n_combos }} pairings · baseline {{ interaction.global_mean }})</small></h2>
+  <p>For each entry × exit pairing: <strong>interaction = observed − expected</strong>, where expected is the additive baseline from each organ's marginal. Positive = synergy (the pair beats the sum of its parts); negative = antagonism.</p>
+  {% if interaction.pairs %}
+  <div class="detail-grid">
+    <article class="card">
+      <p class="eyebrow">Synergy (combo &gt; parts)</p>
+      <div class="table-wrap"><table><thead><tr><th>Entry</th><th>Exit</th><th>obs</th><th>exp</th><th>Δ</th></tr></thead><tbody>
+        {% for p in interaction.synergy %}<tr><td><a href="/genomes/{{ p.entry_slug }}">{{ p.entry }}</a></td><td><a href="/genomes/{{ p.exit_slug }}">{{ p.exit }}</a></td><td>{{ p.observed }}</td><td>{{ p.expected }}</td><td style="color:#7fd17f;">{{ "%+.1f"|format(p.interaction) }}</td></tr>{% endfor %}
+      </tbody></table></div>
+    </article>
+    <article class="card">
+      <p class="eyebrow">Antagonism (combo &lt; parts)</p>
+      <div class="table-wrap"><table><thead><tr><th>Entry</th><th>Exit</th><th>obs</th><th>exp</th><th>Δ</th></tr></thead><tbody>
+        {% for p in interaction.antagonism %}<tr><td><a href="/genomes/{{ p.entry_slug }}">{{ p.entry }}</a></td><td><a href="/genomes/{{ p.exit_slug }}">{{ p.exit }}</a></td><td>{{ p.observed }}</td><td>{{ p.expected }}</td><td style="color:#f08a8a;">{{ "%+.1f"|format(p.interaction) }}</td></tr>{% endfor %}
+      </tbody></table></div>
+    </article>
+  </div>
+  {% else %}<p><small>Need entry×exit pairings with evidence — run a genome_scrimmage lobby.</small></p>{% endif %}
+  {% if interaction.correlations %}
+  <p style="margin-top:0.5rem;"><strong>Trait correlations:</strong></p>
+  <ul>{% for c in interaction.correlations %}<li><small>{{ c.label }} → <strong>r = {{ c.r }}</strong> (n={{ c.n }})</small></li>{% endfor %}</ul>
+  {% endif %}
+</section>
+
+<section class="card">
+  <p class="eyebrow">ML Lab · descendant proposals → experiments</p>
+  <h2>Cross an entry with a different exit</h2>
+  <p><small>The Lab's descendant hypotheses are organ-combination proposals. Promote one straight into a runnable lobby (parent A's entry × parent B's exit) — it carries the rationale as the experiment's question.</small></p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Descendant</th><th>Parents</th><th>Conviction</th><th>Rationale</th><th></th></tr></thead>
+      <tbody>
+        {% for d in descendants %}
+        <tr>
+          <td>{{ d.slug }}</td>
+          <td><small>{{ d.parent_a }} × {{ d.parent_b }}</small></td>
+          <td>{{ "%.2f"|format(d.conviction_score or 0) }}</td>
+          <td><small>{{ (d.rationale or "")[:90] }}</small></td>
+          <td><form method="post" action="/ml/descendants/{{ d.slug }}/to-lobby"><button type="submit">→ lobby</button></form></td>
+        </tr>
+        {% endfor %}
+        {% if not descendants %}<tr><td colspan="5"><small>No descendant hypotheses yet (the Evolution Review spawns them).</small></td></tr>{% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% if legacy_buckets %}
+<details>
+  <summary><small>Legacy feature buckets (pre-genome ML scouting)</small></summary>
+  <section class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Bucket</th><th>Conditions</th><th>Samples</th><th>Win/Loss</th><th>Fwd Move</th><th>Long/Short</th><th>Causality</th><th>Contamination</th></tr></thead>
+        <tbody>
+          {% for row in legacy_buckets %}
+          <tr><td>{{ row.bucket_name }}</td><td><small>{{ row.feature_conditions }}</small></td><td>{{ row.samples }}</td><td><small>{{ row.win_loss_profile }}</small></td><td>{{ row.avg_forward_move }}%</td><td><small>{{ row.long_vs_short }}</small></td><td><small>{{ row.causal_rating }}</small></td><td><small>{{ row.contamination_flag }}</small></td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</details>
+{% endif %}
+{% endblock %}

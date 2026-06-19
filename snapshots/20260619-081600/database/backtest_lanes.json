@@ -1,0 +1,11 @@
+[
+  {
+    "lane_id": "A",
+    "status": "idle",
+    "current_job_id": "",
+    "started_at": null,
+    "last_job_id": "cosmo-wanda-50-pc__top50_marketcap__1781855872489736300",
+    "failure_reason": "Backtest produced no archive.",
+    "updated_at": "2026-06-19T08:14:49.982318+00:00"
+  }
+]
