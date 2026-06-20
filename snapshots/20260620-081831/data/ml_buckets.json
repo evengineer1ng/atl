@@ -1,0 +1,34 @@
+[
+  {
+    "id": "dark-matter",
+    "bucket_name": "Dark Matter",
+    "hypothesis_id": "dark-matter-antimatter",
+    "feature_conditions": "compression_ratio < 0.18, internal_motion_score > 0.74, imbalance_delta > 0.41",
+    "samples": 418,
+    "win_loss_profile": "High variance, low hit rate, outsized winner profile",
+    "avg_forward_move": 3.9,
+    "best_example": "ARB 5m coil resolving into impulsive trend continuation",
+    "worst_example": "False breakout regime with news whipsaw contamination",
+    "long_vs_short": "More stable on long side; short side spikes harder but degrades faster.",
+    "example_trades": "Timmy validation clusters around ARB, OP, AVAX.",
+    "causal_rating": "Plausible but not proven",
+    "contamination_flag": "Needs repeat validation without reused validation windows",
+    "notes": "This is the bucket that produced the original Timmy-style thesis."
+  },
+  {
+    "id": "antimatter",
+    "bucket_name": "Antimatter",
+    "hypothesis_id": "dark-matter-antimatter",
+    "feature_conditions": "compression_ratio < 0.15, internal_motion_score > 0.82, downside_imbalance > 0.50",
+    "samples": 179,
+    "win_loss_profile": "Lower sample count, more explosive downside resolution",
+    "avg_forward_move": 4.6,
+    "best_example": "Short-side cascade after fake support retention",
+    "worst_example": "Short squeeze reversal on thin book conditions",
+    "long_vs_short": "Predominantly short behavior",
+    "example_trades": "Short basket candidates with fast stop discipline.",
+    "causal_rating": "Suspicious but interesting",
+    "contamination_flag": "Short-side sample scarcity",
+    "notes": "Use extra caution on leakage and survivorship bias."
+  }
+]

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Genome Era · matchmaking</p>
+  <h2>Experiment Lobbies <a href="/lobbies/new" style="font-size:0.7em;">+ new lobby</a></h2>
+  <p>A lobby is an <strong>experiment</strong>, not a runtime container: it poses a question, makes predictions, assembles a roster of genome combinations, feeds them the same market tape, ranks the evidence, and flags promotion candidates. Freqtrade stays the scarce validation layer; lobbies explore broadly and cheaply.</p>
+</section>
+
+{% macro lobby_table(title, items) %}
+<section class="card">
+  <p class="eyebrow">{{ title }} ({{ items | length }})</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Lobby</th><th>Type</th><th>Status</th><th>Slots</th><th>Universes</th><th>By</th><th>Question</th></tr></thead>
+      <tbody>
+        {% for l in items %}
+        <tr>
+          <td><a href="/lobbies/{{ l.lobby_id }}">{{ l.name or l.lobby_id }}</a></td>
+          <td><small>{{ l.lobby_type }}</small></td>
+          <td><span class="record-pill" style="background:{% if l.status=='reviewed' %}#2f4a3a{% elif l.status=='review_pending' %}#5a4a1f{% elif l.status=='running' %}#1f3a5a{% elif l.status in ('failed','cancelled') %}#5a1f1f{% else %}#444{% endif %};">{{ l.status }}</span></td>
+          <td>{{ l.slot_count }}</td>
+          <td>{{ l.universe_count }}</td>
+          <td><small>{{ l.created_by }}</small></td>
+          <td><small>{{ (l.question or "—")[:80] }}</small></td>
+        </tr>
+        {% endfor %}
+        {% if not items %}<tr><td colspan="7"><small>none</small></td></tr>{% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endmacro %}
+
+{{ lobby_table("Active / filling", groups.active) }}
+{{ lobby_table("Review pending", groups.review) }}
+{{ lobby_table("Recent completed", groups.recent) }}
+
+<section class="card">
+  <p class="eyebrow">Question queue ({{ questions | length }})</p>
+  <p><small>ATL's backlog of unanswered questions. Observer notes and follow-ups land here; they do not auto-launch experiments.</small></p>
+  {% if questions %}
+  <ul>{% for q in questions %}<li><small><strong>{{ q.kind }}</strong> — {{ q.question }} <span style="opacity:.6">({{ q.source }})</span></small></li>{% endfor %}</ul>
+  {% else %}<p><small>No open questions.</small></p>{% endif %}
+</section>
+{% endblock %}
