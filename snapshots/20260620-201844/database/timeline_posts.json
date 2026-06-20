@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "created_at": "2026-06-05T22:58:50.975308+00:00",
+    "title": "League Tracker Initialized",
+    "team_tags": "cosmo-wanda-20-pi,cosmo-wanda-50-pc,timmy-20-pc,timmy-50-pc",
+    "observation": "Set up the local-first league dashboard with one official Pi incumbent and three local challengers.",
+    "evidence": "Configured API endpoints at 10.0.0.159:8080 and 127.0.0.1:8090/8091/8092 with local trade database bindings.",
+    "interpretation": "The evidence stack is now structured enough to compare clean challenger runs against the incumbent without blending legacy containers.",
+    "next_action": "Verify Pi credentials if needed, run sync, and start posting observations as new exits and trade patterns appear.",
+    "category": "league"
+  },
+  {
+    "id": 3,
+    "created_at": "2026-06-05T23:19:36.962078+00:00",
+    "title": "Dark Matter Bucket Rediscovered",
+    "team_tags": "dark-matter-antimatter,timmy",
+    "observation": "Found a compressed-price, high-internal-motion regime consistent with the original Timmy thesis.",
+    "evidence": "Validation bucket retained outsized forward moves and behavior distinct from broad reactive expansion setups.",
+    "interpretation": "This remains scouting evidence, not scoreboard proof. Timmy dry-run behavior decides whether the idea earns promotion.",
+    "next_action": "Re-run with stricter leakage checks and compare against the live Timmy dry-run cohort.",
+    "category": "ml"
+  },
+  {
+    "id": 5,
+    "created_at": "2026-06-07T07:05:16.293438+00:00",
+    "title": "June 5, 2026 \u2014 Opening Day",
+    "team_tags": "cosmo-wanda-20-pi, cosmo-wanda-50-pc, timmy-50-pc, timmy-20-pc",
+    "observation": "The Algo Trading League officially opened with four active franchises:\r\n\r\nCosmo & Wanda Top 20\r\nCosmo & Wanda Top 50\r\nTimmy Top 20\r\nTimmy Top 50\r\n\r\nThe incumbent champion entered as the established benchmark. Three challengers entered seeking evidence, not belief.",
+    "evidence": "Four live dry-run teams launched.\r\nHeartbeats confirmed.\r\nLeague infrastructure operational.\r\nSeason 1 officially began.",
+    "interpretation": "Cosmo and Wanda top 20 has had roughly one month extra on the live instance being tracked as part of the inaugural season compared to its 3 peers, however the champion started at almost exactly the same $990 the three other contenders were launched with on June 5th, with only roughly ~$5 of PnL advantage. Meaning: Winner of Season 1 is entirely up for grabs.",
+    "next_action": " There is lots more shape to this competition to be discovered as it unfolds, however Season 1 June 5th - July 5th is locked in. The aim is to crystallize or manufacture, refine top strategies from scratch at scale, and track them through their journey as they aim to produce the best results in Development League 6 hour and 12 hour tiers. On July 6th at 00:00, the top prospects may then be drafted into the big leagues to compete with the other top strategies running with 24/7 runtime.  The budgets get reset, and Season 2 begins.",
+    "category": "league"
+  }
+]

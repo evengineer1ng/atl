@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "event_type": "environment_version_deployed",
+    "strategy_id": "cosmo-wanda-20-pi",
+    "old_version_id": 1,
+    "new_version_id": 5,
+    "season_number": 1,
+    "reason": "Major-league runtimes were operating on a mix of dynamic market-cap and static snapshots across different exchanges; standardizing the universe source improves experimental consistency.",
+    "summary": "Migrated to ATL RemotePairList \u2014 universe now drawn from the single league-controlled source.",
+    "evidence_snapshot_json": "{\"from\": {\"exchange\": \"hyperliquid\", \"stake_currency\": \"USDC\", \"universe_label\": \"Top 20\", \"universe_construction\": \"dynamic-marketcap\", \"pairlist_source\": \"freqtrade-marketcap\", \"pairlist_name\": \"\", \"number_assets\": 20, \"pairlist_method\": \"MarketCapPairList\"}, \"to\": {\"exchange\": \"hyperliquid\", \"stake_currency\": \"USDC\", \"universe_label\": \"Top 20\", \"universe_construction\": \"atl-remote\", \"pairlist_source\": \"atl-remote\", \"pairlist_name\": \"top20_marketcap\", \"number_assets\": 20, \"pairlist_method\": \"RemotePairList\"}}",
+    "created_at": "2026-06-09T22:10:05.717341+00:00"
+  },
+  {
+    "id": 2,
+    "event_type": "environment_version_deployed",
+    "strategy_id": "cosmo-wanda-50-pc",
+    "old_version_id": 2,
+    "new_version_id": 6,
+    "season_number": 1,
+    "reason": "Major-league runtimes were operating on a mix of dynamic market-cap and static snapshots across different exchanges; standardizing the universe source improves experimental consistency.",
+    "summary": "Migrated to ATL RemotePairList \u2014 universe now drawn from the single league-controlled source.",
+    "evidence_snapshot_json": "{\"from\": {\"exchange\": \"bitget\", \"stake_currency\": \"USDT\", \"universe_label\": \"Top 50\", \"universe_construction\": \"static-snapshot\", \"pairlist_source\": \"static-config\", \"pairlist_name\": \"\", \"number_assets\": 50, \"pairlist_method\": \"StaticPairList\"}, \"to\": {\"exchange\": \"bitget\", \"stake_currency\": \"USDT\", \"universe_label\": \"Top 50\", \"universe_construction\": \"atl-remote\", \"pairlist_source\": \"atl-remote\", \"pairlist_name\": \"top50_marketcap\", \"number_assets\": 50, \"pairlist_method\": \"RemotePairList\"}}",
+    "created_at": "2026-06-09T22:10:05.812897+00:00"
+  },
+  {
+    "id": 3,
+    "event_type": "environment_version_deployed",
+    "strategy_id": "timmy-50-pc",
+    "old_version_id": 3,
+    "new_version_id": 7,
+    "season_number": 1,
+    "reason": "Major-league runtimes were operating on a mix of dynamic market-cap and static snapshots across different exchanges; standardizing the universe source improves experimental consistency.",
+    "summary": "Migrated to ATL RemotePairList \u2014 universe now drawn from the single league-controlled source.",
+    "evidence_snapshot_json": "{\"from\": {\"exchange\": \"bybit\", \"stake_currency\": \"USDT\", \"universe_label\": \"Top 50\", \"universe_construction\": \"static-snapshot\", \"pairlist_source\": \"static-config\", \"pairlist_name\": \"\", \"number_assets\": 50, \"pairlist_method\": \"StaticPairList\"}, \"to\": {\"exchange\": \"bybit\", \"stake_currency\": \"USDT\", \"universe_label\": \"Top 50\", \"universe_construction\": \"atl-remote\", \"pairlist_source\": \"atl-remote\", \"pairlist_name\": \"top50_marketcap\", \"number_assets\": 50, \"pairlist_method\": \"RemotePairList\"}}",
+    "created_at": "2026-06-09T22:10:05.907517+00:00"
+  },
+  {
+    "id": 4,
+    "event_type": "environment_version_deployed",
+    "strategy_id": "timmy-20-pc",
+    "old_version_id": 4,
+    "new_version_id": 8,
+    "season_number": 1,
+    "reason": "Major-league runtimes were operating on a mix of dynamic market-cap and static snapshots across different exchanges; standardizing the universe source improves experimental consistency.",
+    "summary": "Migrated to ATL RemotePairList \u2014 universe now drawn from the single league-controlled source.",
+    "evidence_snapshot_json": "{\"from\": {\"exchange\": \"okx\", \"stake_currency\": \"USDT\", \"universe_label\": \"Top 20\", \"universe_construction\": \"static-snapshot\", \"pairlist_source\": \"static-config\", \"pairlist_name\": \"\", \"number_assets\": 20, \"pairlist_method\": \"StaticPairList\"}, \"to\": {\"exchange\": \"okx\", \"stake_currency\": \"USDT\", \"universe_label\": \"Top 20\", \"universe_construction\": \"atl-remote\", \"pairlist_source\": \"atl-remote\", \"pairlist_name\": \"top20_marketcap\", \"number_assets\": 20, \"pairlist_method\": \"RemotePairList\"}}",
+    "created_at": "2026-06-09T22:10:05.993209+00:00"
+  }
+]

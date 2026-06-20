@@ -1,0 +1,252 @@
+[
+  {
+    "id": 5,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy variants & Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Timmy variants have unreliable sample quality with 0-1 closed trades after ~8 hours. Ghost Ladder lacks any completed backtest. No evidence meets live promotion thresholds.",
+    "blockers": "low_trade_count, projection_unreliable, unstarted_backtest, auc_below_gate",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T07:00:24.697347+00:00"
+  },
+  {
+    "id": 6,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy variants & Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Timmy variants have unreliable sample quality (0-1 closed trades after ~8 hours). Ghost Ladder backtest is planned but unstarted. Parent Dark Matter model AUC 0.61 sits below the 0.65 promotion gate with known overlapping-window leakage. No evidence meets live promotion thresholds.",
+    "blockers": "low_trade_count, projection_unreliable, unstarted_backtest, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T07:03:37.637635+00:00"
+  },
+  {
+    "id": 7,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy variants & Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Timmy variants show unreliable sample quality with 0-1 closed trades after ~8 hours and parent model AUC 0.61 with unresolved contamination. Ghost Ladder has no completed backtest. No evidence meets live promotion thresholds.",
+    "blockers": "low_trade_count, projection_unreliable, unstarted_backtest, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T07:05:27.269200+00:00"
+  },
+  {
+    "id": 8,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy variants & Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Timmy live variants show unreliable sample quality (0-1 closed trades after ~11 hours) and parent model AUC 0.61 with unresolved overlapping-window contamination. Ghost Ladder backtest is planned but unstarted. No evidence meets live promotion thresholds.",
+    "blockers": "low_trade_count, projection_unreliable, unstarted_backtest, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T10:07:40.363486+00:00"
+  },
+  {
+    "id": 9,
+    "experiment_run_id": null,
+    "candidate_name": "Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Prospect is the cleanest path but backtest ghost-ladder-clean-backtest-wfv1 is unstarted. No precision or stability evidence exists yet. Do not promote to live until backtest completes and shows stable metrics.",
+    "blockers": "unstarted_backtest",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T13:11:56.886245+00:00"
+  },
+  {
+    "id": 10,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy variants & Antimatter",
+    "recommendation": "hold",
+    "rationale": "Timmy live variants show unreliable sample quality (0-1 closed trades after ~14 hours) and parent model AUC 0.61 with unresolved overlapping-window contamination. Antimatter is blocked by parent issues and short-side scarcity (n=179).",
+    "blockers": "low_trade_count, projection_unreliable, auc_below_gate, contamination_unresolved, short_side_scarcity",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T13:11:56.894879+00:00"
+  },
+  {
+    "id": 11,
+    "experiment_run_id": 5,
+    "candidate_name": "Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Cleanest prospect with no known contamination, but critical backtest ghost-ladder-clean-backtest-wfv1 is unstarted. Zero precision or stability evidence exists.",
+    "blockers": "unstarted_backtest",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T16:13:26.713994+00:00"
+  },
+  {
+    "id": 12,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy Variants (Top 50 / Top 20)",
+    "recommendation": "hold",
+    "rationale": "Live variants show unreliable sample quality with 0 closed trades after ~17 hours. Parent model AUC 0.61 sits below 0.65 gate with unresolved overlapping-window contamination.",
+    "blockers": "low_trade_count, projection_unreliable, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T16:13:26.721868+00:00"
+  },
+  {
+    "id": 13,
+    "experiment_run_id": null,
+    "candidate_name": "Antimatter Short Cartographer",
+    "recommendation": "hold",
+    "rationale": "Blocked by parent hypothesis contamination. Severe short-side sample scarcity (n=179) and suspicious causal rating prevent independent evaluation.",
+    "blockers": "short_side_scarcity, parent_contamination, auc_below_gate",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T16:13:26.729407+00:00"
+  },
+  {
+    "id": 14,
+    "experiment_run_id": null,
+    "candidate_name": "Dark Matter Bucket Ranker v3",
+    "recommendation": "hold",
+    "rationale": "Model artifact reports AUC 0.61 with confirmed leakage risks from overlapping windows. Cannot promote any dependent bucket until leakage-controlled revalidation exceeds 0.65 AUC.",
+    "blockers": "auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T16:13:26.737300+00:00"
+  },
+  {
+    "id": 15,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy Variants (Top 20 / Top 50)",
+    "recommendation": "hold",
+    "rationale": "~20 hours live runtime produced 0\u20131 closed trades with unreliable sample quality. Parent model AUC 0.61 remains below 0.65 gate with unresolved overlapping-window contamination. Live burn does not currently yield validatory evidence.",
+    "blockers": "low_trade_count, projection_unreliable, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T19:16:07.802331+00:00"
+  },
+  {
+    "id": 16,
+    "experiment_run_id": 5,
+    "candidate_name": "Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Cleanest prospect with no known contamination, but critical backtest is unstarted. Zero precision or stability evidence exists. Promotion to live blocked until backtest completes and shows stable metrics.",
+    "blockers": "unstarted_backtest",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T19:16:07.810190+00:00"
+  },
+  {
+    "id": 17,
+    "experiment_run_id": null,
+    "candidate_name": "Antimatter Short Cartographer",
+    "recommendation": "hold",
+    "rationale": "Blocked by parent hypothesis contamination. Short-side sample scarcity (n=179) and suspicious causal rating persist. No promotion until parent revalidation succeeds.",
+    "blockers": "short_side_scarcity, parent_contamination, auc_below_gate",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T19:16:07.817856+00:00"
+  },
+  {
+    "id": 18,
+    "experiment_run_id": null,
+    "candidate_name": "Dark Matter Bucket Ranker v3",
+    "recommendation": "hold",
+    "rationale": "AUC 0.61 with confirmed leakage risks from overlapping windows. Cannot promote any dependent bucket until leakage-controlled revalidation exceeds 0.65 AUC.",
+    "blockers": "auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T19:16:07.825396+00:00"
+  },
+  {
+    "id": 19,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy Variants (Top 20 / Top 50)",
+    "recommendation": "hold",
+    "rationale": "Live variants produced 0-1 closed trades over ~23h with unreliable sample quality. Parent model AUC 0.61 remains below 0.65 gate with unresolved overlapping-window contamination. Live burn does not yield validatory evidence.",
+    "blockers": "low_trade_count, projection_unreliable, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T22:18:31.963887+00:00"
+  },
+  {
+    "id": 20,
+    "experiment_run_id": null,
+    "candidate_name": "Antimatter Short Cartographer",
+    "recommendation": "hold",
+    "rationale": "Blocked by parent hypothesis contamination. Short-side sample scarcity (n=179) and suspicious causal rating persist. No promotion until parent revalidation succeeds.",
+    "blockers": "short_side_scarcity, parent_contamination, auc_below_gate",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T22:18:31.971704+00:00"
+  },
+  {
+    "id": 21,
+    "experiment_run_id": 5,
+    "candidate_name": "Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Cleanest prospect with no known contamination, but critical backtest is unstarted. Zero precision or stability evidence exists. Promotion to live blocked until backtest completes and shows stable metrics.",
+    "blockers": "unstarted_backtest",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-06T22:18:31.979468+00:00"
+  },
+  {
+    "id": 22,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy Variants (Top 20 / Top 50)",
+    "recommendation": "hold",
+    "rationale": "Live variants produced 0-1 closed trades over ~26h with unreliable sample quality. Parent model AUC 0.61 remains below 0.65 gate with unresolved overlapping-window contamination. Live burn does not yield validatory evidence.",
+    "blockers": "low_trade_count, projection_unreliable, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T01:24:15.426557+00:00"
+  },
+  {
+    "id": 23,
+    "experiment_run_id": null,
+    "candidate_name": "Dark Matter Bucket Ranker v3",
+    "recommendation": "hold",
+    "rationale": "Model artifact reports AUC 0.61 with confirmed leakage risks from overlapping windows. Cannot promote any dependent bucket until leakage-controlled revalidation exceeds 0.65 AUC.",
+    "blockers": "auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T01:24:15.434397+00:00"
+  },
+  {
+    "id": 24,
+    "experiment_run_id": null,
+    "candidate_name": "Antimatter Short Cartographer",
+    "recommendation": "hold",
+    "rationale": "Blocked by parent hypothesis contamination. Short-side sample scarcity (n=179) and suspicious causal rating persist. No promotion until parent revalidation succeeds.",
+    "blockers": "short_side_scarcity, parent_contamination, auc_below_gate",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T01:24:15.442683+00:00"
+  },
+  {
+    "id": 25,
+    "experiment_run_id": 5,
+    "candidate_name": "Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Cleanest prospect with no known contamination, but critical backtest is unstarted. Zero precision or stability evidence exists. Promotion to live blocked until backtest completes and shows stable metrics.",
+    "blockers": "unstarted_backtest",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T01:24:15.450890+00:00"
+  },
+  {
+    "id": 26,
+    "experiment_run_id": 5,
+    "candidate_name": "Ghost Ladder",
+    "recommendation": "hold",
+    "rationale": "Cleanest prospect with no known contamination, but critical backtest is unstarted. Zero precision or stability evidence exists.",
+    "blockers": "unstarted_backtest",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T04:26:15.034945+00:00"
+  },
+  {
+    "id": 27,
+    "experiment_run_id": null,
+    "candidate_name": "Timmy Variants (Top 20 / Top 50)",
+    "recommendation": "hold",
+    "rationale": "Live variants produced 0-1 closed trades over ~29h with unreliable sample quality. Parent model AUC 0.61 remains below 0.65 gate with unresolved overlapping-window contamination. Live burn does not yield validatory evidence.",
+    "blockers": "low_trade_count, projection_unreliable, auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T04:26:15.042924+00:00"
+  },
+  {
+    "id": 28,
+    "experiment_run_id": null,
+    "candidate_name": "Dark Matter Bucket Ranker v3",
+    "recommendation": "hold",
+    "rationale": "Model artifact reports AUC 0.61 with confirmed leakage risks from overlapping windows. Cannot promote any dependent bucket until leakage-controlled revalidation exceeds 0.65 AUC.",
+    "blockers": "auc_below_gate, contamination_unresolved",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T04:26:15.051217+00:00"
+  },
+  {
+    "id": 29,
+    "experiment_run_id": null,
+    "candidate_name": "Antimatter Short Cartographer",
+    "recommendation": "hold",
+    "rationale": "Blocked by parent hypothesis contamination. Short-side sample scarcity (n=179) and suspicious causal rating persist. No promotion until parent revalidation succeeds.",
+    "blockers": "short_side_scarcity, parent_contamination, auc_below_gate",
+    "target_surface": "live_trading",
+    "created_at": "2026-06-07T04:26:15.058935+00:00"
+  }
+]
