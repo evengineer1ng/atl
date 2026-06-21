@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 3432,
+    "category": "league",
+    "question": "Does Cosmo & Wanda Top 20 outperform Top 50 after accounting for open-trade overhang and exit frequency?",
+    "rationale": "Top 20 shows a perfect closed-trade record but carries a -33.57% open-trade drawdown and higher champion-exit density, while Top 50 posts a higher average closed-trade ROI with fewer exits. Net performance remains unresolved because neither variant has realized PnL or restarted.",
+    "status": "Blocked",
+    "created_at": "2026-06-21T07:58:16.850699+00:00"
+  },
+  {
+    "id": 3433,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy-50 records the family\u2019s largest outlier win (+19.37%) but deeper losses and lower win rate (~32%), whereas Timmy-20 exhibits a flatter distribution and weaker average ROI (-2.12%). Determining which universe provides the more viable expectancy profile requires resumed runtime.",
+    "status": "Open",
+    "created_at": "2026-06-21T07:58:16.850745+00:00"
+  },
+  {
+    "id": 3434,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits across complete trade lifecycles?",
+    "rationale": "Cosmo & Wanda data shows divergent exit frequencies (3 champion exits vs 1) despite both posting 100% closed-trade win rates. Champion exits may capture larger moves but could conceal hidden open-drawdown risk that dynamic exits avoid.",
+    "status": "Pending",
+    "created_at": "2026-06-21T07:58:16.850752+00:00"
+  },
+  {
+    "id": 3435,
+    "category": "league",
+    "question": "Does Timmy's low-win-rate / high-win-size profile survive live dry-run conditions?",
+    "rationale": "The +19.37% best trade and negative average ROI suggest a lottery-ticket distribution that may degrade under real slippage, partial fills, and latency. Trust in the profile depends on observing it through a live dry-run gate before capital deployment.",
+    "status": "Open",
+    "created_at": "2026-06-21T07:58:16.850756+00:00"
+  },
+  {
+    "id": 3436,
+    "category": "league",
+    "question": "Does broader pair coverage improve raw opportunity or primarily add noise and execution drag?",
+    "rationale": "Top 50 variants generated more closed trades but lower champion-exit density and, for Timmy, worse aggregate returns. Breadth may dilute signal purity rather than diversify it, but this hypothesis needs per-pair sharpness analysis once both universes resume.",
+    "status": "Monitoring",
+    "created_at": "2026-06-21T07:58:16.850759+00:00"
+  }
+]
