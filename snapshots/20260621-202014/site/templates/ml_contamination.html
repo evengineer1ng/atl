@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Guardrails</p>
+  <h2>Prevent scouting notes from pretending to be scoreboard truth.</h2>
+  {% for warning in warnings %}
+  <article class="question-card">{{ warning }}</article>
+  {% endfor %}
+</section>
+<section class="card">
+  <h2>Review Standard</h2>
+  <p>Every ML result should declare whether it has lookahead bias risk, leakage risk, reused validation exposure, survivorship distortion, repeated-test fatigue, and whether any live confirmation exists.</p>
+</section>
+{% endblock %}

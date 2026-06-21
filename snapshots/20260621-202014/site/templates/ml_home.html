@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="league-hero ml-hero">
+  <article class="card hero-story">
+    <div class="hero-mark">
+      <div class="league-crest ml-crest">LAB</div>
+      <div>
+        <p class="eyebrow">Strategy Biology Department</p>
+        <h2>The ML Lab studies strategies as organisms — their traits, bloodlines, and the descendants that deserve to exist.</h2>
+      </div>
+    </div>
+    <p>Python measures everything deterministically every 3 hours (telemetry &rarr; divergence &rarr; relationships &rarr; conviction). The LLM only writes the language. Every 15 days the lab spends scarce development capital on 0&ndash;3 high-conviction descendants.</p>
+    <div class="post-form" style="flex-direction:row;gap:8px;flex-wrap:wrap;">
+      <button type="button" onclick="mlTrigger('/api/maintenance/ml-telemetry', this)">Run Telemetry Cycle now</button>
+      <button type="button" onclick="mlTrigger('/api/maintenance/ml-evolution', this)">Run Evolution Review now</button>
+    </div>
+  </article>
+  <div class="metric-grid">
+    <article class="metric-card"><span>Organisms</span><strong>{{ strategy_count }}</strong></article>
+    <article class="metric-card"><span>Families</span><strong>{{ family_count }}</strong></article>
+    <article class="metric-card"><span>Catalogued Traits</span><strong>{{ trait_count }}</strong></article>
+    <article class="metric-card"><span>Descendant Hypotheses</span><strong>{{ hypotheses|length }}</strong></article>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card" style="grid-column:1 / -1;">
+    <h2>Latest Telemetry Essay
+      {% if latest_cycle %}<span class="eyebrow">cycle {{ latest_cycle.id }} &middot; {{ latest_cycle.started_at }} &middot; {{ 'LLM' if latest_cycle.llm_used else 'deterministic' }}</span>{% endif %}
+    </h2>
+    {% if latest_cycle %}
+      <h3>The Fearsome Five</h3>
+      <table class="data-table">
+        <thead><tr><th>#</th><th>Strategy</th><th>Telemetry</th><th>Value</th><th>Peer median</th><th>Robust z</th><th>Read</th></tr></thead>
+        <tbody>
+        {% for f in latest_cycle.findings %}
+          <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ f.strategy_name }}</td>
+            <td>{{ f.category }}</td>
+            <td>{{ "%.3f"|format(f.value) }}</td>
+            <td>{{ "%.3f"|format(f.peer_median) }}</td>
+            <td>{{ "%.2f"|format(f.robust_z) }} ({{ f.direction }})</td>
+            <td><span class="pill pill-{{ f.favorable }}">{{ f.favorable }}</span></td>
+          </tr>
+        {% else %}
+          <tr><td colspan="7">No strategy diverged meaningfully this cycle.</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <pre class="ml-essay">{{ latest_cycle.essay_markdown }}</pre>
+      <p><a href="/ml/telemetry/{{ latest_cycle.id }}">Full divergence breakdown &rarr;</a></p>
+    {% else %}
+      <p>No telemetry cycle has run yet. Click <strong>Run Telemetry Cycle now</strong> above to collect the first evidence essay.</p>
+    {% endif %}
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Descendant Watchlist</h2>
+    <p class="eyebrow">Conviction threshold to propose: {{ "%.2f"|format(conviction_threshold) }}</p>
+    {% for h in hypotheses %}
+    <article class="lab-note">
+      <h3>{{ h.parent_a }} &times; {{ h.parent_b }} <span class="pill pill-{{ h.status }}">{{ h.status }}</span></h3>
+      <div class="conviction-bar"><div class="conviction-fill" style="width: {{ (h.conviction_score * 100)|round|int }}%"></div></div>
+      <p>conviction {{ "%.2f"|format(h.conviction_score) }} &middot; complement {{ "%.2f"|format(h.complement_score) }} &middot; novelty {{ "%.2f"|format(h.novelty_score) }} &middot; evidence {{ "%.2f"|format(h.evidence_score) }}</p>
+      <p>{{ h.rationale }}</p>
+    </article>
+    {% else %}
+    <p>No complementary pairings have accumulated yet. The lab is still watching.</p>
+    {% endfor %}
+  </article>
+  <article class="card">
+    <h2>Relationship Highlights</h2>
+    {% for r in relationships %}
+    <article class="lab-note">
+      <h3>{{ r.name_a }} &amp; {{ r.name_b }} <span class="pill">{{ r.relationship_type }}</span></h3>
+      <p>complement {{ "%.2f"|format(r.complement_score) }} &middot; similarity {{ "%.2f"|format(r.similarity_score) }}</p>
+    </article>
+    {% else %}
+    <p>No relationships computed yet.</p>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Family Registry</h2>
+    {% for fam in families %}
+    <article class="lab-note">
+      <h3>{{ fam.name }}</h3>
+      <p>{{ fam.members|map(attribute='name')|join(', ') or 'No members yet.' }}</p>
+    </article>
+    {% endfor %}
+    <p><a href="/ml/families">Full family tree &amp; trait catalog &rarr;</a></p>
+  </article>
+  <article class="card">
+    <h2>Latest Evolution Review</h2>
+    {% if latest_review %}
+    <article class="lab-note">
+      <h3>Review {{ latest_review.id }} &middot; {{ latest_review.descendants_proposed }} descendant(s)</h3>
+      <p>{{ latest_review.summary }}</p>
+      <p class="eyebrow">cycles {{ latest_review.cycle_window_start }}&ndash;{{ latest_review.cycle_window_end }}</p>
+    </article>
+    {% else %}
+    <p>No evolution review has run yet.</p>
+    {% endif %}
+    <p><a href="/ml/evolution">All evolution reviews &rarr;</a></p>
+  </article>
+</section>
+
+<style>
+  .ml-essay { white-space: pre-wrap; font-family: inherit; line-height: 1.5; background: rgba(0,0,0,0.15); padding: 14px; border-radius: 10px; }
+  .conviction-bar { height: 8px; background: rgba(255,255,255,0.12); border-radius: 6px; overflow: hidden; margin: 6px 0; }
+  .conviction-fill { height: 100%; background: linear-gradient(90deg, #4f8cff, #8a5cff); }
+  .pill { display:inline-block; padding:1px 8px; border-radius:999px; font-size:0.72em; background:rgba(255,255,255,0.12); }
+  .pill-favorable { background: rgba(60,200,120,0.25); }
+  .pill-unfavorable { background: rgba(230,90,90,0.25); }
+  .pill-proposed, .pill-promoted { background: rgba(120,160,255,0.3); }
+</style>
+<script>
+  async function mlTrigger(url, btn) {
+    btn.disabled = true; const original = btn.textContent; btn.textContent = 'Running…';
+    try { const r = await fetch(url, { method: 'POST' }); if (!r.ok) throw new Error(await r.text()); location.reload(); }
+    catch (e) { btn.disabled = false; btn.textContent = original; alert('Failed: ' + e.message); }
+  }
+</script>
+{% endblock %}

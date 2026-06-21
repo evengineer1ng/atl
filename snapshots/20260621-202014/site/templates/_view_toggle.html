@@ -1,0 +1,11 @@
+{% macro view_toggle(base, view, label) %}
+<section class="card view-toggle-card">
+  <div class="view-toggle-row">
+    <div class="view-toggle" role="tablist" aria-label="View mode">
+      <a class="view-pill {% if view != 'universe' %}active{% endif %}" href="{{ base }}?view=strategy" role="tab" aria-selected="{{ 'false' if view == 'universe' else 'true' }}">Strategies</a>
+      <a class="view-pill {% if view == 'universe' %}active{% endif %}" href="{{ base }}?view=universe" role="tab" aria-selected="{{ 'true' if view == 'universe' else 'false' }}">Universes</a>
+    </div>
+    <p class="view-mode-label">{{ label }} &middot; {{ 'Universe View' if view == 'universe' else 'Strategy View' }}</p>
+  </div>
+</section>
+{% endmacro %}
