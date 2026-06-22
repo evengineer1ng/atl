@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Prospect</th><th>Family</th><th>Expected Edge</th><th>Evidence Quality</th><th>Risk</th><th>Backtest Strength</th><th>Live Readiness</th><th>Draft Status</th><th>Notes</th></tr></thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.prospect_name }}</td>
+          <td>{{ row.strategy_family }}</td>
+          <td>{{ row.expected_edge }}</td>
+          <td>{{ row.evidence_quality }}</td>
+          <td>{{ row.risk_level }}</td>
+          <td>{{ row.backtest_strength }}</td>
+          <td>{{ row.live_readiness }}</td>
+          <td>{{ row.draft_status }}</td>
+          <td>{{ row.notes }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

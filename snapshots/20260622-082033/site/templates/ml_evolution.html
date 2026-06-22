@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="league-hero ml-hero">
+  <article class="card hero-story">
+    <p class="eyebrow">Evolution Committee</p>
+    <h2>Evolution Reviews</h2>
+    <p>Every 15 days the lab spends scarce development capital on 0&ndash;3 high-conviction descendants. Each proposal is created as a Draft Room prospect, generated, validated, and parked at the human-review gate. Zero is a valid, explained outcome.</p>
+    <div class="post-form" style="flex-direction:row;">
+      <button type="button" onclick="mlTrigger('/api/maintenance/ml-evolution', this)">Run Evolution Review now</button>
+    </div>
+  </article>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Descendant Watchlist</h2>
+    <p class="eyebrow">Conviction threshold to propose: {{ "%.2f"|format(conviction_threshold) }}</p>
+    {% for h in hypotheses %}
+    <article class="lab-note">
+      <h3>{{ h.parent_a }} &times; {{ h.parent_b }} <span class="pill pill-{{ h.status }}">{{ h.status }}</span></h3>
+      <p>conviction {{ "%.2f"|format(h.conviction_score) }} &middot; complement {{ "%.2f"|format(h.complement_score) }} &middot; inheritance {{ "%.2f"|format(h.inheritance_score) }} &middot; environmental {{ "%.2f"|format(h.environmental_score) }} &middot; novelty {{ "%.2f"|format(h.novelty_score) }} &middot; evidence {{ "%.2f"|format(h.evidence_score) }}</p>
+      <p>{{ h.rationale }}</p>
+    </article>
+    {% else %}
+    <p>No descendant hypotheses yet.</p>
+    {% endfor %}
+  </article>
+</section>
+
+{% for review in reviews %}
+<section class="detail-grid">
+  <article class="card" style="grid-column:1 / -1;">
+    <h2>Review {{ review.id }} <span class="eyebrow">cycles {{ review.cycle_window_start }}&ndash;{{ review.cycle_window_end }} &middot; {{ review.completed_at }}</span></h2>
+    <p><strong>{{ review.descendants_proposed }} descendant(s) proposed.</strong> {{ review.summary }}</p>
+    <pre class="ml-essay">{{ review.report_markdown }}</pre>
+  </article>
+</section>
+{% else %}
+<section class="detail-grid"><article class="card"><p>No evolution reviews have run yet.</p></article></section>
+{% endfor %}
+
+<style>
+  .ml-essay { white-space: pre-wrap; font-family: inherit; line-height: 1.5; background: rgba(0,0,0,0.15); padding: 14px; border-radius: 10px; }
+  .pill { display:inline-block; padding:1px 8px; border-radius:999px; font-size:0.72em; background:rgba(255,255,255,0.12); }
+  .pill-proposed, .pill-promoted { background: rgba(120,160,255,0.3); }
+</style>
+<script>
+  async function mlTrigger(url, btn) {
+    btn.disabled = true; const original = btn.textContent; btn.textContent = 'Running…';
+    try { const r = await fetch(url, { method: 'POST' }); if (!r.ok) throw new Error(await r.text()); location.reload(); }
+    catch (e) { btn.disabled = false; btn.textContent = original; alert('Failed: ' + e.message); }
+  }
+</script>
+{% endblock %}

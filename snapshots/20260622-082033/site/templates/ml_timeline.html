@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="detail-grid">
+  <article class="card">
+    <h2>Write ML Post</h2>
+    <form action="/ml/timeline" method="post" class="post-form">
+      <label>Title<input type="text" name="title" required></label>
+      <label>Hypothesis tags<input type="text" name="team_tags" placeholder="dark-matter-antimatter,ghost-ladder" required></label>
+      <label>Observation<textarea name="observation" required></textarea></label>
+      <label>Evidence<textarea name="evidence" required></textarea></label>
+      <label>Interpretation<textarea name="interpretation" required></textarea></label>
+      <label>Next action<textarea name="next_action" required></textarea></label>
+      <button type="submit">Publish ML Post</button>
+    </form>
+  </article>
+  <article class="card">
+    <h2>Tracked Hypotheses</h2>
+    {% for row in hypotheses %}
+    <p class="mono">{{ row.id }} &middot; {{ row.name }}</p>
+    {% endfor %}
+  </article>
+</section>
+{% for post in posts %}
+<article class="card timeline-card scouting-card">
+  <div class="timeline-date">{{ post.created_at }} &middot; scouting evidence</div>
+  <div class="timeline-body">
+    <h2>{{ post.title }}</h2>
+    <p><strong>Tags:</strong> {{ post.team_tags }}</p>
+    <p><strong>Observation:</strong> {{ post.observation }}</p>
+    <p><strong>Evidence:</strong> {{ post.evidence }}</p>
+    <p><strong>Interpretation:</strong> {{ post.interpretation }}</p>
+    <p><strong>Next action:</strong> {{ post.next_action }}</p>
+  </div>
+</article>
+{% endfor %}
+{% endblock %}
