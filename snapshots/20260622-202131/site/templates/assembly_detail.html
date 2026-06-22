@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+{% set a = d.assembly %}
+<section class="card">
+  <p class="eyebrow">Genome Era · assembly</p>
+  <h2>{{ a.display_name or a.slug }}
+    {% if d.self_paired %}<span class="record-pill" style="background:#3a2f5a;">monolithic · seam not traced</span>
+    {% elif a.era == 'monolithic' %}<span class="record-pill" style="background:#2f4a3a;">seam traced · artifact still monolithic</span>{% endif %}
+  </h2>
+  {% include "_trophy_shelf.html" %}
+  {% if evidence %}<p><small><strong>Evidence:</strong> mean P&amp;L {{ "%+.1f"|format(evidence.pnl) }} across {{ evidence.combos }} sample(s) · synergy {{ "%+.1f"|format(evidence.interaction) }}</small></p>{% endif %}
+  <div class="kv-grid">
+    <div><span>Universe</span><strong>{{ a.universe_label or "—" }}</strong></div>
+    <div><span>Era</span><strong>{{ a.era }}</strong></div>
+    <div><span>Source</span><strong>{% if a.source_team_id.startswith('dev:') %}dev · {{ a.league_tier }}{% else %}<a href="/teams/{{ a.source_team_id }}">major league</a>{% endif %}</strong></div>
+    <div><span>Compiled artifact</span><strong>{{ d.compiled_artifact.filename if d.compiled_artifact else "—" }} <span class="record-pill" style="background:#444;">{{ d.compiled_artifact.origin if d.compiled_artifact else "" }}</span></strong></div>
+  </div>
+  {% if a.notes %}<p style="margin-top:0.5rem;color:#b9a;">{{ a.notes }}</p>{% endif %}
+</section>
+
+{% set compat = d.compatibility %}
+<section class="card">
+  <p class="eyebrow">Compiler · graft validity gate</p>
+  <h2>Compatibility:
+    {% set cs = compat.status if compat and compat.status else (a.compatibility_status or "unknown") %}
+    <span class="record-pill" style="background:{% if cs == 'native' %}#2f4a3a{% elif cs == 'plausible' %}#5a4a1f{% elif cs == 'incompatible' %}#5a1f1f{% else %}#444{% endif %};">{{ cs }}</span>
+  </h2>
+  {% if cs == 'native' %}
+  <p>All organs come from one source strategy — this is the original organism. The compiled artifact is the existing monolithic <code>.py</code>; it runs as authored. No graft to validate.</p>
+  {% elif cs == 'incompatible' %}
+  <p>This cross-genome graft is <strong>blocked</strong>: the exit/management organs need things the chosen entry does not provide. The compiler refuses to emit code for an incompatible graft (audit §9.3).</p>
+  {% elif cs == 'plausible' %}
+  <p>This graft is <strong>plausible but unverified</strong> — no missing columns or custom_data were detected, but that does not prove it works. It is <em>ready for generation</em>; code generation + a validity-gated backtest come next.</p>
+  {% else %}
+  <p>Not yet compiled.</p>
+  {% endif %}
+  {% if compat and compat.findings %}
+  <ul>{% for f in compat.findings %}<li><small>{{ f }}</small></li>{% endfor %}</ul>
+  {% endif %}
+  {% if compat and (compat.missing_indicators or compat.missing_custom_data) %}
+  <div class="kv-grid">
+    {% if compat.missing_indicators %}<div><span>Missing indicators</span><strong><small>{{ compat.missing_indicators | join(", ") }}</small></strong></div>{% endif %}
+    {% if compat.missing_custom_data %}<div><span>Missing custom_data</span><strong><small>{{ compat.missing_custom_data | join(", ") }}</small></strong></div>{% endif %}
+  </div>
+  {% endif %}
+  <form method="post" action="/assemblies/{{ a.slug }}/compile" style="margin-top:0.5rem;">
+    <button type="submit">Re-run compatibility gate</button>
+  </form>
+</section>
+
+{% macro organ_card(label, g, role) %}
+<section class="card">
+  <p class="eyebrow">{{ label }} genome</p>
+  {% if g %}
+  <h2><a href="/genomes/{{ g.slug }}">{{ g.name }}</a>
+    <span class="record-pill" style="background:#444;">{{ g.seam_status }}</span>
+  </h2>
+  <p>{{ g.description }}</p>
+  {% if g.tags_list %}<p><small><strong>Produces:</strong> {{ g.tags_list | join(", ") }}</small></p>{% endif %}
+  {% if g.custom_data_list %}<p><small><strong>Requires custom_data:</strong> {{ g.custom_data_list | join(", ") }}</small></p>{% endif %}
+  {% if g.notes %}<p style="color:#b9a;"><small>{{ g.notes }}</small></p>{% endif %}
+  {% else %}
+  <h2>(none)</h2>
+  <p><small>This assembly has no {{ role }} organ — a pure entry/exit organism.</small></p>
+  {% endif %}
+</section>
+{% endmacro %}
+
+{{ organ_card("Entry", d.entry_genome, "management") }}
+{{ organ_card("Exit", d.exit_genome, "management") }}
+{{ organ_card("Management", d.management_genome, "management") }}
+
+<p><a href="/assemblies">← All assemblies</a> · <a href="/genomes">Genome catalog</a></p>
+{% endblock %}

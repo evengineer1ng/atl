@@ -1,0 +1,110 @@
+{
+  "$schema": "https://schema.freqtrade.io/schema.json",
+  "bot_name": "atl-dev-the-turners",
+  "initial_state": "running",
+  "dry_run": true,
+  "dry_run_wallet": 250,
+  "max_open_trades": 18,
+  "stake_currency": "USDT",
+  "stake_amount": "unlimited",
+  "tradable_balance_ratio": 1.0,
+  "trading_mode": "futures",
+  "margin_mode": "isolated",
+  "fiat_display_currency": "",
+  "cancel_open_orders_on_exit": false,
+  "download_trades": false,
+  "timeframe": "5m",
+  "unfilledtimeout": {
+    "entry": 10,
+    "exit": 10,
+    "exit_timeout_count": 0,
+    "unit": "minutes"
+  },
+  "entry_pricing": {
+    "price_side": "other",
+    "use_order_book": true,
+    "order_book_top": 1,
+    "price_last_balance": 0.0,
+    "check_depth_of_market": {
+      "enabled": false,
+      "bids_to_ask_delta": 1
+    }
+  },
+  "exit_pricing": {
+    "price_side": "same",
+    "use_order_book": true,
+    "order_book_top": 1
+  },
+  "exchange": {
+    "name": "bybit",
+    "ccxt_config": {
+      "enableRateLimit": true,
+      "options": {
+        "defaultType": "swap",
+        "defaultSettle": "USDT"
+      }
+    },
+    "pair_whitelist": [],
+    "pair_blacklist": [
+      "(USDC|USDD|TUSD|BUSD|DAI|FDUSD|USDP|GUSD|USTC|USDE|PYUSD|FRAX|LUSD|SUSD|USD1|USDX|USDJ|USDB|EURT|EURS|AEUR|EURI)/.*"
+    ]
+  },
+  "pairlists": [
+    {
+      "method": "RemotePairList",
+      "pairlist_url": "http://host.docker.internal:8000/pairlists/shift_six-hour-A-2026-06-22_bybit_usdt.json",
+      "number_assets": 50,
+      "refresh_period": 21600,
+      "keep_pairlist_on_failure": true
+    }
+  ],
+  "api_server": {
+    "enabled": true,
+    "listen_ip_address": "0.0.0.0",
+    "listen_port": 18084,
+    "verbosity": "error",
+    "enable_openapi": false,
+    "jwt_secret_key": "[redacted]",
+    "ws_token": "[redacted]",
+    "CORS_origins": [],
+    "username": "dev_the-turners",
+    "password": "[redacted]"
+  },
+  "telegram": {
+    "enabled": false,
+    "token": "[redacted]",
+    "chat_id": ""
+  },
+  "internals": {
+    "process_throttle_secs": 5
+  },
+  "strategy_parameters": {
+    "sell": {
+      "adx_high_roi_boost": 0.036,
+      "adx_low_roi_penalty": 0.015,
+      "cl_gain_weight": 2.19,
+      "cl_loss_weight": 0.2,
+      "cl_temp_clip": 0.98,
+      "cl_temp_pow": 2.54,
+      "cl_w12": 0.31,
+      "cl_w24": 0.83,
+      "cl_w3": 2.96,
+      "cl_w48": 0.07,
+      "cl_w6": 1.49,
+      "cl_w96": 0.7,
+      "min_profit": 0.018,
+      "risk_cap": 0.077,
+      "roi_base": 0.018,
+      "roi_max": 0.085,
+      "roi_min": 0.019,
+      "roi_temp_scale": 0.482,
+      "sl_base": 0.046,
+      "sl_max": 0.102,
+      "sl_temp_scale": 1.269,
+      "time_decay_factor": 0.001,
+      "trend_confirmation_boost": 0.023,
+      "trend_confirmation_penalty": 0.04,
+      "volume_boost_factor": 0.036
+    }
+  }
+}

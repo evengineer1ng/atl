@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% block content %}
+{% set p = matrix_params %}
+
+<section class="card">
+  <p class="eyebrow">Genome Era · command center</p>
+  <h2>The Promotion Funnel</h2>
+  <p>Explore broadly in lobbies, validate selectively in Freqtrade, promote only evidence-backed genomes into the scarce official seats. <strong>The evaluator is not pretending to be Freqtrade</strong> — it asks "does this genome produce interesting decisions on the shared tape?"; Freqtrade asks "do those decisions survive real bot mechanics?"</p>
+  <div class="kv-grid">
+    {% for t in funnel.tiers %}
+    <div><span>{{ t.label }} · <small>{{ t.engine }}</small></span><strong style="font-size:1.4em;">{{ t.n }}</strong><br><small>{{ t.unit }} — {{ t.sub }}</small></div>
+    {% endfor %}
+  </div>
+  {% if funnel.knocking %}
+  <p style="margin-top:0.5rem;"><small><strong>Knocking on a seat</strong> (top ghost genomes not from a seated family): {% for k in funnel.knocking %}<a href="/genomes/{{ k.slug }}">{{ k.name }}</a> ({{ "%+.0f"|format(k.score) }}){% if not loop.last %} · {% endif %}{% endfor %}</small></p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <p class="eyebrow">Genome Era · wind tunnel</p>
+  <h2>Combination Matrix</h2>
+  <form method="get" action="/" style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;margin-bottom:0.6rem;">
+    <label><small>rows (y)</small> <select name="my" onchange="this.form.submit()">{% for k, lbl in kind_options %}<option value="{{ k }}" {% if k==p.my %}selected{% endif %}>{{ lbl }}</option>{% endfor %}</select></label>
+    <label><small>cols (x)</small> <select name="mx" onchange="this.form.submit()">{% for k, lbl in kind_options %}<option value="{{ k }}" {% if k==p.mx %}selected{% endif %}>{{ lbl }}</option>{% endfor %}</select></label>
+    <label><small>stat</small> <select name="stat" onchange="this.form.submit()">{% for s, lbl in stat_options %}<option value="{{ s }}" {% if s==p.stat %}selected{% endif %}>{{ lbl }}</option>{% endfor %}</select></label>
+    <label><small>universe</small> <select name="universe" onchange="this.form.submit()">{% for u in universe_options %}<option value="{{ u.key }}" {% if u.key==p.universe %}selected{% endif %}>{{ u.name }}</option>{% endfor %}</select></label>
+    <label><small>evidence</small> <select name="tier" onchange="this.form.submit()">{% for tv in ['both','ghost','validated'] %}<option value="{{ tv }}" {% if tv==p.tier %}selected{% endif %}>{{ tv }}</option>{% endfor %}</select></label>
+    <noscript><button type="submit">apply</button></noscript>
+  </form>
+  {% if matrix.empty %}
+  <p><small>No evidence yet for this slice. <a href="/lobbies/new">Run an experiment →</a></small></p>
+  {% else %}
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th><small>{{ p.my }} \ {{ p.mx }}</small></th>{% for c in matrix.cols %}<th><a href="/genomes/{{ c.slug }}"><small>{{ c.name }}</small></a></th>{% endfor %}</tr>
+      </thead>
+      <tbody>
+        {% for r in matrix.rows %}
+        <tr>
+          <td><a href="/genomes/{{ r.slug }}">{{ r.name }}</a></td>
+          {% for c in matrix.cols %}
+            {% set cell = matrix.cells.get(r.slug ~ '|' ~ c.slug) %}
+            {% if cell %}
+            <td style="text-align:center;background:hsl({{ (cell.norm*120)|int }},55%,28%);" title="{{ cell.n }} sample(s) · {{ cell.tier }}">{{ cell.value }}<br><small style="opacity:.6">{{ cell.tier[:1] }}{{ cell.n }}</small></td>
+            {% else %}
+            <td style="text-align:center;opacity:.35;" title="untested"><a href="/lobbies/new" style="opacity:.5;">·</a></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p><small>Cells = mean {{ p.stat }} for that pairing. Color green→red = best→worst. <code>g</code>=ghost / <code>v</code>=validated sample. Blank <code>·</code> = untested (the next experiment).</small></p>
+  {% endif %}
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Top entries · {{ p.stat }}</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Entry genome</th><th>{{ p.stat }}</th><th>combos</th><th>evidence</th></tr></thead>
+      <tbody>{% for r in top_entries %}<tr><td><a href="/genomes/{{ r.slug }}">{{ r.name }}</a></td><td>{{ r.score }}</td><td>{{ r.combos }}</td><td><small>{{ r.ghost_n }}g / {{ r.validated_n }}v</small></td></tr>{% endfor %}
+      {% if not top_entries %}<tr><td colspan="4"><small>no evidence yet</small></td></tr>{% endif %}</tbody>
+    </table></div>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Top exits · {{ p.stat }}</p>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Exit genome</th><th>{{ p.stat }}</th><th>combos</th><th>evidence</th></tr></thead>
+      <tbody>{% for r in top_exits %}<tr><td><a href="/genomes/{{ r.slug }}">{{ r.name }}</a></td><td>{{ r.score }}</td><td>{{ r.combos }}</td><td><small>{{ r.ghost_n }}g / {{ r.validated_n }}v</small></td></tr>{% endfor %}
+      {% if not top_exits %}<tr><td colspan="4"><small>no evidence yet</small></td></tr>{% endif %}</tbody>
+    </table></div>
+  </article>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Big League · the scarce seats ({{ seats|length }})</p>
+  <h2>24/7 Freqtrade containers</h2>
+  <p><small>Every official seat is an <strong>assembly</strong> of organs. Total P&amp;L {{ "%.2f"|format(total_pnl) }} · {{ active_teams }} live · {{ league_trades }} trades.</small></p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Seat (team)</th><th>Entry</th><th>Exit</th><th>Management</th><th>Universe</th><th>Total P&amp;L</th></tr></thead>
+      <tbody>
+        {% for s in seats %}
+        <tr>
+          <td>{{ s.rank }}</td>
+          <td><a href="/teams/{{ s.team_id }}">{{ s.team }}</a></td>
+          <td>{% if s.entry_name %}{{ s.entry_name }}{% else %}—{% endif %}</td>
+          <td>{% if s.exit_name %}{{ s.exit_name }}{% else %}—{% endif %}</td>
+          <td>{% if s.mgmt_name %}{{ s.mgmt_name }}{% else %}<small>(none)</small>{% endif %}</td>
+          <td><small>{{ s.pair_universe or "—" }}</small></td>
+          <td>{{ "%+.2f"|format(s.total_pnl) }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Recent experiments</p>
+    {% for l in recent_lobbies %}
+    <p style="margin:0.2rem 0;"><a href="/lobbies/{{ l.lobby_id }}">{{ l.name or l.lobby_id }}</a> <small class="record-pill" style="background:#444;">{{ l.status }}</small> <small>{{ l.lobby_type }}</small></p>
+    {% endfor %}
+    {% if not recent_lobbies %}<p><small>No lobbies yet. <a href="/lobbies/new">Create one →</a></small></p>{% endif %}
+  </article>
+  <article class="card">
+    <p class="eyebrow">Chronicle</p>
+    {% if recent_chronicle %}
+    <p><strong>{{ recent_chronicle.emoji }} {{ recent_chronicle.title }}</strong></p>
+    <p><small>{{ recent_chronicle.blurb }}</small></p>
+    <p><a href="/chronicle"><small>The full record →</small></a></p>
+    {% else %}<p><small>The chronicle has not been written yet.</small></p>{% endif %}
+    {% if recent_posts %}<hr style="opacity:.2;margin:0.5rem 0;">{% for post in recent_posts %}<p style="margin:0.2rem 0;"><small><strong>{{ post.title }}</strong> — {{ post.observation[:90] }}</small></p>{% endfor %}{% endif %}
+  </article>
+</section>
+{% endblock %}
