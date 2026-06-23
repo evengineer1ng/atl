@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+{% for row in rows %}
+<section class="card">
+  <h2>{{ row.strategy_name }}</h2>
+  <p><strong>Why promoted:</strong> {{ row.promotion_reason }}</p>
+  <p><strong>Supporting evidence:</strong> {{ row.supporting_evidence }}</p>
+  <p><strong>Entered dry run:</strong> {{ row.entered_dry_run }}</p>
+  <p><strong>Removed if removed:</strong> {{ row.removal_reason or 'Still active' }}</p>
+</section>
+{% endfor %}
+{% endblock %}

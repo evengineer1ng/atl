@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+{% set l = lobby %}
+<section class="card">
+  <p class="eyebrow">Genome Era · experiment · {{ l.lobby_type }}</p>
+  <h2>{{ l.name or l.lobby_id }}
+    <span class="record-pill" style="background:{% if l.status=='reviewed' %}#2f4a3a{% elif l.status=='review_pending' %}#5a4a1f{% elif l.status=='running' %}#1f3a5a{% elif l.status in ('failed','cancelled') %}#5a1f1f{% else %}#444{% endif %};">{{ l.status }}</span>
+  </h2>
+  {% if l.question %}<p><strong>Question:</strong> {{ l.question }}</p>{% else %}<p style="color:#f87171;">⚠ No question set — this lobby cannot launch.</p>{% endif %}
+  {% if l.success_criteria %}<p><strong>Success criteria:</strong> {{ l.success_criteria }}</p>{% endif %}
+  {% if l.predictions %}
+  <p><strong>Predictions (committed before launch):</strong></p>
+  <ol>{% for p in l.predictions %}<li><small>{{ p }}</small></li>{% endfor %}</ol>
+  {% endif %}
+  <div class="kv-grid">
+    <div><span>Exchange / TF</span><strong>{{ l.exchange }} · {{ l.timeframe }}</strong></div>
+    <div><span>Eval mode</span><strong>{{ l.eval_mode }}{% if l.eval_mode == 'live_dry' %} <small class="record-pill" style="background:#1f3a5a;">cursor {{ l.cursor_ts or l.timerange.split('-')[0] }}</small>{% endif %}</strong></div>
+    <div><span>Timerange</span><strong>{{ l.timerange or "—" }}</strong></div>
+    <div><span>Universes</span><strong>{{ l.universe_keys | join(", ") if l.universe_keys else "—" }}</strong></div>
+    <div><span>Market source</span><strong>{{ l.market_source }}</strong></div>
+    <div><span>Confidence before → after</span><strong>{{ l.confidence_before if l.confidence_before is not none else "—" }} → {{ l.confidence_after if l.confidence_after is not none else "—" }}</strong></div>
+    <div><span>Created by</span><strong>{{ l.created_by }}</strong></div>
+  </div>
+  <div style="margin-top:0.6rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+    {% if l.status in ('ready','running','draft') and l.question %}
+      {% if l.eval_mode == 'live_dry' %}
+      <form method="post" action="/lobbies/{{ l.lobby_id }}/tick"><button type="submit">Advance dry-run one tick →</button></form>
+      {% else %}
+      <form method="post" action="/lobbies/{{ l.lobby_id }}/run"><button type="submit">Run backtest (resolve slots)</button></form>
+      {% endif %}
+    {% endif %}
+    {% if l.status == 'review_pending' %}
+    <form method="post" action="/lobbies/{{ l.lobby_id }}/review" style="display:flex;gap:0.4rem;align-items:center;">
+      <input type="number" name="confidence_after" placeholder="confidence after" step="1" style="width:9rem;">
+      <button type="submit">Mark reviewed</button>
+    </form>
+    {% endif %}
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Roster & results ({{ rows | length }} slots)</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Rank</th><th>Entry</th><th>Exit</th><th>Mgmt</th><th>Universe</th><th>Compat</th><th>Status</th><th>Trades</th><th>PnL</th><th>Win%</th><th>MaxDD</th><th>Promote</th></tr></thead>
+      <tbody>
+        {% for row in rows %}
+        {% set s = row.slot %}{% set r = row.result %}
+        <tr>
+          <td>{{ r.rank if r.rank else "—" }}{% if r.promotion_flag %} ⭐{% endif %}</td>
+          <td>{% if s.entry_key %}<a href="/genomes/{{ s.entry_key }}">{{ row.entry_name }}</a>{% else %}—{% endif %}</td>
+          <td>{% if s.exit_key %}<a href="/genomes/{{ s.exit_key }}">{{ row.exit_name }}</a>{% else %}—{% endif %}</td>
+          <td>{{ row.mgmt_name or "—" }}</td>
+          <td>{{ s.universe_key }}</td>
+          <td><span class="record-pill" style="background:{% if s.compatibility_status=='native' %}#2f4a3a{% elif s.compatibility_status=='plausible' %}#5a4a1f{% elif s.compatibility_status=='incompatible' %}#5a1f1f{% else %}#444{% endif %};">{{ s.compatibility_status }}</span></td>
+          <td>{{ s.status }}</td>
+          <td>{{ r.trades if r else "—" }}</td>
+          <td>{% if r and r.result_id %}{{ "%+.2f"|format(r.pnl) }}{% else %}—{% endif %}</td>
+          <td>{% if r and r.result_id %}{{ "%.0f"|format(r.win_rate) }}%{% else %}—{% endif %}</td>
+          <td>{% if r and r.result_id %}{{ "%.1f"|format(r.max_drawdown) }}{% else %}—{% endif %}</td>
+          <td>
+            {% if r and r.result_id %}
+            <form method="post" action="/lobbies/{{ l.lobby_id }}/results/{{ r.result_id }}/promote">
+              <input type="hidden" name="flag" value="{% if r.promotion_flag %}0{% else %}1{% endif %}">
+              <button type="submit">{% if r.promotion_flag %}unflag{% else %}promote{% endif %}</button>
+            </form>
+            {% else %}—{% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p><small>Slots without evidence stay <code>ready</code> (awaiting a backtest job) — the lobby never fabricates P&amp;L. Incompatible grafts are <code>failed</code> by the gate.</small></p>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Question queue</p>
+  <form method="post" action="/lobbies/{{ l.lobby_id }}/question" style="display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;">
+    <select name="kind"><option value="question">question</option><option value="observation">observation</option><option value="concern">concern</option><option value="hypothesis">hypothesis</option><option value="follow_up">follow_up</option></select>
+    <input type="text" name="question" placeholder="New question / observation from this experiment" style="flex:1;min-width:18rem;">
+    <button type="submit">Add to queue</button>
+  </form>
+  {% if questions %}
+  <ul>{% for q in questions %}<li><small><strong>{{ q.kind }}</strong> — {{ q.question }}</small></li>{% endfor %}</ul>
+  {% endif %}
+</section>
+
+<p><a href="/lobbies">← All lobbies</a></p>
+{% endblock %}

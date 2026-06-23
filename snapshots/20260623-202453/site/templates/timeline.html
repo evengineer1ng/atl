@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card timeline-banner">
+  <p class="eyebrow">League Memory</p>
+  <h2>The timeline is the soul of the league.</h2>
+  <p>This is where promotions, discoveries, slumps, turning points, and new eras stop being notes and start becoming history.</p>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <h2>Write Post</h2>
+    <form action="/timeline" method="post" class="post-form">
+      <label>Title<input type="text" name="title" required></label>
+      <label>Team tags<input type="text" name="team_tags" placeholder="cosmo-wanda-20-pi,timmy-50-pc" required></label>
+      <label>Observation<textarea name="observation" required></textarea></label>
+      <label>Evidence<textarea name="evidence" required></textarea></label>
+      <label>Interpretation<textarea name="interpretation" required></textarea></label>
+      <label>Next action<textarea name="next_action" required></textarea></label>
+      <button type="submit">Publish Post</button>
+    </form>
+  </article>
+  <article class="card">
+    <h2>Available Tags</h2>
+    {% for team in teams %}
+    <p class="mono">{{ team.id }} &middot; {{ team.display_name }}</p>
+    {% endfor %}
+  </article>
+</section>
+
+{% for post in posts %}
+<article class="card timeline-card narrative-card">
+  <div class="timeline-date">{{ post.created_at }}</div>
+  <div class="timeline-body">
+    <p class="eyebrow">Field Report</p>
+    <h2>{{ post.title }}</h2>
+    <p><strong>Strategy/team tags:</strong> {{ post.team_tags }}</p>
+    <p><strong>Observation:</strong> {{ post.observation }}</p>
+    <p><strong>Evidence:</strong> {{ post.evidence }}</p>
+    <p><strong>Interpretation:</strong> {{ post.interpretation }}</p>
+    <p><strong>Next action:</strong> {{ post.next_action }}</p>
+  </div>
+</article>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 3997,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 50 currently leads in realized PnL and per-trade amplitude, but Top 20 is the official incumbent with more champion exits and a longer uninterrupted lineage. The performance gap must be reconciled over a full uninterrupted cycle before declaring a definitive hierarchy.",
+    "status": "open",
+    "created_at": "2026-06-23T20:13:00.692576+00:00"
+  },
+  {
+    "id": 3998,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Both universes are offline with zero realized PnL, yet Top 50 generated higher best-trade amplitude (19.37% vs 7.38%) and trade velocity, while Top 20 produced a marginally better win rate. Dry-run telemetry with explicit cost accounting is needed to isolate universe fit.",
+    "status": "open",
+    "created_at": "2026-06-23T20:13:00.692621+00:00"
+  },
+  {
+    "id": 3999,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Top 20 recorded 3 champion exits but lower average ROI than Top 50, which recorded 2 champion exits with higher per-trade ROI. Comparing exit discipline versus opportunity cost will clarify whether champion exits are preserving capital or capping upside.",
+    "status": "open",
+    "created_at": "2026-06-23T20:13:00.692627+00:00"
+  },
+  {
+    "id": 4000,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Live production failed to monetize outlier wins despite locating 19.37% amplitude moves. A controlled dry-run with explicit slippage and cost accounting is required to determine whether the profile is executable or structurally compromised by friction.",
+    "status": "blocked_pending_dry_run",
+    "created_at": "2026-06-23T20:13:00.692632+00:00"
+  },
+  {
+    "id": 4001,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Top 50 shows higher amplitude and per-trade ROI in Cosmo & Wanda and higher trade velocity in Timmy, yet the same breadth coincides with deeper unrealized liability in Cosmo & Wanda and live failure in Timmy. Isolating coverage effect from execution friction is essential.",
+    "status": "open",
+    "created_at": "2026-06-23T20:13:00.692635+00:00"
+  }
+]
