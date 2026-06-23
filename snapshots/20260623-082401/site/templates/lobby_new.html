@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Genome Era · matchmaking</p>
+  <h2>New Experiment Lobby</h2>
+  <p>Select entries × exits × universes — the system expands them into one slot per combination, gated by the compatibility engine. A lobby may not launch without a <strong>question</strong>.</p>
+  <form method="post" action="/lobbies" class="kv-grid">
+    <div><span>Name</span><input type="text" name="name" placeholder="e.g. Ownership vs ChampionLadder on PreExpansion"></div>
+    <div><span>Type</span>
+      <select name="lobby_type">{% for key, label in lobby_types %}<option value="{{ key }}">{{ label }}</option>{% endfor %}</select>
+    </div>
+    <div><span>Market source</span>
+      <select name="market_source">
+        <option value="broker">broker — shared on-disk tape (ghost, container-free)</option>
+        <option value="freqtrade">freqtrade — link existing backtest evidence</option>
+      </select>
+    </div>
+    <div><span>Eval mode</span>
+      <select name="eval_mode">
+        <option value="backtest">backtest — full window, one shot</option>
+        <option value="live_dry">live dry-run — advance forward by ticks</option>
+      </select>
+    </div>
+    <div><span>Tick window (min, live only)</span><input type="number" name="tick_minutes" value="1440"></div>
+    <div><span>Exchange</span><input type="text" name="exchange" value="binance"></div>
+    <div><span>Timeframe</span><input type="text" name="timeframe" value="5m"></div>
+    <div><span>Timerange</span><input type="text" name="timerange" placeholder="20260510-20260609"></div>
+    <div><span>Duration (min)</span><input type="number" name="duration_minutes" value="0"></div>
+
+    <div style="grid-column:1/-1;"><span>Entries (multi-select)</span><br>
+      <select name="entry_keys" multiple size="6" style="width:100%;">
+        {% for g in entry_genomes %}<option value="{{ g.slug }}">{{ g.name }} ({{ g.family_slug }})</option>{% endfor %}
+      </select>
+    </div>
+    <div style="grid-column:1/-1;"><span>Exits (multi-select)</span><br>
+      <select name="exit_keys" multiple size="6" style="width:100%;">
+        {% for g in exit_genomes %}<option value="{{ g.slug }}">{{ g.name }} ({{ g.family_slug }})</option>{% endfor %}
+      </select>
+    </div>
+    <div style="grid-column:1/-1;"><span>Management (optional, multi-select)</span><br>
+      <select name="management_keys" multiple size="3" style="width:100%;">
+        {% for g in management_genomes %}<option value="{{ g.slug }}">{{ g.name }} ({{ g.family_slug }})</option>{% endfor %}
+      </select>
+    </div>
+    <div style="grid-column:1/-1;"><span>Universes (multi-select)</span><br>
+      <select name="universe_keys" multiple size="6" style="width:100%;">
+        {% for u in universes %}<option value="{{ u.key }}">{{ u.name }}</option>{% endfor %}
+      </select>
+    </div>
+
+    <div style="grid-column:1/-1;"><span>Question (required to launch)</span><input type="text" name="question" style="width:100%;" placeholder="Is Ownership stronger than ChampionLadder on PreExpansion?"></div>
+    <div style="grid-column:1/-1;"><span>Predictions (one per line, up to 5)</span><br><textarea name="predictions" rows="5" style="width:100%;" placeholder="Ownership will outperform ChampionLadder on net PnL&#10;ChampionLadder will produce higher win rate"></textarea></div>
+    <div style="grid-column:1/-1;"><span>Success criteria</span><input type="text" name="success_criteria" style="width:100%;" placeholder="Ownership wins in at least 3 of 5 habitats"></div>
+    <div><span>Confidence before (0-100)</span><input type="number" name="confidence_before" step="1" placeholder="42"></div>
+    <div><span>Promote top N</span><input type="number" name="promotion_top_n" value="1"></div>
+    <div style="grid-column:1/-1;"><button type="submit">Create lobby & expand roster</button></div>
+  </form>
+</section>
+{% endblock %}

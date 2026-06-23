@@ -1,0 +1,11 @@
+[
+  {
+    "lane_id": "A",
+    "status": "idle",
+    "current_job_id": "",
+    "started_at": null,
+    "last_job_id": "dev-jade__block_party__1782201657317646800",
+    "failure_reason": "Backtest produced no archive.",
+    "updated_at": "2026-06-23T08:22:24.201952+00:00"
+  }
+]

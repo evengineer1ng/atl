@@ -1,0 +1,2009 @@
+[
+  {
+    "id": 1,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:02:36.435422+00:00",
+    "stopped_at": "2026-06-06T10:06:55.000513+00:00",
+    "duration_hours": 0.07182363638888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:02:36.435824+00:00"
+  },
+  {
+    "id": 2,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:02:38.687158+00:00",
+    "stopped_at": "2026-06-06T10:06:57.839467+00:00",
+    "duration_hours": 0.0719867525,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:02:38.687565+00:00"
+  },
+  {
+    "id": 3,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:08:00.107446+00:00",
+    "stopped_at": "2026-06-06T10:12:18.741875+00:00",
+    "duration_hours": 0.07184289694444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:08:00.107836+00:00"
+  },
+  {
+    "id": 4,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:08:02.360807+00:00",
+    "stopped_at": "2026-06-06T10:12:21.613942+00:00",
+    "duration_hours": 0.07201475972222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:08:02.361197+00:00"
+  },
+  {
+    "id": 5,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:13:23.892388+00:00",
+    "stopped_at": "2026-06-06T10:17:42.524619+00:00",
+    "duration_hours": 0.07184228638888888,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:13:23.892769+00:00"
+  },
+  {
+    "id": 6,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:13:26.146305+00:00",
+    "stopped_at": "2026-06-06T10:17:45.359774+00:00",
+    "duration_hours": 0.07200374138888888,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:13:26.146677+00:00"
+  },
+  {
+    "id": 7,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:18:47.617126+00:00",
+    "stopped_at": "2026-06-06T10:23:06.302192+00:00",
+    "duration_hours": 0.07185696277777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:18:47.617512+00:00"
+  },
+  {
+    "id": 8,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:18:49.866648+00:00",
+    "stopped_at": "2026-06-06T10:23:09.124567+00:00",
+    "duration_hours": 0.07201608861111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:18:49.867033+00:00"
+  },
+  {
+    "id": 9,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:24:11.383478+00:00",
+    "stopped_at": "2026-06-06T10:28:30.018213+00:00",
+    "duration_hours": 0.07184298194444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:24:11.383897+00:00"
+  },
+  {
+    "id": 10,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:24:13.651593+00:00",
+    "stopped_at": "2026-06-06T10:28:32.871117+00:00",
+    "duration_hours": 0.07200542333333333,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:24:13.652001+00:00"
+  },
+  {
+    "id": 11,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:29:35.139535+00:00",
+    "stopped_at": "2026-06-06T10:33:53.761182+00:00",
+    "duration_hours": 0.07183934638888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:29:35.140049+00:00"
+  },
+  {
+    "id": 12,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:29:37.402142+00:00",
+    "stopped_at": "2026-06-06T10:33:56.609934+00:00",
+    "duration_hours": 0.07200216444444443,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:29:37.402523+00:00"
+  },
+  {
+    "id": 13,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:34:58.911283+00:00",
+    "stopped_at": "2026-06-06T10:39:17.537290+00:00",
+    "duration_hours": 0.0718405575,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:34:58.911679+00:00"
+  },
+  {
+    "id": 14,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:35:01.166319+00:00",
+    "stopped_at": "2026-06-06T10:39:20.390590+00:00",
+    "duration_hours": 0.07200674194444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:35:01.166735+00:00"
+  },
+  {
+    "id": 15,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:40:22.672230+00:00",
+    "stopped_at": "2026-06-06T10:44:41.309249+00:00",
+    "duration_hours": 0.07184361638888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:40:22.672788+00:00"
+  },
+  {
+    "id": 16,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:40:24.961360+00:00",
+    "stopped_at": "2026-06-06T10:44:44.133402+00:00",
+    "duration_hours": 0.07199223388888888,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:40:24.961831+00:00"
+  },
+  {
+    "id": 17,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:45:46.390270+00:00",
+    "stopped_at": "2026-06-06T10:50:05.057891+00:00",
+    "duration_hours": 0.07185211694444445,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:45:46.390655+00:00"
+  },
+  {
+    "id": 18,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:45:48.657650+00:00",
+    "stopped_at": "2026-06-06T10:50:07.916131+00:00",
+    "duration_hours": 0.07201624472222223,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:45:48.658094+00:00"
+  },
+  {
+    "id": 19,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:51:10.201074+00:00",
+    "stopped_at": "2026-06-06T10:55:28.811487+00:00",
+    "duration_hours": 0.07183622583333334,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:51:10.201474+00:00"
+  },
+  {
+    "id": 20,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:51:12.462115+00:00",
+    "stopped_at": "2026-06-06T10:55:31.673312+00:00",
+    "duration_hours": 0.07200311027777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:51:12.462504+00:00"
+  },
+  {
+    "id": 21,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T10:56:33.944726+00:00",
+    "stopped_at": "2026-06-06T11:00:52.611259+00:00",
+    "duration_hours": 0.07185181472222223,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:56:33.945114+00:00"
+  },
+  {
+    "id": 22,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T10:56:36.200762+00:00",
+    "stopped_at": "2026-06-06T11:00:55.451663+00:00",
+    "duration_hours": 0.07201413916666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T10:56:36.201168+00:00"
+  },
+  {
+    "id": 23,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:01:57.711832+00:00",
+    "stopped_at": "2026-06-06T11:06:16.393332+00:00",
+    "duration_hours": 0.07185597222222223,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:01:57.712213+00:00"
+  },
+  {
+    "id": 24,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:01:59.967888+00:00",
+    "stopped_at": "2026-06-06T11:06:19.289826+00:00",
+    "duration_hours": 0.07203387166666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:01:59.968263+00:00"
+  },
+  {
+    "id": 25,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:07:21.546257+00:00",
+    "stopped_at": "2026-06-06T11:11:40.157590+00:00",
+    "duration_hours": 0.07183648138888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:07:21.546650+00:00"
+  },
+  {
+    "id": 26,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:07:23.796999+00:00",
+    "stopped_at": "2026-06-06T11:11:42.990247+00:00",
+    "duration_hours": 0.07199812444444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:07:23.797476+00:00"
+  },
+  {
+    "id": 27,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:12:45.246768+00:00",
+    "stopped_at": "2026-06-06T11:17:03.847784+00:00",
+    "duration_hours": 0.07183361555555556,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:12:45.247167+00:00"
+  },
+  {
+    "id": 28,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:12:47.498547+00:00",
+    "stopped_at": "2026-06-06T11:17:06.694593+00:00",
+    "duration_hours": 0.07199890166666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:12:47.498924+00:00"
+  },
+  {
+    "id": 29,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:18:08.950676+00:00",
+    "stopped_at": "2026-06-06T11:22:27.717915+00:00",
+    "duration_hours": 0.07187978861111112,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:18:08.951053+00:00"
+  },
+  {
+    "id": 30,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:18:11.207051+00:00",
+    "stopped_at": "2026-06-06T11:22:30.554897+00:00",
+    "duration_hours": 0.07204106833333333,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:18:11.207474+00:00"
+  },
+  {
+    "id": 31,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:23:32.834027+00:00",
+    "stopped_at": "2026-06-06T11:27:51.530540+00:00",
+    "duration_hours": 0.0718601425,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:23:32.834404+00:00"
+  },
+  {
+    "id": 32,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:23:35.090016+00:00",
+    "stopped_at": "2026-06-06T11:27:54.373826+00:00",
+    "duration_hours": 0.07202328055555555,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:23:35.090408+00:00"
+  },
+  {
+    "id": 33,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:28:56.638993+00:00",
+    "stopped_at": "2026-06-06T11:33:15.253926+00:00",
+    "duration_hours": 0.07183748138888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:28:56.639388+00:00"
+  },
+  {
+    "id": 34,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:28:58.920757+00:00",
+    "stopped_at": "2026-06-06T11:33:18.104730+00:00",
+    "duration_hours": 0.07199554805555555,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:28:58.921142+00:00"
+  },
+  {
+    "id": 35,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:34:20.365728+00:00",
+    "stopped_at": "2026-06-06T11:38:39.033104+00:00",
+    "duration_hours": 0.07185204888888888,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:34:20.366115+00:00"
+  },
+  {
+    "id": 36,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:34:22.641490+00:00",
+    "stopped_at": "2026-06-06T11:38:41.875058+00:00",
+    "duration_hours": 0.07200932444444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:34:22.641981+00:00"
+  },
+  {
+    "id": 37,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:39:44.128620+00:00",
+    "stopped_at": "2026-06-06T11:44:02.761743+00:00",
+    "duration_hours": 0.07184253416666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:39:44.129025+00:00"
+  },
+  {
+    "id": 38,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:39:46.380182+00:00",
+    "stopped_at": "2026-06-06T11:44:05.624623+00:00",
+    "duration_hours": 0.07201234472222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:39:46.380576+00:00"
+  },
+  {
+    "id": 39,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:45:07.884448+00:00",
+    "stopped_at": "2026-06-06T11:49:26.588818+00:00",
+    "duration_hours": 0.07186232499999999,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:45:07.884841+00:00"
+  },
+  {
+    "id": 40,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:45:10.156489+00:00",
+    "stopped_at": "2026-06-06T11:49:29.435923+00:00",
+    "duration_hours": 0.072022065,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:45:10.157352+00:00"
+  },
+  {
+    "id": 41,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:50:31.707495+00:00",
+    "stopped_at": "2026-06-06T11:54:50.327580+00:00",
+    "duration_hours": 0.0718389125,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:50:31.707897+00:00"
+  },
+  {
+    "id": 42,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:50:33.966771+00:00",
+    "stopped_at": "2026-06-06T11:54:53.165358+00:00",
+    "duration_hours": 0.07199960749999999,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:50:33.967170+00:00"
+  },
+  {
+    "id": 43,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T11:55:55.450949+00:00",
+    "stopped_at": "2026-06-06T12:00:14.067336+00:00",
+    "duration_hours": 0.07183788527777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:55:55.451338+00:00"
+  },
+  {
+    "id": 44,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T11:55:57.705630+00:00",
+    "stopped_at": "2026-06-06T12:00:16.896038+00:00",
+    "duration_hours": 0.07199733555555556,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T11:55:57.706007+00:00"
+  },
+  {
+    "id": 45,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:01:19.159838+00:00",
+    "stopped_at": "2026-06-06T12:05:37.772146+00:00",
+    "duration_hours": 0.07183675222222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:01:19.160232+00:00"
+  },
+  {
+    "id": 46,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:01:21.412662+00:00",
+    "stopped_at": "2026-06-06T12:05:40.606550+00:00",
+    "duration_hours": 0.07199830222222223,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:01:21.413052+00:00"
+  },
+  {
+    "id": 47,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:06:42.883459+00:00",
+    "stopped_at": "2026-06-06T12:11:01.487951+00:00",
+    "duration_hours": 0.07183458111111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:06:42.883838+00:00"
+  },
+  {
+    "id": 48,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:06:45.158642+00:00",
+    "stopped_at": "2026-06-06T12:11:04.333044+00:00",
+    "duration_hours": 0.07199288944444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:06:45.159049+00:00"
+  },
+  {
+    "id": 49,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:12:06.589613+00:00",
+    "stopped_at": "2026-06-06T12:16:25.228766+00:00",
+    "duration_hours": 0.07184420916666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:12:06.590058+00:00"
+  },
+  {
+    "id": 50,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:12:08.850223+00:00",
+    "stopped_at": "2026-06-06T12:16:28.070197+00:00",
+    "duration_hours": 0.07200554833333332,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:12:08.850611+00:00"
+  },
+  {
+    "id": 51,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:17:30.328740+00:00",
+    "stopped_at": "2026-06-06T12:21:48.982611+00:00",
+    "duration_hours": 0.07184829749999999,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:17:30.329121+00:00"
+  },
+  {
+    "id": 52,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:17:32.590840+00:00",
+    "stopped_at": "2026-06-06T12:21:51.842723+00:00",
+    "duration_hours": 0.07201441194444445,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:17:32.591228+00:00"
+  },
+  {
+    "id": 53,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:22:54.103106+00:00",
+    "stopped_at": "2026-06-06T12:27:12.724192+00:00",
+    "duration_hours": 0.07183919055555556,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:22:54.103510+00:00"
+  },
+  {
+    "id": 54,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:22:56.375489+00:00",
+    "stopped_at": "2026-06-06T12:27:15.548793+00:00",
+    "duration_hours": 0.07199258444444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:22:56.376030+00:00"
+  },
+  {
+    "id": 55,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:28:17.806280+00:00",
+    "stopped_at": "2026-06-06T12:32:36.409244+00:00",
+    "duration_hours": 0.07183415666666666,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:28:17.806870+00:00"
+  },
+  {
+    "id": 56,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:28:20.076675+00:00",
+    "stopped_at": "2026-06-06T12:32:39.233508+00:00",
+    "duration_hours": 0.07198800916666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:28:20.077058+00:00"
+  },
+  {
+    "id": 57,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:33:41.494269+00:00",
+    "stopped_at": "2026-06-06T12:38:00.106358+00:00",
+    "duration_hours": 0.0718366913888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:33:41.494653+00:00"
+  },
+  {
+    "id": 58,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:33:43.766170+00:00",
+    "stopped_at": "2026-06-06T12:38:02.949271+00:00",
+    "duration_hours": 0.07199530583333334,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:33:43.766545+00:00"
+  },
+  {
+    "id": 59,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:39:05.238975+00:00",
+    "stopped_at": "2026-06-06T12:43:23.848768+00:00",
+    "duration_hours": 0.07183605361111112,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:39:05.239525+00:00"
+  },
+  {
+    "id": 60,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:39:07.502435+00:00",
+    "stopped_at": "2026-06-06T12:43:26.687902+00:00",
+    "duration_hours": 0.07199596305555556,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:39:07.502858+00:00"
+  },
+  {
+    "id": 61,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:44:28.944686+00:00",
+    "stopped_at": "2026-06-06T12:48:47.570604+00:00",
+    "duration_hours": 0.07184053277777779,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:44:28.945097+00:00"
+  },
+  {
+    "id": 62,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:44:31.206987+00:00",
+    "stopped_at": "2026-06-06T12:48:50.392250+00:00",
+    "duration_hours": 0.07199590638888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:44:31.207392+00:00"
+  },
+  {
+    "id": 63,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:49:52.651256+00:00",
+    "stopped_at": "2026-06-06T12:54:11.262571+00:00",
+    "duration_hours": 0.07183647638888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:49:52.651648+00:00"
+  },
+  {
+    "id": 64,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:49:54.909047+00:00",
+    "stopped_at": "2026-06-06T12:54:14.115719+00:00",
+    "duration_hours": 0.07200185333333334,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:49:54.909436+00:00"
+  },
+  {
+    "id": 65,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T12:55:16.375334+00:00",
+    "stopped_at": "2026-06-06T12:59:35.000919+00:00",
+    "duration_hours": 0.07184044027777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:55:16.375742+00:00"
+  },
+  {
+    "id": 66,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T12:55:18.639649+00:00",
+    "stopped_at": "2026-06-06T12:59:37.843489+00:00",
+    "duration_hours": 0.07200106666666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T12:55:18.640069+00:00"
+  },
+  {
+    "id": 67,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:00:40.114199+00:00",
+    "stopped_at": "2026-06-06T13:04:58.827117+00:00",
+    "duration_hours": 0.07186469944444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:00:40.114598+00:00"
+  },
+  {
+    "id": 68,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:00:42.371963+00:00",
+    "stopped_at": "2026-06-06T13:05:01.800651+00:00",
+    "duration_hours": 0.07206352444444446,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:00:42.372342+00:00"
+  },
+  {
+    "id": 69,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:06:04.059276+00:00",
+    "stopped_at": "2026-06-06T13:10:22.674682+00:00",
+    "duration_hours": 0.07183761277777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:06:04.059701+00:00"
+  },
+  {
+    "id": 70,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:06:06.310325+00:00",
+    "stopped_at": "2026-06-06T13:10:25.518429+00:00",
+    "duration_hours": 0.07200225111111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:06:06.310701+00:00"
+  },
+  {
+    "id": 71,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:11:28.022206+00:00",
+    "stopped_at": "2026-06-06T13:15:46.765156+00:00",
+    "duration_hours": 0.07187304166666666,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:11:28.022788+00:00"
+  },
+  {
+    "id": 72,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:11:30.359127+00:00",
+    "stopped_at": "2026-06-06T13:15:49.622358+00:00",
+    "duration_hours": 0.07201756416666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:11:30.359549+00:00"
+  },
+  {
+    "id": 73,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:16:51.889727+00:00",
+    "stopped_at": "2026-06-06T13:21:10.495239+00:00",
+    "duration_hours": 0.07183486444444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:16:51.890132+00:00"
+  },
+  {
+    "id": 74,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:16:54.148777+00:00",
+    "stopped_at": "2026-06-06T13:21:13.319994+00:00",
+    "duration_hours": 0.07199200472222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:16:54.149186+00:00"
+  },
+  {
+    "id": 75,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:22:15.574630+00:00",
+    "stopped_at": "2026-06-06T13:26:34.168886+00:00",
+    "duration_hours": 0.07183173777777777,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:22:15.575038+00:00"
+  },
+  {
+    "id": 76,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:22:17.828213+00:00",
+    "stopped_at": "2026-06-06T13:26:36.997899+00:00",
+    "duration_hours": 0.07199157944444445,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:22:17.828612+00:00"
+  },
+  {
+    "id": 77,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:27:39.268229+00:00",
+    "stopped_at": "2026-06-06T13:31:57.941638+00:00",
+    "duration_hours": 0.07185372472222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:27:39.268747+00:00"
+  },
+  {
+    "id": 78,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:27:41.525816+00:00",
+    "stopped_at": "2026-06-06T13:32:00.925842+00:00",
+    "duration_hours": 0.07205556277777779,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:27:41.526213+00:00"
+  },
+  {
+    "id": 79,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:33:03.188854+00:00",
+    "stopped_at": "2026-06-06T13:37:21.954545+00:00",
+    "duration_hours": 0.07187935861111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:33:03.189274+00:00"
+  },
+  {
+    "id": 80,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:33:05.454558+00:00",
+    "stopped_at": "2026-06-06T13:37:24.782883+00:00",
+    "duration_hours": 0.07203564583333333,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:33:05.455209+00:00"
+  },
+  {
+    "id": 81,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:38:27.097574+00:00",
+    "stopped_at": "2026-06-06T13:42:45.746133+00:00",
+    "duration_hours": 0.07184682194444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:38:27.097966+00:00"
+  },
+  {
+    "id": 82,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:38:29.364660+00:00",
+    "stopped_at": "2026-06-06T13:42:48.576620+00:00",
+    "duration_hours": 0.07200332222222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:38:29.365067+00:00"
+  },
+  {
+    "id": 83,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:43:50.834447+00:00",
+    "stopped_at": "2026-06-06T13:48:09.461065+00:00",
+    "duration_hours": 0.07184072722222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:43:50.834838+00:00"
+  },
+  {
+    "id": 84,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:43:53.112814+00:00",
+    "stopped_at": "2026-06-06T13:48:12.295921+00:00",
+    "duration_hours": 0.07199530750000001,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:43:53.113333+00:00"
+  },
+  {
+    "id": 85,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:49:14.563073+00:00",
+    "stopped_at": "2026-06-06T13:53:33.190723+00:00",
+    "duration_hours": 0.07184101388888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:49:14.563497+00:00"
+  },
+  {
+    "id": 86,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:49:16.830250+00:00",
+    "stopped_at": "2026-06-06T13:53:36.028611+00:00",
+    "duration_hours": 0.07199954472222221,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:49:16.830665+00:00"
+  },
+  {
+    "id": 87,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T13:54:38.303021+00:00",
+    "stopped_at": "2026-06-06T13:58:56.905652+00:00",
+    "duration_hours": 0.07183406416666666,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:54:38.303397+00:00"
+  },
+  {
+    "id": 88,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T13:54:40.554898+00:00",
+    "stopped_at": "2026-06-06T13:58:59.762963+00:00",
+    "duration_hours": 0.07200224027777777,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T13:54:40.555319+00:00"
+  },
+  {
+    "id": 89,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:00:02.027132+00:00",
+    "stopped_at": "2026-06-06T14:04:20.932698+00:00",
+    "duration_hours": 0.07191821277777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:00:02.027549+00:00"
+  },
+  {
+    "id": 90,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:00:04.387517+00:00",
+    "stopped_at": "2026-06-06T14:04:23.782083+00:00",
+    "duration_hours": 0.07205404611111112,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:00:04.388080+00:00"
+  },
+  {
+    "id": 91,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:05:26.062478+00:00",
+    "stopped_at": "2026-06-06T14:09:44.930085+00:00",
+    "duration_hours": 0.07190766861111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:05:26.062893+00:00"
+  },
+  {
+    "id": 92,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:05:28.309180+00:00",
+    "stopped_at": "2026-06-06T14:09:47.755651+00:00",
+    "duration_hours": 0.07206846416666667,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:05:28.309599+00:00"
+  },
+  {
+    "id": 93,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:10:50.167519+00:00",
+    "stopped_at": "2026-06-06T14:15:08.921975+00:00",
+    "duration_hours": 0.07187623777777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:10:50.167945+00:00"
+  },
+  {
+    "id": 94,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:10:52.418597+00:00",
+    "stopped_at": "2026-06-06T14:15:11.765059+00:00",
+    "duration_hours": 0.07204068388888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:10:52.418975+00:00"
+  },
+  {
+    "id": 95,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:16:14.045705+00:00",
+    "stopped_at": "2026-06-06T14:20:32.842198+00:00",
+    "duration_hours": 0.07188791472222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:16:14.046093+00:00"
+  },
+  {
+    "id": 96,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:16:16.322475+00:00",
+    "stopped_at": "2026-06-06T14:20:35.706520+00:00",
+    "duration_hours": 0.07205112361111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:16:16.323076+00:00"
+  },
+  {
+    "id": 97,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:21:37.964173+00:00",
+    "stopped_at": "2026-06-06T14:25:56.656587+00:00",
+    "duration_hours": 0.07185900388888888,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:21:37.964561+00:00"
+  },
+  {
+    "id": 98,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:21:40.240401+00:00",
+    "stopped_at": "2026-06-06T14:25:59.494148+00:00",
+    "duration_hours": 0.07201492972222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:21:40.240794+00:00"
+  },
+  {
+    "id": 99,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:27:01.747832+00:00",
+    "stopped_at": "2026-06-06T14:31:20.447154+00:00",
+    "duration_hours": 0.07186092277777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:27:01.748221+00:00"
+  },
+  {
+    "id": 100,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:27:04.017433+00:00",
+    "stopped_at": "2026-06-06T14:31:23.286698+00:00",
+    "duration_hours": 0.07201924027777779,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:27:04.017995+00:00"
+  },
+  {
+    "id": 101,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:32:25.553991+00:00",
+    "stopped_at": "2026-06-06T14:36:44.334559+00:00",
+    "duration_hours": 0.07188349111111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:32:25.554439+00:00"
+  },
+  {
+    "id": 102,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:32:27.810012+00:00",
+    "stopped_at": "2026-06-06T14:36:47.183906+00:00",
+    "duration_hours": 0.07204830388888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:32:27.810394+00:00"
+  },
+  {
+    "id": 103,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:37:49.444881+00:00",
+    "stopped_at": "2026-06-06T14:42:08.080258+00:00",
+    "duration_hours": 0.07184316027777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:37:49.445256+00:00"
+  },
+  {
+    "id": 104,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:37:51.698824+00:00",
+    "stopped_at": "2026-06-06T14:42:10.947137+00:00",
+    "duration_hours": 0.07201342027777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:37:51.699264+00:00"
+  },
+  {
+    "id": 105,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:43:13.213965+00:00",
+    "stopped_at": "2026-06-06T14:47:31.877442+00:00",
+    "duration_hours": 0.07185096583333334,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:43:13.214346+00:00"
+  },
+  {
+    "id": 106,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:43:15.476309+00:00",
+    "stopped_at": "2026-06-06T14:47:34.712654+00:00",
+    "duration_hours": 0.07201009583333333,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:43:15.476705+00:00"
+  },
+  {
+    "id": 107,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:48:36.975365+00:00",
+    "stopped_at": "2026-06-06T14:52:55.591171+00:00",
+    "duration_hours": 0.0718377238888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:48:36.975765+00:00"
+  },
+  {
+    "id": 108,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:48:39.230070+00:00",
+    "stopped_at": "2026-06-06T14:52:58.429393+00:00",
+    "duration_hours": 0.07199981194444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:48:39.230475+00:00"
+  },
+  {
+    "id": 109,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:54:00.709633+00:00",
+    "stopped_at": "2026-06-06T14:58:19.467860+00:00",
+    "duration_hours": 0.07187728527777777,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:54:00.710157+00:00"
+  },
+  {
+    "id": 110,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:54:02.976074+00:00",
+    "stopped_at": "2026-06-06T14:58:22.308537+00:00",
+    "duration_hours": 0.07203679527777779,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:54:02.976473+00:00"
+  },
+  {
+    "id": 111,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T14:59:24.567482+00:00",
+    "stopped_at": "2026-06-06T15:03:43.218737+00:00",
+    "duration_hours": 0.07184757083333333,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:59:24.567871+00:00"
+  },
+  {
+    "id": 112,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T14:59:26.848739+00:00",
+    "stopped_at": "2026-06-06T15:03:46.070807+00:00",
+    "duration_hours": 0.07200612999999999,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T14:59:26.849126+00:00"
+  },
+  {
+    "id": 113,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T15:04:48.352897+00:00",
+    "stopped_at": "2026-06-06T15:09:06.981029+00:00",
+    "duration_hours": 0.07184114777777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:04:48.353307+00:00"
+  },
+  {
+    "id": 114,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T15:04:50.616091+00:00",
+    "stopped_at": "2026-06-06T15:09:09.841127+00:00",
+    "duration_hours": 0.07200695444444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:04:50.616477+00:00"
+  },
+  {
+    "id": 115,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T15:10:12.101862+00:00",
+    "stopped_at": "2026-06-06T15:14:30.727620+00:00",
+    "duration_hours": 0.07184048833333334,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:10:12.102249+00:00"
+  },
+  {
+    "id": 116,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T15:10:14.356517+00:00",
+    "stopped_at": "2026-06-06T15:14:33.606756+00:00",
+    "duration_hours": 0.07201395527777778,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:10:14.356940+00:00"
+  },
+  {
+    "id": 117,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T15:15:35.875864+00:00",
+    "stopped_at": "2026-06-06T15:19:54.523194+00:00",
+    "duration_hours": 0.07184648055555556,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:15:35.876290+00:00"
+  },
+  {
+    "id": 118,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T15:15:38.155297+00:00",
+    "stopped_at": "2026-06-06T15:19:57.355478+00:00",
+    "duration_hours": 0.07200005027777777,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:15:38.155679+00:00"
+  },
+  {
+    "id": 119,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T15:20:59.634908+00:00",
+    "stopped_at": "2026-06-06T15:25:18.296275+00:00",
+    "duration_hours": 0.07185037972222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:20:59.635308+00:00"
+  },
+  {
+    "id": 120,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T15:21:01.891247+00:00",
+    "stopped_at": "2026-06-06T15:25:21.127902+00:00",
+    "duration_hours": 0.07201018194444445,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:21:01.891636+00:00"
+  },
+  {
+    "id": 121,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T15:26:23.367813+00:00",
+    "stopped_at": "2026-06-06T15:30:42.121633+00:00",
+    "duration_hours": 0.07187606111111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:26:23.368216+00:00"
+  },
+  {
+    "id": 122,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T15:26:25.610164+00:00",
+    "stopped_at": "2026-06-06T15:30:45.018472+00:00",
+    "duration_hours": 0.07205786333333333,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-06T15:26:25.610566+00:00"
+  },
+  {
+    "id": 123,
+    "candidate_id": 2,
+    "started_at": "2026-06-06T16:02:01.614106+00:00",
+    "stopped_at": "2026-06-06T22:00:33.469489+00:00",
+    "duration_hours": 5.975515384166666,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-06T16:02:01.614526+00:00"
+  },
+  {
+    "id": 124,
+    "candidate_id": 1,
+    "started_at": "2026-06-06T16:02:02.074358+00:00",
+    "stopped_at": "2026-06-06T22:00:45.625787+00:00",
+    "duration_hours": 5.978764285833333,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-06T16:02:02.074763+00:00"
+  },
+  {
+    "id": 125,
+    "candidate_id": 3,
+    "started_at": "2026-06-07T04:02:32.964491+00:00",
+    "stopped_at": "2026-06-07T04:15:46.839259+00:00",
+    "duration_hours": 0.22052076888888889,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-07T04:02:32.964994+00:00"
+  },
+  {
+    "id": 126,
+    "candidate_id": 4,
+    "started_at": "2026-06-07T04:03:40.995541+00:00",
+    "stopped_at": "2026-06-07T04:05:52.239166+00:00",
+    "duration_hours": 0.036456562500000005,
+    "stop_reason": "pause",
+    "created_at": "2026-06-07T04:03:40.995995+00:00"
+  },
+  {
+    "id": 127,
+    "candidate_id": 4,
+    "started_at": "2026-06-07T04:06:57.866169+00:00",
+    "stopped_at": "2026-06-07T04:07:03.967198+00:00",
+    "duration_hours": 0.0016947302777777778,
+    "stop_reason": "manual_start",
+    "created_at": "2026-06-07T04:06:57.866617+00:00"
+  },
+  {
+    "id": 128,
+    "candidate_id": 4,
+    "started_at": "2026-06-07T04:08:03.431122+00:00",
+    "stopped_at": "2026-06-07T04:09:08.978742+00:00",
+    "duration_hours": 0.01820767222222222,
+    "stop_reason": "pause",
+    "created_at": "2026-06-07T04:08:03.432957+00:00"
+  },
+  {
+    "id": 129,
+    "candidate_id": 4,
+    "started_at": "2026-06-07T04:12:25.720205+00:00",
+    "stopped_at": "2026-06-07T04:19:13.460691+00:00",
+    "duration_hours": 0.1132612461111111,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-07T04:12:25.721735+00:00"
+  },
+  {
+    "id": 130,
+    "candidate_id": 3,
+    "started_at": "2026-06-07T04:16:54.514113+00:00",
+    "stopped_at": "2026-06-07T04:30:13.389401+00:00",
+    "duration_hours": 0.2219098022222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-07T04:16:54.514561+00:00"
+  },
+  {
+    "id": 131,
+    "candidate_id": 4,
+    "started_at": "2026-06-07T04:21:26.692590+00:00",
+    "stopped_at": "2026-06-07T04:25:50.171160+00:00",
+    "duration_hours": 0.07318849166666666,
+    "stop_reason": "pause",
+    "created_at": "2026-06-07T04:21:26.694616+00:00"
+  },
+  {
+    "id": 132,
+    "candidate_id": 4,
+    "started_at": "2026-06-07T04:26:55.735652+00:00",
+    "stopped_at": "2026-06-07T04:32:00.745862+00:00",
+    "duration_hours": 0.08472505833333333,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-07T04:26:55.737407+00:00"
+  },
+  {
+    "id": 133,
+    "candidate_id": 3,
+    "started_at": "2026-06-07T04:33:11.973609+00:00",
+    "stopped_at": "2026-06-07T10:01:14.978298+00:00",
+    "duration_hours": 5.4675013025000005,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-07T04:33:11.974055+00:00"
+  },
+  {
+    "id": 134,
+    "candidate_id": 4,
+    "started_at": "2026-06-07T04:33:12.442731+00:00",
+    "stopped_at": "2026-06-07T14:25:47.175252+00:00",
+    "duration_hours": 9.876314589166666,
+    "stop_reason": "manual_stop",
+    "created_at": "2026-06-07T04:33:12.444602+00:00"
+  },
+  {
+    "id": 135,
+    "candidate_id": 5,
+    "started_at": "2026-06-07T14:35:54.814338+00:00",
+    "stopped_at": "2026-06-07T16:00:51.387313+00:00",
+    "duration_hours": 1.4157147152777778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-07T14:35:54.814853+00:00"
+  },
+  {
+    "id": 136,
+    "candidate_id": 2,
+    "started_at": "2026-06-07T16:02:07.439308+00:00",
+    "stopped_at": "2026-06-07T22:01:05.739265+00:00",
+    "duration_hours": 5.982861099166667,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-07T16:02:07.439830+00:00"
+  },
+  {
+    "id": 137,
+    "candidate_id": 1,
+    "started_at": "2026-06-07T16:03:19.224408+00:00",
+    "stopped_at": "2026-06-07T22:01:19.966822+00:00",
+    "duration_hours": 5.966872892777777,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-07T16:03:19.224938+00:00"
+  },
+  {
+    "id": 138,
+    "candidate_id": 6,
+    "started_at": "2026-06-07T22:18:22.092606+00:00",
+    "stopped_at": "2026-06-08T04:00:59.516512+00:00",
+    "duration_hours": 5.710395529444445,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-07T22:18:22.093145+00:00"
+  },
+  {
+    "id": 139,
+    "candidate_id": 3,
+    "started_at": "2026-06-08T04:03:32.044667+00:00",
+    "stopped_at": "2026-06-08T10:00:20.545469+00:00",
+    "duration_hours": 5.946805778333333,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T04:03:32.045289+00:00"
+  },
+  {
+    "id": 140,
+    "candidate_id": 7,
+    "started_at": "2026-06-08T04:03:32.509209+00:00",
+    "stopped_at": "2026-06-08T10:00:44.977143+00:00",
+    "duration_hours": 5.9534633150000005,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T04:03:32.509796+00:00"
+  },
+  {
+    "id": 141,
+    "candidate_id": 4,
+    "started_at": "2026-06-08T04:03:32.982530+00:00",
+    "stopped_at": "2026-06-08T10:01:08.416848+00:00",
+    "duration_hours": 5.959842866111111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T04:03:32.983147+00:00"
+  },
+  {
+    "id": 142,
+    "candidate_id": 8,
+    "started_at": "2026-06-08T10:03:58.305185+00:00",
+    "stopped_at": "2026-06-08T16:01:03.548180+00:00",
+    "duration_hours": 5.9514563875,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T10:03:58.305778+00:00"
+  },
+  {
+    "id": 143,
+    "candidate_id": 5,
+    "started_at": "2026-06-08T10:03:58.773397+00:00",
+    "stopped_at": "2026-06-08T16:01:27.879580+00:00",
+    "duration_hours": 5.958085050833334,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T10:03:58.773989+00:00"
+  },
+  {
+    "id": 144,
+    "candidate_id": 2,
+    "started_at": "2026-06-08T16:02:57.580523+00:00",
+    "stopped_at": "2026-06-08T22:01:41.828329+00:00",
+    "duration_hours": 5.978957723888889,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T16:02:57.581101+00:00"
+  },
+  {
+    "id": 145,
+    "candidate_id": 1,
+    "started_at": "2026-06-08T17:00:52.692977+00:00",
+    "stopped_at": "2026-06-08T22:01:58.642410+00:00",
+    "duration_hours": 5.018319286944445,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T17:00:52.693601+00:00"
+  },
+  {
+    "id": 146,
+    "candidate_id": 9,
+    "started_at": "2026-06-08T22:03:35.648237+00:00",
+    "stopped_at": "2026-06-09T04:00:39.628637+00:00",
+    "duration_hours": 5.951105666666667,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T22:03:35.648846+00:00"
+  },
+  {
+    "id": 147,
+    "candidate_id": 6,
+    "started_at": "2026-06-08T23:06:33.805375+00:00",
+    "stopped_at": "2026-06-09T04:00:56.808877+00:00",
+    "duration_hours": 4.906389861666667,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-08T23:06:33.805973+00:00"
+  },
+  {
+    "id": 148,
+    "candidate_id": 3,
+    "started_at": "2026-06-09T04:03:43.295371+00:00",
+    "stopped_at": "2026-06-09T10:00:40.966071+00:00",
+    "duration_hours": 5.949352972222222,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T04:03:43.296019+00:00"
+  },
+  {
+    "id": 149,
+    "candidate_id": 4,
+    "started_at": "2026-06-09T04:03:43.774466+00:00",
+    "stopped_at": "2026-06-09T10:01:04.014553+00:00",
+    "duration_hours": 5.955622246388889,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T04:03:43.775109+00:00"
+  },
+  {
+    "id": 150,
+    "candidate_id": 10,
+    "started_at": "2026-06-09T04:09:20.084109+00:00",
+    "stopped_at": "2026-06-09T10:01:20.877599+00:00",
+    "duration_hours": 5.866887080555555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T04:09:20.084706+00:00"
+  },
+  {
+    "id": 151,
+    "candidate_id": 8,
+    "started_at": "2026-06-09T10:04:34.354517+00:00",
+    "stopped_at": "2026-06-09T16:01:08.307378+00:00",
+    "duration_hours": 5.942764683611111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T10:04:34.355122+00:00"
+  },
+  {
+    "id": 152,
+    "candidate_id": 5,
+    "started_at": "2026-06-09T10:04:34.830131+00:00",
+    "stopped_at": "2026-06-09T16:01:33.923104+00:00",
+    "duration_hours": 5.949748048055556,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T10:04:34.830747+00:00"
+  },
+  {
+    "id": 153,
+    "candidate_id": 7,
+    "started_at": "2026-06-09T10:04:35.298883+00:00",
+    "stopped_at": "2026-06-09T16:01:58.439847+00:00",
+    "duration_hours": 5.956428045555555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T10:04:35.299494+00:00"
+  },
+  {
+    "id": 154,
+    "candidate_id": 2,
+    "started_at": "2026-06-09T16:03:32.901446+00:00",
+    "stopped_at": "2026-06-09T22:01:00.109266+00:00",
+    "duration_hours": 5.957557727777778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T16:03:32.902051+00:00"
+  },
+  {
+    "id": 155,
+    "candidate_id": 11,
+    "started_at": "2026-06-09T16:05:08.510572+00:00",
+    "stopped_at": "2026-06-09T22:01:29.251327+00:00",
+    "duration_hours": 5.9390946541666665,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T16:05:08.511176+00:00"
+  },
+  {
+    "id": 156,
+    "candidate_id": 1,
+    "started_at": "2026-06-09T16:05:08.986646+00:00",
+    "stopped_at": "2026-06-09T22:01:43.864138+00:00",
+    "duration_hours": 5.943021525555555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-09T16:05:08.987288+00:00"
+  },
+  {
+    "id": 157,
+    "candidate_id": 9,
+    "started_at": "2026-06-09T22:04:52.172857+00:00",
+    "stopped_at": "2026-06-10T02:55:51.333976+00:00",
+    "duration_hours": 4.8497669775,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-09T22:04:52.173545+00:00"
+  },
+  {
+    "id": 158,
+    "candidate_id": 6,
+    "started_at": "2026-06-09T22:04:52.666644+00:00",
+    "stopped_at": "2026-06-10T02:56:03.862974+00:00",
+    "duration_hours": 4.853110091666666,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-09T22:04:52.667330+00:00"
+  },
+  {
+    "id": 159,
+    "candidate_id": 9,
+    "started_at": "2026-06-10T03:01:24.616387+00:00",
+    "stopped_at": "2026-06-10T04:01:28.796946+00:00",
+    "duration_hours": 1.001161266388889,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T03:01:24.617338+00:00"
+  },
+  {
+    "id": 160,
+    "candidate_id": 6,
+    "started_at": "2026-06-10T03:04:43.408224+00:00",
+    "stopped_at": "2026-06-10T04:01:45.549172+00:00",
+    "duration_hours": 0.9505947077777779,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T03:04:43.408905+00:00"
+  },
+  {
+    "id": 161,
+    "candidate_id": 3,
+    "started_at": "2026-06-10T04:02:48.306585+00:00",
+    "stopped_at": "2026-06-10T10:01:08.424651+00:00",
+    "duration_hours": 5.972255018333333,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T04:02:48.307314+00:00"
+  },
+  {
+    "id": 162,
+    "candidate_id": 4,
+    "started_at": "2026-06-10T04:02:48.803848+00:00",
+    "stopped_at": "2026-06-10T10:01:23.650755+00:00",
+    "duration_hours": 5.976346363055555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T04:02:48.804566+00:00"
+  },
+  {
+    "id": 163,
+    "candidate_id": 10,
+    "started_at": "2026-06-10T04:04:17.039967+00:00",
+    "stopped_at": "2026-06-10T10:01:40.891057+00:00",
+    "duration_hours": 5.956625302777778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T04:04:17.040682+00:00"
+  },
+  {
+    "id": 164,
+    "candidate_id": 8,
+    "started_at": "2026-06-10T10:03:25.355265+00:00",
+    "stopped_at": "2026-06-10T11:46:34.571842+00:00",
+    "duration_hours": 1.7192268269444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-10T10:03:25.356276+00:00"
+  },
+  {
+    "id": 165,
+    "candidate_id": 5,
+    "started_at": "2026-06-10T10:03:25.953317+00:00",
+    "stopped_at": "2026-06-10T11:46:36.882765+00:00",
+    "duration_hours": 1.7197026244444444,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-10T10:03:25.954088+00:00"
+  },
+  {
+    "id": 166,
+    "candidate_id": 7,
+    "started_at": "2026-06-10T10:04:55.354491+00:00",
+    "stopped_at": "2026-06-10T11:47:03.196451+00:00",
+    "duration_hours": 1.7021783222222222,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-10T10:04:55.355521+00:00"
+  },
+  {
+    "id": 167,
+    "candidate_id": 8,
+    "started_at": "2026-06-10T11:49:07.641734+00:00",
+    "stopped_at": "2026-06-10T16:00:58.687284+00:00",
+    "duration_hours": 4.197512652777778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T11:49:07.642488+00:00"
+  },
+  {
+    "id": 168,
+    "candidate_id": 5,
+    "started_at": "2026-06-10T11:49:08.180531+00:00",
+    "stopped_at": "2026-06-10T12:17:39.489838+00:00",
+    "duration_hours": 0.47536369638888887,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-10T11:49:08.181237+00:00"
+  },
+  {
+    "id": 169,
+    "candidate_id": 7,
+    "started_at": "2026-06-10T11:49:08.581950+00:00",
+    "stopped_at": "2026-06-10T12:18:03.220275+00:00",
+    "duration_hours": 0.48184397916666666,
+    "stop_reason": "state_change",
+    "created_at": "2026-06-10T11:49:08.582639+00:00"
+  },
+  {
+    "id": 170,
+    "candidate_id": 5,
+    "started_at": "2026-06-10T12:20:51.808577+00:00",
+    "stopped_at": "2026-06-10T16:01:19.424186+00:00",
+    "duration_hours": 3.674337669166667,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T12:20:51.809289+00:00"
+  },
+  {
+    "id": 171,
+    "candidate_id": 7,
+    "started_at": "2026-06-10T12:20:52.450687+00:00",
+    "stopped_at": "2026-06-10T16:01:44.634904+00:00",
+    "duration_hours": 3.6811622825,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T12:20:52.451376+00:00"
+  },
+  {
+    "id": 172,
+    "candidate_id": 11,
+    "started_at": "2026-06-10T16:04:53.551613+00:00",
+    "stopped_at": "2026-06-10T22:00:53.720850+00:00",
+    "duration_hours": 5.933380343611111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T16:04:53.552440+00:00"
+  },
+  {
+    "id": 173,
+    "candidate_id": 1,
+    "started_at": "2026-06-10T16:04:53.993752+00:00",
+    "stopped_at": "2026-06-10T22:01:07.862835+00:00",
+    "duration_hours": 5.937185856388889,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T16:04:53.994484+00:00"
+  },
+  {
+    "id": 174,
+    "candidate_id": 2,
+    "started_at": "2026-06-10T16:40:42.624026+00:00",
+    "stopped_at": "2026-06-10T22:00:30.061350+00:00",
+    "duration_hours": 5.329843701111111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T16:40:42.633119+00:00"
+  },
+  {
+    "id": 175,
+    "candidate_id": 9,
+    "started_at": "2026-06-10T22:04:14.492624+00:00",
+    "stopped_at": "2026-06-11T04:00:50.125488+00:00",
+    "duration_hours": 5.943231351111111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T22:04:14.493482+00:00"
+  },
+  {
+    "id": 176,
+    "candidate_id": 6,
+    "started_at": "2026-06-10T22:04:14.933569+00:00",
+    "stopped_at": "2026-06-11T04:01:09.252565+00:00",
+    "duration_hours": 5.948421943333334,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-10T22:04:14.934368+00:00"
+  },
+  {
+    "id": 177,
+    "candidate_id": 4,
+    "started_at": "2026-06-11T04:03:45.180926+00:00",
+    "stopped_at": "2026-06-11T10:01:24.826774+00:00",
+    "duration_hours": 5.961012735555555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T04:03:45.182080+00:00"
+  },
+  {
+    "id": 178,
+    "candidate_id": 8,
+    "started_at": "2026-06-11T10:03:12.421666+00:00",
+    "stopped_at": "2026-06-11T16:01:02.302265+00:00",
+    "duration_hours": 5.963855721944444,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T10:03:12.422537+00:00"
+  },
+  {
+    "id": 179,
+    "candidate_id": 5,
+    "started_at": "2026-06-11T10:03:12.858560+00:00",
+    "stopped_at": "2026-06-11T16:01:16.450632+00:00",
+    "duration_hours": 5.967664464444444,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T10:03:12.859378+00:00"
+  },
+  {
+    "id": 180,
+    "candidate_id": 7,
+    "started_at": "2026-06-11T10:03:13.294889+00:00",
+    "stopped_at": "2026-06-11T16:01:40.744577+00:00",
+    "duration_hours": 5.97429158,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T10:03:13.295719+00:00"
+  },
+  {
+    "id": 181,
+    "candidate_id": 2,
+    "started_at": "2026-06-11T16:03:19.006326+00:00",
+    "stopped_at": "2026-06-11T22:01:20.495900+00:00",
+    "duration_hours": 5.967080437222222,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T16:03:19.007205+00:00"
+  },
+  {
+    "id": 182,
+    "candidate_id": 11,
+    "started_at": "2026-06-11T16:03:19.433963+00:00",
+    "stopped_at": "2026-06-11T22:01:49.277745+00:00",
+    "duration_hours": 5.974956606111111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T16:03:19.434784+00:00"
+  },
+  {
+    "id": 183,
+    "candidate_id": 1,
+    "started_at": "2026-06-11T16:04:46.751634+00:00",
+    "stopped_at": "2026-06-11T22:02:03.490994+00:00",
+    "duration_hours": 5.954649822222222,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T16:04:46.752457+00:00"
+  },
+  {
+    "id": 184,
+    "candidate_id": 9,
+    "started_at": "2026-06-11T22:03:44.170696+00:00",
+    "stopped_at": "2026-06-12T04:01:03.062771+00:00",
+    "duration_hours": 5.955247798611111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T22:03:44.171523+00:00"
+  },
+  {
+    "id": 185,
+    "candidate_id": 6,
+    "started_at": "2026-06-11T22:03:44.616848+00:00",
+    "stopped_at": "2026-06-12T04:01:22.437630+00:00",
+    "duration_hours": 5.960505772777777,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-11T22:03:44.618541+00:00"
+  },
+  {
+    "id": 186,
+    "candidate_id": 4,
+    "started_at": "2026-06-12T04:04:06.596535+00:00",
+    "stopped_at": "2026-06-12T10:00:17.833450+00:00",
+    "duration_hours": 5.9364546986111115,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T04:04:06.599487+00:00"
+  },
+  {
+    "id": 187,
+    "candidate_id": 8,
+    "started_at": "2026-06-12T10:03:32.007351+00:00",
+    "stopped_at": "2026-06-12T16:00:31.617258+00:00",
+    "duration_hours": 5.949891640833333,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T10:03:32.008571+00:00"
+  },
+  {
+    "id": 188,
+    "candidate_id": 5,
+    "started_at": "2026-06-12T10:03:32.920105+00:00",
+    "stopped_at": "2026-06-12T16:00:55.671603+00:00",
+    "duration_hours": 5.956319860555556,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T10:03:32.923139+00:00"
+  },
+  {
+    "id": 189,
+    "candidate_id": 7,
+    "started_at": "2026-06-12T10:03:33.907782+00:00",
+    "stopped_at": "2026-06-12T16:01:18.622545+00:00",
+    "duration_hours": 5.9624207675,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T10:03:33.910460+00:00"
+  },
+  {
+    "id": 190,
+    "candidate_id": 2,
+    "started_at": "2026-06-12T16:04:35.584431+00:00",
+    "stopped_at": "2026-06-12T22:00:51.445445+00:00",
+    "duration_hours": 5.937739170555555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T16:04:35.585791+00:00"
+  },
+  {
+    "id": 191,
+    "candidate_id": 11,
+    "started_at": "2026-06-12T16:04:36.457322+00:00",
+    "stopped_at": "2026-06-12T22:01:20.425336+00:00",
+    "duration_hours": 5.945546670555555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T16:04:36.458851+00:00"
+  },
+  {
+    "id": 192,
+    "candidate_id": 1,
+    "started_at": "2026-06-12T16:04:37.331328+00:00",
+    "stopped_at": "2026-06-12T22:01:35.429764+00:00",
+    "duration_hours": 5.949471787777778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T16:04:37.333193+00:00"
+  },
+  {
+    "id": 193,
+    "candidate_id": 9,
+    "started_at": "2026-06-12T22:04:50.754883+00:00",
+    "stopped_at": "2026-06-13T04:01:25.269290+00:00",
+    "duration_hours": 5.9429206686111105,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T22:04:50.755745+00:00"
+  },
+  {
+    "id": 194,
+    "candidate_id": 6,
+    "started_at": "2026-06-12T22:04:51.234386+00:00",
+    "stopped_at": "2026-06-13T04:01:44.549991+00:00",
+    "duration_hours": 5.948143223611111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-12T22:04:51.235313+00:00"
+  },
+  {
+    "id": 195,
+    "candidate_id": 4,
+    "started_at": "2026-06-13T04:02:51.476899+00:00",
+    "stopped_at": "2026-06-13T10:00:59.262444+00:00",
+    "duration_hours": 5.968829318055556,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T04:02:51.478160+00:00"
+  },
+  {
+    "id": 196,
+    "candidate_id": 8,
+    "started_at": "2026-06-13T10:02:43.856747+00:00",
+    "stopped_at": "2026-06-13T16:01:01.027896+00:00",
+    "duration_hours": 5.9714364302777785,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T10:02:43.857596+00:00"
+  },
+  {
+    "id": 197,
+    "candidate_id": 5,
+    "started_at": "2026-06-13T10:04:19.485825+00:00",
+    "stopped_at": "2026-06-13T16:01:15.247915+00:00",
+    "duration_hours": 5.948822802777777,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T10:04:19.486671+00:00"
+  },
+  {
+    "id": 198,
+    "candidate_id": 7,
+    "started_at": "2026-06-13T10:04:19.942102+00:00",
+    "stopped_at": "2026-06-13T16:01:39.992711+00:00",
+    "duration_hours": 5.955569613611112,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T10:04:19.942944+00:00"
+  },
+  {
+    "id": 199,
+    "candidate_id": 2,
+    "started_at": "2026-06-13T16:03:18.377799+00:00",
+    "stopped_at": "2026-06-13T22:00:59.456510+00:00",
+    "duration_hours": 5.961410753055555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T16:03:18.378648+00:00"
+  },
+  {
+    "id": 200,
+    "candidate_id": 1,
+    "started_at": "2026-06-13T16:04:51.645549+00:00",
+    "stopped_at": "2026-06-13T22:01:16.349190+00:00",
+    "duration_hours": 5.940195455833333,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T16:04:51.646388+00:00"
+  },
+  {
+    "id": 201,
+    "candidate_id": 9,
+    "started_at": "2026-06-13T22:04:29.854587+00:00",
+    "stopped_at": "2026-06-14T04:00:43.172956+00:00",
+    "duration_hours": 5.937032880277778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T22:04:29.855949+00:00"
+  },
+  {
+    "id": 202,
+    "candidate_id": 6,
+    "started_at": "2026-06-13T22:04:30.844197+00:00",
+    "stopped_at": "2026-06-14T04:01:02.127881+00:00",
+    "duration_hours": 5.942023245555556,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-13T22:04:30.846494+00:00"
+  },
+  {
+    "id": 203,
+    "candidate_id": 4,
+    "started_at": "2026-06-14T04:03:46.645764+00:00",
+    "stopped_at": "2026-06-14T10:00:27.994867+00:00",
+    "duration_hours": 5.944819195277778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-14T04:03:46.650067+00:00"
+  },
+  {
+    "id": 204,
+    "candidate_id": 8,
+    "started_at": "2026-06-14T10:03:42.507039+00:00",
+    "stopped_at": "2026-06-14T16:00:43.817892+00:00",
+    "duration_hours": 5.950364125833333,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-14T10:03:42.507895+00:00"
+  },
+  {
+    "id": 205,
+    "candidate_id": 5,
+    "started_at": "2026-06-14T10:03:42.950230+00:00",
+    "stopped_at": "2026-06-14T16:01:06.741845+00:00",
+    "duration_hours": 5.9566087819444435,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-14T10:03:42.951080+00:00"
+  },
+  {
+    "id": 206,
+    "candidate_id": 7,
+    "started_at": "2026-06-14T10:03:43.390464+00:00",
+    "stopped_at": "2026-06-14T16:01:33.457310+00:00",
+    "duration_hours": 5.963907457222223,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-14T10:03:43.391310+00:00"
+  },
+  {
+    "id": 207,
+    "candidate_id": 1,
+    "started_at": "2026-06-14T16:04:38.368572+00:00",
+    "stopped_at": "2026-06-14T22:00:35.000182+00:00",
+    "duration_hours": 5.932397669444445,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-14T16:04:38.369382+00:00"
+  },
+  {
+    "id": 208,
+    "candidate_id": 9,
+    "started_at": "2026-06-14T22:03:42.594723+00:00",
+    "stopped_at": "2026-06-15T04:01:13.253937+00:00",
+    "duration_hours": 5.9585164483333335,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-14T22:03:42.595568+00:00"
+  },
+  {
+    "id": 209,
+    "candidate_id": 6,
+    "started_at": "2026-06-14T22:03:43.068644+00:00",
+    "stopped_at": "2026-06-15T04:01:30.057722+00:00",
+    "duration_hours": 5.9630525216666666,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-14T22:03:43.069488+00:00"
+  },
+  {
+    "id": 210,
+    "candidate_id": 4,
+    "started_at": "2026-06-15T04:04:07.583197+00:00",
+    "stopped_at": "2026-06-15T10:01:11.142225+00:00",
+    "duration_hours": 5.950988618888889,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-15T04:04:07.588513+00:00"
+  },
+  {
+    "id": 211,
+    "candidate_id": 8,
+    "started_at": "2026-06-15T10:02:54.756947+00:00",
+    "stopped_at": "2026-06-15T16:00:35.228885+00:00",
+    "duration_hours": 5.961242205,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-15T10:02:54.757833+00:00"
+  },
+  {
+    "id": 212,
+    "candidate_id": 5,
+    "started_at": "2026-06-15T10:02:55.209501+00:00",
+    "stopped_at": "2026-06-15T16:01:00.931336+00:00",
+    "duration_hours": 5.968256065277778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-15T10:02:55.210373+00:00"
+  },
+  {
+    "id": 213,
+    "candidate_id": 7,
+    "started_at": "2026-06-15T10:04:23.127615+00:00",
+    "stopped_at": "2026-06-15T16:01:26.995494+00:00",
+    "duration_hours": 5.951074410833334,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-15T10:04:23.128450+00:00"
+  },
+  {
+    "id": 214,
+    "candidate_id": 1,
+    "started_at": "2026-06-15T16:04:32.214624+00:00",
+    "stopped_at": "2026-06-15T22:01:11.609074+00:00",
+    "duration_hours": 5.9442762361111114,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-15T16:04:32.215451+00:00"
+  },
+  {
+    "id": 215,
+    "candidate_id": 9,
+    "started_at": "2026-06-15T22:02:47.972863+00:00",
+    "stopped_at": "2026-06-16T04:00:49.445416+00:00",
+    "duration_hours": 5.967075709166666,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-15T22:02:47.973704+00:00"
+  },
+  {
+    "id": 216,
+    "candidate_id": 6,
+    "started_at": "2026-06-15T22:04:17.892276+00:00",
+    "stopped_at": "2026-06-16T04:01:03.644936+00:00",
+    "duration_hours": 5.946042405555555,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-15T22:04:17.893122+00:00"
+  },
+  {
+    "id": 217,
+    "candidate_id": 4,
+    "started_at": "2026-06-16T04:03:39.967727+00:00",
+    "stopped_at": "2026-06-16T10:01:39.995622+00:00",
+    "duration_hours": 5.966674415277778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-16T04:03:39.968595+00:00"
+  },
+  {
+    "id": 218,
+    "candidate_id": 7,
+    "started_at": "2026-06-16T10:03:20.985327+00:00",
+    "stopped_at": "2026-06-16T16:00:55.478759+00:00",
+    "duration_hours": 5.959581508888888,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-16T10:03:20.986138+00:00"
+  },
+  {
+    "id": 219,
+    "candidate_id": 1,
+    "started_at": "2026-06-16T16:04:00.966504+00:00",
+    "stopped_at": "2026-06-16T22:07:29.671198+00:00",
+    "duration_hours": 6.057973526111111,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-16T16:04:00.967337+00:00"
+  },
+  {
+    "id": 220,
+    "candidate_id": 1,
+    "started_at": "2026-06-22T18:03:02.415491+00:00",
+    "stopped_at": "2026-06-22T22:01:10.604712+00:00",
+    "duration_hours": 3.968941450277778,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-22T18:03:02.416338+00:00"
+  },
+  {
+    "id": 221,
+    "candidate_id": 9,
+    "started_at": "2026-06-22T22:02:45.406804+00:00",
+    "stopped_at": "2026-06-23T04:01:43.700119+00:00",
+    "duration_hours": 5.982859254166667,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-22T22:02:45.407629+00:00"
+  },
+  {
+    "id": 222,
+    "candidate_id": 6,
+    "started_at": "2026-06-22T22:04:13.882197+00:00",
+    "stopped_at": "2026-06-23T04:02:04.019310+00:00",
+    "duration_hours": 5.963926975833333,
+    "stop_reason": "scheduled_shift_end",
+    "created_at": "2026-06-22T22:04:13.883063+00:00"
+  },
+  {
+    "id": 223,
+    "candidate_id": 4,
+    "started_at": "2026-06-23T04:03:09.585149+00:00",
+    "stopped_at": null,
+    "duration_hours": 0.0,
+    "stop_reason": "",
+    "created_at": "2026-06-23T04:03:09.586004+00:00"
+  }
+]
