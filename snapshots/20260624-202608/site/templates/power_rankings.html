@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% from "_view_toggle.html" import view_toggle %}
+{% set view = view if view is defined else 'strategy' %}
+{% block content %}
+{{ view_toggle('/power-rankings', view, 'Power Rankings') }}
+
+{% if view != 'universe' %}
+<section class="card">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Score</th>
+          <th>Trust</th>
+          <th>Data Quality</th>
+          <th>Maturity</th>
+          <th>Recent Form</th>
+          <th>Risk Profile</th>
+          <th>Read Basis</th>
+          <th>Interesting Discoveries</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td><a href="/teams/{{ row.team_id }}">{{ row.team }}</a>{% if row.active_version %} <small>({{ row.active_version }})</small>{% endif %}</td>
+          <td>{{ row.score }}</td>
+          <td>{{ row.trust_score }}{% if row.trust_note %}<br><small>{{ row.trust_note }}</small>{% endif %}</td>
+          <td>{{ row.data_quality }}{% if row.data_quality_note %}<br><small>{{ row.data_quality_note }}</small>{% endif %}</td>
+          <td>{{ row.strategy_maturity }}</td>
+          <td>{{ row.recent_form }}</td>
+          <td>{{ row.risk_profile }}</td>
+          <td>{{ row.version_basis }}{% if row.version_note %}<br><small>{{ row.version_note }}</small>{% endif %}</td>
+          <td>{{ row.interesting_discoveries }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% else %}
+<section class="card">
+  <p class="eyebrow">Universe Championship</p>
+  <h2>Universe Confidence</h2>
+  <p class="section-intro">A front-office confidence view for habitats, not raw PnL. Universes proven by more than one strategy family earn a breadth bonus; thin-sample universes are flagged experimental until enough trades exist.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Universe</th>
+          <th>Score</th>
+          <th>Net PnL</th>
+          <th>Realized Quality</th>
+          <th>Win Rate</th>
+          <th>Avg ROI</th>
+          <th>Teams</th>
+          <th>Strategies</th>
+          <th>Breadth Bonus</th>
+          <th>Open Drag</th>
+          <th>Sample</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in universe_rows %}
+        <tr>
+          <td>{{ row.rank }}</td>
+          <td><a href="/universes/{{ row.key }}">{{ row.name }}</a>{% if row.experimental %} <span class="badge offline">experimental</span>{% endif %}</td>
+          <td>{{ row.score }}</td>
+          <td>{{ "%.2f"|format(row.net_pnl) }}</td>
+          <td>{{ row.realized_quality }}</td>
+          <td>{{ "%.1f"|format(row.win_rate) }}%</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ row.active_teams }} / {{ row.team_count }}</td>
+          <td>{{ row.strategy_count }}</td>
+          <td>{{ row.breadth_bonus }}</td>
+          <td>{{ row.open_trade_drag }}</td>
+          <td>{{ row.closed_trades }} trades</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="12">No universes registered yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <p class="eyebrow">Genome Era</p>
+  <h2>Genome Catalog</h2>
+  <p>The organs ATL strategies are built from — Entry, Exit, Management — plus the monolithic ancestors not yet seam-traced. A genome with <code>traced</code> status has been located in source; <code>unconfirmed</code> means the seam is still a hypothesis. Shared organs (used by more than one assembly) are the genome model paying off. See <a href="/assemblies">assemblies</a>.</p>
+</section>
+
+{% macro genome_table(title, blurb, items) %}
+<section class="card">
+  <p class="eyebrow">{{ title }}</p>
+  <p><small>{{ blurb }}</small></p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Genome</th><th>Family</th><th>Seam</th><th>Used by</th><th>Produces</th></tr></thead>
+      <tbody>
+        {% for g in items %}
+        <tr>
+          <td><a href="/genomes/{{ g.slug }}">{{ g.name }}</a>{% if g.status == 'split' %} <small class="record-pill" style="background:#444;">split ancestor</small>{% endif %}</td>
+          <td><small>{{ g.family_slug }}</small></td>
+          <td><span class="record-pill" style="background:{% if g.seam_status == 'traced' %}#2f4a3a{% else %}#5a3a1f{% endif %};">{{ g.seam_status }}</span></td>
+          <td>{{ g.used_by }}{% if g.used_by > 1 %} <small class="record-pill" style="background:#3a2f5a;">shared</small>{% endif %}</td>
+          <td><small>{{ g.tags_list | join(", ") if g.tags_list else "—" }}</small></td>
+        </tr>
+        {% endfor %}
+        {% if not items %}<tr><td colspan="5"><small>none yet</small></td></tr>{% endif %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endmacro %}
+
+{{ genome_table("Entry genomes", "Opportunity detectors — what the organism sees and triggers on.", catalog.entry) }}
+{{ genome_table("Exit genomes", "How the organism lets go — final-exit logic.", catalog.exit) }}
+{{ genome_table("Management genomes", "Intra-trade stewardship — scale-outs, portfolio gating, ranking.", catalog.management) }}
+{{ genome_table("Monolithic ancestors", "Undivided organisms; split into the organs above once their seam was traced.", catalog.monolithic) }}
+{% endblock %}

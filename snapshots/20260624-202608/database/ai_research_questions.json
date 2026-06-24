@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 4222,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Current data shows Top 50 leading in equity ($1,078.95 vs $1,021.60), realized PnL ($89.85 vs $73.78), and average ROI (2.43% vs 1.79%) despite fewer champion exits. Top 20's official uninterrupted status makes it the benchmark, but efficiency metrics currently favor Top 50.",
+    "status": "Monitoring",
+    "created_at": "2026-06-24T20:22:28.041696+00:00"
+  },
+  {
+    "id": 4223,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Timmy Top 50 shows a less negative average ROI (-0.008% vs -0.021%) and a larger best-trade amplitude (19.37% vs 7.38%), while Top 20 offers only a marginally higher win rate (36.04% vs 31.85%). Both remain offline, so superiority is currently inferred from trade distribution, not realized PnL.",
+    "status": "Monitoring",
+    "created_at": "2026-06-24T20:22:28.041743+00:00"
+  },
+  {
+    "id": 4224,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda Top 20 recorded 3 champion exits vs Top 50's 2, yet Top 50 achieved higher average ROI (2.43% vs 1.79%). Disambiguating whether champion exits preserve more profit or if dynamic exits capture larger intermittent gains is necessary to refine exit logic.",
+    "status": "Open",
+    "created_at": "2026-06-24T20:22:28.041749+00:00"
+  },
+  {
+    "id": 4225,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy variants exhibit high skew (best trade 19.37% on Top 50) but are offline under v3 with zero realized PnL. The gap between theoretical signal and execution capture must be bridged before the profile can be validated under live conditions.",
+    "status": "Blocked - awaiting redeploy",
+    "created_at": "2026-06-24T20:22:28.041753+00:00"
+  },
+  {
+    "id": 4226,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Across both families, Top 50 generated larger best trades and higher realized PnL per hour than Top 20, suggesting breadth amplifies signal. However, open-trade drag is present in both, requiring confirmation that the additional pairs improve net returns rather than increase unrealized exposure.",
+    "status": "Open",
+    "created_at": "2026-06-24T20:22:28.041756+00:00"
+  }
+]
