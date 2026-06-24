@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 4107,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 50 currently leads in realized PnL ($89.49 vs $73.37) and avg ROI (2.45% vs 1.80%), but Top 20 holds official lineage and deeper session history. Continued monitoring is needed to see if the narrower universe converges or if breadth sustains edge.",
+    "status": "Monitoring",
+    "created_at": "2026-06-24T07:57:30.340104+00:00"
+  },
+  {
+    "id": 4108,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Both variants are offline with zero realized PnL. Top 50 shows higher best-trade amplitude (19.37% vs 7.38%), while Top 20 posts a marginally better win rate (36.04% vs 31.85%). Determining which universe offers a viable revival path is critical before any re-deployment.",
+    "status": "Monitoring",
+    "created_at": "2026-06-24T07:57:30.340157+00:00"
+  },
+  {
+    "id": 4109,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Top 20 has 3 champion exits vs Top 50's 2, yet its avg ROI is lower. Disentangling whether champion-exit discipline or pair-universe breadth is the primary driver of ROI divergence will inform future exit-configuration rules.",
+    "status": "Monitoring",
+    "created_at": "2026-06-24T07:57:30.340163+00:00"
+  },
+  {
+    "id": 4110,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Clean historical telemetry shows the intended skew (best trade 19.37%), but 268 combined realized trades produced $0 profit. Verifying whether execution friction, cost leakage, or sizing errors prevent theoretical edge from converting is prerequisite to any live dry-run authorization.",
+    "status": "Monitoring",
+    "created_at": "2026-06-24T07:57:30.340167+00:00"
+  },
+  {
+    "id": 4111,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Cosmo & Wanda benefits from Top 50 breadth (higher ROI, larger winners), while Timmy also registers larger winners in Top 50 despite overall failure. Cross-family comparison will clarify whether increased pair coverage systematically adds convexity or merely dilutes focus.",
+    "status": "Monitoring",
+    "created_at": "2026-06-24T07:57:30.340171+00:00"
+  }
+]
