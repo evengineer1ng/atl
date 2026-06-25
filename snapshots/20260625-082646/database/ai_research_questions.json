@@ -1,0 +1,50 @@
+[
+  {
+    "id": 261,
+    "category": "ml",
+    "question": "Which scouting lane should the executor prioritize to produce a promotable strategy, and what specific evidence gap currently blocks every promotion recommendation?",
+    "rationale": "The draft board is entirely stalled: Ghost Ladder is the only uncontaminated prospect but its critical backtest has not started, while live Timmy variants are burning runtime without generating adequate closed-trade samples. Dark Matter and Antimatter remain blocked by leakage and sample scarcity. Answering this focuses limited compute on the highest-leverage next step and explains why no candidate can advance today.",
+    "status": "active",
+    "created_at": "2026-06-07T04:26:14.959228+00:00"
+  },
+  {
+    "id": 4332,
+    "category": "league",
+    "question": "Does Cosmo/Wanda Top 20 outperform Top 50?",
+    "rationale": "Top 20 holds a higher realized PnL ($73.78 vs $44.44) and perfect win rate, yet Top 50 leads in total equity ($1,033.99 vs $1,020.98) and shows lower unrealized drag. Determining which universe yields superior risk-adjusted returns will guide capital allocation.",
+    "status": "Monitoring",
+    "created_at": "2026-06-25T08:02:46.069911+00:00"
+  },
+  {
+    "id": 4333,
+    "category": "league",
+    "question": "Does Timmy perform better on Top 20 or Top 50?",
+    "rationale": "Both Timmy variants are offline with zero realized PnL, but Top 50 generated a 19.37% best trade versus Top 20's 7.38% and sustained higher trade volume (157 vs 111). Identifying the optimal universe is critical before any restart.",
+    "status": "Open",
+    "created_at": "2026-06-25T08:02:46.069984+00:00"
+  },
+  {
+    "id": 4334,
+    "category": "league",
+    "question": "Do champion exits maintain a higher ROI than dynamic ROI exits?",
+    "rationale": "Cosmo & Wanda variants recorded 3 and 2 champion exits respectively, alongside unrealized positions. Comparing the average ROI of trades with champion exits against those without will clarify whether the exit phenotype adds alpha or introduces latency.",
+    "status": "Monitoring",
+    "created_at": "2026-06-25T08:02:46.069992+00:00"
+  },
+  {
+    "id": 4335,
+    "category": "league",
+    "question": "Does Timmy's low-win/high-win-size profile survive live dry-run conditions?",
+    "rationale": "Timmy's model exhibits low win rates (~32-36%) but occasional large winners (up to 19.37%). Both variants failed to convert any realized PnL, raising the question of whether the skew profile can survive transaction costs and slippage upon restart.",
+    "status": "Open",
+    "created_at": "2026-06-25T08:02:46.069999+00:00"
+  },
+  {
+    "id": 4336,
+    "category": "league",
+    "question": "Does broader pair coverage improve opportunity or add noise?",
+    "rationale": "Top 50 coverage produced higher equity in Cosmo & Wanda and larger individual wins in Timmy, while Top 20 maintained a perfect realized win rate. Assessing whether the additional pairs improve risk-adjusted returns or dilute signal fidelity is essential.",
+    "status": "Open",
+    "created_at": "2026-06-25T08:02:46.070005+00:00"
+  }
+]

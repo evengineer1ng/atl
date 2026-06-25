@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% set summary = detail.summary %}
+{% set catalog = detail.catalog %}
+{% block content %}
+<section class="detail-grid">
+  <article class="card franchise-hero">
+    <div class="franchise-topline">
+      <div>
+        <p class="eyebrow">Universe / Pairlist</p>
+        <h2>{{ catalog.name or detail.key }}</h2>
+      </div>
+    </div>
+    <div class="record-strip">
+      <span class="record-pill">Type {{ catalog.type or 'custom' }}</span>
+      <span class="record-pill">Status {{ catalog.status or 'experimental' }}</span>
+      {% if catalog.current_symbol_count is not none %}<span class="record-pill">{{ catalog.current_symbol_count }} symbols</span>{% endif %}
+    </div>
+    <div class="kv-grid">
+      <div><span>First seen</span><strong>{{ detail.first_seen or 'n/a' }}</strong></div>
+      <div><span>Last updated</span><strong>{{ detail.last_seen or 'n/a' }}</strong></div>
+      <div><span>Current teams</span><strong>{{ detail.active_members|length }}</strong></div>
+      <div><span>Historical teams</span><strong>{{ detail.members|length }}</strong></div>
+    </div>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Habitat Record</p>
+    <h2>Performance</h2>
+    {% if summary %}
+    <div class="scoreboard-grid">
+      <div><span>Total P&amp;L</span><strong>{{ "%.2f"|format(summary.total_pnl) }}</strong></div>
+      <div><span>Realized P&amp;L</span><strong>{{ "%.2f"|format(summary.realized_pnl) }}</strong></div>
+      <div><span>Unrealized P&amp;L</span><strong>{{ "%.2f"|format(summary.unrealized_pnl) }}</strong></div>
+      <div><span>Closed trades</span><strong>{{ summary.closed_trades }}</strong></div>
+      <div><span>Open trades</span><strong>{{ summary.open_trades }}</strong></div>
+      <div><span>Win rate</span><strong>{{ "%.1f"|format(summary.win_rate) }}%</strong></div>
+      <div><span>Avg ROI</span><strong>{{ "%.2f"|format(summary.avg_roi) }}%</strong></div>
+      <div><span>Best closed trade</span><strong>{{ "%.2f"|format(summary.best_trade) }}%</strong></div>
+      <div><span>Worst open trade</span><strong>{{ "%.2f"|format(summary.worst_open_trade) }}%</strong></div>
+      <div><span>Strategies proven</span><strong>{{ summary.strategy_count }}</strong></div>
+    </div>
+    {% else %}
+    <p>No performance data yet. This universe is registered but has no assigned teams.</p>
+    {% endif %}
+  </article>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Usage</p>
+  <h2>Teams Using This Universe</h2>
+  <p class="section-intro">
+    {% if detail.first_team %}First seen with <a href="{{ detail.first_team.link }}">{{ detail.first_team.name }}</a>. {% endif %}
+    {% if detail.best_team %}Most successful: <a href="{{ detail.best_team.link }}">{{ detail.best_team.name }}</a> ({{ "%.2f"|format(detail.best_team.total_pnl) }} P&amp;L).{% endif %}
+  </p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Team</th><th>League</th><th>Family</th><th>Status</th><th>Closed Trades</th><th>Win Rate</th><th>Avg ROI</th><th>Total P&amp;L</th></tr></thead>
+      <tbody>
+        {% for team in detail.members %}
+        <tr>
+          <td><a href="{{ team.link }}">{{ team.name }}</a></td>
+          <td>{{ team.league }}</td>
+          <td>{{ team.family }}</td>
+          <td><span class="badge {{ 'online' if team.heartbeat else 'offline' }}">{{ 'active' if team.heartbeat else 'idle' }}</span></td>
+          <td>{{ team.closed_trades }}</td>
+          <td>{{ "%.1f"|format(team.win_rate) }}%</td>
+          <td>{{ "%.2f"|format(team.avg_roi) }}%</td>
+          <td>{{ "%.2f"|format(team.total_pnl) }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="8">No teams have used this universe yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Signature Moves</p>
+  <h2>Exit Tags</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Exit Tag</th><th>Count</th><th>Avg ROI</th><th>Total Profit</th></tr></thead>
+      <tbody>
+        {% for row in detail.exit_rows %}
+        <tr>
+          <td>{{ row.exit_tag }}</td>
+          <td>{{ row.count }}</td>
+          <td>{{ "%.2f"|format(row.avg_roi) }}%</td>
+          <td>{{ "%.2f"|format(row.total_profit) }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="4">No closed trades recorded for this universe yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="detail-grid">
+  <article class="card">
+    <p class="eyebrow">Live Board</p>
+    <h2>Recent Open Trades</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Team</th><th>Pair</th><th>Open Date</th><th>Profit %</th></tr></thead>
+        <tbody>
+          {% for trade in detail.open_trades %}
+          <tr>
+            <td><a href="{{ trade.team_link }}">{{ trade.team }}</a></td>
+            <td>{{ trade.pair }}</td>
+            <td>{{ trade.open_date }}</td>
+            <td>{{ "%.2f"|format(trade.profit_pct) }}%</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="4">No open trades.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p><a href="/trade-explorer">Open Trade Explorer</a></p>
+  </article>
+  <article class="card">
+    <p class="eyebrow">Box Score</p>
+    <h2>Recent Closed Trades</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Team</th><th>Pair</th><th>Close</th><th>Profit %</th><th>Exit Tag</th></tr></thead>
+        <tbody>
+          {% for trade in detail.closed_trades %}
+          <tr>
+            <td><a href="{{ trade.team_link }}">{{ trade.team }}</a></td>
+            <td>{{ trade.pair }}</td>
+            <td>{{ trade.close_date }}</td>
+            <td>{{ "%.2f"|format(trade.profit_pct) }}%</td>
+            <td>{{ trade.exit_tag }}</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="5">No closed trades.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p><a href="/trade-explorer">Open Trade Explorer</a></p>
+  </article>
+</section>
+
+<section class="card">
+  <p class="eyebrow">Symbol Participation</p>
+  <h2>Current Symbols</h2>
+  {% if detail.current_symbols %}
+  <p class="mono">{{ detail.current_symbols|join(", ") }}</p>
+  {% else %}
+  <p>No live pairlist manifest is available for this universe.</p>
+  {% endif %}
+  <p class="section-intro">TODO: per-symbol participation history (most frequently included, most closed trades, best/worst ROI) is not stored yet. Only the current manifest membership is shown for now.</p>
+</section>
+{% endblock %}
